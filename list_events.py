@@ -29,12 +29,10 @@ service = build("calendar", "v3", credentials=creds)
 calendar_list = service.calendarList().list().execute()
 
 items = calendar_list.get("items", [])
-if not items:
-    print("No calendars found.")
-else:
-    print("Available calendars:")
-    for calendar in items:
-        print(f"- {calendar.get('summary')} (ID: {calendar.get('id')})")
+
+print("Available calendars:")
+for calendar in items:
+    print(f"- {calendar.get('summary')} (ID: {calendar.get('id')})")
 
 # --------------------------------------
 
