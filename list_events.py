@@ -18,6 +18,26 @@ creds = service_account.Credentials.from_service_account_file(
 service = build("calendar", "v3", credentials=creds)
 now = datetime.datetime.utcnow().isoformat() + "Z"
 
+
+# Build service
+service = build("calendar", "v3", credentials=creds)
+
+
+# ------------------------------------------------------
+
+# List all calendars the service account has access to
+calendar_list = service.calendarList().list().execute()
+
+items = calendar_list.get("items", [])
+if not items:
+    print("No calendars found.")
+else:
+    print("Available calendars:")
+    for calendar in items:
+        print(f"- {calendar.get('summary')} (ID: {calendar.get('id')})")
+
+# --------------------------------------
+
 events_result = service.events().list(
               calendarId="primary", timeMin=now,
               maxResults=10, singleEvents=True,
