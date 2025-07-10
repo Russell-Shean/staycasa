@@ -33,7 +33,7 @@ print("Getting the upcoming 10 events")
 events_result = (
         service.events()
         .list(
-            calendarId="primary",
+            calendarId="stayvacasa@gmail.com",
             timeMin=now,
             maxResults=10,
             singleEvents=True,
@@ -73,7 +73,7 @@ for calendar in items:
 # --------------------------------------
 
 events_result = service.events().list(
-              calendarId="primary", timeMin=now,
+              calendarId="stayvacasa@gmail.com",
               maxResults=10, singleEvents=True,
               orderBy="startTime"
             ).execute()
