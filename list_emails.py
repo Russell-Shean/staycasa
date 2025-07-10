@@ -10,7 +10,8 @@ from google.oauth2 import service_account
 from googleapiclient.errors import HttpError
 
 # If modifying these scopes, delete the file token.json.
-SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
+SCOPES = ["https://mail.google.com/"]
+
 
 
 # Write secret to a file
