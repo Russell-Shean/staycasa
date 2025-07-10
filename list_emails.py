@@ -20,11 +20,11 @@ with open("service_account.json", "w") as f:
 # Load credentials
 creds = service_account.Credentials.from_service_account_file(
                   "service_account.json",
-                  scopes=["https://mail.google.com/"]
+                  scopes=["https://www.googleapis.com/auth/gmail.readonly"]
               )
 
 service = build("gmail", "v1", credentials=creds)
-results = service.users().labels().list(userId="me").execute()
+results = service.users().labels().list(userId="stayvacasa@gmail.com").execute()
 labels = results.get("labels", [])
 
 if not labels:
