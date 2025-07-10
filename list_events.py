@@ -12,7 +12,11 @@ with open("service_account.json", "w") as f:
 # Load credentials
 creds = service_account.Credentials.from_service_account_file(
                   "service_account.json",
-                  scopes=["https://www.googleapis.com/auth/calendar.readonly"]
+                  scopes=["https://www.googleapis.com/auth/calendar",
+                          "https://www.googleapis.com/auth/calendar.calendarlist",
+                          "https://www.googleapis.com/auth/calendar.calendarlist.readonly",
+                          "https://www.googleapis.com/auth/calendar.readonly",
+                          ]
               )
 
 service = build("calendar", "v3", credentials=creds)
