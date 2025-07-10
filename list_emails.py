@@ -9,8 +9,7 @@ from google.oauth2 import service_account
 
 from googleapiclient.errors import HttpError
 
-# If modifying these scopes, delete the file token.json.
-SCOPES = ["https://mail.google.com/"]
+
 
 
 
@@ -21,11 +20,7 @@ with open("service_account.json", "w") as f:
 # Load credentials
 creds = service_account.Credentials.from_service_account_file(
                   "service_account.json",
-                  scopes=["https://www.googleapis.com/auth/calendar",
-                          "https://www.googleapis.com/auth/calendar.calendarlist",
-                          "https://www.googleapis.com/auth/calendar.calendarlist.readonly",
-                          "https://www.googleapis.com/auth/calendar.readonly",
-                          ]
+                  scopes=["https://mail.google.com/"]
               )
 
 service = build("gmail", "v1", credentials=creds)
