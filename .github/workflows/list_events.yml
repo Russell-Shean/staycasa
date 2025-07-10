@@ -1,6 +1,9 @@
 name: List Google Calendar Events
 
 on:
+  push:
+    branches:
+        - main
   schedule:
     - cron: '0 * * * *'  # Runs every hour
   workflow_dispatch:
