@@ -28,5 +28,5 @@ jobs:
       - name: List events
         env:
           GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
-        run: python3 list_events.py
+        run: python3 list_emails.py
 

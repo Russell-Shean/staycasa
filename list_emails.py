@@ -1,0 +1,38 @@
+import os.path
+
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+
+# If modifying these scopes, delete the file token.json.
+SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
+
+
+# Write secret to a file
+with open("service_account.json", "w") as f:
+    f.write(os.environ["GOOGLE_CREDENTIALS_JSON"])
+
+# Load credentials
+creds = service_account.Credentials.from_service_account_file(
+                  "service_account.json",
+                  scopes=["https://www.googleapis.com/auth/calendar",
+                          "https://www.googleapis.com/auth/calendar.calendarlist",
+                          "https://www.googleapis.com/auth/calendar.calendarlist.readonly",
+                          "https://www.googleapis.com/auth/calendar.readonly",
+                          ]
+              )
+
+service = build("gmail", "v1", credentials=creds)
+results = service.users().labels().list(userId="me").execute()
+labels = results.get("labels", [])
+
+if not labels:
+    print("No labels found.")
+
+print("Labels:")
+for label in labels:
+    print(label["name"])
+
+
