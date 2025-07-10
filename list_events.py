@@ -25,8 +25,9 @@ events_result = service.events().list(
             ).execute()
 
 events = events_result.get("items", [])
-    if not events:
-        print("No upcoming events found.")
+
+if not events:
+    print("No upcoming events found.")
 
 for event in events:
     start = event["start"].get("dateTime", event["start"].get("date"))
