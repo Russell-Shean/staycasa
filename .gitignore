@@ -3,6 +3,9 @@
 # google credentials
 .credentials/
 
+# wrote out credential file
+service_account.json
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
