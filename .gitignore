@@ -1,7 +1,7 @@
 # User defined objects
 
 # google credentials
-credentials/
+.credentials/
 
 
 # Byte-compiled / optimized / DLL files
