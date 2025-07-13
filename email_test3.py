@@ -77,7 +77,7 @@ for email_id in email_ids:
         "from": from_,
         "date": date,
         "time": time,
-        "email_id": email_id,
+         #"email_id": email_id,
         "subject": subject,
         "body": body,
     })
