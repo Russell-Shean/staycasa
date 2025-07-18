@@ -168,15 +168,26 @@ airbnb_emails2 <- airbnb_reservations |>
                  mutate(reservation_times = str_squish(str_extract(reservation_times, "(?<=週.).*"))) |> 
   
                  mutate(checkin_date = str_extract(reservation_dates, "^.*?(?=週)"),
-                        checkout_date = str_extract(reservation_dates, "(?<=週.).*(?=週)"),
+                        checkout_date = str_squish(str_extract(reservation_dates, "(?<=週.).*(?=週)")),
                         checkin_day_of_week = str_extract(reservation_dates, "週."),
                         checkout_day_of_week = str_extract(reservation_dates, "週.(?=..午)"),
                         checkin_time = str_extract(reservation_times, "^.*(?= .午)"),
-                        checkout_time = str_extract(reservation_times, "(?<= ).*$"),
+                        checkout_time = str_extract(reservation_times, "(?<= ).*$")) |>
+                        
+                        
+                # convert checkin date to actual date format
+                mutate(checkin_date = ifelse(!str_detect(checkin_date, "年") & !is.na(checkin_date),
+                                             paste0(format(Sys.Date(), "%Y年"), checkin_date),
+                                             checkin_date),
+                       checkout_date = ifelse(!str_detect(checkout_date, "年") & !is.na(checkout_date),
+                                             paste0(format(Sys.Date(), "%Y年"), checkout_date),
+                                             checkout_date),) |>
+                     
+               mutate(across(c(checkin_date, checkout_date), ~ as.Date(.x, format= "%Y年%m月%d日"))) |>
                         
                         
                         # Guest info
-                        guest_name = str_extract(subject, "(?<=預訂已確認 -).*(?=於)"),
+                mutate( guest_name = str_extract(subject, "(?<=預訂已確認 -).*(?=於)"),
                         guests_block = str_replace_all(str_extract(info_block1, "人數.*即將入住")," ", ""),
                         number_of_adults = as.numeric(str_extract(guests_block, "\\d+(?=名成人)")),
                         number_of_children = as.numeric(str_extract(guests_block, "\\d+(?=名兒童)"))) |>
