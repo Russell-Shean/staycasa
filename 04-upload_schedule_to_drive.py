@@ -20,13 +20,10 @@ creds = service_account.Credentials.from_service_account_file(
 
 
 # Authenticate
-credentials = service_account.Credentials.from_service_account_info(
-    creds, scopes=SCOPES
-)
 
 # Build service clients
-docs_service = build("docs", "v1", credentials=credentials)
-drive_service = build("drive", "v3", credentials=credentials)
+docs_service = build("docs", "v1", credentials=creds)
+drive_service = build("drive", "v3", credentials=creds)
 
 # Title and content of the doc
 DOCUMENT_TITLE = "GitHub Actions Created Doc"
