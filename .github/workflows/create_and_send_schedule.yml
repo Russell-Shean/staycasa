@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  list-events:
+  create-schedule:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
