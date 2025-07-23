@@ -4,7 +4,7 @@ library(dplyr)
 library(stringr)
 library(base64enc)
 
-sample_data <- fromJSON("/home/russ/Documents/python_projects/staycasa-automation/emails.json")
+sample_data <- fromJSON("data/emails.json")
 
 # add additional columns
 sample_data2 <- sample_data |>
@@ -226,7 +226,7 @@ airbnb_emails2 <- airbnb_reservations |>
   
   
   
-  
+write.csv(airbnb_emails2, file = "data/airbnb_reservations.csv", row.names = FALSE)  
                  
                   
    

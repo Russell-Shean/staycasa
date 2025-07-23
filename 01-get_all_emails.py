@@ -1,4 +1,5 @@
 import imaplib
+import os
 import email
 import json
 from email.header import decode_header
@@ -6,7 +7,7 @@ from datetime import datetime
 
 # Your Gmail credentials
 username = "stayvacasa@gmail.com"
-app_password = "rnxlvbtckpzdfvup"
+app_password = os.environ["GOOGLE_APP_PASSWORD"]
 
 # Connect to Gmail
 mail = imaplib.IMAP4_SSL("imap.gmail.com")
@@ -84,7 +85,7 @@ for email_id in email_ids:
 
 
 # Write out the emails dictionary as a json file 
-with open('emails.json', 'w') as fp:
+with open('data/emails.json', 'w') as fp:
     json.dump(emails, fp)
 
 
