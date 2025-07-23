@@ -173,6 +173,14 @@ airbnb_emails2 <- airbnb_reservations |>
                         checkout_day_of_week = str_extract(reservation_dates, "週.(?=..午)"),
                         checkin_time = str_extract(reservation_times, "^.*(?= .午)"),
                         checkout_time = str_extract(reservation_times, "(?<= ).*$")) |>
+                     
+                     
+                     # Convert checkin and checkout time to 24 hour clock
+                mutate(across(c(checkin_time, checkout_time),
+                              function(x)case_when(x=="下午4:00" ~ "16:00", 
+                                                   x == "中午12:00" ~ "12:00",
+                                                   x == "下午6:00" ~ "18:00",
+                                                   .default = x))) |>
                         
                         
                 # convert checkin date to actual date format
@@ -188,6 +196,7 @@ airbnb_emails2 <- airbnb_reservations |>
                         
                         # Guest info
                 mutate( guest_name = str_extract(subject, "(?<=預訂已確認 -).*(?=於)"),
+                        guest_first_name = str_extract(body_cleaned, "(?<=已確認！).*(?=於)"),
                         guests_block = str_replace_all(str_extract(info_block1, "人數.*即將入住")," ", ""),
                         number_of_adults = as.numeric(str_extract(guests_block, "\\d+(?=名成人)")),
                         number_of_children = as.numeric(str_extract(guests_block, "\\d+(?=名兒童)"))) |>
@@ -197,7 +206,19 @@ airbnb_emails2 <- airbnb_reservations |>
                                                     0,
                                                     number_of_children)) |>
                         
-                        mutate(number_of_guests = number_of_children + number_of_adults)
+                        mutate(number_of_guests = number_of_children + number_of_adults) |>
+                     
+                     
+                        mutate(room_number = case_when(room_id == "1396249388984584475" ~ 1600,
+                                                       room_id == "1378099322751033231" ~ 513,
+                                                       room_id == "1363706811577260499" ~ 1615,
+                                                       room_id == "1334778893973629207" ~ 716,
+                                                       room_id == "1325719145487941225" ~ 1713,
+                                                       room_id == "1316303449136573922" ~ 515,
+                                                       room_id == "1304380734749180095" ~ 814))
+
+                   
+                   
 
   
                  
