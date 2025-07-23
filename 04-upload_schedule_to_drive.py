@@ -21,7 +21,7 @@ creds = service_account.Credentials.from_service_account_file(
 
 # Authenticate
 credentials = service_account.Credentials.from_service_account_info(
-    credentials_info, scopes=SCOPES
+    creds, scopes=SCOPES
 )
 
 # Build service clients
