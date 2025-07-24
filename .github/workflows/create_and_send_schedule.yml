@@ -38,7 +38,9 @@ jobs:
       - name: Get emails
         env: 
           GOOGLE_APP_PASSWORD: ${{ secrets.GOOGLE_APP_PASSWORD }}
-        run: python3 01-get_all_emails.py
+        run: |
+          echo skipping email downloading step for time
+          # python3 01-get_all_emails.py
 
       # Step 2: Process emails
       - name: Process emails
