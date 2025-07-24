@@ -1,0 +1,6 @@
+from google_auth_oauthlib.flow import InstalledAppFlow
+
+SCOPES = ['https://www.googleapis.com/auth/drive']
+flow = InstalledAppFlow.from_client_secrets_file('/home/russ/Downloads/client_secret_949319258142-r63ks0avjf218a6n13p558gn704h5k2v.apps.googleusercontent.com.json', SCOPES)
+creds = flow.run_local_server(port=0)  # This opens a browser for you to log in
+print("Refresh token:", creds.refresh_token)

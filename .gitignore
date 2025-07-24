@@ -6,6 +6,9 @@
 # wrote out credential file
 service_account.json
 
+# Test files folder
+test_files/
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
