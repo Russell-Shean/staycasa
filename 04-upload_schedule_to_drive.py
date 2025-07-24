@@ -6,7 +6,7 @@ from googleapiclient.discovery import build
 
 # Write secret to a file
 with open("service_account.json", "w") as f:
-    f.write(os.environ["GOOGLE_CREDENTIALS_JSON"])
+    f.write(os.environ["GOOGLE_CREDENTIALS_JSON2"])
 
 # Load credentials
 creds = service_account.Credentials.from_service_account_file(

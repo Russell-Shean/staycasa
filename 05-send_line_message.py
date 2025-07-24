@@ -9,8 +9,8 @@ load_dotenv()
 LINE_CHANNEL_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")  # or set directly as a string
 
 print(LINE_CHANNEL_ACCESS_TOKEN)
-GROUP_ID = "C4c2944e52265752b5b36ca467d6bbbd6"  # The LINE user ID of the recipient
-#GROUP_ID = "Ufa81a6bd5dd4ed3282949516cc3dc200"
+# GROUP_ID = "C4c2944e52265752b5b36ca467d6bbbd6"  # actual group
+GROUP_ID = "Ufa81a6bd5dd4ed3282949516cc3dc200" # Russ
 
 def send_line_message(group_id, message_text):
     url = "https://api.line.me/v2/bot/message/push"
