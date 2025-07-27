@@ -57,6 +57,10 @@ sample_data2 <- sample_data |>
                        reservation_change_request = ifelse(str_detect(subject, "想要更改預訂"), 
                                                            "yes",
                                                            "no"),
+                       
+                       reservation_update = ifelse(str_detect(subject, "預訂已更新"),
+                                                              "yes",
+                                                               "no"),
                          
                          
                          
@@ -71,7 +75,7 @@ sample_data2 <- sample_data |>
                        
                       
                        
-                       miscellaneous = 	ifelse(str_detect(subject, "感謝你接受.*的邀請|身分已通過驗證|Message sent off-schedule|Messages sent off-schedule|Scheduled message skipped|你身為搭檔所擁有的權限已變更|緊急通知：新增必要的出租資訊|是時候回覆Xu Jing YiIrene的住宿諮詢了|在6小時內回覆宜嫻的預訂詢問以維持您的高回覆率|有房客今天想入住"), 
+                       miscellaneous = 	ifelse(str_detect(subject, "感謝你接受.*的邀請|身分已通過驗證|Message sent off-schedule|Messages sent off-schedule|Scheduled message skipped|你身為搭檔所擁有的權限已變更|緊急通知：新增必要的出租資訊|是時候回覆Xu Jing YiIrene的住宿諮詢了|在6小時內回覆宜嫻的預訂詢問以維持您的高回覆率|有房客今天想入住|你的預訂變更已接受"), 
                                          "yes",
                                          "no")
                          
@@ -146,11 +150,102 @@ airbnb_emails <- sample_data2 |>
                                    account_activity == "no",
                                    reservation_change_request == "no",
                                    payment_issues == "no",
+                                   reservation_update == "no",
                                    miscellaneous == "no",
                                    context_parameter2 != "booking/v2_migration/reservation_host_pending"
                      )  
                    
+                   airbnb_replies <- airbnb_emails |> 
+                     filter(str_detect(subject, "RE:.*預訂"))
+                   
+                   
+                   airbnb_cancelations <- airbnb_emails |> 
+                     filter(str_detect(subject, "已取消："))
+                   
+                   airbnb_reminders <- airbnb_emails |> 
+                     filter(str_detect(subject, "提醒：.*快要入住了"))
+                   
       ######################################################
+                   
+                   airbnb_reminders <- airbnb_reminders |>
+                     
+                     # extract confirmation numbers
+                     mutate(confirmation_number = str_extract(body_cleaned, "(?<=reservations/details/).*?(?=\\?)")) |>
+                     
+                     
+                     mutate(guest_first_name = str_extract(subject, "(?<=提醒：).*(?=快要)"))  |>
+                     
+                     # extract two blocks of information
+                     mutate(info_block1 = str_extract(body_cleaned, "入住 退房.*即將入住租客的更多詳情")) |>
+                     mutate(info_block1 = str_replace_all(info_block1, "~~newline~~", "")) |>
+                     
+                     mutate(info_block2 = str_extract(body_cleaned, "確認碼.*出租收入會在房客入住")) |>
+                     mutate(info_block2 = str_replace_all(info_block2, "~~newline~~", "")) |>
+                     
+                     
+                     
+                     # Extract the checkin and checkout dates
+                     mutate(reservation_dates = str_squish(str_extract(info_block1, "(?<=退房).*(?=人數)"))) |>
+                     mutate(reservation_times = str_squish(str_extract(info_block1, "(?<=週.).*(?=人數)"))) |> 
+                     mutate(reservation_times = str_squish(str_extract(reservation_times, "(?<=週.).*"))) |> 
+                     
+                     mutate(checkin_date = str_extract(reservation_dates, "^.*?(?=週)"),
+                            checkout_date = str_squish(str_extract(reservation_dates, "(?<=週.).*(?=週)")),
+                            checkin_day_of_week = str_extract(reservation_dates, "週."),
+                            checkout_day_of_week = str_extract(reservation_dates, "週.(?=..午)"),
+                            checkin_time = str_extract(reservation_times, "^.*(?= .午)"),
+                            checkout_time = str_extract(reservation_times, "(?<= ).*$")) |>
+                     
+                     
+                     # Convert checkin and checkout time to 24 hour clock
+                     mutate(across(c(checkin_time, checkout_time),
+                                   function(x)case_when(x=="下午4:00" ~ "16:00", 
+                                                        x == "中午12:00" ~ "12:00",
+                                                        x == "下午6:00" ~ "18:00",
+                                                        x == "下午3:00" ~ "15:00",
+                                                        x == "上午11:00" ~ "11:00",
+                                                        .default = x))) |>
+                     
+                     
+                     # convert checkin date to actual date format
+                     mutate(checkin_date = ifelse(!str_detect(checkin_date, "年") & !is.na(checkin_date),
+                                                  paste0(format(Sys.Date(), "%Y年"), checkin_date),
+                                                  checkin_date),
+                            checkout_date = ifelse(!str_detect(checkout_date, "年") & !is.na(checkout_date),
+                                                   paste0(format(Sys.Date(), "%Y年"), checkout_date),
+                                                   checkout_date),) |>
+                     
+                     mutate(across(c(checkin_date, checkout_date), ~ as.Date(.x, format= "%Y年%m月%d日"))) |>
+                     
+                     
+                     # Guest info
+                     mutate( #guest_name = str_extract(subject, "(?<=預訂已確認 -).*(?=於)"),
+                       #guest_first_name = str_extract(body_cleaned, "(?<=已確認！).*(?=於)"),
+                       guests_block = str_replace_all(str_extract(info_block1, "人數.*即將入住")," ", ""),
+                       number_of_adults = as.numeric(str_extract(guests_block, "\\d+(?=名成人)")),
+                       number_of_children = as.numeric(str_extract(guests_block, "\\d+(?=名兒童)"))) |>
+                     
+                     # convert na's to zeros for children
+                     mutate(number_of_children = ifelse(!is.na(number_of_adults) & is.na(number_of_children),
+                                                        0,
+                                                        number_of_children)) |>
+                     
+                     mutate(number_of_guests = number_of_children + number_of_adults) |>
+                     
+                     mutate(room_number = case_when(room_id == "1396249388984584475" ~ as.character(1600),
+                                                    room_id == "1378099322751033231" ~ as.character(513),
+                                                    room_id == "1363706811577260499" ~ as.character(1615),
+                                                    room_id == "1334778893973629207" ~ as.character(716),
+                                                    room_id == "1325719145487941225" ~ as.character(1713),
+                                                    room_id == "1316303449136573922" ~ as.character(515),
+                                                    room_id == "1304380734749180095" ~ as.character(814)))
+                   
+                   
+                   
+                   
+                   
+                   
+    ###############################################################
                    
                    
                    
@@ -223,7 +318,18 @@ airbnb_emails <- sample_data2 |>
                                                        room_id == "1304380734749180095" ~ as.character(814)))
 
                    
+                   # Add reminders that aren't currently in the data set
+                   confirmation_numbers <- airbnb_reservation_confirmations2 |> 
+                                  pull(confirmation_number)  |>
+                                  unique()
                    
+                   
+                   airbnb_reminders2 <- airbnb_reminders |>
+                                      filter(!(confirmation_number %in% confirmation_numbers))
+                   
+                   
+                   airbnb_reservation_confirmations3 <- airbnb_reservation_confirmations2 |>
+                                                        full_join(airbnb_reminders2)
 
   
                  
@@ -232,7 +338,7 @@ airbnb_emails <- sample_data2 |>
   
   
   
-write.csv(airbnb_reservation_confirmations2, 
+write.csv(airbnb_reservation_confirmations3, 
           file = "data/airbnb_reservation_confirmations.csv", 
           row.names = FALSE)  
                  
