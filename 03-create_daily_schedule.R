@@ -38,6 +38,9 @@ generate_schedule <- function(day_series){
     todays_checkouts <- airbnb_emails2 |> 
       dplyr::filter(checkout_date == day)
     
+    todays_checkins <- airbnb_emails2 |> 
+      dplyr::filter(checkin_date == day)
+    
     
     #print(nrow(todays_checkouts))
     
@@ -77,6 +80,13 @@ generate_schedule <- function(day_series){
                      future_checkins[1, "guest_first_name"], " 515"),
               file = file_name, append = TRUE)
         
+        
+        # remove the future checkin from today's checkins so that we don't
+        # double print
+        todays_checkins <- todays_checkins |>
+                           dplyr::filter((!guest_first_name == future_checkins[1, "guest_first_name"] &
+                                         checkin_time  == future_checkins[1, "checkin_time"])) 
+        
         if(t == nrow(todays_checkouts)){
           
           write("\n",
@@ -86,10 +96,39 @@ generate_schedule <- function(day_series){
       }
     } else {
 
+
       write("\n",
             file = file_name, append = TRUE)
     }
-  }               
+    
+    # Write out checkins for listings where there's not a checkout  date listed
+    
+    if(nrow(todays_checkins) > 0){
+    
+    for(u in 1:nrow(todays_checkins)){
+      
+      # Print info about the checkout
+      write(paste0("(",todays_checkins[u,"room_number"], ")"),
+            file = file_name, append = TRUE)
+      
+      write(paste0("Check in: ", 
+                   todays_checkins[u,"guest_first_name"], 
+                   " ",todays_checkins[u, "checkin_time"]),
+            file = file_name, append = TRUE)
+      
+      
+      if(u == nrow(todays_checkins)){
+        
+        write("\n",
+              file = file_name, append = TRUE)
+        
+      }
+    }
+    }
+    
+
+    
+  }   #破哦            
 }
 
 generate_schedule(this_month)

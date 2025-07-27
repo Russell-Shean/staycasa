@@ -15,7 +15,15 @@ Check in: 2025-08-03 香里 16:00
 Drop Keycard : (1615) 香里 515
 
 
+(1713)
+Check in: ANNY 16:00
+
+
 08-04
+
+
+(716)
+Check in: SANDRA 16:00
 
 
 08-05
@@ -38,6 +46,10 @@ Check in: 2025-08-08 ROB 16:00
 Drop Keycard : (1615) ROB 515
 
 
+(513)
+Check in: KENT 16:00
+
+
 08-09
 
 
@@ -52,7 +64,15 @@ Check in: 2025-08-29 DIANE 16:00
 Drop Keycard : (515) DIANE 515
 
 
+(1713)
+Check in: ELLA 16:00
+
+
 08-11
+
+
+(716)
+Check in: ALEXANDRE 16:00
 
 
 08-12
@@ -72,6 +92,10 @@ Drop Keycard : (1615) AVIJIT 515
 08-14
 
 
+(1615)
+Check in: AVIJIT 16:00
+
+
 08-15
 
 
@@ -87,6 +111,10 @@ Drop Keycard : (513) LEE YONG 515
 Check out: ELLA 12:00
 Check in: 2025-08-21 岑岑 16:00
 Drop Keycard : (1713) 岑岑 515
+
+
+(814)
+Check in: YENLING 16:00
 
 
 08-18
@@ -109,10 +137,20 @@ Drop Keycard : (1615) JOHANNES 515
 08-21
 
 
+(1713)
+Check in: 岑岑 16:00
+
+
 08-22
 
 
 08-23
+
+
+(513)
+Check in: LEE YONG 16:00
+(716)
+Check in: LEE YONG 16:00
 
 
 08-24
@@ -136,6 +174,10 @@ Check in: 2025-08-28 MIA 16:00
 Drop Keycard : (1615) MIA 515
 
 
+(814)
+Check in: EIJI 16:00
+
+
 08-27
 (513)
 Check out: LEE YONG 12:00
@@ -150,7 +192,15 @@ Drop Keycard : (716) EDDY 515
 08-28
 
 
+(1615)
+Check in: MIA 16:00
+
+
 08-29
+
+
+(515)
+Check in: DIANE 16:00
 
 
 08-30
@@ -165,5 +215,9 @@ Drop Keycard : (1713) MARK JOSEPH 515
 Check out: EIJI 12:00
 Check in: 2025-09-09 TONY 16:00
 Drop Keycard : (814) TONY 515
+
+
+(513)
+Check in: PIYAMAPORN 16:00
 
 
