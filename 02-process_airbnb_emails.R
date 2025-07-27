@@ -83,23 +83,17 @@ sample_data2 <- sample_data |>
 
 
 airbnb_emails <- sample_data2 |>
-                 filter(sender_domain == "airbnb.com")
-
-
-airbnb_reservations <- airbnb_emails |>
-                      dplyr::filter(review == "no",
-                             reply == "no",
-                             super_host_invite == "no",
-                             reminder == "no",
-                             inquiry == "no",
-                             account_activity == "no",
-                             reservation_change_request == "no",
-                             payment_issues == "no",
-                             miscellaneous == "no"
-                             )  
-
-
-airbnb_emails2 <- airbnb_reservations |> 
+                 filter(sender_domain == "airbnb.com")  |> 
+  
+                  # Clean body
+                 mutate(body_cleaned = str_replace_all(body,
+                                                       "\\n|\\r", 
+                                                       "~~newline~~")) |>
+  
+                 mutate(body_cleaned = str_squish(body_cleaned)) |>
+  
+  
+  
   
                   # Do a first round extraction of confirmation numbers
                   mutate(confirmation_number = str_extract(body, "(?<=/reservations/details/).*(?=\\?)")) |>
@@ -138,21 +132,32 @@ airbnb_emails2 <- airbnb_reservations |>
                   # Use base R because something dumb is happening with decoding plus dplyr
                   decoder <- function(x){rawToChar(base64enc::base64decode(x))}
 
-                   airbnb_emails2$context_parameter2 <- sapply(airbnb_emails2$context_parameter, decoder)
+                   airbnb_emails$context_parameter2 <- sapply(airbnb_emails$context_parameter, decoder)
                    
                    
-                   airbnb_emails2 <- airbnb_emails2 |>
-  
-       
-  
-  
-                    
-
-  
-                 # clean the body field
-                 mutate(body_cleaned = str_replace_all(body, "\\n|\\r", "~~newline~~")) |>
-                 
-                 mutate(body_cleaned = str_squish(body_cleaned)) |>
+                  
+         ##############################################
+           airbnb_reservation_confirmations <- airbnb_emails|>
+                     dplyr::filter(review == "no",
+                                   reply == "no",
+                                   super_host_invite == "no",
+                                   reminder == "no",
+                                   inquiry == "no",
+                                   account_activity == "no",
+                                   reservation_change_request == "no",
+                                   payment_issues == "no",
+                                   miscellaneous == "no",
+                                   context_parameter2 != "booking/v2_migration/reservation_host_pending"
+                     )  
+                   
+      ######################################################
+                   
+                   
+                   
+              airbnb_reservation_confirmations2 <- airbnb_reservation_confirmations |>
+                
+                 # filter out cancelations
+                 dplyr::filter(!(confirmation_number %in% cancelation_numbers)) |>
   
   
                  # extract two blocks of information
@@ -209,13 +214,13 @@ airbnb_emails2 <- airbnb_reservations |>
                         mutate(number_of_guests = number_of_children + number_of_adults) |>
                      
                      
-                        mutate(room_number = case_when(room_id == "1396249388984584475" ~ 1600,
-                                                       room_id == "1378099322751033231" ~ 513,
-                                                       room_id == "1363706811577260499" ~ 1615,
-                                                       room_id == "1334778893973629207" ~ 716,
-                                                       room_id == "1325719145487941225" ~ 1713,
-                                                       room_id == "1316303449136573922" ~ 515,
-                                                       room_id == "1304380734749180095" ~ 814))
+                        mutate(room_number = case_when(room_id == "1396249388984584475" ~ as.character(1600),
+                                                       room_id == "1378099322751033231" ~ as.character(513),
+                                                       room_id == "1363706811577260499" ~ as.character(1615),
+                                                       room_id == "1334778893973629207" ~ as.character(716),
+                                                       room_id == "1325719145487941225" ~ as.character(1713),
+                                                       room_id == "1316303449136573922" ~ as.character(515),
+                                                       room_id == "1304380734749180095" ~ as.character(814)))
 
                    
                    
@@ -223,10 +228,13 @@ airbnb_emails2 <- airbnb_reservations |>
   
                  
 
+                   
   
   
   
-write.csv(airbnb_emails2, file = "data/airbnb_reservations.csv", row.names = FALSE)  
+write.csv(airbnb_reservation_confirmations2, 
+          file = "data/airbnb_reservation_confirmations.csv", 
+          row.names = FALSE)  
                  
                   
    

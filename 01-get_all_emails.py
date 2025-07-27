@@ -5,6 +5,10 @@ import json
 from email.header import decode_header
 from datetime import datetime
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Your Gmail credentials
 username = "stayvacasa@gmail.com"
 app_password = os.environ["GOOGLE_APP_PASSWORD"]
