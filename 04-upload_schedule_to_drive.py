@@ -94,14 +94,6 @@ def upload_file_to_drive(local_filename,drive_filename):
 
 
 
-
-
-
-
-
-
-
-
     # Prepare file metadata for Google Doc conversion
     file_metadata = {
 
@@ -110,7 +102,7 @@ def upload_file_to_drive(local_filename,drive_filename):
     }
 
     # Upload the text file (must be plain text or compatible with conversion)
-    media = MediaFileUpload(filename, mimetype="text/plain", resumable=True)
+    media = MediaFileUpload(local_filename, mimetype="text/plain", resumable=True)
 
     # Upload and convert to Google Doc
     file = drive_service.files().create(
