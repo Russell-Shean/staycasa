@@ -87,7 +87,7 @@ def upload_file_to_drive(local_filename,drive_filename):
     ).execute()
 
 
-    for f in files.get("files", []):
+    for f in current_files.get("files", []):
         print(f"Deleting old file: {f['name']} ({f['id']})")
         #drive_service.files().delete(fileId=f["id"]).execute()
 
