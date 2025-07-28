@@ -87,6 +87,8 @@ with open(next_month_filename, 'r', encoding='utf-8') as file:
 
 
 
+
+
 # send messages
 send_line_message(GROUP_ID, "Here's the monthly schedule for this month!")
 send_line_message(GROUP_ID, this_month_schedule)
@@ -94,3 +96,8 @@ send_line_message(GROUP_ID, this_month_schedule)
 
 send_line_message(GROUP_ID, "Here's the monthly schedule for next month!")
 send_line_message(GROUP_ID, next_month_schedule)
+
+
+# load the links
+with open("data/drive_links.txt", "r") as f:
+    send_line_message(GROUP_ID,f.read())

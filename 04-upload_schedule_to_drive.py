@@ -116,6 +116,10 @@ def upload_file_to_drive(local_filename,drive_filename):
     print("📝 Name:", file["name"])
     print("📄 File ID:", file["id"])
     print("🔗 View it here:", file["webViewLink"])
+    
+    with open("data/drive_links.txt", "a") as f:
+      f.write(f"{drive_filename}: {file['webViewLink']}\n")
+      
 
 
 
