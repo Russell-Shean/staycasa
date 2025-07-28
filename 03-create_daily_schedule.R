@@ -58,7 +58,7 @@ generate_schedule <- function(day_series){
               file = file_name, append = TRUE)
         
         write(paste0("Check out: ", 
-                     todays_checkouts[t,"guest_first_name"], 
+                     todays_checkouts[t,"guest_first_name.x"], 
                      " ",todays_checkouts[t, "checkout_time"]),
               file = file_name, append = TRUE)
         
@@ -70,21 +70,21 @@ generate_schedule <- function(day_series){
         
         write(paste0("Check in: ",
                      future_checkins[1, "checkin_date"], 
-                     " ", future_checkins[1, "guest_first_name"], 
+                     " ", future_checkins[1, "guest_first_name.x"], 
                      " ", future_checkins[1, "checkin_time"]),
               file = file_name, append = TRUE)
         
         write(paste0("Drop Keycard : (",
                      todays_checkouts[t,"room_number"],
                      ") ", 
-                     future_checkins[1, "guest_first_name"], " 515"),
+                     future_checkins[1, "guest_first_name.x"], " 515"),
               file = file_name, append = TRUE)
         
         
         # remove the future checkin from today's checkins so that we don't
         # double print
         todays_checkins <- todays_checkins |>
-                           dplyr::filter((!guest_first_name == future_checkins[1, "guest_first_name"] &
+                           dplyr::filter((!guest_first_name.x == future_checkins[1, "guest_first_name.x"] &
                                          checkin_time  == future_checkins[1, "checkin_time"])) 
         
         if(t == nrow(todays_checkouts)){
@@ -112,7 +112,7 @@ generate_schedule <- function(day_series){
             file = file_name, append = TRUE)
       
       write(paste0("Check in: ", 
-                   todays_checkins[u,"guest_first_name"], 
+                   todays_checkins[u,"guest_first_name.x"], 
                    " ",todays_checkins[u, "checkin_time"]),
             file = file_name, append = TRUE)
       
