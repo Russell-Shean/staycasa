@@ -1,0 +1,104 @@
+from google.oauth2.credentials import Credentials
+from google.auth.transport.requests import Request
+from googleapiclient.discovery import build
+from googleapiclient.http import MediaFileUpload
+from datetime import date
+import calendar
+
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Load file names ---------------------------------------------------------
+
+
+today = date.today()
+
+
+
+# Current year and month
+year = today.year
+month = today.month
+next_month = today.month + 1
+
+# Calculate the month after the next
+if month > 12:
+    next_month = month - 12
+    next_year += 1
+
+else:
+    next_year = year
+
+# First and last day of that month
+next_month_first_day = date(next_year, next_month, 1)
+next_month_last_day = date(next_year, next_month, calendar.monthrange(next_year, next_month)[1])
+
+# Create the string
+next_month_filename = f"data/daily_schedule_{next_month_first_day}_{next_month_last_day}.txt"
+print(f'next month: {next_month_filename}')
+
+
+
+# First and last day of the current month
+this_month_first_day = date(year, month, 1)
+this_month_last_day = date(year, month, calendar.monthrange(year, month)[1])
+
+# Create the string
+this_month_filename = f"data/daily_schedule_{this_month_first_day}_{this_month_last_day}.txt"
+print(f'this month: {this_month_filename}')
+
+
+# load google creds -----------------------------------------------------------------------
+
+
+# Load from environment variables
+client_id = os.environ["GOOGLE_OAUTH_CLIENT_ID"]
+client_secret = os.environ["GOOGLE_OAUTH_CLIENT_SECRET"]
+refresh_token = os.environ["GOOGLE_OAUTH_REFRESH_TOKEN"]
+
+creds = Credentials(
+    token=None,
+    refresh_token=refresh_token,
+    token_uri="https://oauth2.googleapis.com/token",
+    client_id=client_id,
+    client_secret=client_secret,
+    scopes=["https://www.googleapis.com/auth/drive"],
+)
+
+# Refresh the access token
+creds.refresh(Request())
+
+drive_service = build("drive", "v3", credentials=creds)
+
+# create a function to upload the file
+def upload_file_to_drive(local_filename,drive_filename):
+
+    # Prepare file metadata for Google Doc conversion
+    file_metadata = {
+
+    "name": drive_filename,  # Desired name of Google Doc
+    "mimeType": "application/vnd.google-apps.document"  # ⚠️ This tells Drive to convert it
+    }
+
+    # Upload the text file (must be plain text or compatible with conversion)
+    media = MediaFileUpload(filename, mimetype="text/plain", resumable=True)
+
+    # Upload and convert to Google Doc
+    file = drive_service.files().create(
+    body=file_metadata,
+    media_body=media,
+    fields="id, name, mimeType, webViewLink"
+
+    ).execute()
+
+    print("✅ Uploaded as Google Doc:")
+    print("📝 Name:", file["name"])
+    print("📄 File ID:", file["id"])
+    print("🔗 View it here:", file["webViewLink"])
+
+
+
+upload_file_to_drive(this_month_filename, "Daily Schedule - This Month")
+upload_file_to_drive(next_month_filename, "Daily Schedule - Next Month")
