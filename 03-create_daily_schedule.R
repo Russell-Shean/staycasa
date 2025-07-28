@@ -30,6 +30,9 @@ generate_schedule <- function(day_series){
                       max(day_series),
                       ".txt")
   
+  # Make sure we're starting with a blank file
+  write("", file = file_name)
+  
   
   # this returns each date in this month
   for(day in day_series){
