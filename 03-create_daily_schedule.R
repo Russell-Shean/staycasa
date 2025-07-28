@@ -53,14 +53,6 @@ generate_schedule <- function(day_series){
       
       for(t in 1:nrow(todays_checkouts)){
         
-        # Print info about the checkout
-        write(paste0("(",todays_checkouts[t,"room_number"], ")"),
-              file = file_name, append = TRUE)
-        
-        write(paste0("Check out: ", 
-                     todays_checkouts[t,"guest_first_name.x"], 
-                     " ",todays_checkouts[t, "checkout_time"]),
-              file = file_name, append = TRUE)
         
         # Find the next checkin for the room
         future_checkins <- airbnb_emails2 |> 
@@ -68,11 +60,31 @@ generate_schedule <- function(day_series){
                         checkin_date >= day) |>
           dplyr::arrange(checkin_date)
         
+        
+        # Determine when the unit should be cleaned
+        clean_time <- ifelse(future_checkins[1, "checkin_date"] == day,
+                             " Clean immediately",
+                             " Clean anytime of day")
+        
+        # Print info about the checkout
+        write(paste0("(",todays_checkouts[t,"room_number"], ")"),
+              file = file_name, append = TRUE)
+        
+        write(paste0("Check out: ", 
+                     todays_checkouts[t,"guest_first_name.x"], 
+                     " ",todays_checkouts[t, "checkout_time"],
+                     clean_time),
+              file = file_name, append = TRUE)
+        
+
+        # Print info about checkins
         write(paste0("Check in: ",
                      future_checkins[1, "checkin_date"], 
                      " ", future_checkins[1, "guest_first_name.x"], 
                      " ", future_checkins[1, "checkin_time"]),
               file = file_name, append = TRUE)
+        
+        # Print about key car drops
         
         write(paste0("Drop Keycard : (",
                      todays_checkouts[t,"room_number"],
