@@ -84,7 +84,8 @@ generate_schedule <- function(day_series){
         write(paste0("Check in: ",
                      future_checkins[1, "checkin_date"], 
                      " ", future_checkins[1, "guest_first_name.x"], 
-                     " ", future_checkins[1, "checkin_time"]),
+                     "(", future_checkins[1, "number_of_guests"], 
+                     ") ", future_checkins[1, "checkin_time"]),
               file = file_name, append = TRUE)
         
         # Print about key car drops
@@ -92,7 +93,8 @@ generate_schedule <- function(day_series){
         write(paste0("Drop Keycard : (",
                      todays_checkouts[t,"room_number"],
                      ") ", 
-                     future_checkins[1, "guest_first_name.x"], " 515"),
+                     future_checkins[1, "guest_first_name.x"],
+                     " 515"),
               file = file_name, append = TRUE)
         
         
@@ -122,12 +124,14 @@ generate_schedule <- function(day_series){
     
     for(u in 1:nrow(todays_checkins)){
       
-      # Print info about the checkout
+      # Print info about the checkin
       write(paste0("(",todays_checkins[u,"room_number"], ")"),
             file = file_name, append = TRUE)
       
       write(paste0("Check in: ", 
                    todays_checkins[u,"guest_first_name.x"], 
+                   "(", todays_checkins[1, "number_of_guests"], 
+                   ") ",
                    " ",todays_checkins[u, "checkin_time"]),
             file = file_name, append = TRUE)
       
