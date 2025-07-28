@@ -119,5 +119,5 @@ def upload_file_to_drive(local_filename,drive_filename):
 
 
 
-upload_file_to_drive(this_month_filename, "Daily Schedule - This Month")
-upload_file_to_drive(next_month_filename, "Daily Schedule - Next Month")
+upload_file_to_drive(this_month_filename, "Automatically Generated Daily Schedule - This Month")
+upload_file_to_drive(next_month_filename, "Automatically Generated Daily Schedule - Next Month")
