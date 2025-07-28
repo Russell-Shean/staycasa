@@ -160,7 +160,13 @@ airbnb_emails <- sample_data2 |>
                    
                    
                    airbnb_cancelations <- airbnb_emails |> 
-                     filter(str_detect(subject, "已取消："))
+                     filter(str_detect(subject, "已取消：")) |>
+                     mutate(guest_first_name = str_extract(body, "(?<=你的房客).*(?=必須取消)"))
+                   
+                   # Pull out the cancellation numbers
+                   cancelation_numbers <- airbnb_cancelations |> 
+                                          pull(confirmation_number) |> 
+                                          unique()
                    
                    airbnb_reminders <- airbnb_emails |> 
                      filter(str_detect(subject, "提醒：.*快要入住了"))
@@ -338,9 +344,7 @@ airbnb_emails <- sample_data2 |>
   
   
   
-write.csv(airbnb_reservation_confirmations3, 
-          file = "data/airbnb_reservation_confirmations.csv", 
-          row.names = FALSE)  
+
                  
                   
    
