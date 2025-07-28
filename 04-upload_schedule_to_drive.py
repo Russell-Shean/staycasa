@@ -75,6 +75,33 @@ drive_service = build("drive", "v3", credentials=creds)
 # create a function to upload the file
 def upload_file_to_drive(local_filename,drive_filename):
 
+    # See if the file already exists and delete it 
+    # If it does
+    query = f"name='{drive_filename}'"
+
+    current_files = drive_service.files().list(
+    q=query,
+    supportsAllDrives=True,
+    includeItemsFromAllDrives=True,
+    fields="files(id, name)"
+    ).execute()
+
+
+    for f in files.get("files", []):
+        print(f"Deleting old file: {f['name']} ({f['id']})")
+        #drive_service.files().delete(fileId=f["id"]).execute()
+
+
+
+
+
+
+
+
+
+
+
+
     # Prepare file metadata for Google Doc conversion
     file_metadata = {
 
