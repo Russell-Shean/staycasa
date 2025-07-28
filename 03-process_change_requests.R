@@ -1,3 +1,7 @@
+library(dplyr)
+library(stringr)
+
+
 airbnb_change_requests <- airbnb_emails |> 
                   filter(str_detect(subject, "想要更改預訂")) |>
   # extract confirmation numbers
