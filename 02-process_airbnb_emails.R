@@ -331,7 +331,11 @@ airbnb_emails <- sample_data2 |>
                    
                    
                    airbnb_reminders2 <- airbnb_reminders |>
-                                      filter(!(confirmation_number %in% confirmation_numbers))
+                                      filter(!(confirmation_number %in% confirmation_numbers)) |>
+        
+                   
+                   # remove emails that are duplicates
+                                      distinct(confirmation_number, .keep_all = TRUE)
                    
                    
                    airbnb_reservation_confirmations3 <- airbnb_reservation_confirmations2 |>
