@@ -20,10 +20,138 @@ next_month <-  seq.Date(from = next_month_start,
   as.character()
 
 
+#########################################################################3
+# Define advanced keydrops
+
+
+# create a keycard drops dataframe
+# we should do this for the entire dataset not just the date series
+# because there's a possibility that the checkout occurs in a different month
+# than the checkin
+
+
+# The keycard should be dropped off the same day as the checkout
+# only if the checking occurs within the next three days
+# otherwise the key should be dropped off the day of the checkin
+
+
+
+min_date <- c(airbnb_emails2$checkin_date,
+              airbnb_emails2$checkout_date) |> 
+  unique() |>
+  min() |>
+  as.Date()
+
+max_date <- c(airbnb_emails2$checkin_date,
+              airbnb_emails2$checkout_date) |> 
+  unique() |>
+  max() |>
+  as.Date()
+
+
+complete_date_range <- seq.Date(from = min_date,
+                                to = max_date, 
+                                by = "day") |>
+  as.character()
+
+
+
+
+# create a dataframe to determine if the keydrop needs to be done
+# a day before checkin
+# the default is no, which we'll modify further down
+keydrops <- data.frame(date = as.Date(complete_date_range), 
+                       advanced_key_drop = FALSE, 
+                       confirmation_number = NA)
+
+
+
+
+
+for(day in complete_date_range){
+  
+  print(day)
+  
+  todays_checkouts <- airbnb_emails2 |> 
+    dplyr::filter(checkout_date == day)
+  
+  todays_checkins <- airbnb_emails2 |> 
+    dplyr::filter(checkin_date == day)
+  
+  if(nrow(todays_checkouts) > 0){
+    
+    for(t in 1:nrow(todays_checkouts)){
+      
+      
+      # Find the next checkin for the room
+      future_checkins <- airbnb_emails2 |> 
+        dplyr::filter(room_number == todays_checkouts[t,"room_number"],
+                      checkin_date >= day) |>
+        dplyr::arrange(checkin_date)
+      
+      
+    }
+    
+    
+    # The keycard should be dropped off the same day as the checkout
+    # only if the checking occurs within the next three days
+    # otherwise the key should be dropped off the day of the checkin
+    
+    
+    # check to make sure there are entries in the dataframes
+    if(nrow(future_checkins) > 0 & 
+       nrow(todays_checkouts) > 0){
+      
+      if(as.Date(future_checkins[1,"checkin_date"]) - as.Date(todays_checkouts[t,"checkout_date"]) > 3){
+        
+        
+        
+        keydrops <- keydrops |>
+          mutate(advanced_key_drop = if_else(date == as.Date(future_checkins[1,"checkin_date"]) - 1,
+                                             TRUE,
+                                             advanced_key_drop),
+                 
+                 confirmation_number = if_else(date == as.Date(future_checkins[1,"checkin_date"]) - 1,
+                                               future_checkins[1,"confirmation_number"],
+                                               confirmation_number)
+          )
+        
+        
+      } 
+      
+    }
+  }
+  
+  
+}
+
+
+# merge data about the checkin onto keydrops dataframe
+
+keydrops <- keydrops |>
+  
+  # filter out NA values
+  filter(!is.na(confirmation_number)) |>
+  
+  
+  left_join(airbnb_emails2, by = join_by("confirmation_number" == "confirmation_number"))
+
+
+
+
+
+
+
+
+
+
+###########################################################################
+
+
 generate_schedule <- function(day_series){
   
-  
-  
+
+
   file_name <- paste0("data/daily_schedule_",
                       min(day_series),
                       "_",
@@ -88,14 +216,35 @@ generate_schedule <- function(day_series){
                      ") ", future_checkins[1, "checkin_time"]),
               file = file_name, append = TRUE)
         
-        # Print about key car drops
+        # Print about key card drops
         
-        write(paste0("Drop Keycard : (",
-                     todays_checkouts[t,"room_number"],
-                     ") ", 
-                     future_checkins[1, "guest_first_name.x"],
-                     " 515"),
-              file = file_name, append = TRUE)
+        # The keycard should be dropped off the same day as the checkout
+        # only if the checking occurs within the next three days
+        # otherwise the key should be dropped off the day of the checkin
+        if(as.Date(future_checkins[1,"checkin_date"]) - as.Date(todays_checkouts[t,"checkout_date"]) > 3){
+        
+
+          keydrop_on_checkout <- FALSE
+          
+          
+        } else {
+          
+          
+          keydrop_on_checkout <- TRUE
+          
+          
+          write(paste0("Drop Keycard : (",
+                       future_checkins[1, "room_number"],
+                       ") ", 
+                       future_checkins[1, "guest_first_name.x"],
+                       " 515"),
+                file = file_name, append = TRUE)
+          
+          
+          
+        }
+        
+
         
         
         # remove the future checkin from today's checkins so that we don't
@@ -145,9 +294,39 @@ generate_schedule <- function(day_series){
     }
     }
     
+    
+    # check to see if there are advanced keydrops that need to be recorded for the day
+    if(day %in% keydrops$date.x){
+      
+      
+      todays_keydrops <- keydrops |>
+        filter(date.x == day)
+      
+      
+      for(z in 1:nrow(todays_keydrops)){
+        
+        write(paste0("ADVANCED KEY DROPS:\nDrop Keycard : (",
+                     todays_keydrops[z, "room_number"],
+                     ") ", 
+                     todays_keydrops[z, "guest_first_name.x"],
+                     " 515\n"),
+              file = file_name, append = TRUE)
+        
+        
+        
+        
+      }
+      
+      
+
+      
+      
+    }
 
     
-  }   #破哦            
+  }   #破哦  
+  
+  #print(keydrops)
 }
 
 generate_schedule(this_month)
