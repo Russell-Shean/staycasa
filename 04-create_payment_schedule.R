@@ -117,8 +117,20 @@ this_months_payments <- data.frame(date = as.Date(this_month)) |>
 
 
 
+#last_months_payments <- data.frame(date = seq.Date(from = as.Date("2025-07-01"),
+ #                                                  to = as.Date("2025-07-31"),
+  #                                                 by = "days")) |>
+  #left_join(overall_payments,
+   #         by = join_by( "date" == "checkout_date")) |>
+  #mutate(across(`716`:keycards_daily_total, ~tidyr::replace_na(., 0))) |>
+  
+  # remove the daily totals column
+  #select(-cleaning_daily_total) 
 
 
+
+
+create_invoice_spreadsheet <- function(df, filename){
 
 # Create workbook
 wb <- createWorkbook()
@@ -136,16 +148,16 @@ addStyle(
   wb,
   sheet = "Sheet1",
   style = default_style,
-  rows = 1:(nrow(this_months_payments) + 1),   # header row + data rows
-  cols = 1:ncol(this_months_payments),
+  rows = 1:(nrow(df) + 1),   # header row + data rows
+  cols = 1:ncol(df),
   gridExpand = TRUE
 )
 
 # Write dataframe starting at row 1, col 1
-writeData(wb, "Sheet1", this_months_payments, startRow = 1, startCol = 1)
+writeData(wb, "Sheet1", df, startRow = 1, startCol = 1)
 
 # Determine where the total row should go
-total_row <- nrow(this_months_payments) + 2  # leave one blank row after the table
+total_row <- nrow(df) + 2  # leave one blank row after the table
 
 # Write "total" in first cell of total row
 writeData(wb, "Sheet1", "Total", startRow = total_row, startCol = 1)
@@ -159,7 +171,7 @@ mergeCells(wb, "Sheet1", cols = 7:8, rows = total_row)
 # Add formulas in the merged cells
 writeFormula(
   wb, "Sheet1", 
-  x = sprintf("SUM(B2:F%d)", nrow(this_months_payments) + 1), 
+  x = sprintf("SUM(B2:F%d)", nrow(df) + 1), 
   startCol = 2, startRow = total_row
 )
 
@@ -167,14 +179,14 @@ writeFormula(
 # Add formulas in the merged cells
 writeFormula(
   wb, "Sheet1", 
-  x = sprintf("SUM(G2:H%d)", nrow(this_months_payments) + 1), 
+  x = sprintf("SUM(G2:H%d)", nrow(df) + 1), 
   startCol = 7, startRow = total_row
 )
 
 # calculate the keycard totals
 writeFormula(
   wb, "Sheet1", 
-  x = sprintf("SUM(I2:I%d)", nrow(this_months_payments) + 1), 
+  x = sprintf("SUM(I2:I%d)", nrow(df) + 1), 
   startCol = 9, startRow = total_row
 )
 
@@ -213,7 +225,7 @@ addStyle(
   sheet = "Sheet1",
   style = header_style,
   rows = 1,
-  cols = 1:ncol(this_months_payments),
+  cols = 1:ncol(df),
   gridExpand = TRUE
 )
 
@@ -227,5 +239,15 @@ setColWidths(wb, "Sheet1", cols = 9, widths = 22)
 setColWidths(wb, "Sheet1", cols = 10, widths = 24)
 
 # Save workbook
-saveWorkbook(wb, "data/this_months_payment_schedule.xlsx", overwrite = TRUE)
+saveWorkbook(wb, filename, overwrite = TRUE)
 
+}
+
+
+create_invoice_spreadsheet(this_months_payments, 
+                           "data/this_months_payment_schedule.xlsx")
+
+
+
+#create_invoice_spreadsheet(last_months_payments, 
+   #                        "Cleaning Schedule and Invoice - July 2025.xlsx")
