@@ -139,6 +139,19 @@ airbnb_emails <- sample_data2 |>
                    airbnb_emails$context_parameter2 <- sapply(airbnb_emails$context_parameter, decoder)
                    
                    
+                   
+      # Print a warning about host modified reservations that aren't in the emails
+      host_modified_reservations <- airbnb_emails |>
+                                    filter(str_detect(subject, "你的預訂變更已接受"))
+      
+      
+      for(confirmation_number  in host_modified_reservations$confirmation_number){
+        
+        warning(paste0("The following reservation number has changes that don't show up in any of the emails!\n",
+                       confirmation_number))
+      }
+                   
+                   
                   
          ##############################################
            airbnb_reservation_confirmations <- airbnb_emails|>
@@ -302,7 +315,7 @@ airbnb_emails <- sample_data2 |>
                         
                         # Guest info
                 mutate( guest_name = str_extract(subject, "(?<=預訂已確認 -).*(?=於)"),
-                        guest_first_name = str_extract(body_cleaned, "(?<=已確認！).*(?=於)"),
+                        guest_first_name = str_extract(body_cleaned, "(?<=已確認！).*?(?=於)"),
                         guests_block = str_replace_all(str_extract(info_block1, "人數.*即將入住")," ", ""),
                         number_of_adults = as.numeric(str_extract(guests_block, "\\d+(?=名成人)")),
                         number_of_children = as.numeric(str_extract(guests_block, "\\d+(?=名兒童)"))) |>
@@ -431,6 +444,14 @@ airbnb_emails <- sample_data2 |>
                             number_of_guests = if_else(is.na(requested_guest_number),
                                                        number_of_guests,
                                                        requested_guest_number))
+                   
+                   
+                   
+                   # Make manual changes that don't show up in any of the emails
+                   airbnb_reservation_confirmations4 <- airbnb_reservation_confirmations4 |>
+                                                        mutate(checkout_date = if_else(confirmation_number == "HMQMWRA9PB",
+                                                                                       as.Date("2025-06-28"),
+                                                                                       checkout_date))
                    
                    
                    write.csv(airbnb_reservation_confirmations4, 
