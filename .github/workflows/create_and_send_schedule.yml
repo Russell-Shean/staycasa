@@ -40,13 +40,12 @@ jobs:
           GOOGLE_APP_PASSWORD: ${{ secrets.GOOGLE_APP_PASSWORD }}
         run: |
           # echo skipping email downloading step for time
-          # python3 01-get_all_emails.py
+          python3 01-get_all_emails.py
 
       # Step 2: Process emails
       - name: Process emails
         run: |
           Rscript -e 'source("02-process_airbnb_emails.R")'
-          # Rscript -e 'source("03-process_change_requests.R")'
 
       # Step 3: Create daily schedule from emails
       # Step 4: Create a payment schedule
