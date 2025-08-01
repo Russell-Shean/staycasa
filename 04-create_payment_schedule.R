@@ -199,6 +199,7 @@ addStyle(
 
 # style the header row
 header_style <- createStyle(
+  fontName = "Arial",
   fontColour = "black",      # black text for contrast
   fgFill = "#FFFF00",        # bright yellow background
   textDecoration = "bold",   # bold font

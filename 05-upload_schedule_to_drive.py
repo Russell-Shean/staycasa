@@ -112,6 +112,19 @@ def upload_file_to_drive(local_filename,drive_filename):
 
     ).execute()
 
+    # give anyone with a link viewing permissions
+    permission = {
+            "type": "anyone",  # Anyone on the internet
+            "role": "reader"   # Can also be "reader" or "commenter"
+        }
+    
+    drive_service.permissions().create(
+            fileId=file["id"],
+            body=permission
+        ).execute()
+    
+    print("🌍 Sharing enabled: Anyone with link can edit")
+
     print("✅ Uploaded as Google Doc:")
     print("📝 Name:", file["name"])
     print("📄 File ID:", file["id"])
@@ -175,6 +188,19 @@ def upload_excel_to_drive(local_filename,drive_filename):
         fields="id, name, mimeType, webViewLink",
         supportsAllDrives=True
     ).execute()
+
+    # give anyone with a link viewing permissions
+    permission = {
+            "type": "anyone",  # Anyone on the internet
+            "role": "reader"   # Can also be "reader" or "commenter"
+        }
+    
+    drive_service.permissions().create(
+            fileId=file["id"],
+            body=permission
+        ).execute()
+    
+    print("🌍 Sharing enabled: Anyone with link can edit")
 
     print("✅ Uploaded as Google Sheet:")
     print("📝 Name:", file["name"])
