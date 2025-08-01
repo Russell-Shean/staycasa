@@ -110,7 +110,7 @@ overall_payments <- cleaning_payment_schedule |>
 this_months_payments <- data.frame(date = as.Date(this_month)) |>
                         left_join(overall_payments,
                                   by = join_by( "date" == "checkout_date")) |>
-                        mutate(across(`716`:keycards_daily_total, ~replace_na(., 0))) |>
+                        mutate(across(`716`:keycards_daily_total, ~tidyr::replace_na(., 0))) |>
                         
                         # remove the daily totals column
                         select(-cleaning_daily_total) 

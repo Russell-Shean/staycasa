@@ -1,5 +1,6 @@
 library(dplyr)
 library(stringr)
+library(tidyr)
 
 
 airbnb_change_requests <- airbnb_emails |> 
