@@ -124,6 +124,23 @@ this_months_payments <- data.frame(date = as.Date(this_month)) |>
 wb <- createWorkbook()
 addWorksheet(wb, "Sheet1")
 
+
+# default font style
+
+# Create a base Arial style
+default_style <- createStyle(fontName = "Arial",
+)
+
+# Apply Arial font to the entire table (header + data)
+addStyle(
+  wb,
+  sheet = "Sheet1",
+  style = default_style,
+  rows = 1:(nrow(this_months_payments) + 1),   # header row + data rows
+  cols = 1:ncol(this_months_payments),
+  gridExpand = TRUE
+)
+
 # Write dataframe starting at row 1, col 1
 writeData(wb, "Sheet1", this_months_payments, startRow = 1, startCol = 1)
 
@@ -200,21 +217,6 @@ addStyle(
 )
 
 
-# default font style
-
-# Create a base Arial style
-default_style <- createStyle(fontName = "Arial",
-                             )
-
-# Apply Arial font to the entire table (header + data)
-addStyle(
-  wb,
-  sheet = "Sheet1",
-  style = default_style,
-  rows = 1:(nrow(this_months_payments) + 1),   # header row + data rows
-  cols = 1:ncol(this_months_payments),
-  gridExpand = TRUE
-)
 
 
 

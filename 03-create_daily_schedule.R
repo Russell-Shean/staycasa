@@ -305,7 +305,7 @@ generate_schedule <- function(day_series){
       
       for(z in 1:nrow(todays_keydrops)){
         
-        write(paste0("ADVANCED KEY DROPS:\nDrop Keycard : (",
+        write(paste0("DAY BEFORE KEY DROPS:\nDrop Keycard : (",
                      todays_keydrops[z, "room_number"],
                      ") ", 
                      todays_keydrops[z, "guest_first_name.x"],
