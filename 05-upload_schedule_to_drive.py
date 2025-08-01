@@ -16,6 +16,12 @@ load_dotenv()
 
 today = date.today()
 
+# Get current date
+now = datetime.now()
+
+# Format as "Month Year"
+current_month_year = now.strftime("%B %Y")
+
 
 
 # Current year and month
@@ -219,4 +225,4 @@ def upload_excel_to_drive(local_filename,drive_filename):
 
 upload_file_to_drive(this_month_filename, "Automatically Generated Daily Schedule - This Month")
 upload_file_to_drive(next_month_filename, "Automatically Generated Daily Schedule - Next Month")
-upload_excel_to_drive("data/this_months_payment_schedule.xlsx", "Automatically Generated Cleaning Schedule and Invoice - This Month")
+upload_excel_to_drive("data/this_months_payment_schedule.xlsx", f'Automatically Generated Cleaning Schedule and Invoice - {current_month_year}')

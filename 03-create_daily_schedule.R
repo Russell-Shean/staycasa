@@ -70,7 +70,7 @@ keydrops <- data.frame(date = as.Date(complete_date_range),
 
 for(day in complete_date_range){
   
-  print(day)
+  #print(day)
   
   todays_checkouts <- airbnb_emails2 |> 
     dplyr::filter(checkout_date == day)
