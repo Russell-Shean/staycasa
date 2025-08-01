@@ -200,6 +200,23 @@ addStyle(
 )
 
 
+# default font style
+
+# Create a base Arial style
+default_style <- createStyle(fontName = "Arial",
+                             )
+
+# Apply Arial font to the entire table (header + data)
+addStyle(
+  wb,
+  sheet = "Sheet1",
+  style = default_style,
+  rows = 1:(nrow(this_months_payments) + 1),   # header row + data rows
+  cols = 1:ncol(this_months_payments),
+  gridExpand = TRUE
+)
+
+
 
 # manually adjust a few column widths
 
