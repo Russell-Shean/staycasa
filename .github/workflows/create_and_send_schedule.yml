@@ -49,13 +49,10 @@ jobs:
           # Rscript -e 'source("03-process_change_requests.R")'
 
       # Step 3: Create daily schedule from emails
-      - name: Create Daily Schedule
-        run: Rscript -e 'source("03-create_daily_schedule.R")'
-        
       # Step 4: Create a payment schedule
-      - name: Create Daily Schedule
-        run: Rscript -e 'source("04-create_payment_schedule.R")'
-
+      - name: Create schedules
+        run: Rscript -e 'source("03-create_daily_schedule.R");source("04-create_payment_schedule.R")'
+        
 
       # Step 5: Upload daily schedule to google drive
       - name: Upload schedule

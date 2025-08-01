@@ -1,5 +1,5 @@
 library(openxlsx)
-
+library(dplyr)
 
 # create payment schedule for cleanings
 cleaning_payment_schedule <- airbnb_emails2 |>
