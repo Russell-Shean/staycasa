@@ -452,7 +452,10 @@ airbnb_emails <- sample_data2 |>
                    airbnb_reservation_confirmations4 <- airbnb_reservation_confirmations4 |>
                                                         mutate(checkout_date = if_else(confirmation_number == "HMQMWRA9PB",
                                                                                        as.Date("2025-06-28"),
-                                                                                       checkout_date))
+                                                                                       checkout_date)) |>
+                     mutate(checkout_date = if_else(confirmation_number == "HM5CRZWWZZ",
+                                                    as.Date("2025-08-04"),
+                                                    checkout_date))
                    
                    
                    write.csv(airbnb_reservation_confirmations4, 
