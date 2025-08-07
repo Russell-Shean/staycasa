@@ -69,7 +69,7 @@ sample_data2 <- sample_data |>
                                          "yes",
                                          "no"),
                       
-                      payment_issues = ifelse(str_detect(subject, "付款問題|你已要求.*付款|要求你付款|已收到補償|提出的補償申請|確認搭檔收款|取消了收款提案"), 
+                      payment_issues = ifelse(str_detect(subject, "付款問題|你已要求.*付款|要求你付款|已收到補償|提出的補償申請|確認搭檔收款|取消了收款提案|你已向.*支付賠償金"), 
                                                "yes",
                                                "no"),
                        
@@ -166,6 +166,7 @@ airbnb_emails <- sample_data2 |>
                                    reservation_update == "no",
                                    miscellaneous == "no",
                                    context_parameter2 != "booking/v2_migration/reservation_host_pending"
+                                   
                      )  
                    
                    airbnb_replies <- airbnb_emails |> 
