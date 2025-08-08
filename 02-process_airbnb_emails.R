@@ -349,7 +349,11 @@ airbnb_emails <- sample_data2 |>
         
                    
                    # remove emails that are duplicates
-                                      distinct(confirmation_number, .keep_all = TRUE)
+                                      distinct(confirmation_number, .keep_all = TRUE) |>
+                   
+                   # remove cancellations from the reminders too!
+                   dplyr::filter(!(confirmation_number %in% cancelation_numbers)) 
+                   
                    
                    
                    airbnb_reservation_confirmations3 <- airbnb_reservation_confirmations2 |>
@@ -453,6 +457,7 @@ airbnb_emails <- sample_data2 |>
                                                         mutate(checkout_date = if_else(confirmation_number == "HMQMWRA9PB",
                                                                                        as.Date("2025-06-28"),
                                                                                        checkout_date)) |>
+                     
                      mutate(checkout_date = if_else(confirmation_number == "HM5CRZWWZZ",
                                                     as.Date("2025-08-04"),
                                                     checkout_date))
