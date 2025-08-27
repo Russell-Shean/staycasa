@@ -1,0 +1,26 @@
+[
+  {
+    "checkin_date": "2025-05-04",
+    "sameday_checkins": true,
+    "checkins": [
+      [
+        "6pm",
+        "513",
+        "1",
+        "JAMES"
+      ]
+    ]
+  },
+  {
+    "checkin_date": "2025-08-18",
+    "sameday_checkins": true,
+    "checkins": [
+      [
+        "4pm",
+        "716",
+        "1",
+        "CHEN"
+      ]
+    ]
+  }
+]

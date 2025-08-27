@@ -20,6 +20,16 @@ sample_data2 <- sample_data |>
                        date = as.Date(date),
                        
                        
+                       # Convert the date and time from UTC to Taiwan time
+                       # combine date + time string into a UTC datetime
+                       datetime_taipei = with_tz(as.POSIXct(paste(date, time), format = "%Y-%m-%d %H:%M:%S", tz = "UTC")),
+                       
+                       # extract new date and time in Taipei time
+                       taipei_date = as.Date(datetime_taipei),
+                       taipei_time = format(datetime_taipei, "%H:%M:%S"),
+                    
+                       
+                       
                        # determine if an email is a review
                        review = ifelse(str_detect(subject, "評價"), 
                                        "yes",
