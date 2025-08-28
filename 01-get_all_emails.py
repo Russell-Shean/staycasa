@@ -1,105 +1,143 @@
-import imaplib
 import os
-import email
+import base64
 import json
-from email.header import decode_header
-from datetime import datetime
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from googleapiclient.discovery import build
+
 
 from dotenv import load_dotenv
 
 load_dotenv()
 
-# Your Gmail credentials
-username = "stayvacasa@gmail.com"
-app_password = os.environ["GOOGLE_APP_PASSWORD"]
 
-# Connect to Gmail
-mail = imaplib.IMAP4_SSL("imap.gmail.com")
-mail.login(username, app_password)
-mail.select("inbox")
+# Gmail API scope 
+SCOPES = ["https://www.googleapis.com/auth/gmail.modify"]
 
-# Search for all emails
-status, messages = mail.search(None, "ALL")
-email_ids = messages[0].split()
+# Load from environment variables
+CLIENT_ID = os.environ["GOOGLE_OAUTH_CLIENT_ID"]
+CLIENT_SECRET = os.environ["GOOGLE_OAUTH_CLIENT_SECRET"]
+REFRESH_TOKEN = os.environ["GOOGLE_OAUTH_REFRESH_TOKEN"]
+
+
+
+# Path to checkpoint file
+CHECKPOINT_FILE = "data/last_message_id.txt"
+
+# PAth to save out data
+emails_path = "data/emails_from_api.json"
+
+# Build credentials
+creds = Credentials(
+    None,
+    refresh_token=REFRESH_TOKEN,
+    token_uri="https://oauth2.googleapis.com/token",
+    client_id=CLIENT_ID,
+    client_secret=CLIENT_SECRET,
+    scopes=SCOPES,
+)
+
+creds.refresh(Request())
+
+# Build Gmail service
+service = build("gmail", "v1", credentials=creds)
+
+def get_message_body(msg_payload):
+    """Extract plain text or HTML body."""
+    parts = msg_payload.get("parts", [])
+    if not parts:
+        data = msg_payload.get("body", {}).get("data")
+        return base64.urlsafe_b64decode(data).decode("utf-8", errors="ignore") if data else ""
+    for part in parts:
+        mime_type = part.get("mimeType")
+        data = part.get("body", {}).get("data")
+        if mime_type == "text/plain" and data:
+            return base64.urlsafe_b64decode(data).decode("utf-8", errors="ignore")
+    for part in parts:
+        mime_type = part.get("mimeType")
+        data = part.get("body", {}).get("data")
+        if mime_type == "text/html" and data:
+            return base64.urlsafe_b64decode(data).decode("utf-8", errors="ignore")
+    return ""
+
+# Load last processed message ID (if exists)
+last_message_id = None
+if os.path.exists(CHECKPOINT_FILE):
+    with open(CHECKPOINT_FILE, "r") as f:
+        last_message_id = f.read().strip()
 
 emails = []
+all_new_ids = []
+page_token = None
+stop_fetching = False
 
-# Helper function to decode text
-def decode_mime_words(s):
-    if not s:
-        return ""
-    decoded = decode_header(s)
-    return ''.join(
-        str(part.decode(enc if enc else "utf-8")) if isinstance(part, bytes) else part
-        for part, enc in decoded
-    )
+# Page through Gmail messages
+while True:
 
-# Helper function to extract body
-def get_body(msg):
-    if msg.is_multipart():
-        for part in msg.walk():
-            content_type = part.get_content_type()
-            content_dispo = str(part.get("Content-Disposition"))
-            if "attachment" in content_dispo:
-                continue
-            if content_type == "text/plain":
-                return part.get_payload(decode=True).decode(errors="ignore")
-        # fallback to html if no plain text found
-        for part in msg.walk():
-            if part.get_content_type() == "text/html":
-                return part.get_payload(decode=True).decode(errors="ignore")
-    else:
-        return msg.get_payload(decode=True).decode(errors="ignore")
+    print(f'Now on page: {page_token}')
 
-# Loop through all emails
+    results = service.users().messages().list(
+        userId="me",
+        maxResults=500,
+        pageToken=page_token,
+    ).execute()
 
-# Add index for status tracking
-i = 0
+    messages = results.get("messages", [])
+    if not messages:
+        break
 
-for email_id in email_ids:
-    i += 1
-    if i % 100 == 0:
-        print(f"Processing email number {i}") 
-    status, msg_data = mail.fetch(email_id, "(RFC822)")
-    raw_email = msg_data[0][1]
-    msg = email.message_from_bytes(raw_email)
+    for msg in messages:
+        msg_id = msg["id"]
 
-    from_ = decode_mime_words(msg.get("From"))
-    subject = decode_mime_words(msg.get("Subject"))
-    date_str = msg.get("Date")
+        # Stop when we reach the last processed ID
+        if last_message_id and msg_id == last_message_id:
+            stop_fetching = True
+            break
 
-    try:
-        date_obj = email.utils.parsedate_to_datetime(date_str)
-        date = date_obj.strftime("%Y-%m-%d")
-        time = date_obj.strftime("%H:%M:%S")
-    except:
-        date = ""
-        time = ""
+        # Download message details
+        message = service.users().messages().get(userId="me", id=msg_id, format="full").execute()
+        payload = message.get("payload", {})
+        headers = payload.get("headers", [])
+        header_map = {h["name"]: h["value"] for h in headers}
 
-    body = get_body(msg)
+        from_ = header_map.get("From", "")
+        subject = header_map.get("Subject", "")
+        date = header_map.get("Date", "")
+        body = get_message_body(payload)
 
-    emails.append({
-        "from": from_,
-        "date": date,
-        "time": time,
-         #"email_id": email_id,
-        "subject": subject,
-        "body": body,
-    })
+        emails.append({
+            "id": msg_id,
+            "from": from_,
+            "subject": subject,
+            "date": date,
+            "body": body,
+        })
 
+        all_new_ids.append(msg_id)
 
-# Write out the emails dictionary as a json file 
-with open('data/emails.json', 'w') as fp:
-    json.dump(emails, fp)
+    if stop_fetching:
+        break
+
+    page_token = results.get("nextPageToken")
+    if not page_token:
+        break
+
+# Save emails JSON
+os.makedirs("data", exist_ok=True)
+
+if os.path.exists(emails_path):
+    with open(emails_path, "r") as file:
+        old_emails = json.load(file)
+        emails.extend(old_emails)
 
 
-# Logout
-#mail.logout()
+with open(emails_path, "w") as f:
+    json.dump(emails, f, indent=2)
 
-# Print the result (optional)
-#for e in emails:
-#    print("\n--- Email ---")
-#    for k, v in e.items():
-#        print(f"{k}: {v[:100]}{'...' if len(v) > 100 else ''}")
+# Save newest message ID as checkpoint
+if all_new_ids:
+    newest_id = all_new_ids[0]  # Gmail returns newest first
+    with open(CHECKPOINT_FILE, "w") as f:
+        f.write(newest_id)
 
-# Result is in the `emails` list
+print(f"Fetched {len(emails)} new emails")
