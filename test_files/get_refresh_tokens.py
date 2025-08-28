@@ -1,6 +1,6 @@
 from google_auth_oauthlib.flow import InstalledAppFlow
 
-SCOPES = ['https://www.googleapis.com/auth/drive']
+SCOPES = ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/gmail.modify']
 
 flow = InstalledAppFlow.from_client_secrets_file('/home/russ/Downloads/client_secret_949319258142-r63ks0avjf218a6n13p558gn704h5k2v.apps.googleusercontent.com.json', SCOPES)
 

@@ -3,8 +3,11 @@ library(jsonlite)
 library(dplyr)
 library(stringr)
 library(base64enc)
+library(lubridate)
 
 sample_data <- fromJSON("data/emails.json")
+
+sample_data <- fromJSON("data/emails_from_api.json")
 
 # add additional columns
 sample_data2 <- sample_data |>
@@ -16,13 +19,15 @@ sample_data2 <- sample_data |>
                        sender_domain = str_extract(from, "(?<=@).*(?=\\>)"),
                        
                        
-                       # Convert the date to a date format
-                       date = as.Date(date),
+                
                        
                        
                        # Convert the date and time from UTC to Taiwan time
                        # combine date + time string into a UTC datetime
-                       datetime_taipei = with_tz(as.POSIXct(paste(date, time), format = "%Y-%m-%d %H:%M:%S", tz = "UTC")),
+                       datetime_taipei = with_tz(dmy_hms(date), tz="Asia/Taipei"),
+                       
+                       # Convert the date to a date format
+                       date = as.Date(dmy_hms(date)),
                        
                        # extract new date and time in Taipei time
                        taipei_date = as.Date(datetime_taipei),
@@ -175,7 +180,8 @@ airbnb_emails <- sample_data2 |>
                                    payment_issues == "no",
                                    reservation_update == "no",
                                    miscellaneous == "no",
-                                   context_parameter2 != "booking/v2_migration/reservation_host_pending"
+                                   context_parameter2 != "booking/v2_migration/reservation_host_pending",
+                                   context_parameter2 != "reservation/inquiries/first_preapprove_reminder7"
                                    
                      )  
                    
