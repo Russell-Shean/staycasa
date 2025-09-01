@@ -1,0 +1,190 @@
+
+09-01
+(515)
+Check out: DIANE 12:00 Clean anytime of day
+Check in: 2025-09-02 SHU(2) 16:00
+Drop Keycard : (515) SHU 515
+(1615)
+Check out: MIA 12:00 Clean immediately
+Check in: 2025-09-01 LAM(2) 16:00
+Drop Keycard : (1615) LAM 515
+
+
+09-02
+
+
+(515)
+Check in: SHU(2)  16:00
+
+
+09-03
+(1713)
+Check out: KENT 12:00 Clean anytime of day
+Check in: 2025-09-09 JEAN(1) 16:00
+
+
+09-04
+
+
+09-05
+(1615)
+Check out: LAM 12:00 Clean immediately
+Check in: 2025-09-05 BAO TIEN(4) 16:00
+Drop Keycard : (1615) BAO TIEN 515
+
+
+09-06
+
+
+09-07
+
+
+09-08
+
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (1713) JEAN 515
+
+09-09
+(1615)
+Check out: BAO TIEN 12:00 Clean anytime of day
+Check in: 2025-09-11 AYANO(3) 16:00
+Drop Keycard : (1615) AYANO 515
+
+
+(1713)
+Check in: JEAN(1)  16:00
+(814)
+Check in: TONY(1)  16:00
+
+
+09-10
+
+
+09-11
+(716)
+Check out: C&S 12:00 Clean anytime of day
+Check in: 2025-09-23 SAM(2) 16:00
+
+
+(1615)
+Check in: AYANO(3)  16:00
+
+
+09-12
+(1713)
+Check out: JEAN 12:00 Clean anytime of day
+Check in: 2025-09-25 TOM(1) 16:00
+
+
+09-13
+
+
+09-14
+(515)
+Check out: SHU 12:00 Clean anytime of day
+Check in: 2025-09-28 JUSTIN(1) 16:00
+(1615)
+Check out: AYANO 12:00 Clean immediately
+Check in: 2025-09-14 AVERY(1) 16:00
+Drop Keycard : (1615) AVERY 515
+
+
+09-15
+(814)
+Check out: TONY 12:00 Clean anytime of day
+Check in: 2025-09-18 MANUEL(1) 16:00
+Drop Keycard : (814) MANUEL 515
+
+
+09-16
+
+
+09-17
+
+
+09-18
+
+
+(814)
+Check in: MANUEL(1)  16:00
+
+
+09-19
+(1615)
+Check out: AVERY 12:00 Clean anytime of day
+Check in: 2025-09-20 PATRICK(2) 16:00
+Drop Keycard : (1615) PATRICK 515
+
+
+09-20
+
+
+(1615)
+Check in: PATRICK(2)  16:00
+
+
+09-21
+
+
+09-22
+(814)
+Check out: MANUEL 12:00 Clean anytime of day
+Check in: 2025-09-23 LAURA & SCOTT(2) 16:00
+Drop Keycard : (814) LAURA & SCOTT 515
+
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (716) SAM 515
+
+09-23
+
+
+(716)
+Check in: SAM(2)  16:00
+(814)
+Check in: LAURA & SCOTT(2)  16:00
+
+
+09-24
+
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (1713) TOM 515
+
+09-25
+
+
+(1713)
+Check in: TOM(1)  16:00
+
+
+09-26
+
+
+09-27
+(1615)
+Check out: PATRICK 12:00 Clean immediately
+Check in: 2025-09-27 KYNAN(1) 16:00
+Drop Keycard : (1615) KYNAN 515
+
+
+09-28
+(716)
+Check out: SAM 12:00 Clean anytime of day
+Check in: 2025-10-05 SUSAN(2) 16:00
+
+
+(515)
+Check in: JUSTIN(1)  16:00
+
+
+09-29
+(814)
+Check out: LAURA & SCOTT 12:00 Clean anytime of day
+Check in: 2025-10-06 BINH(4) 16:00
+
+
+09-30
+
+

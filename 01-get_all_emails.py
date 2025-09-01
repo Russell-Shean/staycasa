@@ -122,6 +122,10 @@ while True:
     if not page_token:
         break
 
+# Tell le gen how many new emails we fetched
+print(f"Fetched {len(emails)} new emails")
+
+
 # Save emails JSON
 os.makedirs("data", exist_ok=True)
 
@@ -140,4 +144,4 @@ if all_new_ids:
     with open(CHECKPOINT_FILE, "w") as f:
         f.write(newest_id)
 
-print(f"Fetched {len(emails)} new emails")
+print(f"Fetched {len(emails)} total emails")
