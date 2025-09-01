@@ -2,9 +2,6 @@ name: Create and send a schedule
 
 
 on:
-  push:
-    branches:
-        - main
   schedule:
     - cron: '0 0 * * *'  # Runs at 8 AM Taipei (0 UTC)
   workflow_dispatch:
