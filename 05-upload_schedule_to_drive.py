@@ -57,6 +57,11 @@ this_month_filename = f"data/daily_schedule_{this_month_first_day}_{this_month_l
 print(f'this month: {this_month_filename}')
 
 
+# links to drive files
+# Step 1: Create/overwrite the file to make it blank
+open("data/drive_links.txt", "w").close()
+
+
 # load google creds -----------------------------------------------------------------------
 
 
@@ -136,6 +141,8 @@ def upload_file_to_drive(local_filename,drive_filename):
     print("📝 Name:", file["name"])
     print("📄 File ID:", file["id"])
     print("🔗 View it here:", file["webViewLink"])
+
+
     
     with open("data/drive_links.txt", "a") as f:
       f.write(f"{drive_filename}: {file['webViewLink']}\n")

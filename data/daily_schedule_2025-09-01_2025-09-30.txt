@@ -19,8 +19,9 @@ Check in: SHU(2)  16:00
 
 09-03
 (1713)
-Check out: KENT 12:00 Clean anytime of day
-Check in: 2025-09-09 JEAN(1) 16:00
+Check out: KENT 12:00 Clean immediately
+Check in: 2025-09-03 JOHN(1) 16:00
+Drop Keycard : (1713) JOHN 515
 
 
 09-04
@@ -40,10 +41,14 @@ Drop Keycard : (1615) BAO TIEN 515
 
 
 09-08
+(1713)
+Check out: JOHN 12:00 Clean anytime of day
+Check in: 2025-09-09 JEAN(1) 16:00
+Drop Keycard : (1713) JEAN 515
 
 
 DAY BEFORE KEY DROPS:
-Drop Keycard : (1713) JEAN 515
+Drop Keycard : (814) TONY 515
 
 09-09
 (1615)
@@ -125,13 +130,13 @@ Check in: PATRICK(2)  16:00
 
 
 09-21
-
-
-09-22
 (814)
 Check out: MANUEL 12:00 Clean anytime of day
 Check in: 2025-09-23 LAURA & SCOTT(2) 16:00
 Drop Keycard : (814) LAURA & SCOTT 515
+
+
+09-22
 
 
 DAY BEFORE KEY DROPS:
