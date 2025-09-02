@@ -92,7 +92,7 @@ with open(next_month_filename, 'r', encoding='utf-8') as file:
 # send messages
 this_month_message = "Here's the monthly schedule for this month!\n" + this_month_schedule
 
-next_month_message = "Here's the monthly schedule for this month!\n" + next_month_schedule
+next_month_message = "Here's the monthly schedule for next month!\n" + next_month_schedule
 
 #send_line_message(GROUP_ID, "Here's the monthly schedule for this month!")
 send_line_message(GROUP_ID, this_month_message)
