@@ -3,7 +3,9 @@ library(dplyr)
 
 # create payment schedule for cleanings
 cleaning_payment_schedule <- airbnb_emails2 |>
-                    mutate(cleaning_payment = 1000
+                    mutate(cleaning_payment = ifelse(checkout_date > "2025-08-31",
+                                                        1200,
+                                                        1000)
                            ) |>
                     tidyr::pivot_wider(names_from = room_number,
                                        values_from = cleaning_payment) |>

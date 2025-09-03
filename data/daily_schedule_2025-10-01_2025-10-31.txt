@@ -28,14 +28,11 @@ Check in: 성원(2)  16:00
 10-04
 
 
-DAY BEFORE KEY DROPS:
-Drop Keycard : (716) SUSAN 515
-
 10-05
-
-
 (716)
-Check in: SUSAN(2)  16:00
+Check out: JESS 12:00 Clean immediately
+Check in: 2025-10-05 SUSAN(2) 16:00
+Drop Keycard : (716) SUSAN 515
 
 
 DAY BEFORE KEY DROPS:
