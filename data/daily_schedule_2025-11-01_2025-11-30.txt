@@ -1,0 +1,234 @@
+
+11-01
+(515)
+Check out: 大 12:00 Clean immediately
+Check in: 2025-11-01 YUEN HING(1) 16:00
+Drop Keycard : (515) YUEN HING 515
+
+
+11-02
+(1615)
+Check out: MASON 12:00 Clean immediately
+Check in: 2025-11-02 JEFFREY(2) 16:00
+Drop Keycard : (1615) JEFFREY 515
+
+
+11-03
+(1600)
+Check out: DANIEL 12:00 Clean anytime of day
+Check in: 2025-11-04 ATTICUS(2) 16:00
+Drop Keycard : (1600) ATTICUS 515
+
+
+11-04
+(1713)
+Check out: THOMAS 12:00 Clean anytime of day
+Check in: 2025-11-06 NANCY(1) 16:00
+Drop Keycard : (1713) NANCY 515
+(515)
+Check out: YUEN HING 12:00 Clean immediately
+Check in: 2025-11-04 WYMAN(2) 16:00
+Drop Keycard : (515) WYMAN 515
+(513)
+Check out: BRIAN 12:00 Clean anytime of day
+Check in: 2025-11-08 LIYUN(1) 16:00
+
+
+(1600)
+Check in: ATTICUS(2)  16:00
+
+
+11-05
+
+
+11-06
+
+
+(1713)
+Check in: NANCY(1)  16:00
+
+
+11-07
+
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (513) LIYUN 515
+
+11-08
+(716)
+Check out: EDDY 12:00 Clean anytime of day
+Check in: 2025-11-09 ALEX(2) 16:00
+Drop Keycard : (716) ALEX 515
+
+
+(513)
+Check in: LIYUN(1)  16:00
+
+
+11-09
+
+
+(716)
+Check in: ALEX(2)  16:00
+
+
+11-10
+
+
+11-11
+(1600)
+Check out: ATTICUS 12:00 Clean anytime of day
+Check in: 2025-11-15 BRIAN(2) 16:00
+
+
+11-12
+
+
+11-13
+(716)
+Check out: ALEX 12:00 Clean anytime of day
+Check in: 2025-11-15 MELODY(2) 16:00
+Drop Keycard : (716) MELODY 515
+(513)
+Check out: LIYUN 12:00 Clean immediately
+Check in: 2025-11-13 PETE(1) 16:00
+Drop Keycard : (513) PETE 515
+
+
+11-14
+
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (1600) BRIAN 515
+
+11-15
+(1615)
+Check out: JEFFREY 12:00 Clean immediately
+Check in: 2025-11-15 DAVID(2) 16:00
+Drop Keycard : (1615) DAVID 515
+
+
+(1600)
+Check in: BRIAN(2)  16:00
+(716)
+Check in: MELODY(2)  16:00
+
+
+11-16
+(1713)
+Check out: NANCY 12:00 Clean immediately
+Check in: 2025-11-16 DONNA(2) 16:00
+Drop Keycard : (1713) DONNA 515
+
+
+11-17
+
+
+11-18
+
+
+11-19
+(1713)
+Check out: DONNA 12:00 Clean immediately
+Check in: 2025-11-19 KATHRIN(2) 16:00
+Drop Keycard : (1713) KATHRIN 515
+(716)
+Check out: MELODY 12:00 Clean anytime of day
+Check in: 2025-11-22 YUN CHI(2) 16:00
+Drop Keycard : (716) YUN CHI 515
+
+
+11-20
+
+
+11-21
+
+
+11-22
+
+
+(716)
+Check in: YUN CHI(2)  16:00
+
+
+11-23
+(1600)
+Check out: BRIAN 12:00 Clean anytime of day
+Check in: 2025-11-28 SUE(2) 16:00
+(1615)
+Check out: DAVID 12:00 Clean anytime of day
+Check in: 2025-11-27 LYDIA(4) 16:00
+
+
+11-24
+(1713)
+Check out: KATHRIN 12:00 Clean anytime of day
+Check in: 2025-11-26 NORA(2) 16:00
+Drop Keycard : (1713) NORA 515
+(513)
+Check out: PETE 12:00 Clean anytime of day
+Check in: 2025-11-25 정민(2) 16:00
+Drop Keycard : (513) 정민 515
+(814)
+Check out: BIN 12:00 Clean immediately
+Check in: 2025-11-24 JACKSON(2) 16:00
+Drop Keycard : (814) JACKSON 515
+
+
+11-25
+
+
+(513)
+Check in: 정민(2)  16:00
+
+
+11-26
+
+
+(1713)
+Check in: NORA(2)  16:00
+
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (1615) LYDIA 515
+
+11-27
+
+
+(1615)
+Check in: LYDIA(4)  16:00
+
+
+11-28
+
+
+(1600)
+Check in: SUE(2)  16:00
+
+
+11-29
+(1713)
+Check out: NORA 12:00 Clean anytime of day
+Check in: 2025-11-30 JOHN(1) 16:00
+Drop Keycard : (1713) JOHN 515
+(814)
+Check out: JACKSON 12:00 Clean immediately
+Check in: 2025-11-29 JAMIE(2) 16:00
+Drop Keycard : (814) JAMIE 515
+
+
+11-30
+(513)
+Check out: 정민 12:00 Clean anytime of day
+Check in: 2025-12-01 一林(1) 16:00
+Drop Keycard : (513) 一林 515
+(1615)
+Check out: LYDIA 12:00 Clean anytime of day
+Check in: 2025-12-01 JULIO(2) 16:00
+Drop Keycard : (1615) JULIO 515
+
+
+(1713)
+Check in: JOHN(1)  16:00
+
+

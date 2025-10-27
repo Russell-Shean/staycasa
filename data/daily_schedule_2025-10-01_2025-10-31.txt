@@ -2,7 +2,8 @@
 10-01
 (1713)
 Check out: TOM 12:00 Clean anytime of day
-Check in: 2025-12-05 MAHJOUBA ET SAMIR(3) 16:00
+Check in: 2025-10-04 DHAMEER(1) 16:00
+Drop Keycard : (1713) DHAMEER 515
 (513)
 Check out: PIYAMAPORN 12:00 Clean anytime of day
 Check in: 2025-10-03 성원(2) 16:00
@@ -13,19 +14,32 @@ Check in: 2025-10-03 CHADD(2) 16:00
 Drop Keycard : (1615) CHADD 515
 
 
+(1600)
+Check in: PHILIPP(1)  16:00
+
+
 10-02
 
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (814) SHARON 515
 
 10-03
 
 
+(814)
+Check in: SHARON(3)  16:00
 (1615)
-Check in: CHADD(2)  16:00
+Check in: CHADD(3)  16:00
 (513)
-Check in: 성원(2)  16:00
+Check in: 성원(3)  16:00
 
 
 10-04
+
+
+(1713)
+Check in: DHAMEER(1)  16:00
 
 
 10-05
@@ -35,20 +49,18 @@ Check in: 2025-10-05 SUSAN(2) 16:00
 Drop Keycard : (716) SUSAN 515
 
 
-DAY BEFORE KEY DROPS:
-Drop Keycard : (814) BINH 515
-
 10-06
-
-
 (814)
-Check in: BINH(4)  16:00
+Check out: SHARON 12:00 Clean immediately
+Check in: 2025-10-06 BINH(4) 16:00
+Drop Keycard : (814) BINH 515
 
 
 10-07
 (513)
-Check out: 성원 12:00 Clean anytime of day
-Check in: 2025-10-11 WINNIE(2) 16:00
+Check out: 성원 12:00 Clean immediately
+Check in: 2025-10-07 MICHELANGELO(2) 16:00
+Drop Keycard : (513) MICHELANGELO 515
 
 
 10-08
@@ -59,6 +71,10 @@ Drop Keycard : (1615) LEA 515
 
 
 10-09
+(1600)
+Check out: PHILIPP 12:00 Clean anytime of day
+Check in: 2025-10-11 KARL(1) 16:00
+Drop Keycard : (1600) KARL 515
 
 
 (1615)
@@ -68,57 +84,77 @@ Check in: LEA(3)  16:00
 10-10
 
 
-DAY BEFORE KEY DROPS:
-Drop Keycard : (513) WINNIE 515
-
 10-11
+(513)
+Check out: MICHELANGELO 12:00 Clean immediately
+Check in: 2025-10-11 WINNIE(2) 16:00
+Drop Keycard : (513) WINNIE 515
 (515)
 Check out: JUSTIN 12:00 Clean anytime of day
 Check in: 2025-10-18 社(2) 16:00
 (814)
-Check out: BINH 12:00 Clean anytime of day
-Check in: 2025-10-21 MARTHA(3) 16:00
+Check out: BINH 12:00 Clean immediately
+Check in: 2025-10-11 IAN(1) 16:00
+Drop Keycard : (814) IAN 515
 
 
-(513)
-Check in: WINNIE(2)  16:00
+(1600)
+Check in: KARL(1)  16:00
 
 
 10-12
+(1713)
+Check out: DHAMEER 12:00 Clean anytime of day
+Check in: 2025-10-15 SIEWMING(2) 16:00
+Drop Keycard : (1713) SIEWMING 515
 (716)
 Check out: SUSAN 12:00 Clean immediately
 Check in: 2025-10-12 SEOKWOO(1) 16:00
 Drop Keycard : (716) SEOKWOO 515
-(1615)
-Check out: LEA 12:00 Clean anytime of day
-Check in: 2025-10-15 ELLEN(2) 16:00
-Drop Keycard : (1615) ELLEN 515
 
 
 10-13
+(1615)
+Check out: LEA 12:00 Clean anytime of day
+Check in: 2025-10-16 DANIEL(2) 16:00
+Drop Keycard : (1615) DANIEL 515
 
 
 10-14
+(814)
+Check out: IAN 12:00 Clean anytime of day
+Check in: 2025-10-15 RUMI(2) 16:00
+Drop Keycard : (814) RUMI 515
 
 
 10-15
 (513)
-Check out: WINNIE 12:00 Clean anytime of day
-Check in: 2025-10-18 JOSHUA(2) 16:00
-Drop Keycard : (513) JOSHUA 515
+Check out: WINNIE 12:00 Clean immediately
+Check in: 2025-10-15 SYOMANTAK(1) 16:00
+Drop Keycard : (513) SYOMANTAK 515
 
 
-(1615)
-Check in: ELLEN(2)  16:00
+(1713)
+Check in: SIEWMING(2)  16:00
+(814)
+Check in: RUMI(2)  16:00
 
 
 10-16
+
+
+(1615)
+Check in: DANIEL(2)  16:00
 
 
 10-17
 
 
 10-18
+(513)
+Check out: SYOMANTAK 12:00 Clean immediately
+Check in: 2025-10-18 JOSHUA(2) 16:00
+Drop Keycard : (513) JOSHUA 515
 (716)
 Check out: SEOKWOO 12:00 Clean anytime of day
 Check in: 2025-10-19 EDDY(1) 16:00
@@ -127,8 +163,6 @@ Drop Keycard : (716) EDDY 515
 
 (515)
 Check in: 社(2)  16:00
-(513)
-Check in: JOSHUA(2)  16:00
 
 
 10-19
@@ -139,26 +173,27 @@ Check in: EDDY(1)  16:00
 
 
 10-20
-(1615)
-Check out: ELLEN 12:00 Clean anytime of day
-Check in: 2025-10-23 MASON(2) 16:00
-Drop Keycard : (1615) MASON 515
+(1713)
+Check out: SIEWMING 12:00 Clean anytime of day
+Check in: 2025-10-31 THOMAS(1) 16:00
 
-
-DAY BEFORE KEY DROPS:
-Drop Keycard : (814) MARTHA 515
 
 10-21
-
-
+(1615)
+Check out: DANIEL 12:00 Clean anytime of day
+Check in: 2025-10-23 MASON(2) 16:00
+Drop Keycard : (1615) MASON 515
 (814)
-Check in: MARTHA(3)  16:00
+Check out: RUMI 12:00 Clean immediately
+Check in: 2025-10-21 MARTHA(3) 16:00
+Drop Keycard : (814) MARTHA 515
 
 
 10-22
 (515)
-Check out: 社 12:00 Clean anytime of day
-Check in: 2025-10-29 SCOTT(1) 16:00
+Check out: 社 12:00 Clean immediately
+Check in: 2025-10-22 MATT(2) 16:00
+Drop Keycard : (515) MATT 515
 
 
 10-23
@@ -172,13 +207,17 @@ Check in: MASON(2)  16:00
 
 
 10-25
+(515)
+Check out: MATT 12:00 Clean immediately
+Check in: 2025-10-25 CHEUK(1) 16:00
+Drop Keycard : (515) CHEUK 515
 
 
 10-26
 (513)
-Check out: JOSHUA 12:00 Clean anytime of day
-Check in: 2025-10-29 BRIAN(2) 16:00
-Drop Keycard : (513) BRIAN 515
+Check out: JOSHUA 12:00 Clean immediately
+Check in: 2025-10-26 FRANCES(2) 16:00
+Drop Keycard : (513) FRANCES 515
 (814)
 Check out: MARTHA 12:00 Clean anytime of day
 Check in: 2025-10-27 BIN(2) 16:00
@@ -195,21 +234,31 @@ Check in: BIN(2)  16:00
 10-28
 
 
-DAY BEFORE KEY DROPS:
-Drop Keycard : (515) SCOTT 515
-
 10-29
-
-
-(515)
-Check in: SCOTT(1)  16:00
 (513)
-Check in: BRIAN(1)  16:00
+Check out: FRANCES 12:00 Clean immediately
+Check in: 2025-10-29 BRIAN(2) 16:00
+Drop Keycard : (513) BRIAN 515
+(515)
+Check out: CHEUK 12:00 Clean immediately
+Check in: 2025-10-29 大(2) 16:00
+Drop Keycard : (515) 大 515
 
 
 10-30
 
 
+DAY BEFORE KEY DROPS:
+Drop Keycard : (1713) THOMAS 515
+
 10-31
+(1600)
+Check out: KARL 12:00 Clean immediately
+Check in: 2025-10-31 DANIEL(1) 16:00
+Drop Keycard : (1600) DANIEL 515
+
+
+(1713)
+Check in: THOMAS(1)  16:00
 
 
