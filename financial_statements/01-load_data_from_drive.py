@@ -6,7 +6,11 @@ from datetime import date
 from datetime import datetime
 import calendar
 
+from googleapiclient.http import MediaIoBaseDownload
+import io
 import os
+
+
 
 from dotenv import load_dotenv
 
@@ -36,19 +40,18 @@ creds.refresh(Request())
 drive_service = build("drive", "v3", credentials=creds)
 
 
-# create a function to upload the file
-def download_from_drive(drive_folder, local_download_path):
+def download_from_drive(drive_service, local_download_path):
 
     # See if the file already exists and delete it 
     # If it does
-    query = f"name='{drive_folder}' and mimeType='application/vnd.google-apps.folder' and trashed=false"
+    query = "name='Airbnb Financial ' and mimeType='application/vnd.google-apps.folder' and trashed=false"
 
     results = drive_service.files().list(
     q=query,
-    supportsAllDrives=True,
-    includeItemsFromAllDrives=True,
     fields="files(id, name)"
     ).execute()
+
+    print(results)
 
 
     folders = results.get("files", [])
@@ -97,7 +100,10 @@ def download_from_drive(drive_folder, local_download_path):
     download_folder(root_folder_id, local_download_path)
 
 
-download_from_drive(drive_folder="Airbnb Financial",
+
+download_from_drive(drive_service=drive_service,
+                    #root_folder_name="Airbnb Financial ",
                     local_download_path="data/financial")
+
 
 

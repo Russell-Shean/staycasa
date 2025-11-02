@@ -1,6 +1,7 @@
 install.packages(c("timeperiodsR",
                  "jsonlite",
                  "dplyr",
+                 "dotenv",
                  "lubridate",
                  "openxlsx",
                  "stringr",
