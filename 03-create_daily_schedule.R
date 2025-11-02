@@ -1,4 +1,3 @@
-# Get July schedule
 library(dplyr)
 library(lubridate)
 
@@ -150,7 +149,7 @@ keydrops <- keydrops |>
 
 generate_schedule <- function(day_series){
   
-
+ # day_series <- next_month
 
   file_name <- paste0("data/daily_schedule_",
                       min(day_series),
@@ -165,6 +164,8 @@ generate_schedule <- function(day_series){
   # this returns each date in this month
   for(day in day_series){
     
+    #print(day)
+    #day <- "2025-12-25"
 
     todays_checkouts <- airbnb_emails2 |> 
       dplyr::filter(checkout_date == day)
@@ -193,7 +194,10 @@ generate_schedule <- function(day_series){
         
         
         # Determine when the unit should be cleaned
-        clean_time <- ifelse(future_checkins[1, "checkin_date"] == day,
+        clean_time <- ifelse(future_checkins[1, "checkin_date"] == day &
+                               # If there are no future checkins, just print clean
+                               # anytime
+                               nrow(future_checkins) > 0,
                              " Clean immediately",
                              " Clean anytime of day")
         
@@ -209,19 +213,26 @@ generate_schedule <- function(day_series){
         
 
         # Print info about checkins
+        # if there are no future checkins, don't print anything
+        
+        if(nrow(future_checkins) > 0){
         write(paste0("Check in: ",
                      future_checkins[1, "checkin_date"], 
                      " ", future_checkins[1, "guest_first_name.x"], 
                      "(", future_checkins[1, "number_of_guests"], 
                      ") ", future_checkins[1, "checkin_time"]),
               file = file_name, append = TRUE)
+          
+        }
         
         # Print about key card drops
         
         # The keycard should be dropped off the same day as the checkout
         # only if the checking occurs within the next three days
         # otherwise the key should be dropped off the day of the checkin
-        if(as.Date(future_checkins[1,"checkin_date"]) - as.Date(todays_checkouts[t,"checkout_date"]) > 3){
+        
+        
+        if((as.Date(future_checkins[1,"checkin_date"]) - as.Date(todays_checkouts[t,"checkout_date"]) > 3)|nrow(future_checkins) < 1){
         
 
           keydrop_on_checkout <- FALSE
