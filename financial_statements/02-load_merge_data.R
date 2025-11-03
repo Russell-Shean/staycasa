@@ -4,6 +4,7 @@ library(dplyr)
 library(pdftools)
 library(stringr)
 library(readr)
+library(forcats)
 
 # Load credentials
 load_dot_env()
@@ -15,7 +16,7 @@ financial_data_folder <- "data/financial"
 
 # Define file types based on names
 airbnb_earnings <- list.files(financial_data_folder,
-                              pattern = ".*airbnb_earnings.pdf",
+                              pattern = "^airbnb_.*",
                               full.names = TRUE)
 
 credit_card <- list.files(financial_data_folder, 
@@ -61,9 +62,32 @@ credit_card_transactions <- lapply(credit_card,
 
 
 # Airbnb earnings
-airbnb_earnings[1] |>
-  pdf_text() |> 
-  cat()
+load_airbnb_payouts <- function(file_path){
+  
+  recipient <- file_path |>
+               str_extract("(?<=airbnb_).*(?=\\.)")
+  
+  
+  df <- file_path |>
+        read.csv() |>
+        mutate(recipient = recipient)
+  
+  
+}
+
+airbnb_payouts <- lapply(airbnb_earnings, load_airbnb_payouts) |>
+                   bind_rows() |>
+                   mutate(Date = mdy(Date),
+                          Month = month.abb[month(Date)],
+                          Year = year(Date),
+                          month_year = paste0(Month, "_", Year)) |>
+                  mutate(month_year = fct_relevel(month_year, paste0(month.abb,"_",rep(2016:year(Sys.Date()), each=12))))
+
+
+airbnb_payouts |> 
+  group_by(month_year, recipient) |>
+  summarize(monthly_gross_earnings = sum(Gross.earnings, na.rm = TRUE)) |> 
+  write.csv("example_airbnb_data.csv", row.names = FALSE)
 
 
 
@@ -106,3 +130,9 @@ bank_transactions  <- data.frame(text = bank_transactions_text) |>
                              transaction_type = str_extract(text,
                                                             "電子轉出|網銀轉帳|跨行費用|跨行轉入|自行提款|存款息|跨行提款|ＡＴＭ存|現金|網銀外存|錯誤更正|費用沖正"))
 
+
+
+
+
+# combine all the datasets together
+combined_transactions <- credit_card_transactions
