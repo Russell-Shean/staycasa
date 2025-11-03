@@ -279,7 +279,7 @@ airbnb_emails <- sample_data2 |>
                                                     room_id == "1304380734749180095" ~ as.character(814),
                                                     
                                                     # NEW ROOM here!!
-                                                    room_id == "" ~ as.character(310)))
+                                                    room_id == "1543487232480210468" ~ as.character(310)))
                    
                    
                    
@@ -356,7 +356,8 @@ airbnb_emails <- sample_data2 |>
                                                        room_id == "1334778893973629207" ~ as.character(716),
                                                        room_id == "1325719145487941225" ~ as.character(1713),
                                                        room_id == "1316303449136573922" ~ as.character(515),
-                                                       room_id == "1304380734749180095" ~ as.character(814)))
+                                                       room_id == "1304380734749180095" ~ as.character(814),
+                                                       room_id == "1543487232480210468" ~ as.character(310)))
 
                    
                    # Add reminders that aren't currently in the data set

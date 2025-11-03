@@ -24,7 +24,7 @@ credit_card <- list.files(financial_data_folder,
                           full.names = TRUE)
 
 bank_statements <- list.files(financial_data_folder, 
-                              "國泰.*",
+                              "Bank Statement.*",
                               full.names = TRUE)
 
 
@@ -77,17 +77,60 @@ load_airbnb_payouts <- function(file_path){
 
 airbnb_payouts <- lapply(airbnb_earnings, load_airbnb_payouts) |>
                    bind_rows() |>
+  
+                   # fix dates
                    mutate(Date = mdy(Date),
                           Month = month.abb[month(Date)],
                           Year = year(Date),
                           month_year = paste0(Month, "_", Year)) |>
-                  mutate(month_year = fct_relevel(month_year, paste0(month.abb,"_",rep(2016:year(Sys.Date()), each=12))))
+                  mutate(month_year = fct_relevel(month_year, 
+                                                  paste0(month.abb,"_",
+                                                         rep(2016:year(Sys.Date()), 
+                                                             each=12)))) |>
+  
+                # attach room numbers
+                  mutate(room_number = case_when(Listing == "Skyline Luxe Loft in Xinyi | Taipei 101 Views" ~ as.character(1600),
+                                                 Listing == "The Creative Loft Xinyi | Walk to 101+Night Market" ~ as.character(513),
+                                                 Listing == "Taipei 101 Executive Suite (Self-Check in)" ~ as.character(1615),
+                                                 Listing == "Cozy City Hideaway Tpe 101 & Tonghua Mkt (LT Stay)" ~ as.character(716),
+                                                 Listing == "Chic 2-Story Loft w/101 Views（Great for LT stay)" ~ as.character(1713),
+                                                 Listing == "Modern Boutique Loft in Xinyi - Work, Live & Play" ~ as.character(515),
+                                                 Listing == "101夜景之家 | 月租嚴選" ~ as.character(814),
+                                                 Listing == "1543487232480210468" ~ as.character(310)))
+
+
+
+
 
 
 airbnb_payouts |> 
-  group_by(month_year, recipient) |>
+  group_by(month_year, room_number) |>
   summarize(monthly_gross_earnings = sum(Gross.earnings, na.rm = TRUE)) |> 
+  
+  # Filter out 0 earnings listings (blank rows with NA as the room number)
+  filter(monthly_gross_earnings > 0) |>
   write.csv("example_airbnb_data.csv", row.names = FALSE)
+
+
+
+
+
+
+# Bank statement
+
+bank_transactions <- lapply(bank_statements, 
+                            function(x) read_csv(x, skip=4)) |> 
+                    bind_rows() |>
+   
+  # Replace hyphens with NA for all character columns
+  mutate(across(where(is.character), ~str_replace(., "−", NA_character_))) |>
+  
+  # fix dates
+  mutate(date = as.Date(ymd_hm(交易日期)))
+
+
+
+
 
 
 
