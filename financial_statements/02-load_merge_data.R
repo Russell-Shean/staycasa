@@ -1,4 +1,6 @@
 library(dotenv)
+library(lubridate)
+library(dplyr)
 library(pdftools)
 library(stringr)
 library(readr)
@@ -38,11 +40,12 @@ load_single_cc_statement <- function(file_path){
   single_statement <- file_path |>
     read_csv(skip = 23) |>
     mutate(transaction_date = ymd(paste0(statement_year, "/",消費日)),
+           amount = as.numeric(str_remove_all(`新臺幣金額`, ",")),
            account = "credit card") |> 
     filter(!is.na(transaction_date)) |>
     select(transaction_date,
            description = `交易說明`,
-           amount = `新臺幣金額`,
+           amount,
            account)
   
   single_statement
@@ -59,7 +62,8 @@ credit_card_transactions <- lapply(credit_card,
 
 # Airbnb earnings
 airbnb_earnings[1] |>
-  pdf_text()
+  pdf_text() |> 
+  cat()
 
 
 

@@ -13,6 +13,8 @@ cleaning_payment_schedule <- airbnb_emails2 |>
                     select(checkout_date,
                           # guest_first_name.x,
                            #confirmation_number,
+                          # NEW ROOM here!!
+                          #`310`,
                            `814`,
                            `1713`,
                            `716`,
@@ -57,6 +59,8 @@ keydrop_payment_schedule <- airbnb_emails2 |>
   select(keydrop_date,
          # guest_first_name.x,
          #confirmation_number,
+         # NEW ROOM here!!
+         #`310`
          `814`,
          `1713`,
          `716`,
