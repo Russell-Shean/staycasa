@@ -30,8 +30,8 @@ Drop Keycard : (515) PURNA CHANDRA RAO 515
 
 12-05
 (1615)
-Check out: JULIO 12:00 Clean immediately
-Check in: 2025-12-05 PAULINE(2) 16:00
+Check out: JULIO 12:00 Clean anytime of day
+Check in: 2025-12-06 PAULINE(2) 16:00
 Drop Keycard : (1615) PAULINE 515
 
 
@@ -47,6 +47,10 @@ Drop Keycard : (1600) CHIE 515
 (814)
 Check out: JAMIE 12:00 Clean anytime of day
 Check in: 2025-12-11 JEFF(2) 16:00
+
+
+(1615)
+Check in: PAULINE(2)  16:00
 
 
 DAY BEFORE KEY DROPS:
@@ -222,7 +226,6 @@ Check in: 2025-12-28 SUYING(2) 16:00
 Drop Keycard : (814) SUYING 515
 (1615)
 Check out: B 12:00 Clean anytime of day
-Check in: 2026-02-19 JOY(2) 16:00
 
 
 12-29

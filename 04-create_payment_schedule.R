@@ -10,18 +10,20 @@ cleaning_payment_schedule <- airbnb_emails2 |>
                     tidyr::pivot_wider(names_from = room_number,
                                        values_from = cleaning_payment) |>
 
-                    select(checkout_date,
+                    select(
+                      any_of(
+                            checkout_date,
                           # guest_first_name.x,
                            #confirmation_number,
                           # NEW ROOM here!!
-                          #`310`,
+                           `310`,
                            `814`,
                            `1713`,
                            `716`,
                            `1615`,
                            `513`,
                            `515`,
-                           `1600`) |>
+                           `1600`)) |>
   group_by(checkout_date) |>
   summarise(across(everything(), ~sum(.x, na.rm = TRUE)), .groups = "drop") |>
   mutate(checkout_date = as.Date(checkout_date))
@@ -56,18 +58,20 @@ keydrop_payment_schedule <- airbnb_emails2 |>
     )
   ) |>
   
-  select(keydrop_date,
+  select(
+     any_of(
+         keydrop_date,
          # guest_first_name.x,
          #confirmation_number,
          # NEW ROOM here!!
-         #`310`
+         `310`,
          `814`,
          `1713`,
          `716`,
          `1615`,
          `513`,
          `515`,
-         `1600`) |>
+         `1600`)) |>
   group_by(keydrop_date) |>
   summarise(across(everything(), ~sum(.x, na.rm = TRUE)), .groups = "drop")
 
