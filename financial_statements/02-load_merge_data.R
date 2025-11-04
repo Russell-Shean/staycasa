@@ -6,9 +6,6 @@ library(stringr)
 library(readr)
 library(forcats)
 
-# Load credentials
-load_dot_env()
-BANK_STATEMENT_PASSWORD <- Sys.getenv("BANK_STATEMENT_PASSWORD")
 
 
 # file_path
@@ -238,9 +235,9 @@ bank_transactions <- lapply(bank_statements,
                               
                               
                               str_detect(description, "打掃|ｃｌｅａｎｉｎｇ|Ａｎｎ　ａｄｖａｎｃｅ") ~ "Cleaning",
-                              str_detect(description, "佣金") ~ "Commision",
+                             # str_detect(description, "佣金") ~ "Commision",
                               
-                              str_detect(description, "ｄｉｓｔｒｉｂｕｔｉｏｎ|分紅|ｃａｓｈ　ｐａｙｏｕｔ|Ｃａｓｈ　Ｐａｙｏｕｔ|減資|ｃａｐ　ｒｅｄｕｃｔｉｏｎ|紅利分配")  ~ paste0("Dividend Distribution - ", recipient),
+                              str_detect(description, "佣金|ｄｉｓｔｒｉｂｕｔｉｏｎ|分紅|ｃａｓｈ　ｐａｙｏｕｔ|Ｃａｓｈ　Ｐａｙｏｕｔ|減資|ｃａｐ　ｒｅｄｕｃｔｉｏｎ|紅利分配")  ~ paste0("Dividend Distribution - ", recipient),
                               
                               
 
