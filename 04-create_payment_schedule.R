@@ -1,5 +1,6 @@
 library(openxlsx)
 library(dplyr)
+library(tidyr)
 
 # create payment schedule for cleanings
 cleaning_payment_schedule <- airbnb_emails2 |>
@@ -77,8 +78,8 @@ keydrop_payment_schedule <- airbnb_emails2 |>
   group_by(keydrop_date) |>
   summarise(across(everything(), ~sum(.x, na.rm = TRUE)), .groups = "drop")
 
-
-  
+# save an independent copy for later
+keydrop_payment_schedule2 <- keydrop_payment_schedule
 
 
 
@@ -119,6 +120,7 @@ overall_payments <- cleaning_payment_schedule |>
 
 
 
+
 this_months_payments <- data.frame(date = as.Date(this_month)) |>
                         left_join(overall_payments,
                                   by = join_by( "date" == "checkout_date")) |>
@@ -128,6 +130,32 @@ this_months_payments <- data.frame(date = as.Date(this_month)) |>
                         select(-cleaning_daily_total) 
 
 
+
+# Create a new dataset for use in the financial statements part of the project
+keydrop_payment_schedule2_long <- keydrop_payment_schedule2 |> 
+                                    pivot_longer(
+                                         cols = -keydrop_date, 
+                                         names_to = "room_number",       
+                                         values_to = "keydrop_payment"        
+  )
+
+
+overall_payments_long <- overall_payments |>
+                         select(-keycards_daily_total, - cleaning_daily_total, - keycard_drop_rooms)|> 
+  pivot_longer(
+    cols = -checkout_date, 
+    names_to = "room_number",       
+    values_to = "cleaning_payment"        
+  )
+
+
+# merge the two datasets
+overall_payments_long <- overall_payments_long |>
+                         full_join(keydrop_payment_schedule2_long,
+                                   by = c("checkout_date" = "keydrop_date", "room_number" = "room_number"))
+
+# Save to file
+overall_payments_long |> write.csv("data/overall_payment_schedule.csv", row.names = FALSE)
 
 #last_months_payments <- data.frame(date = seq.Date(from = as.Date("2025-07-01"),
  #                                                  to = as.Date("2025-07-31"),
