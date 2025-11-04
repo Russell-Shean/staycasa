@@ -13,7 +13,7 @@ cleaning_payment_schedule <- airbnb_emails2 |>
                     select(
                       any_of(
                         c(
-                            checkout_date,
+                            "checkout_date",
                           # guest_first_name.x,
                            #confirmation_number,
                           # NEW ROOM here!!
@@ -62,7 +62,7 @@ keydrop_payment_schedule <- airbnb_emails2 |>
   select(
     any_of(
       c(
-        checkout_date,
+        "keydrop_date",
         # guest_first_name.x,
         #confirmation_number,
         # NEW ROOM here!!
