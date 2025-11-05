@@ -40,7 +40,9 @@ sample_data2 <- sample_data |>
                                        "yes",
                                        "no"),
                        
-                       reply = ifelse(str_detect(subject, "回覆：|RE:"), 
+                       reply = ifelse(str_detect(subject, "回覆：|RE:") |
+                                      (str_detect(body, "Subject: RE: Reservation") &
+                                         sender_email == "simon1122@gmail.com"), 
                                       "yes",
                                       "no"),
                        
@@ -102,7 +104,12 @@ sample_data2 <- sample_data |>
 
 
 airbnb_emails <- sample_data2 |>
-                 filter(sender_domain == "airbnb.com")  |> 
+                 filter(sender_domain == "airbnb.com" 
+                        
+                        # We're just going to deal with this manually
+                        #(sender_email == "simon1122@gmail.com" &date == "2025-11-04")
+                        
+                        )  |> 
   
                   # Clean body
                  mutate(body_cleaned = str_replace_all(body,
@@ -121,6 +128,9 @@ airbnb_emails <- sample_data2 |>
                   mutate(confirmation_number = ifelse(is.na(confirmation_number),
                                                       str_extract(subject, "(?<=已取消：預訂).*(?=（)"),
                                                       confirmation_number)) |>
+  
+                  # Get the reservation number from the forwarded airbnb emails
+                  
   
                   mutate(confirmation_number = str_squish(confirmation_number)) |>
   
@@ -447,7 +457,9 @@ airbnb_emails <- sample_data2 |>
                      # extract confirmation numbers
                      mutate(confirmation_number = str_extract(body_cleaned, "(?<=reservations/details/).*?(?=\\?)"),
                             guest_first_name = str_extract(body_cleaned, "(?<=您與).*(?=的預訂已經更新)"),
-                            room_title = str_extract(body, "Taipei 101 Executive Suite \\(Self-Check in\\)|The Creative Loft Xinyi | Walk to 101+Night Market|Panoramic Corner Loft in Xinyi | Taipei 101 Views|101夜景之家 \\| 月租嚴選|Cozy City Hideaway Tpe 101 & Tonghua Mkt \\(LT Stay\\)|Chic 2-Story Loft w/101 Views（Great for LT stay\\)")) 
+                            
+                            # Add new room here
+                            room_title = str_extract(body, "Taipei 101 Executive Suite \\(Self-Check in\\)|The Creative Loft Xinyi | Walk to 101+Night Market|Panoramic Corner Loft in Xinyi | Taipei 101 Views|101夜景之家 \\| 月租嚴選|Cozy City Hideaway Tpe 101 & Tonghua Mkt \\(LT Stay\\)|Chic 2-Story Loft w/101 Views（Great for LT stay\\)|CityLink Suite Xinyi Downtown")) 
                    
                    
                    airbnb_confirmed_changes2 <- airbnb_confirmed_changes |>
@@ -483,6 +495,24 @@ airbnb_emails <- sample_data2 |>
                      mutate(checkout_date = if_else(confirmation_number == "HM5CRZWWZZ",
                                                     as.Date("2025-08-04"),
                                                     checkout_date))
+                   
+                   
+                   
+                   
+                   # Manually create a dataframe for the three reservations that weren't included
+                   manual_reservations <- data.frame(
+                     
+                     checkin_date = c(),
+                     checkout_date = c(),
+                     confirmation_number = c(),
+                     room_number = c()
+                     guest_first_name.x = c(),
+                     number_of_guests = c(),
+                     checkin_time = c(),
+                     checkout_time = c()
+                     date = c()
+                       
+                   )
                    
                    
                    write.csv(airbnb_reservation_confirmations4, 

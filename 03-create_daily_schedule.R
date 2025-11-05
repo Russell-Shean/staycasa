@@ -4,6 +4,8 @@ library(lubridate)
 airbnb_emails2 <- read.csv( file = "data/airbnb_reservation_confirmations.csv")  
 
 
+
+
 month_start <- floor_date(today(), unit = "month")  # First day of the month
 next_month_start <- ceiling_date(today(), unit = "month")   # first day of next month
 
