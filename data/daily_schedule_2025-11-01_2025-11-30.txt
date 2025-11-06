@@ -6,6 +6,10 @@ Check in: 2025-11-01 YUEN HING(1) 16:00
 Drop Keycard : (515) YUEN HING 515
 
 
+(310)
+Check in: たかこ あべ(1)  16:00
+
+
 11-02
 (1615)
 Check out: MASON 12:00 Clean immediately
@@ -36,22 +40,24 @@ Check in: ATTICUS(2)  16:00
 
 
 11-05
+(310)
+Check out: たかこ あべ 12:00 Clean anytime of day
 
 
 11-06
 
 
-(310)
+(301)
 Check in: CARL(1)  16:00
 (1713)
 Check in: NANCY(1)  16:00
 
 
 11-07
-(310)
+(301)
 Check out: CARL 12:00 Clean immediately
 Check in: 2025-11-07 Jisu(2) 16:00
-Drop Keycard : (310) Jisu 515
+Drop Keycard : (301) Jisu 515
 
 
 11-08
@@ -83,7 +89,7 @@ Drop Keycard : (1600) WALLACE 515
 
 
 11-12
-(310)
+(301)
 Check out: Jisu 12:00 Clean anytime of day
 Check in: 2025-11-19 MINWOOK(2) 16:00
 
@@ -131,7 +137,7 @@ Drop Keycard : (1713) DONNA 515
 
 
 DAY BEFORE KEY DROPS:
-Drop Keycard : (310) MINWOOK 515
+Drop Keycard : (301) MINWOOK 515
 
 11-19
 (1713)
@@ -144,7 +150,7 @@ Check in: 2025-11-22 YUN CHI(2) 16:00
 Drop Keycard : (716) YUN CHI 515
 
 
-(310)
+(301)
 Check in: MINWOOK(2)  16:00
 
 
@@ -162,10 +168,10 @@ Check in: YUN CHI(2)  16:00
 
 
 11-23
-(310)
+(301)
 Check out: MINWOOK 12:00 Clean immediately
 Check in: 2025-11-23 MINWOOK(2) 16:00
-Drop Keycard : (310) MINWOOK 515
+Drop Keycard : (301) MINWOOK 515
 (1600)
 Check out: BRIAN 12:00 Clean anytime of day
 Check in: 2025-11-28 SUE(2) 16:00
@@ -214,7 +220,7 @@ Check in: LYDIA(4)  16:00
 
 
 11-28
-(310)
+(301)
 Check out: MINWOOK 12:00 Clean anytime of day
 
 

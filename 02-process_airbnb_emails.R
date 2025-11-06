@@ -533,22 +533,27 @@ airbnb_emails <- sample_data2 |>
                    
                    
                    # Manually create a dataframe for the three reservations that weren't included
-            #       manual_reservations <- data.frame(
+                   # When room 301 was added
+                   manual_reservations <- data.frame(
                      
-             #        checkin_date = c(),
-              #       checkout_date = c(),
-              #       confirmation_number = c(),
-              #       room_number = c()
-              #       guest_first_name.x = c(),
-              #       number_of_guests = c(),
-              #       checkin_time = c(),
-              #       checkout_time = c()
-              #       date = c()
+                     checkin_date = c(as.Date("2025-11-01")),
+                     checkout_date = c(as.Date("2025-11-05")),
+                     confirmation_number = c("HMDHWB8CCB"),
+                     room_number = c("310"),
+                     guest_first_name.x = c("たかこ あべ"),
+                     number_of_guests = c(1),
+                     checkin_time = c("16:00"),
+                     checkout_time = c("12:00"),
+                     date = c(as.Date("2025-10-30"))
                        
-              #     )
+                   )
                    
                    
-                   write.csv(airbnb_reservation_confirmations4, 
+                   airbnb_reservation_confirmations5 <- airbnb_reservation_confirmations4 |>
+                                                        bind_rows(manual_reservations)
+                   
+                   
+                   write.csv(airbnb_reservation_confirmations5, 
                              file = "data/airbnb_reservation_confirmations.csv", 
                              row.names = FALSE)  
                    
