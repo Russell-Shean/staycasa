@@ -41,8 +41,8 @@ Check in: MAHJOUBA ET SAMIR(3)  16:00
 
 12-06
 (1600)
-Check out: SUE 12:00 Clean immediately
-Check in: 2025-12-06 CHIE(1) 16:00
+Check out: SUE 12:00 Clean anytime of day
+Check in: 2025-12-07 CHIE(1) 16:00
 Drop Keycard : (1600) CHIE 515
 (814)
 Check out: JAMIE 12:00 Clean anytime of day
@@ -62,6 +62,8 @@ Check out: PURNA CHANDRA RAO 12:00 Clean anytime of day
 Check in: 2025-12-19 WEI(1) 16:00
 
 
+(1600)
+Check in: CHIE(1)  16:00
 (716)
 Check in: FABIAN(1)  16:00
 

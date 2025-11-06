@@ -439,7 +439,20 @@ airbnb_emails <- sample_data2 |>
                                      og_checkout_date, 
                                      requested_checkin_date, 
                                      requested_checkout_date), 
-                                   function(x)as.Date(x, format = "%Y年%m月%d日")))
+                                   function(x)as.Date(x, format = "%Y年%m月%d日")))  |>
+                     
+                     # get the room number
+                     mutate(room_number = case_when(
+                       str_detect(room_title, "Skyline Luxe Loft in Xinyi|Panoramic Corner Loft in Xinyi") ~ as.character(1600),
+                       str_detect(room_title, "The Creative Loft Xinyi") ~ as.character(513),
+                       str_detect(room_title, "Taipei 101 Executive Suite") ~ as.character(1615),
+                       str_detect(room_title, "Cozy City Hideaway Tpe 101") ~ as.character(716),
+                       str_detect(room_title, "Chic 2-Story Loft w/101 Views") ~ as.character(1713),
+                       str_detect(room_title, "Modern Boutique Loft in Xinyi") ~ as.character(515),
+                       str_detect(room_title, "101夜景之家") ~ as.character(814),
+                       
+                       # NEW ROOM here!!
+                       str_detect(room_title, "CityLink Suite Xinyi Downtown") ~ as.character(310)))
                    
                    
                    if(any(is.na(airbnb_change_requests$change_type))){
@@ -449,7 +462,7 @@ airbnb_emails <- sample_data2 |>
                    
                    airbnb_change_requests2 <- airbnb_change_requests |>
                      select(guest_first_name, 
-                            room_title,
+                            room_number,
                             og_guest_number:requested_checkout_date)
                    
                    airbnb_confirmed_changes <- airbnb_emails |> 
@@ -459,13 +472,26 @@ airbnb_emails <- sample_data2 |>
                             guest_first_name = str_extract(body_cleaned, "(?<=您與).*(?=的預訂已經更新)"),
                             
                             # Add new room here
-                            room_title = str_extract(body, "Taipei 101 Executive Suite \\(Self-Check in\\)|The Creative Loft Xinyi | Walk to 101+Night Market|Panoramic Corner Loft in Xinyi | Taipei 101 Views|101夜景之家 \\| 月租嚴選|Cozy City Hideaway Tpe 101 & Tonghua Mkt \\(LT Stay\\)|Chic 2-Story Loft w/101 Views（Great for LT stay\\)|CityLink Suite Xinyi Downtown")) 
+                            room_title = str_extract(body, "Taipei 101 Executive Suite \\(Self-Check in\\)|The Creative Loft Xinyi | Walk to 101+Night Market|Panoramic Corner Loft in Xinyi | Taipei 101 Views|101夜景之家 \\| 月租嚴選|Cozy City Hideaway Tpe 101 & Tonghua Mkt \\(LT Stay\\)|Chic 2-Story Loft w/101 Views（Great for LT stay\\)|CityLink Suite Xinyi Downtown|Modern Boutique Loft in Xinyi - Work, Live & Play|Skyline Luxe Loft in Xinyi | Taipei 101 Views")) |>
+                    
+                     # get the room number
+                     mutate(room_number = case_when(
+                            str_detect(room_title, "Skyline Luxe Loft in Xinyi|Panoramic Corner Loft in Xinyi") ~ as.character(1600),
+                            str_detect(room_title, "The Creative Loft Xinyi") ~ as.character(513),
+                            str_detect(room_title, "Taipei 101 Executive Suite") ~ as.character(1615),
+                            str_detect(room_title, "Cozy City Hideaway Tpe 101") ~ as.character(716),
+                            str_detect(room_title, "Chic 2-Story Loft w/101 Views") ~ as.character(1713),
+                            str_detect(room_title, "Modern Boutique Loft in Xinyi") ~ as.character(515),
+                            str_detect(room_title, "101夜景之家") ~ as.character(814),
+                            
+                            # NEW ROOM here!!
+                            str_detect(room_title, "CityLink Suite Xinyi Downtown") ~ as.character(310)))
                    
                    
                    airbnb_confirmed_changes2 <- airbnb_confirmed_changes |>
                      select(confirmation_number,
                             guest_first_name, 
-                            room_title) |>
+                            room_number) |>
                      left_join(airbnb_change_requests2)
                    
                    
@@ -494,25 +520,32 @@ airbnb_emails <- sample_data2 |>
                      
                      mutate(checkout_date = if_else(confirmation_number == "HM5CRZWWZZ",
                                                     as.Date("2025-08-04"),
-                                                    checkout_date))
-                   
+                                                    checkout_date)) |> 
+                     
+                     
+                     mutate(checkout_date = if_else(confirmation_number == "HMYN3YCAQ2",
+                                                    as.Date("2025-10-11"),
+                                                    checkout_date)) |>
+                     
+                     # rename room_numbers
+                     rename(room_number = room_number.x)
                    
                    
                    
                    # Manually create a dataframe for the three reservations that weren't included
-                   manual_reservations <- data.frame(
+            #       manual_reservations <- data.frame(
                      
-                     checkin_date = c(),
-                     checkout_date = c(),
-                     confirmation_number = c(),
-                     room_number = c()
-                     guest_first_name.x = c(),
-                     number_of_guests = c(),
-                     checkin_time = c(),
-                     checkout_time = c()
-                     date = c()
+             #        checkin_date = c(),
+              #       checkout_date = c(),
+              #       confirmation_number = c(),
+              #       room_number = c()
+              #       guest_first_name.x = c(),
+              #       number_of_guests = c(),
+              #       checkin_time = c(),
+              #       checkout_time = c()
+              #       date = c()
                        
-                   )
+              #     )
                    
                    
                    write.csv(airbnb_reservation_confirmations4, 

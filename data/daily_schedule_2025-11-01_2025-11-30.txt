@@ -29,9 +29,6 @@ Drop Keycard : (1713) NANCY 515
 Check out: YUEN HING 12:00 Clean immediately
 Check in: 2025-11-04 WYMAN(2) 16:00
 Drop Keycard : (515) WYMAN 515
-(513)
-Check out: BRIAN 12:00 Clean anytime of day
-Check in: 2025-11-08 LIYUN(1) 16:00
 
 
 (1600)
@@ -44,29 +41,28 @@ Check in: ATTICUS(2)  16:00
 11-06
 
 
+(310)
+Check in: CARL(1)  16:00
 (1713)
 Check in: NANCY(1)  16:00
 
 
 11-07
-
-
 (310)
-Check in: Jisu(2)  16:00
+Check out: CARL 12:00 Clean immediately
+Check in: 2025-11-07 Jisu(2) 16:00
+Drop Keycard : (310) Jisu 515
 
-
-DAY BEFORE KEY DROPS:
-Drop Keycard : (513) LIYUN 515
 
 11-08
+(513)
+Check out: BRIAN 12:00 Clean immediately
+Check in: 2025-11-08 LIYUN(1) 16:00
+Drop Keycard : (513) LIYUN 515
 (716)
 Check out: EDDY 12:00 Clean anytime of day
 Check in: 2025-11-09 ALEX(2) 16:00
 Drop Keycard : (716) ALEX 515
-
-
-(513)
-Check in: LIYUN(1)  16:00
 
 
 11-09
@@ -89,6 +85,7 @@ Drop Keycard : (1600) WALLACE 515
 11-12
 (310)
 Check out: Jisu 12:00 Clean anytime of day
+Check in: 2025-11-19 MINWOOK(2) 16:00
 
 
 11-13
@@ -133,6 +130,9 @@ Drop Keycard : (1713) DONNA 515
 11-18
 
 
+DAY BEFORE KEY DROPS:
+Drop Keycard : (310) MINWOOK 515
+
 11-19
 (1713)
 Check out: DONNA 12:00 Clean immediately
@@ -142,6 +142,10 @@ Drop Keycard : (1713) KATHRIN 515
 Check out: MELODY 12:00 Clean anytime of day
 Check in: 2025-11-22 YUN CHI(2) 16:00
 Drop Keycard : (716) YUN CHI 515
+
+
+(310)
+Check in: MINWOOK(2)  16:00
 
 
 11-20
@@ -158,6 +162,10 @@ Check in: YUN CHI(2)  16:00
 
 
 11-23
+(310)
+Check out: MINWOOK 12:00 Clean immediately
+Check in: 2025-11-23 MINWOOK(2) 16:00
+Drop Keycard : (310) MINWOOK 515
 (1600)
 Check out: BRIAN 12:00 Clean anytime of day
 Check in: 2025-11-28 SUE(2) 16:00
@@ -206,10 +214,8 @@ Check in: LYDIA(4)  16:00
 
 
 11-28
-
-
-(1600)
-Check in: SUE(2)  16:00
+(310)
+Check out: MINWOOK 12:00 Clean anytime of day
 
 
 11-29
