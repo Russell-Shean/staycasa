@@ -18,7 +18,7 @@ cleaning_payment_schedule <- airbnb_emails2 |>
                           # guest_first_name.x,
                            #confirmation_number,
                           # NEW ROOM here!!
-                           "310",
+                           "301",
                            "814",
                            "1713",
                            "716",
@@ -67,7 +67,7 @@ keydrop_payment_schedule <- airbnb_emails2 |>
         # guest_first_name.x,
         #confirmation_number,
         # NEW ROOM here!!
-        "310",
+        "301",
         "814",
         "1713",
         "716",

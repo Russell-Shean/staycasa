@@ -289,7 +289,7 @@ airbnb_emails <- sample_data2 |>
                                                     room_id == "1304380734749180095" ~ as.character(814),
                                                     
                                                     # NEW ROOM here!!
-                                                    room_id == "1543487232480210468" ~ as.character(310)))
+                                                    room_id == "1543487232480210468" ~ as.character(301)))
                    
                    
                    
@@ -367,7 +367,7 @@ airbnb_emails <- sample_data2 |>
                                                        room_id == "1325719145487941225" ~ as.character(1713),
                                                        room_id == "1316303449136573922" ~ as.character(515),
                                                        room_id == "1304380734749180095" ~ as.character(814),
-                                                       room_id == "1543487232480210468" ~ as.character(310)))
+                                                       room_id == "1543487232480210468" ~ as.character(301)))
 
                    
                    # Add reminders that aren't currently in the data set
@@ -452,7 +452,7 @@ airbnb_emails <- sample_data2 |>
                        str_detect(room_title, "101夜景之家") ~ as.character(814),
                        
                        # NEW ROOM here!!
-                       str_detect(room_title, "CityLink Suite Xinyi Downtown") ~ as.character(310)))
+                       str_detect(room_title, "CityLink Suite Xinyi Downtown") ~ as.character(301)))
                    
                    
                    if(any(is.na(airbnb_change_requests$change_type))){
@@ -485,7 +485,7 @@ airbnb_emails <- sample_data2 |>
                             str_detect(room_title, "101夜景之家") ~ as.character(814),
                             
                             # NEW ROOM here!!
-                            str_detect(room_title, "CityLink Suite Xinyi Downtown") ~ as.character(310)))
+                            str_detect(room_title, "CityLink Suite Xinyi Downtown") ~ as.character(301)))
                    
                    
                    airbnb_confirmed_changes2 <- airbnb_confirmed_changes |>
