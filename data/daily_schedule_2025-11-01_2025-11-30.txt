@@ -91,7 +91,8 @@ Drop Keycard : (1600) WALLACE 515
 11-12
 (301)
 Check out: Jisu 12:00 Clean anytime of day
-Check in: 2025-11-19 MINWOOK(2) 16:00
+Check in: 2025-11-14 Chai Ling(1) 16:00
+Drop Keycard : (301) Chai Ling 515
 
 
 11-13
@@ -106,6 +107,10 @@ Drop Keycard : (513) PETE 515
 
 
 11-14
+
+
+(301)
+Check in: Chai Ling(1)  16:00
 
 
 11-15
@@ -131,13 +136,14 @@ Drop Keycard : (1713) DONNA 515
 
 
 11-17
+(301)
+Check out: Chai Ling 12:00 Clean anytime of day
+Check in: 2025-11-19 MINWOOK(2) 16:00
+Drop Keycard : (301) MINWOOK 515
 
 
 11-18
 
-
-DAY BEFORE KEY DROPS:
-Drop Keycard : (301) MINWOOK 515
 
 11-19
 (1713)

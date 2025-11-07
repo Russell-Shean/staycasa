@@ -172,8 +172,17 @@ airbnb_emails <- sample_data2 |>
       
       for(confirmation_number  in host_modified_reservations$confirmation_number){
         
-        warning(paste0("The following reservation number has changes that don't show up in any of the emails!\n",
-                       confirmation_number))
+        # This if statement is for reservations we've already dealt with. 
+        # After you're done dealing with a number add it to the list.
+        if(!confirmation_number %in% c("HMYN3YCAQ2","HM5CRZWWZZ","HMQMWRA9PB")){
+          
+          warning(paste0("The following reservation number has changes that don't show up in any of the emails!\n",
+                         confirmation_number))
+          
+          
+        }
+        
+        
       }
                    
                    
@@ -193,7 +202,8 @@ airbnb_emails <- sample_data2 |>
                                    context_parameter2 != "booking/v2_migration/reservation_host_pending",
                                    context_parameter2 != "reservation/inquiries/first_preapprove_reminder7",
                                    context_parameter2 != "claims/resolution_center/to_claimant_offer_money",
-                                   context_parameter2 != "claims/resolution_center/to_claimant_accept_request"
+                                   context_parameter2 != "claims/resolution_center/to_claimant_accept_request",
+                                   context_parameter2 != "claims/to_claimant_mediation_request_submitted"
                                    
                      )  
                    

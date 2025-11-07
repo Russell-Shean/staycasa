@@ -59,7 +59,11 @@ airbnb_payouts <- lapply(airbnb_earnings, load_airbnb_payouts) |>
 # Select a version of airbnb payouts for later use
 airbnb_payouts2 <- airbnb_payouts |> 
   filter(!is.na(room_number)) |> 
-  group_by(room_number, month_year) |> 
+  
+  # filter out Tina's rooms
+  filter(!room_number %in% c("1600", "515")) |>
+  group_by(#room_number, 
+    month_year) |> 
   summarize(monthly_gross = sum(Gross.earnings, na.rm = TRUE),
             monthly_occupancy_tax = sum(Occupancy.taxes, na.rm = TRUE),
             monthly_service_fee = sum(Service.fee, na.rm = TRUE)) |>

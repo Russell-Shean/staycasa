@@ -31,7 +31,7 @@ load_single_cc_statement <- function(file_path){
   single_statement <- file_path |>
     read_csv(skip = 23) |>
     mutate(transaction_date = ymd(paste0(statement_year, "/",消費日)),
-           amount = as.numeric(str_remove_all(`新臺幣金額`, ",")),
+           amount = as.numeric(str_remove_all(`新臺幣金額`, ",")) * -1,
            account = "credit card") |> 
     filter(!is.na(transaction_date)) |>
     select(transaction_date,
