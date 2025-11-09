@@ -1,4 +1,4 @@
-name: Create and send a schedule
+name: 2pm check for same day checkins
 
 
 on:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  create-schedule:
+  same-day-checkins:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
