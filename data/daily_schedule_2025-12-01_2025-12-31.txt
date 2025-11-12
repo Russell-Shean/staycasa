@@ -116,8 +116,9 @@ Drop Keycard : (513) ETHEREAL 515
 
 12-15
 (1600)
-Check out: CHIE 12:00 Clean anytime of day
-Check in: 2025-12-20 AI(4) 16:00
+Check out: CHIE 12:00 Clean immediately
+Check in: 2025-12-15 LESLIE(1) 16:00
+Drop Keycard : (1600) LESLIE 515
 (814)
 Check out: JEFF 12:00 Clean anytime of day
 Check in: 2025-12-18 ANI(2) 16:00
@@ -141,6 +142,10 @@ DAY BEFORE KEY DROPS:
 Drop Keycard : (1713) BOAZ 515
 
 12-19
+(1600)
+Check out: LESLIE 12:00 Clean anytime of day
+Check in: 2025-12-20 AI(4) 16:00
+Drop Keycard : (1600) AI 515
 (1615)
 Check out: PAULINE 12:00 Clean anytime of day
 Check in: 2025-12-24 B(3) 16:00

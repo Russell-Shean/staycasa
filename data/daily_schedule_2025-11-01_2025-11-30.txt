@@ -90,12 +90,16 @@ Drop Keycard : (1600) WALLACE 515
 
 11-12
 (301)
-Check out: Jisu 12:00 Clean anytime of day
-Check in: 2025-11-14 Chai Ling(1) 16:00
-Drop Keycard : (301) Chai Ling 515
+Check out: Jisu 12:00 Clean immediately
+Check in: 2025-11-12 SOFIE(1) 16:00
+Drop Keycard : (301) SOFIE 515
 
 
 11-13
+(301)
+Check out: SOFIE 12:00 Clean anytime of day
+Check in: 2025-11-14 Chai Ling(1) 16:00
+Drop Keycard : (301) Chai Ling 515
 (716)
 Check out: ALEX 12:00 Clean anytime of day
 Check in: 2025-11-15 MELODY(2) 16:00

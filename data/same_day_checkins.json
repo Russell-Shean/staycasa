@@ -37,5 +37,18 @@
         "guest_first_name": "CHEN"
       }
     ]
+  },
+  {
+    "checkin_date": "2025-11-12",
+    "sameday_checkins": true,
+    "checkins": [
+      {
+        "checkin_date": "2025-11-12",
+        "checkin_time": "4pm",
+        "room_number": 301,
+        "number_of_guests": 1,
+        "guest_first_name": "SOFIE"
+      }
+    ]
   }
 ]

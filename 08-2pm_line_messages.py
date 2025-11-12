@@ -52,7 +52,8 @@ same_day_checkins_path = "data/same_day_checkins.json"
 LINE_CHANNEL_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")  # or set directly as a string
 
 # cleaning group id 
-group_id = "Cdfc4f0729f0b3f44c5b219b4928d3e24"
+#group_id = "Cdfc4f0729f0b3f44c5b219b4928d3e24"
+GROUP_ID = "C4c2944e52265752b5b36ca467d6bbbd6"  # actual group
 
 
 # define a function to send a line message

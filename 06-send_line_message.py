@@ -52,7 +52,7 @@ print(f'this month: {this_month_filename}')
 # Load token from environment variable (or replace with string)
 LINE_CHANNEL_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")  # or set directly as a string
 
-print(LINE_CHANNEL_ACCESS_TOKEN)
+# print(LINE_CHANNEL_ACCESS_TOKEN)
 GROUP_ID = "C4c2944e52265752b5b36ca467d6bbbd6"  # actual group
 # GROUP_ID = "Ufa81a6bd5dd4ed3282949516cc3dc200" # Russ
 
