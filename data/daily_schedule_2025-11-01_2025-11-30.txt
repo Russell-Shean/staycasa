@@ -155,9 +155,9 @@ Check out: DONNA 12:00 Clean immediately
 Check in: 2025-11-19 KATHRIN(2) 16:00
 Drop Keycard : (1713) KATHRIN 515
 (716)
-Check out: MELODY 12:00 Clean anytime of day
-Check in: 2025-11-22 YUN CHI(2) 16:00
-Drop Keycard : (716) YUN CHI 515
+Check out: MELODY 12:00 Clean immediately
+Check in: 2025-11-19 HENRY(2) 16:00
+Drop Keycard : (716) HENRY 515
 
 
 (301)
@@ -171,10 +171,10 @@ Check in: MINWOOK(2)  16:00
 
 
 11-22
-
-
 (716)
-Check in: YUN CHI(2)  16:00
+Check out: HENRY 12:00 Clean immediately
+Check in: 2025-11-22 YUN CHI(2) 16:00
+Drop Keycard : (716) YUN CHI 515
 
 
 11-23
@@ -186,8 +186,9 @@ Drop Keycard : (301) MINWOOK 515
 Check out: BRIAN 12:00 Clean anytime of day
 Check in: 2025-11-28 SUE(2) 16:00
 (1615)
-Check out: DAVID 12:00 Clean anytime of day
-Check in: 2025-11-27 LYDIA(4) 16:00
+Check out: DAVID 12:00 Clean immediately
+Check in: 2025-11-23 JENNIFER(2) 16:00
+Drop Keycard : (1615) JENNIFER 515
 
 
 11-24
@@ -219,14 +220,11 @@ Check in: 정민(2)  16:00
 Check in: NORA(2)  16:00
 
 
-DAY BEFORE KEY DROPS:
-Drop Keycard : (1615) LYDIA 515
-
 11-27
-
-
 (1615)
-Check in: LYDIA(4)  16:00
+Check out: JENNIFER 12:00 Clean immediately
+Check in: 2025-11-27 LYDIA(4) 16:00
+Drop Keycard : (1615) LYDIA 515
 
 
 11-28

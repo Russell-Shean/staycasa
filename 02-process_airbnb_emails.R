@@ -179,6 +179,8 @@ airbnb_emails <- sample_data2 |>
           warning(paste0("The following reservation number has changes that don't show up in any of the emails!\n",
                          confirmation_number))
           
+          print("for HMXZX4DM2Q check back at the beginning of march")
+          
           
         }
         
@@ -203,7 +205,8 @@ airbnb_emails <- sample_data2 |>
                                    context_parameter2 != "reservation/inquiries/first_preapprove_reminder7",
                                    context_parameter2 != "claims/resolution_center/to_claimant_offer_money",
                                    context_parameter2 != "claims/resolution_center/to_claimant_accept_request",
-                                   context_parameter2 != "claims/to_claimant_mediation_request_submitted"
+                                   context_parameter2 != "claims/to_claimant_mediation_request_submitted",
+                                   context_parameter2 != "host_communications/scheduled_message_force_sent"
                                    
                      )  
                    
