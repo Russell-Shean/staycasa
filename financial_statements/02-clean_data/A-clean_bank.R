@@ -56,6 +56,7 @@ bank_transactions <- lapply(bank_statements,
                                str_detect(description, "\\(013\\)0000270506032358") ~ "Tina",
                                str_detect(description, "\\(822\\)0000152540146385") ~ "Andy",
                                str_detect(description, "\\(009\\)0053459500036600") ~ "Marty",
+                               str_detect(description, "\\(822\\)0000215540116773") ~ "Russ",
                                str_detect(description, "\\(013\\)0000011506192732") ~ "劉＊志",
                                str_detect(description, "\\(013\\)0000222506144844") ~ "陳＊君",
                                str_detect(description, "\\(013\\)0000043558186748") ~ "王＊凱",
@@ -81,6 +82,7 @@ bank_transactions <- lapply(bank_statements,
                                str_detect(description, "\\(822\\)0000190530056476") ~ "Cleaner 2",
                                str_detect(description, "\\(007\\)0000018150301741") ~ "Cleaner 3",
                                str_detect(description, "\\(700\\)0001213890257738") ~ "Cleaner 4",
+                               str_detect(description, "\\(008\\)0000130200094501") ~ "Cleaner 5",
                                
                                
                                str_detect(description, "\\(806\\)0000080221492500") ~ "Handyman 1",
@@ -94,19 +96,27 @@ bank_transactions <- lapply(bank_statements,
   
   # And if we money was received, who sent it??
   mutate(sender = case_when(str_detect(description, "\\(013\\)0000270\\*\\*\\*032358") ~ "Tina",
+                            str_detect(description, "\\(822\\)0000241\\*\\*\\*091956") ~ "Simon",
                             str_detect(description, "\\(013\\)0000223\\*\\*\\*262045") ~ "李＊軒",
                             str_detect(description, "\\(808\\)0000015\\*\\*\\*209452") ~ "Andy",
+                            str_detect(description, "\\(009\\)0053459\\*\\*\\*036600") ~ "Marty",
                             .default = NA)) |> 
+  
+  
   
   # create categories 
   mutate(category = case_when(str_detect(description, "跨行費用|費用沖正") ~ "Bank Transfer fees",
                               
-                              str_detect(description, "房租 |Ｒｅｎｔ|租金 |ｒｅｎｔ") & sender != "Andy" ~ "Rent",
+                              (str_detect(description, "房租|Ｒｅｎｔ|租金|ｒｅｎｔ") & 
+                              #replace_na(sender != "Andy", FALSE) & 
+                              !str_detect(description, "押金")) ~ "Rent",
+                              
                               str_detect(description, "８１４|\\(006\\)0001405765859712") & amount == -32560 ~ "Rent",
                               str_detect(description, "１７１３|\\(008\\)0000129200040033") & amount == -31500 ~ "Rent",
                               str_detect(description, "１６１５|\\(012\\)0000704168156410") & amount == -29560 ~ "Rent", 
                               str_detect(description, "７１６|\\(009\\)0053458666888700") & amount == -29000 ~ "Rent",
                               str_detect(description, "５１３|\\(009\\)0053458666888700") & amount == -27560 ~ "Rent",
+                              str_detect(recipient, "Landlord") & amount > -40000 ~ "Rent",
                               
                               # Deposit
                               str_detect(description, "押金") ~ "Deposit",
@@ -120,9 +130,10 @@ bank_transactions <- lapply(bank_statements,
                               
                               
                               str_detect(description, "打掃|ｃｌｅａｎｉｎｇ|Ａｎｎ　ａｄｖａｎｃｅ") ~ "Cleaning",
+                              str_detect(recipient, "Cleaner") ~ "Cleaning", 
                               # str_detect(description, "佣金") ~ "Commision",
                               
-                              str_detect(description, "佣金|ｄｉｓｔｒｉｂｕｔｉｏｎ|分紅|ｃａｓｈ　ｐａｙｏｕｔ|Ｃａｓｈ　Ｐａｙｏｕｔ|減資|ｃａｐ　ｒｅｄｕｃｔｉｏｎ|紅利分配")  ~ paste0("Dividend Distribution - ", recipient),
+                              str_detect(description, "佣金|傭金|ｄｉｓｔｒｉｂｕｔｉｏｎ|分紅|ｃａｓｈ　ｐａｙｏｕｔ|Ｃａｓｈ　Ｐａｙｏｕｔ|減資|ｃａｐ　ｒｅｄｕｃｔｉｏｎ|紅利分配")  ~ paste0("Dividend Distribution - ", recipient),
                               
                               
                               
@@ -141,7 +152,7 @@ bank_transactions <- lapply(bank_statements,
                               str_detect(description, "存款息") ~ "Interest",
                               
                               # REvenue
-                              str_detect(description, "現金 彭文") ~ "Revenue"
+                              str_detect(description, "現金 彭文|２天住宿費用") ~ "Revenue",
                               
                               
                               
@@ -150,6 +161,7 @@ bank_transactions <- lapply(bank_statements,
                               
                               
                               str_detect(description, "五金雜貨|電視臂安裝|裝電視臂|熱水器|沙發床|ｈａｎｄｙｍａｎ|修理|修繕|檢修|拆濾水器|電子鎖|修水管|洗冷氣|墊款還款|ｓｈｏｗｅｒ　ｃｕｒｔａｉｎ|馬桶蓋") ~ "Maintenance/Repairs/Furniture",
+                              recipient %in% c("Handyman 1") ~ "Maintenance/Repairs/Furniture",
                               str_detect(description,"ｌａｌａｍｏｖｅ|餐費") ~ "Business Meals",
                               str_detect(description, "網路") ~ "Internet and TV",
                               str_detect(description, "電費") ~ "Water and Electricity",
@@ -157,7 +169,13 @@ bank_transactions <- lapply(bank_statements,
                               
                               
                               # Other expenses
-                              str_detect(description, "ｅｘｐｅｎｓｅ|自行提款") ~ "Other Business Expenses",
+                              str_detect(description, "ｅｘｐｅｎｓｅ|自行提款|跨行提款|客服的錢|Ｍａｒｔｙ　代客") ~ "Other Business Expenses",
+                              
+                              # Payments to Russ
+                              recipient == "Russ" ~ "Other Business Expenses",
+                              
+                              # Credit card payments
+                              str_detect(description, "信用卡款") ~ "Credit Card Payments",
                               
                               
                               

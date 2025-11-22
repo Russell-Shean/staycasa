@@ -102,14 +102,15 @@ financial_report <- combined_transactions |>
          `Water and Electricity`,
          `Internet and TV`,
          `Other Business Expenses`,
+         `NA`,
          `Gross Margin`,
          `Gross margin %`,
          `Operating Expenses`,
-         `Net Income`, 
-         `NA`) |> 
+         `Net Income` 
+         ) |> 
          arrange(`Month and Year`) 
 
-write.csv(financial_report, "financial_report_format1.csv")
+write.csv(financial_report, "financial_report_format1.csv", row.names = FALSE)
 
 
 
@@ -120,5 +121,8 @@ financial_report_format2 <- financial_report %>%
 
 
 
-write.csv(financial_report_format2, "financial_report_format2.csv")
+write.csv(financial_report_format2, "financial_report_format2.csv", row.names = FALSE)
+
+write.csv(unsorted_bank_transactions, "unsorted_bank_transactions.csv", row.names = FALSE)
+write.csv(combined_transactions, "all_transactions.csv", row.names = FALSE)
        
