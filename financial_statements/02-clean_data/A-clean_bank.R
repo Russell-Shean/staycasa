@@ -101,12 +101,15 @@ bank_transactions <- lapply(bank_statements,
   # create categories 
   mutate(category = case_when(str_detect(description, "跨行費用|費用沖正") ~ "Bank Transfer fees",
                               
-                              str_detect(description, "房租|Ｒｅｎｔ|租金|ｒｅｎｔ|押金") ~ "Rent",
+                              str_detect(description, "房租 |Ｒｅｎｔ|租金 |ｒｅｎｔ") & sender != "Andy" ~ "Rent",
                               str_detect(description, "８１４|\\(006\\)0001405765859712") & amount == -32560 ~ "Rent",
                               str_detect(description, "１７１３|\\(008\\)0000129200040033") & amount == -31500 ~ "Rent",
                               str_detect(description, "１６１５|\\(012\\)0000704168156410") & amount == -29560 ~ "Rent", 
                               str_detect(description, "７１６|\\(009\\)0053458666888700") & amount == -29000 ~ "Rent",
                               str_detect(description, "５１３|\\(009\\)0053458666888700") & amount == -27560 ~ "Rent",
+                              
+                              # Deposit
+                              str_detect(description, "押金") ~ "Deposit",
                               
                               str_detect(description, "行銷") ~ "Marketing", 
                               
@@ -137,6 +140,9 @@ bank_transactions <- lapply(bank_statements,
                               # Interest
                               str_detect(description, "存款息") ~ "Interest",
                               
+                              # REvenue
+                              str_detect(description, "現金 彭文") ~ "Revenue"
+                              
                               
                               
                               
@@ -151,7 +157,7 @@ bank_transactions <- lapply(bank_statements,
                               
                               
                               # Other expenses
-                              str_detect(description, "ｅｘｐｅｎｓｅ") ~ "Other Business Expenses",
+                              str_detect(description, "ｅｘｐｅｎｓｅ|自行提款") ~ "Other Business Expenses",
                               
                               
                               

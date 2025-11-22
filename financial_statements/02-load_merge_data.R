@@ -14,7 +14,7 @@ cleaning_and_keycard_payments <- read.csv("data/overall_payment_schedule.csv")
 
 # combine all the datasets together
 combined_transactions <- bank_transactions |> 
-                         bind_rows(credit_card_transactions) 
+                         bind_rows(credit_card_transactions) |> 
                       
                         # create a category 2 to match report requirements
                         mutate(category2 = case_when(
@@ -29,7 +29,7 @@ combined_transactions <- bank_transactions |>
                                           "Business Meals",
                                           "Bank Transfer fees",
                                           "Maintenance/Repairs/Furniture",
-                                          "Storage"， 
+                                          "Storage",
                                           "Taxes",
                                           "Marketing",
                                           "Business Travel Expenses" ) ~ "Other Business Expenses",
@@ -37,10 +37,10 @@ combined_transactions <- bank_transactions |>
                           category %in% c("Interest") ~ "Revenue",
                           
                           category %in% c("Capital Reduction",
-                                          "Dividend Distribution - Marty"，
-                                          "Dividend Distribution - Simon"，
-                                          "Dividend Distribution - Tina"，
-                                          "Dividend Distribution - Andy"，
+                                          "Dividend Distribution - Marty",
+                                          "Dividend Distribution - Simon",
+                                          "Dividend Distribution - Tina",
+                                          "Dividend Distribution - Andy",
                                           "Credit Card Payments"          ) ~ "Unneeded categories",
                           
                           
