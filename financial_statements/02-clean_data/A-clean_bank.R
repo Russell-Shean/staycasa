@@ -167,6 +167,8 @@ bank_transactions <- lapply(bank_statements,
                               str_detect(description, "電費") ~ "Water and Electricity",
                               
                               
+                              # Reimbursements
+                              str_detect(description, "ｒｅｉｍｂｕｒｓｅ|Ｒｅｉｍｂｕｒｓｅ|Ｒｅｉｍｂｕｒ|Ｒｅｉｎｂｕｒ") ~ "Reimbursments",
                               
                               # Other expenses
                               str_detect(description, "ｅｘｐｅｎｓｅ|自行提款|跨行提款|客服的錢|Ｍａｒｔｙ　代客") ~ "Other Business Expenses",

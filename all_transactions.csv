@@ -25,7 +25,7 @@
 ",-1500,"Cathay","Handyman 1",NA,"Maintenance/Repairs/Furniture","Oct",2025,"Oct_2025","Other Business Expenses"
 2025-10-13,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Oct",2025,"Oct_2025","Other Business Expenses"
 2025-10-13,"電子轉出 ｒｅｉｍｂｕｒｓｅ (822)0000241540091956
-",-23120,"Cathay","Simon",NA,NA,"Oct",2025,"Oct_2025",NA
+",-23120,"Cathay","Simon",NA,"Reimbursments","Oct",2025,"Oct_2025",NA
 2025-10-11,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Oct",2025,"Oct_2025","Other Business Expenses"
 2025-10-11,"電子轉出 ５１３　Ｒｅｎｔ (009)0053458666888700
 ",-27560,"Cathay","716 Landlord",NA,"Rent","Oct",2025,"Oct_2025","Rent"
@@ -36,7 +36,7 @@
 ",-10000,"Cathay","Marty",NA,NA,"Oct",2025,"Oct_2025",NA
 2025-10-08,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Oct",2025,"Oct_2025","Other Business Expenses"
 2025-10-08,"電子轉出 押金 (007)0000010668132820
-",-40000,"Cathay","301 Landlord",NA,"Deposit","Oct",2025,"Oct_2025",NA
+",-40000,"Cathay","301 Landlord",NA,"Deposit","Oct",2025,"Oct_2025","Other Business Expenses"
 2025-10-07,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Oct",2025,"Oct_2025","Other Business Expenses"
 2025-10-07,"電子轉出 ３０１房租 (007)0000010668132820
 ",-20000,"Cathay","301 Landlord",NA,"Rent","Oct",2025,"Oct_2025","Rent"
@@ -265,7 +265,7 @@
 2025-05-19,"電子轉出 網路 (009)0053459500036600
 ",-2092,"Cathay","Marty",NA,"Internet and TV","May",2025,"May_2025","Internet and TV"
 2025-05-11,"網銀轉帳 Ｔｉｎａ　Ｒｅｉｍｂｕｒｓｅ (013)0000270506032358
-鄭＊婷",-31180,"Cathay","Tina",NA,NA,"May",2025,"May_2025",NA
+鄭＊婷",-31180,"Cathay","Tina",NA,"Reimbursments","May",2025,"May_2025",NA
 2025-05-08,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","May",2025,"May_2025","Other Business Expenses"
 2025-05-08,"電子轉出 ５１３　Ｒｅｎｔ (009)0053458666888700
 ",-27560,"Cathay","716 Landlord",NA,"Rent","May",2025,"May_2025","Rent"
@@ -331,7 +331,7 @@
 2025-04-11,"電子轉出 ５１３　ｒｅｎｔ (009)0053458666888700
 ",-27560,"Cathay","716 Landlord",NA,"Rent","Apr",2025,"Apr_2025","Rent"
 2025-04-10,"跨行轉入 ２天住宿費用１６１５ (052)0011520***036570
-",4000,"Cathay",NA,NA,"Revenue","Apr",2025,"Apr_2025",NA
+",4000,"Cathay",NA,NA,"Revenue","Apr",2025,"Apr_2025","Revenue"
 2025-04-08,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Apr",2025,"Apr_2025","Other Business Expenses"
 2025-04-08,"電子轉出 小米電子鎖 (012)0000676168062960
 ",-4000,"Cathay",NA,NA,"Maintenance/Repairs/Furniture","Apr",2025,"Apr_2025","Other Business Expenses"
@@ -424,7 +424,7 @@
 2025-02-24,"自行提款 0130VHKP −",-6000,"Cathay",NA,NA,"Other Business Expenses","Feb",2025,"Feb_2025","Other Business Expenses"
 2025-02-21,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Feb",2025,"Feb_2025","Other Business Expenses"
 2025-02-21,"電子轉出 １６１５一個月押金 (822)0000241540091956
-",-24600,"Cathay","Simon",NA,"Deposit","Feb",2025,"Feb_2025",NA
+",-24600,"Cathay","Simon",NA,"Deposit","Feb",2025,"Feb_2025","Other Business Expenses"
 2025-02-18,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Feb",2025,"Feb_2025","Other Business Expenses"
 2025-02-18,"電子轉出 沙發床 (006)0005089717511408
 ",-9999,"Cathay",NA,NA,"Maintenance/Repairs/Furniture","Feb",2025,"Feb_2025","Other Business Expenses"
@@ -457,10 +457,10 @@
 ",-1900,"Cathay",NA,NA,"Maintenance/Repairs/Furniture","Feb",2025,"Feb_2025","Other Business Expenses"
 2025-02-08,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Feb",2025,"Feb_2025","Other Business Expenses"
 2025-02-08,"電子轉出 Ｓｉｍｏｎ　Ｒｅｉｍｂｕｒ　２ (822)0000241540091956
-",-37098,"Cathay","Simon",NA,NA,"Feb",2025,"Feb_2025",NA
+",-37098,"Cathay","Simon",NA,"Reimbursments","Feb",2025,"Feb_2025",NA
 2025-02-08,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Feb",2025,"Feb_2025","Other Business Expenses"
 2025-02-08,"電子轉出 Ａｎｄｙ　Ｒｅｉｎｂｕｒ　２ (822)0000152540146385
-",-32912,"Cathay","Andy",NA,NA,"Feb",2025,"Feb_2025",NA
+",-32912,"Cathay","Andy",NA,"Reimbursments","Feb",2025,"Feb_2025",NA
 2025-02-06,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Feb",2025,"Feb_2025","Other Business Expenses"
 2025-02-06,"電子轉出 ７１６　租金 (009)0053458666888700
 ",-29000,"Cathay","716 Landlord",NA,"Rent","Feb",2025,"Feb_2025","Rent"
@@ -476,7 +476,7 @@
 2025-02-04,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Feb",2025,"Feb_2025","Other Business Expenses"
 2025-02-04,"電子轉出 − (006)0001405765859712
 ",-33560,"Cathay","814 Landlord",NA,"Rent","Feb",2025,"Feb_2025","Rent"
-2025-02-03,"現金 彭文 −",28600,"Cathay",NA,NA,"Revenue","Feb",2025,"Feb_2025",NA
+2025-02-03,"現金 彭文 −",28600,"Cathay",NA,NA,"Revenue","Feb",2025,"Feb_2025","Revenue"
 2025-01-28,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Jan",2025,"Jan_2025","Other Business Expenses"
 2025-01-28,"電子轉出 − (822)0000186540138330
 ",-10480,"Cathay",NA,NA,NA,"Jan",2025,"Jan_2025",NA
@@ -521,10 +521,10 @@
 ",50000,"Cathay",NA,"Andy","Capital Reduction","Dec",2024,"Dec_2024","Unneeded categories"
 2024-12-30,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Dec",2024,"Dec_2024","Other Business Expenses"
 2024-12-30,"電子轉出 １７１３房租押金 (009)0053459500036600
-",-50000,"Cathay","Marty",NA,"Deposit","Dec",2024,"Dec_2024",NA
+",-50000,"Cathay","Marty",NA,"Deposit","Dec",2024,"Dec_2024","Other Business Expenses"
 2024-12-30,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Dec",2024,"Dec_2024","Other Business Expenses"
 2024-12-30,"電子轉出 １７１３房租押金 (009)0053459500036600
-",-18000,"Cathay","Marty",NA,"Deposit","Dec",2024,"Dec_2024",NA
+",-18000,"Cathay","Marty",NA,"Deposit","Dec",2024,"Dec_2024","Other Business Expenses"
 2024-12-30,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Dec",2024,"Dec_2024","Other Business Expenses"
 2024-12-30,"電子轉出 − (008)0000129200040033
 ",-26500,"Cathay","1713 Landlord",NA,"Rent","Dec",2024,"Dec_2024","Rent"
