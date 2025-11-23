@@ -33,12 +33,14 @@ combined_transactions <- bank_transactions |>
   mutate(category2 = case_when(
     
     category %in% c("Rent") ~ "Rent",
+    category %in% c("Revenue") ~ "Revenue",
     category %in% c("Cleaning") ~ "Cleaning",
     
     category %in% c("Water and Electricity") ~ "Water and Electricity",
     category %in% c("Internet and TV") ~ "Internet and TV",
     
     category %in% c("Other Business Expenses", 
+                    "Deposit",
                     "Business Meals",
                     
                     # We're counting account interest as a business expense
@@ -87,6 +89,9 @@ financial_report <- combined_transactions |>
   
   # Replace NA's with zeros
   mutate(across(where(is.numeric), function(x) replace_na(x, 0))) |>
+  
+  # Add random bank transfers to net_earnings
+  mutate(net_earnings = net_earnings - Revenue) |>
   
   # Calculate new columns
   mutate(COGS = Rent + Cleaning + `Water and Electricity` + `Internet and TV`, 
