@@ -154,6 +154,10 @@ bank_transactions <- lapply(bank_statements,
                               # REvenue
                               str_detect(description, "現金 彭文|２天住宿費用") ~ "Revenue",
                               
+                              amount < 0 & recipient == "Marty" ~ "Revenue",
+                              
+                              !(sender %in% c("Simon", "Tina", "Andy")) & amount > 0 ~ "Revenue",
+                              
                               
                               
                               
@@ -168,13 +172,18 @@ bank_transactions <- lapply(bank_statements,
                               
                               
                               # Reimbursements
-                              str_detect(description, "ｒｅｉｍｂｕｒｓｅ|Ｒｅｉｍｂｕｒｓｅ|Ｒｅｉｍｂｕｒ|Ｒｅｉｎｂｕｒ") ~ "Reimbursments",
+                              str_detect(description, "ｒｅｉｍｂｕｒｓｅ|Ｒｅｉｍｂｕｒｓｅ|Ｒｅｉｍｂｕｒ|Ｒｅｉｎｂｕｒ") ~ "Reimbursement",
+                              
+                              # Any time we're sending money to Simon, it's a remibursement
+                              recipient %in% c("Simon", "Tina", "Andy") & amount < 0 ~ "Reimbursement",
+                             
+                    
                               
                               # Other expenses
                               str_detect(description, "ｅｘｐｅｎｓｅ|自行提款|跨行提款|客服的錢|Ｍａｒｔｙ　代客") ~ "Other Business Expenses",
                               
-                              # Payments to Russ
-                              recipient == "Russ" ~ "Other Business Expenses",
+                              # Payments to Russ and other people
+                              recipient %in% c("Russ", "陳＊君", "張＊凱") ~ "Other Business Expenses",
                               
                               # Credit card payments
                               str_detect(description, "信用卡款") ~ "Credit Card Payments",
@@ -189,7 +198,16 @@ bank_transactions <- lapply(bank_statements,
   mutate(category = case_when( 
     
     # Assume all remaining charges over 40K are capital distribution
-    amount >= 40000 & is.na(category) ~ "Capital Reduction",
+    amount >= 40000 & is.na(category) ~ "Capital Injection",
+    
+    # Cash advance
+    sender == "Simon" & 
+      amount > 0 & 
+      amount < 30000 & 
+      is.na(category)~ "Cash Advance Payback",
+    
+    # remaining expenses
+    str_detect(description, "\\(822\\)0000186540138330|\\(007\\)0000010668151280|電子轉出 Ｗ１１０ \\(812\\)0020551000093942|\\(700\\)0003117411608267") ~ "Other Business Expenses",
     
     .default = category
     

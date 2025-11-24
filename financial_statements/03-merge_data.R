@@ -39,24 +39,31 @@ combined_transactions <- bank_transactions |>
     category %in% c("Water and Electricity") ~ "Water and Electricity",
     category %in% c("Internet and TV") ~ "Internet and TV",
     
-    category %in% c("Other Business Expenses", 
-                    "Deposit",
+    category %in% c("Bank Transfer fees",
+                    "Maintenance/Repairs/Furniture",
+                    "Storage", 
+                    "Reimbursement"
+                    ) ~ "Other Business Expenses - COGS",
+    
+    category %in% c("Deposit",
                     "Business Meals",
                     
                     # We're counting account interest as a business expense
                     # Because it esentially offsets the business expense of 
                     # bank transfer fees
                     "Interest",
-                    "Bank Transfer fees",
-                    "Maintenance/Repairs/Furniture",
-                    "Storage",
                     "Taxes",
                     "Marketing",
-                    "Business Travel Expenses" ) ~ "Other Business Expenses",
+                    "Business Travel Expenses" ) ~ "Other Business Expenses - Operating Expenses",
+    
+    category %in% c("Other Business Expenses", "Cash Advance Payback") & amount <= -15000 ~ "Other Business Expenses - Operating Expenses",
+    category %in% c("Other Business Expenses", "Cash Advance Payback") & amount > -15000 ~ "Other Business Expenses - COGS",
+    
     
     #category %in% c() ~ "Revenue",
     
     category %in% c("Capital Reduction",
+                    "Capital Injection",
                     "Dividend Distribution - Marty",
                     "Dividend Distribution - Simon",
                     "Dividend Distribution - Tina",
@@ -94,10 +101,10 @@ financial_report <- combined_transactions |>
   mutate(net_earnings = net_earnings - Revenue) |>
   
   # Calculate new columns
-  mutate(COGS = Rent + Cleaning + `Water and Electricity` + `Internet and TV`, 
+  mutate(COGS = Rent + Cleaning + `Water and Electricity` + `Internet and TV` + `Other Business Expenses - COGS`, 
          `Gross Margin` = net_earnings - COGS,
          `Gross margin %` = (net_earnings - COGS) / net_earnings * 100,
-         `Operating Expenses` = `Other Business Expenses` / net_earnings,
+         `Operating Expenses` = `Other Business Expenses - Operating Expenses` / net_earnings,
          `Net Income` = `Gross Margin` - `Operating Expenses`) |>
   
   select(`Month and Year` = month_year,
@@ -106,8 +113,9 @@ financial_report <- combined_transactions |>
          Cleaning, 
          `Water and Electricity`,
          `Internet and TV`,
-         `Other Business Expenses`,
-         `NA`,
+         `Other Business Expenses - COGS`,
+         `Other Business Expenses - Operating Expenses`,
+         #`NA`,
          `Gross Margin`,
          `Gross margin %`,
          `Operating Expenses`,
