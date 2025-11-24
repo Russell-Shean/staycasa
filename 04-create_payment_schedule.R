@@ -18,6 +18,8 @@ cleaning_payment_schedule <- airbnb_emails2 |>
                           # guest_first_name.x,
                            #confirmation_number,
                           # NEW ROOM here!!
+                           "Renai Casa 2F-2",
+                           "Casa 2-3",
                            "301",
                            "814",
                            "1713",
@@ -67,6 +69,8 @@ keydrop_payment_schedule <- airbnb_emails2 |>
         # guest_first_name.x,
         #confirmation_number,
         # NEW ROOM here!!
+        "Renai Casa 2F-2",
+        "Casa 2-3",
         "301",
         "814",
         "1713",
