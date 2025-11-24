@@ -123,7 +123,7 @@ financial_report <- combined_transactions |>
          ) |> 
          arrange(`Month and Year`) 
 
-write.csv(financial_report, "financial_report_format1.csv", row.names = FALSE)
+write.csv(financial_report, "data/financial_report_format1.csv", row.names = FALSE)
 
 
 
@@ -134,8 +134,8 @@ financial_report_format2 <- financial_report %>%
 
 
 
-write.csv(financial_report_format2, "financial_report_format2.csv", row.names = FALSE)
+write.csv(financial_report_format2, "data/financial_report_format2.csv", row.names = FALSE)
 
-write.csv(unsorted_bank_transactions, "unsorted_bank_transactions.csv", row.names = FALSE)
-write.csv(combined_transactions, "all_transactions.csv", row.names = FALSE)
+write.csv(unsorted_bank_transactions, "data/unsorted_bank_transactions.csv", row.names = FALSE)
+write.csv(combined_transactions, "data/all_transactions.csv", row.names = FALSE)
        
