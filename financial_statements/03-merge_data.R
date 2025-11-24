@@ -119,7 +119,7 @@ financial_report <- combined_transactions |>
          `Gross Margin`,
          `Gross margin %`,
          `Operating Expenses`,
-         `Net Income` 
+         Revenue = `Net Income` 
          ) |> 
          arrange(`Month and Year`) 
 
