@@ -167,6 +167,10 @@ Check in: MINWOOK(2)  16:00
 11-20
 
 
+(Casa 2-3)
+Check in: Kent(2)  16:00
+
+
 11-21
 
 
@@ -218,6 +222,8 @@ Check in: 정민(2)  16:00
 
 (1713)
 Check in: NORA(2)  16:00
+(Renai Casa 2F-2)
+Check in: Connie(2)  16:00
 
 
 11-27
@@ -229,7 +235,13 @@ Drop Keycard : (1615) LYDIA 515
 
 11-28
 (301)
-Check out: MINWOOK 12:00 Clean anytime of day
+Check out: MINWOOK 12:00 Clean immediately
+Check in: 2025-11-28 JACKY(1) 16:00
+Drop Keycard : (301) JACKY 515
+
+
+(1600)
+Check in: SUE(2)  16:00
 
 
 11-29

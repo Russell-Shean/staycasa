@@ -3,6 +3,10 @@
 (716)
 Check out: YUN CHI 12:00 Clean anytime of day
 Check in: 2025-12-07 FABIAN(1) 16:00
+(Casa 2-3)
+Check out: Kent 12:00 Clean immediately
+Check in: 2025-12-01 MICHAEL(1) 16:00
+Drop Keycard : (Casa 2-3) MICHAEL 515
 
 
 (1615)
@@ -23,6 +27,8 @@ Drop Keycard : (1713) MAHJOUBA ET SAMIR 515
 Check out: WYMAN 12:00 Clean immediately
 Check in: 2025-12-03 PURNA CHANDRA RAO(3) 16:00
 Drop Keycard : (515) PURNA CHANDRA RAO 515
+(Renai Casa 2F-2)
+Check out: Connie 12:00 Clean anytime of day
 
 
 12-04
@@ -45,27 +51,21 @@ Check out: SUE 12:00 Clean anytime of day
 Check in: 2025-12-07 CHIE(1) 16:00
 Drop Keycard : (1600) CHIE 515
 (814)
-Check out: JAMIE 12:00 Clean anytime of day
-Check in: 2025-12-11 JEFF(2) 16:00
+Check out: JAMIE 12:00 Clean immediately
+Check in: 2025-12-06 WESLEY(2) 16:00
+Drop Keycard : (814) WESLEY 515
 
 
 (1615)
 Check in: PAULINE(2)  16:00
 
 
-DAY BEFORE KEY DROPS:
-Drop Keycard : (716) FABIAN 515
-
 12-07
+(301)
+Check out: JACKY 12:00 Clean anytime of day
 (515)
 Check out: PURNA CHANDRA RAO 12:00 Clean anytime of day
 Check in: 2025-12-19 WEI(1) 16:00
-
-
-(1600)
-Check in: CHIE(1)  16:00
-(716)
-Check in: FABIAN(1)  16:00
 
 
 12-08
@@ -76,6 +76,14 @@ Drop Keycard : (513) ELENA 515
 
 
 12-09
+(Casa 2-3)
+Check out: MICHAEL 12:00 Clean immediately
+Check in: 2025-12-09 JACOB(1) 16:00
+Drop Keycard : (Casa 2-3) JACOB 515
+(814)
+Check out: WESLEY 12:00 Clean anytime of day
+Check in: 2025-12-11 JEFF(2) 16:00
+Drop Keycard : (814) JEFF 515
 
 
 12-10
@@ -84,9 +92,6 @@ Drop Keycard : (513) ELENA 515
 (513)
 Check in: ELENA(2)  16:00
 
-
-DAY BEFORE KEY DROPS:
-Drop Keycard : (814) JEFF 515
 
 12-11
 
@@ -109,9 +114,8 @@ Check in: 2025-12-19 BOAZ(2) 16:00
 Check out: FABIAN 12:00 Clean anytime of day
 Check in: 2025-12-19 BRANDON(2) 16:00
 (513)
-Check out: ELENA 12:00 Clean immediately
-Check in: 2025-12-14 ETHEREAL(2) 16:00
-Drop Keycard : (513) ETHEREAL 515
+Check out: ELENA 12:00 Clean anytime of day
+Check in: 2025-12-18 HSIAO SHAN(2) 16:00
 
 
 12-15
@@ -131,9 +135,14 @@ Drop Keycard : (814) ANI 515
 12-17
 
 
+DAY BEFORE KEY DROPS:
+Drop Keycard : (513) HSIAO SHAN 515
+
 12-18
 
 
+(513)
+Check in: HSIAO SHAN(2)  16:00
 (814)
 Check in: ANI(2)  16:00
 
@@ -148,7 +157,8 @@ Check in: 2025-12-20 AI(4) 16:00
 Drop Keycard : (1600) AI 515
 (1615)
 Check out: PAULINE 12:00 Clean anytime of day
-Check in: 2025-12-24 B(3) 16:00
+Check in: 2025-12-21 HUI ZHAN(3) 16:00
+Drop Keycard : (1615) HUI ZHAN 515
 
 
 (515)
@@ -167,6 +177,8 @@ Check in: AI(4)  16:00
 
 
 12-21
+(Casa 2-3)
+Check out: JACOB 12:00 Clean anytime of day
 (814)
 Check out: ANI 12:00 Clean immediately
 Check in: 2025-12-21 JUNYI(3) 16:00
@@ -174,6 +186,10 @@ Drop Keycard : (814) JUNYI 515
 
 
 12-22
+(513)
+Check out: HSIAO SHAN 12:00 Clean anytime of day
+Check in: 2025-12-25 JIMIN(2) 16:00
+Drop Keycard : (513) JIMIN 515
 (1713)
 Check out: BOAZ 12:00 Clean anytime of day
 Check in: 2025-12-24 SZE(2) 16:00
@@ -187,25 +203,25 @@ Check in: 2025-12-23 JANA(2) 16:00
 Drop Keycard : (515) JANA 515
 
 
-DAY BEFORE KEY DROPS:
-Drop Keycard : (1615) B 515
-
 12-24
-(513)
-Check out: ETHEREAL 12:00 Clean anytime of day
-Check in: 2025-12-25 JIMIN(2) 16:00
-Drop Keycard : (513) JIMIN 515
+(1615)
+Check out: HUI ZHAN 12:00 Clean immediately
+Check in: 2025-12-24 B(3) 16:00
+Drop Keycard : (1615) B 515
 
 
 (1713)
 Check in: SZE(2)  16:00
-(1615)
-Check in: B(2)  16:00
 
 
 12-25
 (716)
 Check out: BRANDON 12:00 Clean anytime of day
+Check in: 2026-01-02 MIRANDA(1) 16:00
+
+
+(513)
+Check in: JIMIN(2)  16:00
 
 
 12-26
@@ -233,7 +249,7 @@ Check in: 2025-12-28 SUYING(2) 16:00
 Drop Keycard : (814) SUYING 515
 (1615)
 Check out: B 12:00 Clean anytime of day
-Check in: 2026-01-24 MICHAEL(2) 16:00
+Check in: 2026-01-19 ALLEN(2) 16:00
 
 
 12-29

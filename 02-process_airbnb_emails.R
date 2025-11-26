@@ -155,7 +155,16 @@ airbnb_emails <- sample_data2 |>
                     # So this likely helps Airbnb identify the source or action related to messaging.
                    
                    # extract from URL
-                   mutate(context_parameter = str_extract(body, "(?<=c\\=\\.pi80\\.pk).*?(?=\\&)")) 
+  
+                   mutate(         # euid = str_extract(body, "(?<=&euid=).*?(?=( |&))"),
+                          context_parameter = str_extract(body, "(?<=c\\=\\.pi80\\.pk).*?(?=\\&)")
+                          
+                          
+                           
+  
+  
+                 
+                 )
 
                   
                   # Use base R because something dumb is happening with decoding plus dplyr
@@ -210,11 +219,131 @@ airbnb_emails <- sample_data2 |>
                                    
                      )  
                    
-                   airbnb_replies <- airbnb_emails |> 
-                     filter(str_detect(subject, "RE:.*預訂"))
+                   
+      
+      airbnb_replies <- airbnb_emails |> 
+                     filter(str_detect(subject, "RE:.*預訂")) |>
+        
+        
+        mutate(guest_first_name_block = str_extract(body_cleaned, "Airbnb 溝通.*?(?=(預訂人|客人))")) |>
+        mutate(guest_first_name_block = str_replace_all(guest_first_name_block, "~~newline~~", "")) |>
+        mutate(guest_first_name = str_squish(str_extract(guest_first_name_block, "(?<=]。).*"))
+               ) |>
+        # extract two blocks of information
+        mutate(info_block1 = str_extract(body_cleaned, "入住 退房.*(兒童|人)")) |>
+        mutate(info_block1 = str_replace_all(info_block1, "~~newline~~", "")) |>
+        
+      #  mutate(info_block2 = str_extract(body_cleaned, "確認碼.*出租收入會在房客入住")) |>
+       # mutate(info_block2 = str_replace_all(info_block2, "~~newline~~", "")) #|>
+        
+        
+        
+        # Extract the checkin and checkout dates
+        mutate(reservation_dates = str_squish(str_extract(info_block1, "(?<=退房).*(?=客人)"))) |>
+        
+        mutate(reservation_times = str_squish(str_extract(reservation_dates, "\\d+:.*午"))) |> 
+       # mutate(reservation_times = str_squish(str_extract(reservation_times, "(?<=週.).*"))) |> 
+        
+        mutate(checkin_date = str_extract_all(reservation_dates, "\\d+年\\d+月\\d+日") |> sapply( `[`, 1),
+               checkout_date = str_extract_all(reservation_dates, "\\d+年\\d+月\\d+日") |> sapply( `[`, 2),
+               
+               checkin_day_of_week = str_extract(reservation_dates, "星期."),
+               checkout_day_of_week = str_extract(reservation_dates, "星期.(?=.....年)"),
+               
+               checkin_time = str_replace_all(
+                 str_extract(reservation_times, "^.*?.午"),
+                 " ", 
+                 ""),
+               
+               checkout_time = str_replace_all(
+                 str_extract(
+                   reservation_times, "(?<=午).*午"),
+               " ", 
+               "")) |>
+        
+        
+        # Convert checkin and checkout time to 24 hour clock
+        mutate(across(c(checkin_time, checkout_time),
+                      function(x)case_when(x=="4:00下午" ~ "16:00", 
+                                           x == "12:00中午" ~ "12:00",
+                                           x == "6:00下午" ~ "18:00",
+                                           x == "3:00下午" ~ "15:00",
+                                           x == "11:00上午" ~ "11:00",
+                                           .default = x))) |>
+        
+        
+        # convert checkin date to actual date format
+        mutate(checkin_date = ifelse(!str_detect(checkin_date, "年") & !is.na(checkin_date),
+                                     paste0(format(Sys.Date(), "%Y年"), checkin_date),
+                                     checkin_date),
+               checkout_date = ifelse(!str_detect(checkout_date, "年") & !is.na(checkout_date),
+                                      paste0(format(Sys.Date(), "%Y年"), checkout_date),
+                                      checkout_date),) |>
+        
+        mutate(across(c(checkin_date, checkout_date), ~ as.Date(.x, format= "%Y年%m月%d日"))) |>
+        
+        
+        # Guest info
+        mutate( #guest_name = str_extract(subject, "(?<=預訂已確認 -).*(?=於)"),
+          #guest_first_name = str_extract(body, ".*(?=出租)"),
+          guests_block = str_replace_all(str_extract(info_block1, "客人.*")," ", ""),
+          number_of_adults = as.numeric(str_extract(guests_block, "\\d+(?=名成人)")),
+          number_of_children = as.numeric(str_extract(guests_block, "\\d+(?=名兒童)"))) |>
+        
+        # convert na's to zeros for children
+        mutate(number_of_children = ifelse(!is.na(number_of_adults) & is.na(number_of_children),
+                                           0,
+                                           number_of_children)) |>
+        
+        mutate(number_of_guests = number_of_children + number_of_adults) |>
+        
+        mutate(room_number = case_when(room_id == "1396249388984584475" ~ as.character(1600),
+                                       room_id == "1378099322751033231" ~ as.character(513),
+                                       room_id == "1363706811577260499" ~ as.character(1615),
+                                       room_id == "1334778893973629207" ~ as.character(716),
+                                       room_id == "1325719145487941225" ~ as.character(1713),
+                                       room_id == "1316303449136573922" ~ as.character(515),
+                                       room_id == "1304380734749180095" ~ as.character(814),
+                                       
+                                       # NEW ROOM here!!
+                                       room_id == "1543487232480210468" ~ as.character(301),
+                                       room_id == "1558409237712768132" ~ as.character("Renai Casa 2F-2"),
+                                       room_id == "1556499339485122464" ~ as.character("Casa 2-3")))
+      
+      
+
+        
+      
+    #  reservation_threads <- airbnb_emails2 |> select(thread_id) |>  tidyr::drop_na() |> pull(thread_id) |> unique()
+     # cancelation_threads <- airbnb_cancelations |> select(thread_id) |>  tidyr::drop_na() |> pull(thread_id) |> unique()
+      
+     # threads <- c(reservation_threads, cancelation_threads) |> unique()
                    
                    
-                   airbnb_cancelations <- airbnb_emails |> 
+    #  airbnb_replies |> 
+     #   filter(!str_detect(subject, "諮詢|邀請")) |> 
+    #    filter(!thread_id %in% threads) |> 
+        
+    #    distinct(#date,
+     #     thread_id,
+      #    room_id,
+       #   checkin_date,
+      #    checkout_date, 
+      #    checkin_day_of_week, 
+      #    checkout_day_of_week, 
+      #    checkin_time, 
+      #    checkout_time,
+      #    number_of_adults, 
+      #    number_of_children, 
+      #    number_of_guests,
+      #    room_number,
+      #    .keep_all = TRUE) |>
+        
+    #    View()
+        
+        
+        
+        airbnb_cancelations <- airbnb_emails |> 
                      filter(str_detect(subject, "已取消：")) |>
                      mutate(guest_first_name = str_extract(body, "(?<=你的房客).*(?=必須取消)"))
                    
@@ -560,15 +689,41 @@ airbnb_emails <- sample_data2 |>
                    # When room 301 was added
                    manual_reservations <- data.frame(
                      
-                     checkin_date = c(as.Date("2025-11-01")),
-                     checkout_date = c(as.Date("2025-11-05")),
-                     confirmation_number = c("HMDHWB8CCB"),
-                     room_number = c("310"),
-                     guest_first_name.x = c("たかこ あべ"),
-                     number_of_guests = c(1),
-                     checkin_time = c("16:00"),
-                     checkout_time = c("12:00"),
-                     date = c(as.Date("2025-10-30"))
+                     checkin_date = as.Date(c("2025-11-01",
+                                              "2025-11-20",
+                                              "2025-11-26"
+                                              )),
+                     checkout_date = as.Date(c("2025-11-05",
+                                               "2025-12-01",
+                                               "2025-12-03"
+                                               )),
+                     confirmation_number = c("HMDHWB8CCB",
+                                             "HMKSM5ND5H",
+                                             "HM823BW5J4"
+                                             ),
+                     room_number = c("310",
+                                     "Casa 2-3",
+                                     "Renai Casa 2F-2"
+                                     ),
+                     guest_first_name.x = c("たかこ あべ",
+                                            "Kent",
+                                            "Connie"
+                                            ),
+                     number_of_guests = c(1,
+                                          2,
+                                          2),
+                     checkin_time = c("16:00",
+                                      "16:00",
+                                      "16:00"
+                                      ),
+                     checkout_time = c("12:00",
+                                       "12:00",
+                                       "12:00"
+                                       ),
+                     date = as.Date(c("2025-10-30",
+                                      "2025-11-26",
+                                      "2025-11-26"
+                                      ))
                        
                    )
                    
