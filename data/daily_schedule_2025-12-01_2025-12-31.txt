@@ -65,7 +65,7 @@ Check in: PAULINE(2)  16:00
 Check out: JACKY 12:00 Clean anytime of day
 (515)
 Check out: PURNA CHANDRA RAO 12:00 Clean anytime of day
-Check in: 2025-12-19 WEI(1) 16:00
+Check in: 2025-12-11 EDWARD(1) 16:00
 
 
 12-08
@@ -93,11 +93,16 @@ Drop Keycard : (814) JEFF 515
 Check in: ELENA(2)  16:00
 
 
+DAY BEFORE KEY DROPS:
+Drop Keycard : (515) EDWARD 515
+
 12-11
 
 
+(515)
+Check in: EDWARD(1)  16:00
 (814)
-Check in: JEFF(2)  16:00
+Check in: JEFF(1)  16:00
 
 
 12-12
@@ -110,6 +115,9 @@ Check in: 2025-12-19 BOAZ(2) 16:00
 
 
 12-14
+(515)
+Check out: EDWARD 12:00 Clean anytime of day
+Check in: 2025-12-19 WEI(1) 16:00
 (716)
 Check out: FABIAN 12:00 Clean anytime of day
 Check in: 2025-12-19 BRANDON(2) 16:00
