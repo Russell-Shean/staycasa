@@ -69,7 +69,7 @@ def send_line_message(group_id, message_text):
         "messages": [
             {
                 "type": "text",
-                "text": message_text
+                "text": message_text[0:5000]
             }
         ]
     }
