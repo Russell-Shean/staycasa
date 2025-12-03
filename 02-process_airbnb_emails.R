@@ -691,38 +691,47 @@ airbnb_emails <- sample_data2 |>
                      
                      checkin_date = as.Date(c("2025-11-01",
                                               "2025-11-20",
-                                              "2025-11-26"
+                                              "2025-11-26",
+                                              "2025-12-03"
                                               )),
                      checkout_date = as.Date(c("2025-11-05",
                                                "2025-12-01",
-                                               "2025-12-03"
+                                               "2025-12-03",
+                                               "2025-12-11"
                                                )),
                      confirmation_number = c("HMDHWB8CCB",
                                              "HMKSM5ND5H",
-                                             "HM823BW5J4"
+                                             "HM823BW5J4",
+                                             "HMQEE3SQB4"
                                              ),
                      room_number = c("310",
                                      "Casa 2-3",
+                                     "Renai Casa 2F-2",
                                      "Renai Casa 2F-2"
                                      ),
                      guest_first_name.x = c("たかこ あべ",
                                             "Kent",
-                                            "Connie"
+                                            "Connie",
+                                            "Shabbir"
                                             ),
                      number_of_guests = c(1,
                                           2,
-                                          2),
+                                          2,
+                                          1),
                      checkin_time = c("16:00",
+                                      "16:00",
                                       "16:00",
                                       "16:00"
                                       ),
                      checkout_time = c("12:00",
                                        "12:00",
+                                       "12:00",
                                        "12:00"
                                        ),
                      date = as.Date(c("2025-10-30",
                                       "2025-11-26",
-                                      "2025-11-26"
+                                      "2025-11-26",
+                                      "2025-12-03"
                                       ))
                        
                    )

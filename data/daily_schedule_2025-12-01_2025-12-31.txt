@@ -29,7 +29,9 @@ Check out: WYMAN 12:00 Clean immediately
 Check in: 2025-12-03 PURNA CHANDRA RAO(3) 16:00
 Drop Keycard : (515) PURNA CHANDRA RAO 515
 (Renai Casa 2F-2)
-Check out: Connie 12:00 Clean anytime of day
+Check out: Connie 12:00 Clean immediately
+Check in: 2025-12-03 Shabbir(1) 16:00
+Drop Keycard : (Renai Casa 2F-2) Shabbir 515
 
 
 12-04
@@ -109,12 +111,8 @@ DAY BEFORE KEY DROPS:
 Drop Keycard : (515) EDWARD 515
 
 12-11
-
-
-(515)
-Check in: EDWARD(1)  16:00
-(814)
-Check in: JEFF(1)  16:00
+(Renai Casa 2F-2)
+Check out: Shabbir 12:00 Clean anytime of day
 
 
 12-12
