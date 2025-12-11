@@ -51,7 +51,7 @@ Check in: MAHJOUBA ET SAMIR(3)  16:00
 12-06
 (716)
 Check out: KATE 12:00 Clean anytime of day
-Check in: 2025-12-07 FABIAN(1) 16:00
+Check in: 2025-12-07 FABIAN(2) 16:00
 Drop Keycard : (716) FABIAN 515
 (1600)
 Check out: SUE 12:00 Clean anytime of day
@@ -70,7 +70,8 @@ Check in: PAULINE(2)  16:00
 12-07
 (301)
 Check out: JACKY 12:00 Clean anytime of day
-Check in: 2025-12-19 SIA(2) 16:00
+Check in: 2025-12-10 KENT(2) 16:00
+Drop Keycard : (301) KENT 515
 (515)
 Check out: PURNA CHANDRA RAO 12:00 Clean anytime of day
 Check in: 2025-12-11 EDWARD(1) 16:00
@@ -103,6 +104,8 @@ Drop Keycard : (814) JEFF 515
 12-10
 
 
+(301)
+Check in: KENT(2)  16:00
 (513)
 Check in: ELENA(2)  16:00
 
@@ -120,8 +123,9 @@ Check out: Shabbir 12:00 Clean anytime of day
 
 12-13
 (1713)
-Check out: MAHJOUBA ET SAMIR 12:00 Clean anytime of day
-Check in: 2025-12-19 BOAZ(2) 16:00
+Check out: MAHJOUBA ET SAMIR 12:00 Clean immediately
+Check in: 2025-12-13 KAILIN(2) 16:00
+Drop Keycard : (1713) KAILIN 515
 
 
 12-14
@@ -137,6 +141,9 @@ Check in: 2025-12-18 HSIAO SHAN(2) 16:00
 
 
 12-15
+(301)
+Check out: KENT 12:00 Clean anytime of day
+Check in: 2025-12-19 SIA(2) 16:00
 (1600)
 Check out: CHIE 12:00 Clean immediately
 Check in: 2025-12-15 LESLIE(1) 16:00
@@ -167,10 +174,11 @@ Drop Keycard : (814) ANI 515
 Check in: HSIAO SHAN(2)  16:00
 
 
-DAY BEFORE KEY DROPS:
-Drop Keycard : (1713) BOAZ 515
-
 12-19
+(1713)
+Check out: KAILIN 12:00 Clean immediately
+Check in: 2025-12-19 BOAZ(2) 16:00
+Drop Keycard : (1713) BOAZ 515
 (1600)
 Check out: LESLIE 12:00 Clean anytime of day
 Check in: 2025-12-20 AI(4) 16:00
@@ -185,8 +193,6 @@ Drop Keycard : (1615) HUI ZHAN 515
 Check in: SIA(2)  16:00
 (515)
 Check in: WEI(2)  16:00
-(1713)
-Check in: BOAZ(2)  16:00
 (716)
 Check in: BRANDON(2)  16:00
 

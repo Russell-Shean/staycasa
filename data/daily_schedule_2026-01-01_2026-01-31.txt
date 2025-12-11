@@ -34,7 +34,8 @@ Check in: MIRANDA(1)  16:00
 01-04
 (515)
 Check out: YOSEPH 12:00 Clean anytime of day
-Check in: 2026-01-26 CHIAYI(2) 16:00
+Check in: 2026-01-06 VICTOR(2) 16:00
+Drop Keycard : (515) VICTOR 515
 
 
 (1713)
@@ -53,6 +54,8 @@ Check out: EMMA 12:00 Clean anytime of day
 Check in: 2026-01-22 EMILY(2) 16:00
 
 
+(515)
+Check in: VICTOR(2)  16:00
 (1615)
 Check in: TOM(2)  16:00
 
@@ -64,7 +67,7 @@ Check in: 2026-01-10 AL(2) 16:00
 Drop Keycard : (814) AL 515
 (1713)
 Check out: NGOC 12:00 Clean anytime of day
-Check in: 2026-02-20 KEITH(2) 16:00
+Check in: 2026-01-17 NG(2) 16:00
 
 
 01-08
@@ -75,8 +78,9 @@ Check in: 2026-02-20 KEITH(2) 16:00
 Check out: TOM 12:00 Clean anytime of day
 Check in: 2026-01-19 ALLEN(2) 16:00
 (1600)
-Check out: LITTLE 12:00 Clean anytime of day
-Check in: 2026-01-18 BENJAMIN(2) 16:00
+Check out: LITTLE 12:00 Clean immediately
+Check in: 2026-01-09 SHABBIR(1) 16:00
+Drop Keycard : (1600) SHABBIR 515
 
 
 01-10
@@ -87,6 +91,9 @@ Check in: AL(2)  16:00
 
 
 01-11
+(515)
+Check out: VICTOR 12:00 Clean anytime of day
+Check in: 2026-01-26 CHIAYI(2) 16:00
 
 
 01-12
@@ -104,20 +111,24 @@ Check in: AL(2)  16:00
 01-16
 
 
+DAY BEFORE KEY DROPS:
+Drop Keycard : (1713) NG 515
+
 01-17
 (814)
 Check out: AL 12:00 Clean anytime of day
 Check in: 2026-01-23 CARMINA(2) 16:00
 
 
-DAY BEFORE KEY DROPS:
-Drop Keycard : (1600) BENJAMIN 515
+(1713)
+Check in: NG(2)  16:00
+
 
 01-18
-
-
 (1600)
-Check in: BENJAMIN(2)  16:00
+Check out: SHABBIR 12:00 Clean immediately
+Check in: 2026-01-18 BENJAMIN(2) 16:00
+Drop Keycard : (1600) BENJAMIN 515
 
 
 01-19
@@ -178,6 +189,9 @@ Check in: CHIAYI(2)  16:00
 
 
 01-27
+(1713)
+Check out: NG 12:00 Clean anytime of day
+Check in: 2026-02-20 KEITH(2) 16:00
 (513)
 Check out: EMILY 12:00 Clean anytime of day
 Check in: 2026-02-11 ETHEREAL(2) 16:00
