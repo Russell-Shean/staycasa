@@ -162,9 +162,9 @@ bank_transactions <- lapply(bank_statements,
                               
                               
                               
+                              #墊款還款
                               
-                              
-                              str_detect(description, "五金雜貨|電視臂安裝|裝電視臂|熱水器|沙發床|ｈａｎｄｙｍａｎ|修理|修繕|檢修|拆濾水器|電子鎖|修水管|洗冷氣|墊款還款|ｓｈｏｗｅｒ　ｃｕｒｔａｉｎ|馬桶蓋") ~ "Maintenance/Repairs/Furniture",
+                              str_detect(description, "五金雜貨|電視臂安裝|裝電視臂|熱水器|沙發床|ｈａｎｄｙｍａｎ|修理|修繕|檢修|拆濾水器|電子鎖|修水管|洗冷氣|ｓｈｏｗｅｒ　ｃｕｒｔａｉｎ|馬桶蓋") ~ "Maintenance/Repairs/Furniture",
                               recipient %in% c("Handyman 1") ~ "Maintenance/Repairs/Furniture",
                               str_detect(description,"ｌａｌａｍｏｖｅ|餐費") ~ "Business Meals",
                               str_detect(description, "網路") ~ "Internet and TV",
@@ -172,7 +172,8 @@ bank_transactions <- lapply(bank_statements,
                               
                               
                               # Reimbursements
-                              str_detect(description, "ｒｅｉｍｂｕｒｓｅ|Ｒｅｉｍｂｕｒｓｅ|Ｒｅｉｍｂｕｒ|Ｒｅｉｎｂｕｒ") ~ "Reimbursement",
+                              str_detect(description, "ｒｅｉｍｂｕｒｓｅ|Ｒｅｉｍｂｕｒｓｅ|Ｒｅｉｍｂｕｒ|Ｒｅｉｎｂｕｒ|墊款還款") ~ "Reimbursement",
+                              
                               
                               # Any time we're sending money to Simon, it's a remibursement
                               recipient %in% c("Simon", "Tina", "Andy") & amount < 0 ~ "Reimbursement",

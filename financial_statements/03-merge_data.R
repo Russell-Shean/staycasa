@@ -45,7 +45,7 @@ combined_transactions <- bank_transactions |>
                     "Reimbursement"
                     ) ~ "Other Business Expenses - COGS",
     
-    category %in% c("Deposit",
+    category %in% c(#"Deposit",
                     "Business Meals",
                     
                     # We're counting account interest as a business expense
@@ -55,6 +55,8 @@ combined_transactions <- bank_transactions |>
                     "Taxes",
                     "Marketing",
                     "Business Travel Expenses" ) ~ "Other Business Expenses - Operating Expenses",
+    
+    category %in% c("Deposit") ~ "Deposit",
     
     category %in% c("Other Business Expenses", "Cash Advance Payback") & amount <= -15000 ~ "Other Business Expenses - Operating Expenses",
     category %in% c("Other Business Expenses", "Cash Advance Payback") & amount > -15000 ~ "Other Business Expenses - COGS",
@@ -80,8 +82,7 @@ combined_transactions <- bank_transactions |>
 
 #calculate a monthly summary of costs
 financial_report <- combined_transactions |> 
-  filter(category2 != "Unneeded categories" |
-           is.na(category2)) |>
+  filter(!category2 %in% c("Unneeded categories", "Deposit")) |>
   group_by(category2, month_year) |>
   summarise(total_value = sum(amount)) |>
   ungroup() |>
