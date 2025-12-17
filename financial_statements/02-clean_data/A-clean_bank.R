@@ -219,7 +219,8 @@ bank_transactions <- lapply(bank_statements,
                               recipient == "洪永修" & amount < -40000  ~ "Deposit",
                               .default = category)) |>
   
-  mutate()
+  mutate(category = case_when(sender == "Andy" & transaction_date == "2024-12-05" ~ "Capital Injection",
+                              .default = category))  |> 
   
   # Filter out unneeded things 
   
