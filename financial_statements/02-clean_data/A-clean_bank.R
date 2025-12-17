@@ -55,7 +55,7 @@ bank_transactions <- lapply(bank_statements,
   mutate(recipient = case_when(str_detect(description, "\\(822\\)0000241540091956") ~ "Simon",
                                str_detect(description, "\\(013\\)0000270506032358") ~ "Tina",
                                str_detect(description, "\\(822\\)0000152540146385") ~ "Andy",
-                               str_detect(description, "\\(009\\)0053459500036600") ~ "Marty",
+                               str_detect(description, "\\(009\\)0053459500036600") ~ "洪永修",
                                str_detect(description, "\\(822\\)0000215540116773") ~ "Russ",
                                str_detect(description, "\\(013\\)0000011506192732") ~ "劉＊志",
                                str_detect(description, "\\(013\\)0000222506144844") ~ "陳＊君",
@@ -99,7 +99,7 @@ bank_transactions <- lapply(bank_statements,
                             str_detect(description, "\\(822\\)0000241\\*\\*\\*091956") ~ "Simon",
                             str_detect(description, "\\(013\\)0000223\\*\\*\\*262045") ~ "李＊軒",
                             str_detect(description, "\\(808\\)0000015\\*\\*\\*209452") ~ "Andy",
-                            str_detect(description, "\\(009\\)0053459\\*\\*\\*036600") ~ "Marty",
+                            str_detect(description, "\\(009\\)0053459\\*\\*\\*036600") ~ "洪永修",
                             .default = NA)) |> 
   
   
@@ -154,7 +154,7 @@ bank_transactions <- lapply(bank_statements,
                               # REvenue
                               str_detect(description, "現金 彭文|２天住宿費用") ~ "Revenue",
                               
-                              amount < 0 & recipient == "Marty" ~ "Revenue",
+                              #amount < 0 & recipient == "Marty" ~ "Revenue",
                               
                               !(sender %in% c("Simon", "Tina", "Andy")) & amount > 0 ~ "Revenue",
                               
