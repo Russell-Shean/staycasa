@@ -125,7 +125,7 @@ bank_transactions <- lapply(bank_statements,
                               
                               str_detect(description, "租倉儲空間|Ｓｔｏｒａｇｅ") ~ "Storage",
                               
-                              str_detect(description, "報帳") ~ "Taxes",
+                              #str_detect(description, "報帳") ~ "Taxes",
                               
                               
                               
@@ -172,7 +172,7 @@ bank_transactions <- lapply(bank_statements,
                               
                               
                               # Reimbursements
-                              str_detect(description, "ｒｅｉｍｂｕｒｓｅ|Ｒｅｉｍｂｕｒｓｅ|Ｒｅｉｍｂｕｒ|Ｒｅｉｎｂｕｒ|墊款還款") ~ "Reimbursement",
+                              str_detect(description, "ｒｅｉｍｂｕｒｓｅ|Ｒｅｉｍｂｕｒｓｅ|Ｒｅｉｍｂｕｒ|Ｒｅｉｎｂｕｒ|墊款還款|報帳") ~ "Reimbursement",
                               
                               
                               # Any time we're sending money to Simon, it's a remibursement
@@ -213,6 +213,11 @@ bank_transactions <- lapply(bank_statements,
     .default = category
     
   )) |> 
+  
+  mutate(category = case_when(recipient == "洪永修" & amount < 0 & amount > -25000 ~ "Service Fee", 
+                              recipient == "洪永修" & amount < -25000 & amount > -40000  ~ "Rent",
+                              recipient == "洪永修" & amount < -40000  ~ "Deposit",
+                              .default = category)) |>
   
   # Filter out unneeded things 
   
