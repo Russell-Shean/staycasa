@@ -94,19 +94,19 @@ financial_report <- combined_transactions |>
   mutate(across(where(is.numeric), function(x) x * -1)) |>
   
   # Join on the payouts data
-  right_join(airbnb_payouts2) |>
+  #right_join(airbnb_payouts2) |>
   
   # Replace NA's with zeros
   mutate(across(where(is.numeric), function(x) replace_na(x, 0))) |>
   
   # Add random bank transfers to net_earnings
-  mutate(net_earnings = net_earnings - Revenue) |>
+  mutate(Revenue = - Revenue) |>
   
   # Calculate new columns
   mutate(COGS = Rent + Cleaning + `Water and Electricity` + `Internet and TV` + `Other Business Expenses - COGS`, 
-         `Gross Margin` = net_earnings - COGS,
-         `Gross margin %` = (net_earnings - COGS) / net_earnings * 100,
-         `Operating Expenses` = `Other Business Expenses - Operating Expenses` / net_earnings,
+         `Gross Margin` = Revenue - COGS,
+         `Gross margin %` = (Revenue - COGS) / Revenue * 100,
+         `Operating Expenses` = `Other Business Expenses - Operating Expenses` / Revenue,
          `Net Income` = `Gross Margin` - `Operating Expenses`) |>
   
   select(`Month and Year` = month_year,
@@ -121,7 +121,7 @@ financial_report <- combined_transactions |>
          `Gross Margin`,
          `Gross margin %`,
          `Operating Expenses`,
-         Revenue = `Net Income` 
+         Revenue 
          ) |> 
          arrange(`Month and Year`) 
 
