@@ -42,7 +42,8 @@ combined_transactions <- bank_transactions |>
     category %in% c("Bank Transfer fees",
                     "Maintenance/Repairs/Furniture",
                     "Storage", 
-                    "Reimbursement"
+                    "Reimbursement",
+                    "Service Fee"
                     ) ~ "Other Business Expenses - COGS",
     
     category %in% c(#"Deposit",

@@ -219,10 +219,12 @@ bank_transactions <- lapply(bank_statements,
                               recipient == "洪永修" & amount < -40000  ~ "Deposit",
                               .default = category)) |>
   
+  mutate()
+  
   # Filter out unneeded things 
   
   #whatever this is
-  filter(!str_detect(description, "網銀外存 218087121432 −")) |> 
+ # filter(!str_detect(description, "網銀外存 218087121432 −")) |> 
   
   # reversed bank errors
   filter(!str_detect(description, "錯誤更正 ｊｕｎｅ　ｓａｌａｒｙ \\(700\\)0001213890257738|電子轉出 ｊｕｎｅ　ｓａｌａｒｙ \\(700\\)0001213890257738"))
