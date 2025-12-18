@@ -109,6 +109,16 @@ financial_report <- combined_transactions |>
          `Operating Expenses` = `Other Business Expenses - Operating Expenses` / Revenue,
          `Net Income` = `Gross Margin` - `Operating Expenses`) |>
   
+  # Fix Nan and inf number caused by dividing by zero when monthly revenue is zero
+
+  mutate(
+    across(
+      c(`Gross margin %`, `Operating Expenses`),
+      ~ dplyr::na_if(., NaN) %>%
+        replace(is.infinite(.), NA)
+    )
+  ) |> 
+  
   select(`Month and Year` = month_year,
          COGS,
          Rent, 

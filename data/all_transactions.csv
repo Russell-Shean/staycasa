@@ -70,7 +70,7 @@
 2025-10-01,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Oct",2025,"Oct_2025","Other Business Expenses - COGS"
 2025-10-01,"電子轉出 ８１４　Ｒｅｎｔ (006)0001405765859712
 ",-32560,"Cathay","814 Landlord",NA,"Rent","Oct",2025,"Oct_2025","Rent"
-2025-09-27,"自行提款 0130VBAJ −",-19000,"Cathay",NA,NA,"Other Business Expenses","Sep",2025,"Sep_2025","Other Business Expenses - Operating Expenses"
+2025-09-27,"自行提款 0130VBAJ −",-19000,"Cathay",NA,NA,NA,"Sep",2025,"Sep_2025",NA
 2025-09-24,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Sep",2025,"Sep_2025","Other Business Expenses - COGS"
 2025-09-24,"電子轉出 １７１３ (008)0000129200040033
 ",-31500,"Cathay","1713 Landlord",NA,"Rent","Sep",2025,"Sep_2025","Rent"
@@ -85,7 +85,7 @@
 2025-09-19,"電子轉出 Ｗ１１１８房租 (012)0000600168128620
 ",-50000,"Cathay",NA,NA,"Rent","Sep",2025,"Sep_2025","Rent"
 2025-09-13,"跨行費用 − −",-5,"Cathay",NA,NA,"Bank Transfer fees","Sep",2025,"Sep_2025","Other Business Expenses - COGS"
-2025-09-13,"跨行提款 81207438   118829A −",-2000,"Cathay",NA,NA,"Other Business Expenses","Sep",2025,"Sep_2025","Other Business Expenses - COGS"
+2025-09-13,"跨行提款 81207438   118829A −",-2000,"Cathay",NA,NA,NA,"Sep",2025,"Sep_2025",NA
 2025-09-12,"網銀外存 218087121432 −",39290,"Cathay",NA,NA,"Revenue","Sep",2025,"Sep_2025","Revenue"
 2025-09-12,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Sep",2025,"Sep_2025","Other Business Expenses - COGS"
 2025-09-12,"電子轉出 Ｃａｓｈ　Ｐａｙｏｕｔ (822)0000241540091956
@@ -97,7 +97,7 @@
 ",-27560,"Cathay","716 Landlord",NA,"Rent","Sep",2025,"Sep_2025","Rent"
 2025-09-04,"網銀外存 218087121432 −",123217,"Cathay",NA,NA,"Revenue","Sep",2025,"Sep_2025","Revenue"
 2025-09-01,"網銀外存 218087121432 −",110428,"Cathay",NA,NA,"Revenue","Sep",2025,"Sep_2025","Revenue"
-2025-09-01,"自行提款 0130VB3A −",-25800,"Cathay",NA,NA,"Other Business Expenses","Sep",2025,"Sep_2025","Other Business Expenses - Operating Expenses"
+2025-09-01,"自行提款 0130VB3A −",-25800,"Cathay",NA,NA,NA,"Sep",2025,"Sep_2025",NA
 2025-09-01,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Sep",2025,"Sep_2025","Other Business Expenses - COGS"
 2025-09-01,"電子轉出 減資 (822)0000152540146385
 ",-50000,"Cathay","Andy",NA,"Dividend Distribution - Andy","Sep",2025,"Sep_2025","Unneeded categories"
@@ -123,7 +123,7 @@
 2025-08-22,"電子轉出 １６１５ (012)0000704168156410
 ",-29560,"Cathay","1615 Landlord",NA,"Rent","Aug",2025,"Aug_2025","Rent"
 2025-08-19,"網銀外存 218087121432 −",67214,"Cathay",NA,NA,"Revenue","Aug",2025,"Aug_2025","Revenue"
-2025-08-15,"自行提款 0130VB32 −",-10000,"Cathay",NA,NA,"Other Business Expenses","Aug",2025,"Aug_2025","Other Business Expenses - COGS"
+2025-08-15,"自行提款 0130VB32 −",-10000,"Cathay",NA,NA,NA,"Aug",2025,"Aug_2025",NA
 2025-08-15,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Aug",2025,"Aug_2025","Other Business Expenses - COGS"
 2025-08-15,"電子轉出 紅利分配 (822)0000241540091956
 ",-40000,"Cathay","Simon",NA,"Dividend Distribution - Simon","Aug",2025,"Aug_2025","Unneeded categories"
@@ -133,14 +133,14 @@
 鄭＊婷",-50000,"Cathay","Tina",NA,"Dividend Distribution - Tina","Aug",2025,"Aug_2025","Unneeded categories"
 2025-08-12,"網銀外存 218087121432 −",153575,"Cathay",NA,NA,"Revenue","Aug",2025,"Aug_2025","Revenue"
 2025-08-12,"跨行費用 − −",-5,"Cathay",NA,NA,"Bank Transfer fees","Aug",2025,"Aug_2025","Other Business Expenses - COGS"
-2025-08-12,"跨行提款 81207086   04915B6 −",-2000,"Cathay",NA,NA,"Other Business Expenses","Aug",2025,"Aug_2025","Other Business Expenses - COGS"
+2025-08-12,"跨行提款 81207086   04915B6 −",-2000,"Cathay",NA,NA,NA,"Aug",2025,"Aug_2025",NA
 2025-08-09,"信用卡款 國泰世華商業銀行信用卡作業部 (013)02669613447359587
 國＊世華商業銀行信用卡作業部
 0000007***029221",-30732,"Cathay",NA,NA,"Credit Card Payments","Aug",2025,"Aug_2025","Unneeded categories"
 2025-08-09,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Aug",2025,"Aug_2025","Other Business Expenses - COGS"
 2025-08-09,"電子轉出 房租 (009)0053458666888700
 ",-27560,"Cathay","716 Landlord",NA,"Rent","Aug",2025,"Aug_2025","Rent"
-2025-08-05,"自行提款 0130VBAJ −",-17400,"Cathay",NA,NA,"Other Business Expenses","Aug",2025,"Aug_2025","Other Business Expenses - Operating Expenses"
+2025-08-05,"自行提款 0130VBAJ −",-17400,"Cathay",NA,NA,NA,"Aug",2025,"Aug_2025",NA
 2025-08-04,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Aug",2025,"Aug_2025","Other Business Expenses - COGS"
 2025-08-04,"電子轉出 ７１６ (009)0053458666888700
 ",-29000,"Cathay","716 Landlord",NA,"Rent","Aug",2025,"Aug_2025","Rent"
@@ -153,7 +153,7 @@
 2025-08-01,"電子轉出 ｃａｐ　ｒｅｄｕｃｔｉｏｎ (822)0000152540146385
 ",-50000,"Cathay","Andy",NA,"Dividend Distribution - Andy","Aug",2025,"Aug_2025","Unneeded categories"
 2025-08-01,"網銀外存 218087121432 −",118503,"Cathay",NA,NA,"Revenue","Aug",2025,"Aug_2025","Revenue"
-2025-07-29,"自行提款 0130VHPQ −",-6000,"Cathay",NA,NA,"Other Business Expenses","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
+2025-07-29,"自行提款 0130VHPQ −",-6000,"Cathay",NA,NA,NA,"Jul",2025,"Jul_2025",NA
 2025-07-25,"網銀外存 218087121432 −",39847,"Cathay",NA,NA,"Revenue","Jul",2025,"Jul_2025","Revenue"
 2025-07-25,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
 2025-07-25,"電子轉出 １７１３房租 (008)0000129200040033
@@ -165,9 +165,9 @@
 ",-29560,"Cathay","1615 Landlord",NA,"Rent","Jul",2025,"Jul_2025","Rent"
 2025-07-21,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
 2025-07-21,"電子轉出 Ｓｔｏｒａｇｅ (007)0000014610067030
-",-9918,"Cathay","Storage Landlord",NA,"Rent","Jul",2025,"Jul_2025","Rent"
+",-9918,"Cathay","Storage Landlord",NA,"Storage","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
 2025-07-19,"跨行費用 − −",-5,"Cathay",NA,NA,"Bank Transfer fees","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
-2025-07-19,"跨行提款 82204954380A42B31F −",-2000,"Cathay",NA,NA,"Other Business Expenses","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
+2025-07-19,"跨行提款 82204954380A42B31F −",-2000,"Cathay",NA,NA,NA,"Jul",2025,"Jul_2025",NA
 2025-07-15,"信用卡款 國泰世華商業銀行信用卡作業部 (013)02669613447359587
 國＊世華商業銀行信用卡作業部
 0000007***029221",-5236,"Cathay",NA,NA,"Credit Card Payments","Jul",2025,"Jul_2025","Unneeded categories"
@@ -175,7 +175,7 @@
 2025-07-15,"電子轉出 ５１３修理 (806)0000080221492500
 ",-1200,"Cathay","Handyman 1",NA,"Maintenance/Repairs/Furniture","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
 2025-07-14,"跨行費用 − −",-5,"Cathay",NA,NA,"Bank Transfer fees","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
-2025-07-14,"跨行提款 009534553428697727 −",-10000,"Cathay",NA,NA,"Other Business Expenses","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
+2025-07-14,"跨行提款 009534553428697727 −",-10000,"Cathay",NA,NA,NA,"Jul",2025,"Jul_2025",NA
 2025-07-14,"網銀外存 218087121432 −",42515,"Cathay",NA,NA,"Revenue","Jul",2025,"Jul_2025","Revenue"
 2025-07-13,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
 2025-07-13,"電子轉出 − (822)0000152540146385
@@ -202,7 +202,7 @@
 2025-07-05,"費用沖正 − −",15,"Cathay",NA,NA,"Bank Transfer fees","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
 2025-07-05,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
 2025-07-03,"跨行費用 − −",-5,"Cathay",NA,NA,"Bank Transfer fees","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
-2025-07-03,"跨行提款 808L0679O328760226 −",-2000,"Cathay",NA,NA,"Other Business Expenses","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
+2025-07-03,"跨行提款 808L0679O328760226 −",-2000,"Cathay",NA,NA,NA,"Jul",2025,"Jul_2025",NA
 2025-07-03,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
 2025-07-03,"電子轉出 租金 (009)0053458666888700
 ",-29000,"Cathay","716 Landlord",NA,"Rent","Jul",2025,"Jul_2025","Rent"
@@ -279,7 +279,7 @@
 2025-05-22,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","May",2025,"May_2025","Other Business Expenses - COGS"
 2025-05-22,"電子轉出 租金 (012)0000704168156410
 ",-29560,"Cathay","1615 Landlord",NA,"Rent","May",2025,"May_2025","Rent"
-2025-05-21,"自行提款 0130VBAJ −",-15000,"Cathay",NA,NA,"Other Business Expenses","May",2025,"May_2025","Other Business Expenses - Operating Expenses"
+2025-05-21,"自行提款 0130VBAJ −",-15000,"Cathay",NA,NA,NA,"May",2025,"May_2025",NA
 2025-05-19,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","May",2025,"May_2025","Other Business Expenses - COGS"
 2025-05-19,"電子轉出 網路 (009)0053459500036600
 ",-2092,"Cathay","洪永修",NA,"Service Fee","May",2025,"May_2025","Other Business Expenses - COGS"
@@ -305,7 +305,7 @@
 2025-05-01,"網銀轉帳 行銷費用 (013)0000011506192732
 劉＊志",-2235,"Cathay","劉＊志",NA,"Marketing","May",2025,"May_2025","Other Business Expenses - Operating Expenses"
 2025-04-29,"網銀外存 218087121432 −",40073,"Cathay",NA,NA,"Revenue","Apr",2025,"Apr_2025","Revenue"
-2025-04-28,"自行提款 0130VBAJ −",-21300,"Cathay",NA,NA,"Other Business Expenses","Apr",2025,"Apr_2025","Other Business Expenses - Operating Expenses"
+2025-04-28,"自行提款 0130VBAJ −",-21300,"Cathay",NA,NA,NA,"Apr",2025,"Apr_2025",NA
 2025-04-27,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
 2025-04-27,"電子轉出 １７１３房租 (008)0000129200040033
 ",-31500,"Cathay","1713 Landlord",NA,"Rent","Apr",2025,"Apr_2025","Rent"
@@ -313,7 +313,7 @@
 2025-04-27,"電子轉出 拆濾水器 (009)0053459500036600
 ",-1000,"Cathay","洪永修",NA,"Service Fee","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
 2025-04-26,"ＡＴＭ存 0130VBAJ −",5000,"Cathay",NA,NA,"Revenue","Apr",2025,"Apr_2025","Revenue"
-2025-04-26,"自行提款 0130VB3A −",-1500,"Cathay",NA,NA,"Other Business Expenses","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
+2025-04-26,"自行提款 0130VB3A −",-1500,"Cathay",NA,NA,NA,"Apr",2025,"Apr_2025",NA
 2025-04-23,"跨行費用 − −",-10,"Cathay",NA,NA,"Bank Transfer fees","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
 2025-04-23,"電子轉出 修水管 (806)0000080221492500
 ",-1000,"Cathay","Handyman 1",NA,"Maintenance/Repairs/Furniture","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
@@ -327,10 +327,10 @@
 2025-04-22,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
 2025-04-22,"電子轉出 １６１５房租 (012)0000704168156410
 ",-29560,"Cathay","1615 Landlord",NA,"Rent","Apr",2025,"Apr_2025","Rent"
-2025-04-21,"自行提款 0130VBAJ −",-3900,"Cathay",NA,NA,"Other Business Expenses","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
+2025-04-21,"自行提款 0130VBAJ −",-3900,"Cathay",NA,NA,NA,"Apr",2025,"Apr_2025",NA
 2025-04-20,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
 2025-04-20,"電子轉出 １７１３　１６１５　洗冷氣 (822)0000794540177806
-",-4500,"Cathay",NA,NA,"Maintenance/Repairs/Furniture","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
+",-4500,"Cathay",NA,NA,"Rent","Apr",2025,"Apr_2025","Rent"
 2025-04-15,"電子轉出 − (009)0053459500036600
 ",-500,"Cathay","洪永修",NA,"Service Fee","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
 2025-04-15,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
@@ -339,7 +339,7 @@
 2025-04-14,"網銀外存 218087121432 −",51197,"Cathay",NA,NA,"Revenue","Apr",2025,"Apr_2025","Revenue"
 2025-04-14,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
 2025-04-14,"電子轉出 租倉儲空間 (007)0000014610067030
-",-13730,"Cathay","Storage Landlord",NA,"Rent","Apr",2025,"Apr_2025","Rent"
+",-13730,"Cathay","Storage Landlord",NA,"Storage","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
 2025-04-13,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
 2025-04-13,"電子轉出 Ｓｉｍｏｎ　報帳 (822)0000241540091956
 ",-47387,"Cathay","Simon",NA,"Reimbursement","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
@@ -361,8 +361,8 @@
 ",-4000,"Cathay",NA,NA,"Maintenance/Repairs/Furniture","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
 2025-04-06,"電子轉出 １７１３　修繕 (009)0053459500036600
 ",-500,"Cathay","洪永修",NA,"Service Fee","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
-2025-04-06,"自行提款 0130VBAJ −",-500,"Cathay",NA,NA,"Other Business Expenses","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
-2025-04-06,"自行提款 0130VBAJ −",-1000,"Cathay",NA,NA,"Other Business Expenses","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
+2025-04-06,"自行提款 0130VBAJ −",-500,"Cathay",NA,NA,NA,"Apr",2025,"Apr_2025",NA
+2025-04-06,"自行提款 0130VBAJ −",-1000,"Cathay",NA,NA,NA,"Apr",2025,"Apr_2025",NA
 2025-04-04,"網銀轉帳 Ａｉｒｂｎｂ　行銷 (013)0000043558186748
 王＊凱",-2193,"Cathay","王＊凱",NA,"Marketing","Apr",2025,"Apr_2025","Other Business Expenses - Operating Expenses"
 2025-04-02,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
@@ -373,11 +373,11 @@
 ",-32560,"Cathay","814 Landlord",NA,"Rent","Apr",2025,"Apr_2025","Rent"
 2025-04-02,"ＡＴＭ存 0130VBAJ −",100,"Cathay",NA,NA,"Revenue","Apr",2025,"Apr_2025","Revenue"
 2025-04-02,"ＡＴＭ存 0130VBAJ −",88600,"Cathay",NA,NA,"Revenue","Apr",2025,"Apr_2025","Revenue"
-2025-04-02,"自行提款 0130VBAJ −",-14500,"Cathay",NA,NA,"Other Business Expenses","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
+2025-04-02,"自行提款 0130VBAJ −",-14500,"Cathay",NA,NA,NA,"Apr",2025,"Apr_2025",NA
 2025-04-02,"跨行轉入 − (009)0053459***036600
 ",14500,"Cathay",NA,"洪永修","Revenue","Apr",2025,"Apr_2025","Revenue"
 2025-03-29,"ＡＴＭ存 0130VP3T −",4500,"Cathay",NA,NA,"Revenue","Mar",2025,"Mar_2025","Revenue"
-2025-03-28,"自行提款 0130VBAJ −",-15300,"Cathay",NA,NA,"Other Business Expenses","Mar",2025,"Mar_2025","Other Business Expenses - Operating Expenses"
+2025-03-28,"自行提款 0130VBAJ −",-15300,"Cathay",NA,NA,NA,"Mar",2025,"Mar_2025",NA
 2025-03-27,"網銀外存 218087121432 −",7100,"Cathay",NA,NA,"Revenue","Mar",2025,"Mar_2025","Revenue"
 2025-03-27,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Mar",2025,"Mar_2025","Other Business Expenses - COGS"
 2025-03-27,"電子轉出 １７１３租金 (008)0000129200040033
@@ -429,7 +429,7 @@
 2025-03-04,"網銀外存 218087121432 −",32890,"Cathay",NA,NA,"Revenue","Mar",2025,"Mar_2025","Revenue"
 2025-03-02,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Mar",2025,"Mar_2025","Other Business Expenses - COGS"
 2025-03-02,"電子轉出 ８１４裝電子鎖 (806)0000080221492500
-",-2500,"Cathay","Handyman 1",NA,"Maintenance/Repairs/Furniture","Mar",2025,"Mar_2025","Other Business Expenses - COGS"
+",-2500,"Cathay","Handyman 1",NA,"Rent","Mar",2025,"Mar_2025","Rent"
 2025-03-01,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Mar",2025,"Mar_2025","Other Business Expenses - COGS"
 2025-03-01,"電子轉出 − (009)0053458666888700
 ",-29000,"Cathay","716 Landlord",NA,"Rent","Mar",2025,"Mar_2025","Rent"
@@ -449,7 +449,7 @@
 鄭＊婷",50000,"Cathay",NA,"Tina","Capital Injection","Feb",2025,"Feb_2025","Unneeded categories"
 2025-02-24,"網銀轉帳 Ｔｉｎａ (013)0000270***032358
 鄭＊婷",50000,"Cathay",NA,"Tina","Capital Injection","Feb",2025,"Feb_2025","Unneeded categories"
-2025-02-24,"自行提款 0130VHKP −",-6000,"Cathay",NA,NA,"Other Business Expenses","Feb",2025,"Feb_2025","Other Business Expenses - COGS"
+2025-02-24,"自行提款 0130VHKP −",-6000,"Cathay",NA,NA,NA,"Feb",2025,"Feb_2025",NA
 2025-02-21,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Feb",2025,"Feb_2025","Other Business Expenses - COGS"
 2025-02-21,"電子轉出 １６１５一個月押金 (822)0000241540091956
 ",-24600,"Cathay","Simon",NA,"Deposit","Feb",2025,"Feb_2025","Deposit"
@@ -471,7 +471,7 @@
 ",-14943,"Cathay","洪永修",NA,"Service Fee","Feb",2025,"Feb_2025","Other Business Expenses - COGS"
 2025-02-14,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Feb",2025,"Feb_2025","Other Business Expenses - COGS"
 2025-02-14,"電子轉出 １７１３　打掃 (007)0000018150301741
-",-1400,"Cathay","Cleaner 3",NA,"Cleaning","Feb",2025,"Feb_2025","Cleaning"
+",-1400,"Cathay","Cleaner 3",NA,"Rent","Feb",2025,"Feb_2025","Rent"
 2025-02-14,"跨行費用 − −",-10,"Cathay",NA,NA,"Bank Transfer fees","Feb",2025,"Feb_2025","Other Business Expenses - COGS"
 2025-02-14,"電子轉出 １３０修姊打掃 (822)0000190530056476
 ",-1000,"Cathay","Cleaner 2",NA,"Cleaning","Feb",2025,"Feb_2025","Cleaning"
@@ -531,13 +531,13 @@
 2025-01-17,"跨行轉入 − (822)0000241***091956
 ",1000,"Cathay",NA,"Simon","Cash Advance Payback","Jan",2025,"Jan_2025","Other Business Expenses - COGS"
 2025-01-17,"跨行費用 − −",-5,"Cathay",NA,NA,"Bank Transfer fees","Jan",2025,"Jan_2025","Other Business Expenses - COGS"
-2025-01-17,"跨行提款 82204957068D9AC96F −",-1000,"Cathay",NA,NA,"Other Business Expenses","Jan",2025,"Jan_2025","Other Business Expenses - COGS"
+2025-01-17,"跨行提款 82204957068D9AC96F −",-1000,"Cathay",NA,NA,NA,"Jan",2025,"Jan_2025",NA
 2025-01-16,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Jan",2025,"Jan_2025","Other Business Expenses - COGS"
 2025-01-16,"電子轉出 修姊　１７１３　８１４打掃 (822)0000190530056476
-",-3900,"Cathay","Cleaner 2",NA,"Cleaning","Jan",2025,"Jan_2025","Cleaning"
+",-3900,"Cathay","Cleaner 2",NA,"Rent","Jan",2025,"Jan_2025","Rent"
 2025-01-14,"跨行轉入 − (822)0000241***091956
 ",10000,"Cathay",NA,"Simon","Cash Advance Payback","Jan",2025,"Jan_2025","Other Business Expenses - COGS"
-2025-01-14,"自行提款 0130VBAJ −",-10000,"Cathay",NA,NA,"Other Business Expenses","Jan",2025,"Jan_2025","Other Business Expenses - COGS"
+2025-01-14,"自行提款 0130VBAJ −",-10000,"Cathay",NA,NA,NA,"Jan",2025,"Jan_2025",NA
 2025-01-07,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Jan",2025,"Jan_2025","Other Business Expenses - COGS"
 2025-01-07,"電子轉出 一月租金　感恩 (012)0000454210208748
 ",-30000,"Cathay",NA,NA,"Rent","Jan",2025,"Jan_2025","Rent"
@@ -586,7 +586,7 @@
 2024-12-15,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Dec",2024,"Dec_2024","Other Business Expenses - COGS"
 2024-12-15,"電子轉出 五金雜貨 (822)0000241540091956
 ",-8056,"Cathay","Simon",NA,"Maintenance/Repairs/Furniture","Dec",2024,"Dec_2024","Other Business Expenses - COGS"
-2024-12-15,"自行提款 0130VBAJ −",-5000,"Cathay",NA,NA,"Other Business Expenses","Dec",2024,"Dec_2024","Other Business Expenses - COGS"
+2024-12-15,"自行提款 0130VBAJ −",-5000,"Cathay",NA,NA,NA,"Dec",2024,"Dec_2024",NA
 2024-12-08,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Dec",2024,"Dec_2024","Other Business Expenses - COGS"
 2024-12-08,"電子轉出 − (009)0053459500036600
 ",-42560,"Cathay","洪永修",NA,"Deposit","Dec",2024,"Dec_2024","Deposit"

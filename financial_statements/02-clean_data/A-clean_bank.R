@@ -111,12 +111,12 @@ bank_transactions <- lapply(bank_statements,
                               #replace_na(sender != "Andy", FALSE) & 
                               !str_detect(description, "押金")) ~ "Rent",
                               
-                              str_detect(description, "８１４|\\(006\\)0001405765859712") & amount == -32560 ~ "Rent",
-                              str_detect(description, "１７１３|\\(008\\)0000129200040033") & amount == -31500 ~ "Rent",
+                              str_detect(description, "８１４|\\(006\\)0001405765859712") & amount > -40000 ~ "Rent",
+                              str_detect(description, "１７１３|\\(008\\)0000129200040033") & amount > -40000 ~ "Rent",
                               str_detect(description, "１６１５|\\(012\\)0000704168156410") & amount == -29560 ~ "Rent", 
                               str_detect(description, "７１６|\\(009\\)0053458666888700") & amount == -29000 ~ "Rent",
                               str_detect(description, "５１３|\\(009\\)0053458666888700") & amount == -27560 ~ "Rent",
-                              str_detect(recipient, "Landlord") & amount > -40000 ~ "Rent",
+                              #str_detect(recipient, "Landlord") & amount > -40000 ~ "Rent",
                               
                               # Deposit
                               str_detect(description, "押金") ~ "Deposit",
@@ -181,7 +181,7 @@ bank_transactions <- lapply(bank_statements,
                     
                               
                               # Other expenses
-                              str_detect(description, "ｅｘｐｅｎｓｅ|自行提款|跨行提款|客服的錢|Ｍａｒｔｙ　代客") ~ "Other Business Expenses",
+                              str_detect(description, "ｅｘｐｅｎｓｅ|客服的錢|Ｍａｒｔｙ　代客") ~ "Other Business Expenses",
                               
                               # Payments to Russ and other people
                               recipient %in% c("Russ", "陳＊君", "張＊凱") ~ "Other Business Expenses",
