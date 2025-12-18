@@ -7,12 +7,17 @@ from datetime import date
 from datetime import datetime
 import calendar
 
+import sys
+from pathlib import Path
+
 
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 
-from utils import upload_file_to_drive, build_drive_service
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+
+from utils import upload_file_to_drive, build_google_service
 
 
 
@@ -63,7 +68,7 @@ with open("data/financial_drive_links.txt", "w", encoding="utf-8") as drive_link
 
 # Build a drive service  -----------------------------------------------------------------------
 
-my_drive_service = build_drive_service("drive")
+my_drive_service = build_google_service("drive")
 
 
 # upload files

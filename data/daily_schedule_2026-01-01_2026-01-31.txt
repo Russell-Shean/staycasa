@@ -8,9 +8,6 @@ Drop Keycard : (515) YOSEPH 515
 Check out: Yvonne 12:00 Clean anytime of day
 
 
-DAY BEFORE KEY DROPS:
-Drop Keycard : (716) MIRANDA 515
-
 01-02
 (814)
 Check out: SUYING 12:00 Clean immediately
@@ -24,10 +21,12 @@ Drop Keycard : (513) EMMA 515
 Check out: MARK JOSEPH 12:00 Clean anytime of day
 Check in: 2026-01-04 NGOC(4) 16:00
 Drop Keycard : (1713) NGOC 515
-
-
+(Casa 2-3)
+Check out: Debbie 12:00 Clean anytime of day
 (716)
-Check in: MIRANDA(1)  16:00
+Check out: Bianca 11:00 Clean immediately
+Check in: 2026-01-02 MIRANDA(1) 16:00
+Drop Keycard : (716) MIRANDA 515
 
 
 01-03

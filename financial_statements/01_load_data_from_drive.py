@@ -3,15 +3,20 @@
 # pylint: disable=import-error, line-too-long, invalid-name
 
 import os
+import sys
+from pathlib import Path
 import io
 
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 
+
 from googleapiclient.http import MediaIoBaseDownload
 
-from staycasa_automation.utils import build_google_service
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+
+from utils import build_google_service
 
 
 # Build a drive service  -----------------------------------------------------------------------

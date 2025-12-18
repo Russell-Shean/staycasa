@@ -229,10 +229,15 @@ Check in: AI(4)  16:00
 12-21
 (Casa 2-3)
 Check out: JACOB 12:00 Clean anytime of day
+Check in: 2025-12-26 Debbie(1) 16:00
 (814)
 Check out: ANI 12:00 Clean immediately
 Check in: 2025-12-21 JUNYI(3) 16:00
 Drop Keycard : (814) JUNYI 515
+
+
+(1615)
+Check in: HUI ZHAN(3)  16:00
 
 
 12-22
@@ -276,7 +281,8 @@ Check in: 2025-12-25 JIMIN(2) 16:00
 Drop Keycard : (513) JIMIN 515
 (716)
 Check out: BRANDON 12:00 Clean anytime of day
-Check in: 2026-01-02 MIRANDA(1) 16:00
+Check in: 2025-12-26 Bianca(4) 15:00
+Drop Keycard : (716) Bianca 515
 
 
 12-26

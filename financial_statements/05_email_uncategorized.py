@@ -3,6 +3,10 @@
 # pylint: disable=import-error, invalid-name, too-many-arguments, too-many-positional-arguments
 
 import os
+
+import sys
+from pathlib import Path
+
 import base64
 import mimetypes
 from email.message import EmailMessage
@@ -15,7 +19,9 @@ from dotenv import load_dotenv
 
 import pandas as pd
 
-from staycasa_automation.utils import build_google_service
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+
+from utils import build_google_service
 
 my_service = build_google_service("gmail")
 

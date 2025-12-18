@@ -1,2 +1,2 @@
-from staycasa_automation import *
+from staycasa import *
 from .utils import *
