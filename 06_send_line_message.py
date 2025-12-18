@@ -26,16 +26,16 @@ month = today.month
 
 # Calculate the month after the next
 if month == 12:
-    next_month = 1
+    NEXT_MONTH = 1
     next_year = year + 1
 
 else:
-    next_month = today.month + 1
+    NEXT_MONTH = today.month + 1
     next_year = year
 
 # First and last day of that month
-next_month_first_day = date(next_year, next_month, 1)
-next_month_last_day = date(next_year, next_month, calendar.monthrange(next_year, next_month)[1])
+next_month_first_day = date(next_year, NEXT_MONTH, 1)
+next_month_last_day = date(next_year, NEXT_MONTH, calendar.monthrange(next_year, NEXT_MONTH)[1])
 
 # Create the string
 next_month_filename = f"data/daily_schedule_{next_month_first_day}_{next_month_last_day}.txt"

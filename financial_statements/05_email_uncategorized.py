@@ -60,7 +60,7 @@ def create_message_with_attachment(
 
         main_type, sub_type = content_type.split("/", 1)
 
-        with open(attachment_path, "rb", encoding="utf-8") as f:
+        with open(attachment_path, "rb") as f:
             message.add_attachment(
                 f.read(),
                 maintype=main_type,

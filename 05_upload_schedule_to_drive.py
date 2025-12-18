@@ -68,7 +68,7 @@ print(f'this month: {THIS_MONTH_FILENAME}')
 
 # links to drive files
 # Step 1: Create/overwrite the file to make it blank
-with open("data/drive_links.txt", "w", encoding="utf-8") as f:
+with open("data/drive_links.txt", "w", encoding="utf-8") as file:
     pass
 
 
@@ -109,8 +109,8 @@ def upload_file_to_drive(local_filename,drive_filename):
     ).execute()
 
 
-    for f in current_files.get("files", []):
-        print(f"Deleting old file: {f['name']} ({f['id']})")
+    for file in current_files.get("files", []):
+        print(f"Deleting old file: {f['name']} ({file['id']})")
         drive_service.files().delete(fileId=f["id"]).execute()
 
 
@@ -154,8 +154,8 @@ def upload_file_to_drive(local_filename,drive_filename):
 
 
 
-    with open("data/drive_links.txt", "a", encoding="utf-8") as f:
-      f.write(f"{drive_filename}: {file['webViewLink']}\n")
+    with open("data/drive_links.txt", "a", encoding="utf-8") as file:
+      file.write(f"{drive_filename}: {file['webViewLink']}\n")
 
 
 
@@ -184,8 +184,8 @@ def upload_excel_to_drive(local_filename,drive_filename):
     ).execute()
 
 
-    for f in current_files.get("files", []):
-        print(f"Deleting old file: {f['name']} ({f['id']})")
+    for file in current_files.get("files", []):
+        print(f"Deleting old file: {f['name']} ({file['id']})")
         drive_service.files().delete(fileId=f["id"]).execute()
 
 
