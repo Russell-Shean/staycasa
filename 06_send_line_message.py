@@ -38,8 +38,8 @@ next_month_first_day = date(next_year, NEXT_MONTH, 1)
 next_month_last_day = date(next_year, NEXT_MONTH, calendar.monthrange(next_year, NEXT_MONTH)[1])
 
 # Create the string
-next_month_filename = f"data/daily_schedule_{next_month_first_day}_{next_month_last_day}.txt"
-print(f'next month: {next_month_filename}')
+NEXT_MONTH_FILENAME = f"data/daily_schedule_{next_month_first_day}_{next_month_last_day}.txt"
+print(f'next month: {NEXT_MONTH_FILENAME}')
 
 
 
@@ -48,8 +48,8 @@ this_month_first_day = date(year, month, 1)
 this_month_last_day = date(year, month, calendar.monthrange(year, month)[1])
 
 # Create the string
-this_month_filename = f"data/daily_schedule_{this_month_first_day}_{this_month_last_day}.txt"
-print(f'this month: {this_month_filename}')
+THIS_MONTH_FILENAME = f"data/daily_schedule_{this_month_first_day}_{this_month_last_day}.txt"
+print(f'this month: {THIS_MONTH_FILENAME}')
 
 
 # Load line creds ------------------------------------------------------------------
@@ -63,6 +63,8 @@ GROUP_ID = "C4c2944e52265752b5b36ca467d6bbbd6"  # actual group
 # GROUP_ID = "Ufa81a6bd5dd4ed3282949516cc3dc200" # Russ
 
 def send_line_message(group_id, message_text):
+    ''' This function sends a line message to a line group'''
+
     url = "https://api.line.me/v2/bot/message/push"
     headers = {
         "Content-Type": "application/json",
@@ -84,11 +86,11 @@ def send_line_message(group_id, message_text):
 
 
 # Load the schedule so we can send it
-with open(this_month_filename, 'r', encoding='utf-8') as file:
+with open(THIS_MONTH_FILENAME, 'r', encoding='utf-8') as file:
     this_month_schedule = file.read()
 
 
-with open(next_month_filename, 'r', encoding='utf-8') as file:
+with open(NEXT_MONTH_FILENAME, 'r', encoding='utf-8') as file:
     next_month_schedule = file.read()
 
 

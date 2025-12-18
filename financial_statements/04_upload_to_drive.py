@@ -1,14 +1,19 @@
 '''This file uploads the processed financial transactions back to google drive'''
 
-from google.oauth2.credentials import Credentials
-from google.auth.transport.requests import Request
-from googleapiclient.discovery import build
-from googleapiclient.http import MediaFileUpload
+# pylint: disable=import-error
+
+import os
 from datetime import date
 from datetime import datetime
 import calendar
 
-import os
+
+from google.oauth2.credentials import Credentials
+from google.auth.transport.requests import Request
+from googleapiclient.discovery import build
+from googleapiclient.http import MediaFileUpload
+
+
 
 from dotenv import load_dotenv
 
@@ -168,4 +173,3 @@ upload_excel_to_drive("data/unsorted_bank_transactions.csv",
                       f'Unsorted Bank Transactions - {current_month_year}')
 upload_excel_to_drive("data/all_transactions.csv",
                       f'All Transactions - {current_month_year}')
-

@@ -47,7 +47,7 @@ sameday_checkins = [{"checkin_date":"2025-08-27",
                      ]
 
 # Define path to same_day_checkins file
-same_day_checkins_path = "data/same_day_checkins.json"
+SAME_DAY_CHECKINS_PATH = "data/same_day_checkins.json"
 
 # Load line creds ------------------------------------------------------------------
 
@@ -63,6 +63,7 @@ GROUP_ID = "C4c2944e52265752b5b36ca467d6bbbd6"  # actual group
 # define a function to send a line message
 
 def send_line_message(group_id, message_text):
+  '''This function sends a line message'''
     url = "https://api.line.me/v2/bot/message/push"
     headers = {
         "Content-Type": "application/json",
@@ -84,7 +85,7 @@ def send_line_message(group_id, message_text):
 
 
 # Load the same day checkins file so we can send it
-with open(same_day_checkins_path, "r", encoding="utf-8") as f:
+with open(SAME_DAY_CHECKINS_PATH, "r", encoding="utf-8") as f:
     sameday_checkins = json.load(f)
 
 # check to see if there are any same day checkins today

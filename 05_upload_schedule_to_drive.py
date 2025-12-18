@@ -48,11 +48,11 @@ else:
     next_year = year
 
 # First and last day of that month
-NEXT_MONTH_first_day = date(next_year, NEXT_MONTH, 1)
-NEXT_MONTH_last_day = date(next_year, NEXT_MONTH, calendar.monthrange(next_year, NEXT_MONTH)[1])
+NEXT_MONTH_FIRST_DAY = date(next_year, NEXT_MONTH, 1)
+NEXT_MONTH_LAST_DAY = date(next_year, NEXT_MONTH, calendar.monthrange(next_year, NEXT_MONTH)[1])
 
 # Create the string
-NEXT_MONTH_FILENAME = f"data/daily_schedule_{NEXT_MONTH_first_day}_{NEXT_MONTH_last_day}.txt"
+NEXT_MONTH_FILENAME = f"data/daily_schedule_{NEXT_MONTH_FIRST_DAY}_{NEXT_MONTH_LAST_DAY}.txt"
 print(f'next month: {NEXT_MONTH_FILENAME}')
 
 
@@ -95,7 +95,8 @@ creds.refresh(Request())
 drive_service = build("drive", "v3", credentials=creds)
 
 # create a function to upload the file
-def upload_file_to_drive(local_filename,drive_filename):
+def upload_file_to_drive(local_filename, drive_filename):
+    '''This function uploads a text file as a google doc'''
 
     # See if the file already exists and delete it
     # If it does
@@ -109,9 +110,9 @@ def upload_file_to_drive(local_filename,drive_filename):
     ).execute()
 
 
-    for file in current_files.get("files", []):
-        print(f"Deleting old file: {f['name']} ({file['id']})")
-        drive_service.files().delete(fileId=f["id"]).execute()
+    for old_file in current_files.get("files", []):
+        print(f"Deleting old file: {old_file['name']} ({old_file['id']})")
+        drive_service.files().delete(fileId=file["id"]).execute()
 
 
 
@@ -184,8 +185,8 @@ def upload_excel_to_drive(local_filename,drive_filename):
     ).execute()
 
 
-    for file in current_files.get("files", []):
-        print(f"Deleting old file: {f['name']} ({file['id']})")
+    for f in current_files.get("files", []):
+        print(f"Deleting old file: {f['name']} ({f['id']})")
         drive_service.files().delete(fileId=f["id"]).execute()
 
 

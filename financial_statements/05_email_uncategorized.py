@@ -1,5 +1,7 @@
 '''This file emails unsorted transactions to Simon so he can look at them'''
 
+# pylint: disable=import-error
+
 import os
 import base64
 import mimetypes

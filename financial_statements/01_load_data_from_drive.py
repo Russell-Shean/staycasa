@@ -1,19 +1,15 @@
 '''This file downloads financial data from our google drive account'''
 
+# pylint: disable=import-error
+
+import os
+import io
 
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
-from googleapiclient.http import MediaFileUpload
-from datetime import date
-from datetime import datetime
-import calendar
 
 from googleapiclient.http import MediaIoBaseDownload
-import io
-import os
-
-
 
 from dotenv import load_dotenv
 
@@ -108,6 +104,3 @@ def download_from_drive(drive_service, local_download_path):
 download_from_drive(drive_service=drive_service,
                     #root_folder_name="Airbnb Financial ",
                     local_download_path="data/financial")
-
-
-
