@@ -81,13 +81,13 @@ this_month_message = "Here's the monthly schedule for this month!\n" + this_mont
 next_month_message = "Here's the monthly schedule for next month!\n" + next_month_schedule
 
 #send_line_message(GROUP_ID, "Here's the monthly schedule for this month!")
-send_line_message(GROUP_ID, this_month_message)
+send_line_message(GROUP_ID, this_month_message, LINE_CHANNEL_ACCESS_TOKEN)
 
 
 
 
 #send_line_message(GROUP_ID, "Here's the monthly schedule for next month!")
-send_line_message(GROUP_ID, next_month_message)
+send_line_message(GROUP_ID, next_month_message, LINE_CHANNEL_ACCESS_TOKEN)
 
 
 # load the links
