@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  create-schedule:
+  financial-docs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
