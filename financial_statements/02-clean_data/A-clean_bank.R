@@ -232,14 +232,5 @@ bank_transactions <- lapply(bank_statements,
 
 
 
-unsorted_bank_transactions <- bank_transactions |>
-  filter(is.na(category))
-
-
-# Write out unsorted transactions for simon
-unsorted_bank_transactions |> write.csv("unsorted_bank_transactions.csv", row.names = FALSE)
-
-annoymous_bank_transactions <- bank_transactions |> 
-  filter(is.na(recipient) & is.na(sender))
 
 

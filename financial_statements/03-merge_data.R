@@ -80,6 +80,13 @@ combined_transactions <- bank_transactions |>
   )) 
 
 
+unsorted_bank_transactions <- combined_transactions |>
+  filter(is.na(category))
+
+#annoymous_bank_transactions <- bank_transactions |> 
+#  filter(is.na(recipient) & is.na(sender))
+
+
 
 #calculate a monthly summary of costs
 financial_report <- combined_transactions |> 
@@ -135,7 +142,7 @@ financial_report <- combined_transactions |>
          ) |> 
          arrange(`Month and Year`) 
 
-write.csv(financial_report, "data/financial_report_format1.csv", row.names = FALSE)
+
 
 
 
@@ -145,9 +152,13 @@ financial_report_format2 <- financial_report %>%
   pivot_wider(names_from = `Month and Year`, values_from = value) 
 
 
-
+write.csv(financial_report, "data/financial_report_format1.csv", row.names = FALSE)
 write.csv(financial_report_format2, "data/financial_report_format2.csv", row.names = FALSE)
 
 write.csv(unsorted_bank_transactions, "data/unsorted_bank_transactions.csv", row.names = FALSE)
 write.csv(combined_transactions, "data/all_transactions.csv", row.names = FALSE)
+
+
+
+
        
