@@ -24,7 +24,7 @@ load_single_cc_statement <- function(file_path){
   
   # extract year
   statement_year <- file_path |> 
-    read_csv() |>
+    read_csv(locale = locale(encoding = "UTF-8")) |>
     colnames() |> 
     str_extract("^\\d{4}")
   

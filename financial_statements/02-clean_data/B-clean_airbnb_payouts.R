@@ -26,7 +26,7 @@ load_airbnb_payouts <- function(file_path){
   
   
   df <- file_path |>
-    read.csv() |>
+    read.csv(locale = locale(encoding = "UTF-8")) |>
     mutate(recipient = recipient)
   
   

@@ -1,3 +1,7 @@
+'''This script retrieves all emails from the stayvacasa gmail account'''
+
+# pylint: disable=import-error
+
 import os
 import base64
 import json
@@ -9,6 +13,7 @@ from googleapiclient.discovery import build
 from dotenv import load_dotenv
 
 load_dotenv()
+
 
 
 # Gmail API scope
@@ -25,7 +30,7 @@ REFRESH_TOKEN = os.environ["GOOGLE_OAUTH_REFRESH_TOKEN"]
 CHECKPOINT_FILE = "data/last_message_id.txt"
 
 # PAth to save out data
-emails_path = "data/emails_from_api.json"
+EMAILS_PATH = "data/emails_from_api.json"
 
 # Build credentials
 creds = Credentials(
@@ -129,13 +134,13 @@ print(f"Fetched {len(emails)} new emails")
 # Save emails JSON
 os.makedirs("data", exist_ok=True)
 
-if os.path.exists(emails_path):
-    with open(emails_path, "r", encoding="utf-8") as file:
+if os.path.exists(EMAILS_PATH):
+    with open(EMAILS_PATH, "r", encoding="utf-8") as file:
         old_emails = json.load(file)
         emails.extend(old_emails)
 
 
-with open(emails_path, "w", encoding="utf-8") as f:
+with open(EMAILS_PATH, "w", encoding="utf-8") as f:
     json.dump(emails, f, indent=2)
 
 # Save newest message ID as checkpoint

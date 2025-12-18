@@ -1,3 +1,7 @@
+'''This script sends Simon a line message with the cleaning schedule for the next month'''
+
+# pylint: disable=import-error
+
 import os
 from datetime import date
 import calendar

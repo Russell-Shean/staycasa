@@ -17,7 +17,7 @@ bank_statements <- list.files(financial_data_folder,
 
 
 bank_transactions <- lapply(bank_statements, 
-                            function(x) read_csv(x, skip=4)) |> 
+                            function(x) read_csv(x, skip=4, locale = locale(encoding = "UTF-8"))) |> 
   bind_rows() |>
   
   

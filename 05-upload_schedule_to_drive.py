@@ -1,3 +1,7 @@
+'''This script uploads the cleaning schedules and cleaning invoices to google drive'''
+
+# pylint: disable=import-error
+
 import os
 
 from datetime import date
@@ -236,6 +240,11 @@ def upload_excel_to_drive(local_filename,drive_filename):
 
 
 
-upload_file_to_drive(this_month_filename, "Automatically Generated Daily Schedule - This Month")
-upload_file_to_drive(next_month_filename, "Automatically Generated Daily Schedule - Next Month")
-upload_excel_to_drive("data/this_months_payment_schedule.xlsx", f'Automatically Generated Cleaning Schedule and Invoice - {current_month_year}')
+upload_file_to_drive(this_month_filename, 
+"Automatically Generated Daily Schedule - This Month")
+
+upload_file_to_drive(next_month_filename,
+"Automatically Generated Daily Schedule - Next Month")
+
+upload_excel_to_drive("data/this_months_payment_schedule.xlsx", 
+f'Automatically Generated Cleaning Schedule and Invoice - {current_month_year}')

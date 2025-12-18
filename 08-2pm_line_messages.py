@@ -1,6 +1,9 @@
+'''This script sends a line message alerting Simon to same day checkins if present'''
+
+# pylint: disable=import-error
+
 import os
 from datetime import date
-import calendar
 import json
 
 import requests
