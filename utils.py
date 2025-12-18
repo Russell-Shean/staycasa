@@ -4,6 +4,11 @@
 
 import os
 
+from datetime import date
+from datetime import datetime
+
+import calendar
+
 import requests
 
 from googleapiclient.http import build, MediaFileUpload
@@ -200,21 +205,21 @@ def build_date_matrix():
         date_matrix["next_year"] = date_matrix["year"]
 
     # First and last day of that month
-    date_matrix["next_month_first_day"] = date(date_matrix["next_year"], 
-                                               date_matrix["next_month"], 
+    date_matrix["next_month_first_day"] = date(date_matrix["next_year"],
+                                               date_matrix["next_month"],
                                                1)
 
-    date_matrix["next_month_last_day"] = date(date_matrix["next_year"], 
-                                              date_matrix["next_month"], 
+    date_matrix["next_month_last_day"] = date(date_matrix["next_year"],
+                                              date_matrix["next_month"],
                                               calendar.monthrange(date_matrix["next_year"],
                                                date_matrix["next_month"])[1])
 
     # First and last day of the current month
-    date_matrix["this_month_first_day"] = date(date_matrix["year"], 
+    date_matrix["this_month_first_day"] = date(date_matrix["year"],
                                                date_matrix["month"], 1)
 
-    date_matrix["this_month_last_day"] = date(date_matrix["year"], 
-                                               date_matrix["month"], 
+    date_matrix["this_month_last_day"] = date(date_matrix["year"],
+                                               date_matrix["month"],
                                                calendar.monthrange(date_matrix["year"],
                                                 date_matrix["month"])[1])
 

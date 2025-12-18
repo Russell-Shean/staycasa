@@ -15,7 +15,7 @@ from utils import upload_file_to_drive, build_google_service, build_date_matrix
 date_matrix = build_date_matrix()
 
 # Create the string
-NEXT_MONTH_FILENAME = f"data/daily_schedule_{date_matrix["next_month_first_date"]}_{date_matrix["next_month_last_date"]}.txt"
+NEXT_MONTH_FILENAME = f'data/daily_schedule_{date_matrix["next_month_first_date"]}_{date_matrix["next_month_last_date"]}.txt'
 print(f'next month: {NEXT_MONTH_FILENAME}')
 
 

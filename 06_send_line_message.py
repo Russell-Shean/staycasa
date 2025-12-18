@@ -8,7 +8,7 @@ import calendar
 
 from dotenv import load_dotenv
 
-from utils import send_line_message，build_date_matrix
+from utils import send_line_message, build_date_matrix
 
 load_dotenv()
 
