@@ -10,13 +10,10 @@ date_matrix = build_date_matrix()
 
 # Create the string
 NEXT_MONTH_FILENAME = f'data/daily_schedule_{date_matrix["next_month_first_date"]}_{date_matrix["next_month_last_date"]}.txt'
-print(f'next month: {NEXT_MONTH_FILENAME}')
-
-
 
 # Create the string
 THIS_MONTH_FILENAME = f'data/daily_schedule_{date_matrix["this_month_first_day"]}_{date_matrix["this_month_last_day"]}.txt'
-print(f'this month: {THIS_MONTH_FILENAME}')
+
 
 
 # links to drive files
