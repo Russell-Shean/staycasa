@@ -1,0 +1,19 @@
+Package: stayvacasa_project_dependencies
+Type: Project
+Title: R package dependencies for Stavacasa
+Version: 0.0.0
+Description: This is not an actual R package. It's just a way of recording R dependency packages so that I can use the github action for installing R packages and enabling caching.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports:
+    dplyr,
+    timeperiodsR,
+    jsonlite,
+    dotenv,
+    lubridate,
+    openxlsx,
+    readr,
+    stringr,
+    tidyr,
+    base64enc

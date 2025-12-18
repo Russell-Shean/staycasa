@@ -4,6 +4,7 @@ install.packages(c("timeperiodsR",
                  "dotenv",
                  "lubridate",
                  "openxlsx",
+                 "readr",
                  "stringr",
                  "tidyr",
                  "base64enc"))
