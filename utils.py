@@ -17,7 +17,7 @@ def build_google_service(service_type):
     '''This function builds a drive service for later use manipulating drive
      files and sending emails
 
-    This loads secrets from .env or github secrets and then builds 
+    This loads secrets from .env or github secrets and then builds
     authentication and the service based on the provided scopes
 
     Possible types are gmail and drive (for now)
@@ -67,7 +67,7 @@ def upload_file_to_drive(local_filename, drive_filename, file_type, drive_servic
     Args:
         local_filename (str): Path to the local Excel file to upload.
         drive_filename (str): Desired name of the file in Google Drive.
-        file_type (str, optional): The type of google doc type to use. 
+        file_type (str, optional): The type of google doc type to use.
         Options include: document, spreadsheet
     """
 
@@ -170,3 +170,53 @@ def send_line_message(group_id, message_text, channel_access_token):
     response = requests.post(url, headers=headers, json=body)
     print("Status code:", response.status_code)
     print("Response:", response.text)
+
+
+def build_date_matrix():
+    '''This function returns information about the current and next month.
+       For use constructing file paths
+    '''
+    date_matrix = {}
+    date_matrix["today"] = date.today()
+
+    # Get current date
+    date_matrix["now"] = datetime.now()
+
+    # Format as "Month Year"
+    date_matrix["current_month_year"] = now.strftime("%B %Y")
+
+    # Current year and month
+    date_matrix["year"] = today.year
+    date_matrix["month"] = today.month
+    date_matrix["next_month"] = today.month + 1
+
+    # Calculate the month after the next
+    if date_matrix["month"] == 12:
+        date_matrix["next_month"] = 1
+        date_matrix["next_year"] = date_matrix["year"] + 1
+
+    else:
+        date_matrix["next_month"] = today.month + 1
+        date_matrix["next_year"] = date_matrix["year"]
+
+    # First and last day of that month
+    date_matrix["next_month_first_day"] = date(date_matrix["next_year"], 
+                                               date_matrix["next_month"], 
+                                               1)
+
+    date_matrix["next_month_last_day"] = date(date_matrix["next_year"], 
+                                              date_matrix["next_month"], 
+                                              calendar.monthrange(date_matrix["next_year"],
+                                               date_matrix["next_month"])[1])
+
+    # First and last day of the current month
+    date_matrix["this_month_first_day"] = date(date_matrix["year"], 
+                                               date_matrix["month"], 1)
+
+    date_matrix["this_month_last_day"] = date(date_matrix["year"], 
+                                               date_matrix["month"], 
+                                               calendar.monthrange(date_matrix["year"],
+                                                date_matrix["month"])[1])
+
+
+    return date_matrix

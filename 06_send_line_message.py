@@ -8,48 +8,22 @@ import calendar
 
 from dotenv import load_dotenv
 
-from utils import send_line_message
+from utils import send_line_message，build_date_matrix
 
 load_dotenv()
 
 
-# Load file names ---------------------------------------------------------
-
-
-today = date.today()
-
-
-
-# Current year and month
-year = today.year
-month = today.month
-
-
-# Calculate the month after the next
-if month == 12:
-    NEXT_MONTH = 1
-    next_year = year + 1
-
-else:
-    NEXT_MONTH = today.month + 1
-    next_year = year
-
-# First and last day of that month
-next_month_first_day = date(next_year, NEXT_MONTH, 1)
-next_month_last_day = date(next_year, NEXT_MONTH, calendar.monthrange(next_year, NEXT_MONTH)[1])
+# Load date matrix---------------------------------------------------------
+date_matrix = build_date_matrix()
 
 # Create the string
-NEXT_MONTH_FILENAME = f"data/daily_schedule_{next_month_first_day}_{next_month_last_day}.txt"
+NEXT_MONTH_FILENAME = f"data/daily_schedule_{date_matrix["next_month_first_date"]}_{date_matrix["next_month_last_date"]}.txt"
 print(f'next month: {NEXT_MONTH_FILENAME}')
 
 
 
-# First and last day of the current month
-this_month_first_day = date(year, month, 1)
-this_month_last_day = date(year, month, calendar.monthrange(year, month)[1])
-
 # Create the string
-THIS_MONTH_FILENAME = f"data/daily_schedule_{this_month_first_day}_{this_month_last_day}.txt"
+THIS_MONTH_FILENAME = f"data/daily_schedule_{date_matrix["this_month_first_day"]}_{date_matrix["this_month_last_day"]}.txt"
 print(f'this month: {THIS_MONTH_FILENAME}')
 
 

@@ -16,7 +16,6 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 from utils import upload_file_to_drive, build_google_service
 
 
-
 # Load file names ---------------------------------------------------------
 
 
