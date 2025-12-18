@@ -15,7 +15,7 @@ print(f'next month: {NEXT_MONTH_FILENAME}')
 
 
 # Create the string
-THIS_MONTH_FILENAME = f"data/daily_schedule_{date_matrix["this_month_first_day"]}_{date_matrix["this_month_last_day"]}.txt"
+THIS_MONTH_FILENAME = f'data/daily_schedule_{date_matrix["this_month_first_day"]}_{date_matrix["this_month_last_day"]}.txt'
 print(f'this month: {THIS_MONTH_FILENAME}')
 
 
