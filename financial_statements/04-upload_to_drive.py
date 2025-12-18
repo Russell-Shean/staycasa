@@ -91,7 +91,7 @@ def upload_excel_to_drive(local_filename,drive_filename):
     """
 
     # 1️⃣ Check if a file with the same name already exists and delete it
-    # See if the file already exists and delete it 
+    # See if the file already exists and delete it
     # If it does
     query = f"name='{drive_filename}'"
 
@@ -137,12 +137,12 @@ def upload_excel_to_drive(local_filename,drive_filename):
             "type": "anyone",  # Anyone on the internet
             "role": "reader"   # Can also be "reader" or "commenter"
         }
-    
+
     drive_service.permissions().create(
             fileId=file["id"],
             body=permission
         ).execute()
-    
+
     print("🌍 Sharing enabled: Anyone with link can edit")
 
     print("✅ Uploaded as Google Sheet:")
@@ -156,13 +156,13 @@ def upload_excel_to_drive(local_filename,drive_filename):
 
 # upload files
 # ---------------------------------------
-      
-upload_excel_to_drive("data/financial_report_format1.csv", 
+
+upload_excel_to_drive("data/financial_report_format1.csv",
                       f'Financial Report Format 1 - {current_month_year}')
-upload_excel_to_drive("data/financial_report_format2.csv", 
+upload_excel_to_drive("data/financial_report_format2.csv",
                       f'Financial Report Format 2 - {current_month_year}')
-upload_excel_to_drive("data/unsorted_bank_transactions.csv", 
+upload_excel_to_drive("data/unsorted_bank_transactions.csv",
                       f'Unsorted Bank Transactions - {current_month_year}')
-upload_excel_to_drive("data/all_transactions.csv", 
+upload_excel_to_drive("data/all_transactions.csv",
                       f'All Transactions - {current_month_year}')
 

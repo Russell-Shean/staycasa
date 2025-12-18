@@ -42,7 +42,7 @@ drive_service = build("drive", "v3", credentials=creds)
 
 def download_from_drive(drive_service, local_download_path):
 
-    # See if the file already exists and delete it 
+    # See if the file already exists and delete it
     # If it does
     query = "name='Airbnb Financial ' and mimeType='application/vnd.google-apps.folder' and trashed=false"
 

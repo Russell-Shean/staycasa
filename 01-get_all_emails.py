@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-# Gmail API scope 
+# Gmail API scope
 SCOPES = ["https://www.googleapis.com/auth/gmail.modify"]
 
 # Load from environment variables

@@ -1,7 +1,8 @@
-import requests
 import os
 from datetime import date
 import calendar
+
+import requests
 
 from dotenv import load_dotenv
 load_dotenv()

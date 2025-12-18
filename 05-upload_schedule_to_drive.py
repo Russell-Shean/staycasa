@@ -1,12 +1,16 @@
+import os
+
+from datetime import date
+from datetime import datetime
+
+import calendar
+
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
-from datetime import date
-from datetime import datetime
-import calendar
 
-import os
+
 
 from dotenv import load_dotenv
 
@@ -88,7 +92,7 @@ drive_service = build("drive", "v3", credentials=creds)
 # create a function to upload the file
 def upload_file_to_drive(local_filename,drive_filename):
 
-    # See if the file already exists and delete it 
+    # See if the file already exists and delete it
     # If it does
     query = f"name='{drive_filename}'"
 
@@ -130,12 +134,12 @@ def upload_file_to_drive(local_filename,drive_filename):
             "type": "anyone",  # Anyone on the internet
             "role": "reader"   # Can also be "reader" or "commenter"
         }
-    
+
     drive_service.permissions().create(
             fileId=file["id"],
             body=permission
         ).execute()
-    
+
     print("🌍 Sharing enabled: Anyone with link can edit")
 
     print("✅ Uploaded as Google Doc:")
@@ -144,7 +148,7 @@ def upload_file_to_drive(local_filename,drive_filename):
     print("🔗 View it here:", file["webViewLink"])
 
 
-    
+
     with open("data/drive_links.txt", "a") as f:
       f.write(f"{drive_filename}: {file['webViewLink']}\n")
 
@@ -163,7 +167,7 @@ def upload_excel_to_drive(local_filename,drive_filename):
     """
 
     # 1️⃣ Check if a file with the same name already exists and delete it
-    # See if the file already exists and delete it 
+    # See if the file already exists and delete it
     # If it does
     query = f"name='{drive_filename}'"
 
@@ -209,12 +213,12 @@ def upload_excel_to_drive(local_filename,drive_filename):
             "type": "anyone",  # Anyone on the internet
             "role": "reader"   # Can also be "reader" or "commenter"
         }
-    
+
     drive_service.permissions().create(
             fileId=file["id"],
             body=permission
         ).execute()
-    
+
     print("🌍 Sharing enabled: Anyone with link can edit")
 
     print("✅ Uploaded as Google Sheet:")
@@ -228,7 +232,7 @@ def upload_excel_to_drive(local_filename,drive_filename):
 
 # upload files
 # ---------------------------------------
-      
+
 
 
 
