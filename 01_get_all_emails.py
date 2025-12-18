@@ -1,6 +1,6 @@
 '''This script retrieves all emails from the stayvacasa gmail account'''
 
-# pylint: disable=import-error
+# pylint: disable=import-error, invalid-name
 
 import os
 import base64

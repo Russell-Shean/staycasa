@@ -1,6 +1,6 @@
 '''This file downloads financial data from our google drive account'''
 
-# pylint: disable=import-error
+# pylint: disable=import-error, line-too-long, invalid-name
 
 import os
 import io
@@ -36,7 +36,7 @@ creds = Credentials(
 # Refresh the access token
 creds.refresh(Request())
 
-drive_service = build("drive", "v3", credentials=creds)
+my_drive_service = build("drive", "v3", credentials=creds)
 
 
 def download_from_drive(drive_service, local_download_path):
@@ -101,6 +101,6 @@ def download_from_drive(drive_service, local_download_path):
 
 
 
-download_from_drive(drive_service=drive_service,
+download_from_drive(drive_service=my_drive_service,
                     #root_folder_name="Airbnb Financial ",
                     local_download_path="data/financial")

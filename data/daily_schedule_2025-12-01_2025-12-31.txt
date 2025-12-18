@@ -237,9 +237,9 @@ Drop Keycard : (814) JUNYI 515
 
 12-22
 (513)
-Check out: HSIAO SHAN 12:00 Clean anytime of day
-Check in: 2025-12-25 JIMIN(2) 16:00
-Drop Keycard : (513) JIMIN 515
+Check out: HSIAO SHAN 12:00 Clean immediately
+Check in: 2025-12-22 ANGEL(1) 16:00
+Drop Keycard : (513) ANGEL 515
 (1713)
 Check out: BOAZ 12:00 Clean anytime of day
 Check in: 2025-12-24 SZE(2) 16:00
@@ -270,13 +270,13 @@ Check in: Yvonne(2)  16:00
 
 
 12-25
+(513)
+Check out: ANGEL 12:00 Clean immediately
+Check in: 2025-12-25 JIMIN(2) 16:00
+Drop Keycard : (513) JIMIN 515
 (716)
 Check out: BRANDON 12:00 Clean anytime of day
 Check in: 2026-01-02 MIRANDA(1) 16:00
-
-
-(513)
-Check in: JIMIN(2)  16:00
 
 
 12-26

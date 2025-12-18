@@ -9,6 +9,9 @@ import json
 import requests
 
 from dotenv import load_dotenv
+
+from utils import send_line_message
+
 load_dotenv()
 
 # Get today's date
@@ -59,29 +62,6 @@ LINE_CHANNEL_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")  # or set dir
 #group_id = "Cdfc4f0729f0b3f44c5b219b4928d3e24"
 GROUP_ID = "C4c2944e52265752b5b36ca467d6bbbd6"  # actual group
 
-
-# define a function to send a line message
-
-def send_line_message(group_id, message_text):
-  '''This function sends a line message'''
-    url = "https://api.line.me/v2/bot/message/push"
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {LINE_CHANNEL_ACCESS_TOKEN}"
-    }
-    body = {
-        "to": group_id,
-        "messages": [
-            {
-                "type": "text",
-                "text": message_text[0:5000]
-            }
-        ]
-    }
-
-    response = requests.post(url, headers=headers, json=body)
-    print("Status code:", response.status_code)
-    print("Response:", response.text)
 
 
 # Load the same day checkins file so we can send it

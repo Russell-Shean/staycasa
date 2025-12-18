@@ -1,6 +1,6 @@
 '''This file uploads the processed financial transactions back to google drive'''
 
-# pylint: disable=import-error
+# pylint: disable=import-error, invalid-name
 
 import os
 from datetime import date
@@ -60,7 +60,8 @@ this_month_last_day = date(year, month, calendar.monthrange(year, month)[1])
 
 # links to drive files
 # Step 1: Create/overwrite the file to make it blank
-open("data/financial_drive_links.txt", "w", encoding="utf-8").close()
+with open("data/financial_drive_links.txt", "w", encoding="utf-8") as drive_links_file:
+    pass
 
 
 # load google creds -----------------------------------------------------------------------

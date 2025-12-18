@@ -1,6 +1,6 @@
 '''This script is how I got refresh tokens in the first place'''
 
-# pylint: disable=import-error
+# pylint: disable=import-error, line-too-long
 
 from google_auth_oauthlib.flow import InstalledAppFlow
 

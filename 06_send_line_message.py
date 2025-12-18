@@ -1,6 +1,6 @@
 '''This script sends Simon a line message with the cleaning schedule for the next month'''
 
-# pylint: disable=import-error
+# pylint: disable=import-error, invalid-name
 
 import os
 from datetime import date
@@ -61,29 +61,6 @@ LINE_CHANNEL_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")  # or set dir
 # print(LINE_CHANNEL_ACCESS_TOKEN)
 GROUP_ID = "C4c2944e52265752b5b36ca467d6bbbd6"  # actual group
 # GROUP_ID = "Ufa81a6bd5dd4ed3282949516cc3dc200" # Russ
-
-def send_line_message(group_id, message_text):
-    ''' This function sends a line message to a line group'''
-
-    url = "https://api.line.me/v2/bot/message/push"
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {LINE_CHANNEL_ACCESS_TOKEN}"
-    }
-    body = {
-        "to": group_id,
-        "messages": [
-            {
-                "type": "text",
-                "text": message_text[0:5000]
-            }
-        ]
-    }
-
-    response = requests.post(url, headers=headers, json=body)
-    print("Status code:", response.status_code)
-    print("Response:", response.text)
-
 
 # Load the schedule so we can send it
 with open(THIS_MONTH_FILENAME, 'r', encoding='utf-8') as file:

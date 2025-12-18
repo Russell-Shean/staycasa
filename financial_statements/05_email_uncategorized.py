@@ -1,6 +1,6 @@
 '''This file emails unsorted transactions to Simon so he can look at them'''
 
-# pylint: disable=import-error
+# pylint: disable=import-error, invalid-name, too-many-arguments, too-many-positional-arguments
 
 import os
 import base64
@@ -38,7 +38,7 @@ creds = Credentials(
 creds.refresh(Request())
 
 # Build Gmail service
-service = build("gmail", "v1", credentials=creds)
+my_service = build("gmail", "v1", credentials=creds)
 
 
 def create_message_with_attachment(
@@ -99,22 +99,22 @@ def send_email(
     return sent
 
 
-unsorteds_path="data/unsorted_bank_transactions.csv"
+UNSORTEDS_PATH="data/unsorted_bank_transactions.csv"
 
 # Read in the unsorted dataframe and count the number of rows
-unsorted_transactions = pd.read_csv(unsorteds_path)
+unsorted_transactions = pd.read_csv(UNSORTEDS_PATH)
 row_count = len(unsorted_transactions)
 
 # Send the email if there are any uncategorized transactions
 if row_count > 0:
 
     response = send_email(
-        service=service,
+        service=my_service,
         sender="me",  # "me" uses the authenticated Gmail account
         to="simon1122@gmail.com",
         subject="Unsorted Bank Transactions",
         body_text="Hi Simon,\nHere are the latest uncategorized transactions.",
-        attachment_path=unsorteds_path,  # any file, or None
+        attachment_path=UNSORTEDS_PATH,  # any file, or None
     )
 
     print(f"Email sent. Message ID: {response['id']}")
