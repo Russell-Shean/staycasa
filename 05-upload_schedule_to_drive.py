@@ -64,7 +64,7 @@ print(f'this month: {this_month_filename}')
 
 # links to drive files
 # Step 1: Create/overwrite the file to make it blank
-open("data/drive_links.txt", "w").close()
+open("data/drive_links.txt", "w", encoding="utf-8").close()
 
 
 # load google creds -----------------------------------------------------------------------
@@ -149,7 +149,7 @@ def upload_file_to_drive(local_filename,drive_filename):
 
 
 
-    with open("data/drive_links.txt", "a") as f:
+    with open("data/drive_links.txt", "a", encoding="utf-8") as f:
       f.write(f"{drive_filename}: {file['webViewLink']}\n")
 
 

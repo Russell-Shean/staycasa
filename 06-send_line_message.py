@@ -109,7 +109,7 @@ send_line_message(GROUP_ID, next_month_message)
 # load the links
 
 links_message = ""
-with open("data/drive_links.txt", "r") as f:
+with open("data/drive_links.txt", "r", encoding="utf-8") as f:
     links_message += f.read()
 
 send_line_message(GROUP_ID,links_message)

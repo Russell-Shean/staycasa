@@ -1,5 +1,8 @@
-from flask import Flask, request
+'''This script sets up the webhook I used to get the line group id'''
+
 import json
+from flask import Flask, request
+
 
 app = Flask(__name__)
 

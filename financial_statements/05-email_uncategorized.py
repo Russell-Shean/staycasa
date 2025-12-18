@@ -1,3 +1,5 @@
+'''This file emails unsorted transactions to Simon so he can look at them'''
+
 import os
 import base64
 import mimetypes
@@ -58,7 +60,7 @@ def create_message_with_attachment(
 
         main_type, sub_type = content_type.split("/", 1)
 
-        with open(attachment_path, "rb") as f:
+        with open(attachment_path, "rb", encoding="utf-8") as f:
             message.add_attachment(
                 f.read(),
                 maintype=main_type,
@@ -79,6 +81,8 @@ def send_email(
     body_text: str,
     attachment_path: str | None = None,
 ):
+    '''This function sends the email by calling the function from above internally'''
+
     message = create_message_with_attachment(
         sender, to, subject, body_text, attachment_path
     )

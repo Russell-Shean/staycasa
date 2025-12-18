@@ -1,3 +1,6 @@
+'''This file downloads financial data from our google drive account'''
+
+
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
@@ -41,6 +44,7 @@ drive_service = build("drive", "v3", credentials=creds)
 
 
 def download_from_drive(drive_service, local_download_path):
+    '''This function downloads a file from google drive'''
 
     # See if the file already exists and delete it
     # If it does

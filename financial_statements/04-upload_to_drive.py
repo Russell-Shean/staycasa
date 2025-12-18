@@ -1,3 +1,5 @@
+'''This file uploads the processed financial transactions back to google drive'''
+
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
@@ -52,7 +54,7 @@ this_month_last_day = date(year, month, calendar.monthrange(year, month)[1])
 
 # links to drive files
 # Step 1: Create/overwrite the file to make it blank
-open("data/financial_drive_links.txt", "w").close()
+open("data/financial_drive_links.txt", "w", encoding="utf-8").close()
 
 
 # load google creds -----------------------------------------------------------------------

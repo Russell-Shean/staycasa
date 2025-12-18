@@ -63,7 +63,7 @@ def get_message_body(msg_payload):
 # Load last processed message ID (if exists)
 last_message_id = None
 if os.path.exists(CHECKPOINT_FILE):
-    with open(CHECKPOINT_FILE, "r") as f:
+    with open(CHECKPOINT_FILE, "r", encoding="utf-8") as f:
         last_message_id = f.read().strip()
 
 emails = []
@@ -130,18 +130,18 @@ print(f"Fetched {len(emails)} new emails")
 os.makedirs("data", exist_ok=True)
 
 if os.path.exists(emails_path):
-    with open(emails_path, "r") as file:
+    with open(emails_path, "r", encoding="utf-8") as file:
         old_emails = json.load(file)
         emails.extend(old_emails)
 
 
-with open(emails_path, "w") as f:
+with open(emails_path, "w", encoding="utf-8") as f:
     json.dump(emails, f, indent=2)
 
 # Save newest message ID as checkpoint
 if all_new_ids:
     newest_id = all_new_ids[0]  # Gmail returns newest first
-    with open(CHECKPOINT_FILE, "w") as f:
+    with open(CHECKPOINT_FILE, "w", encoding="utf-8") as f:
         f.write(newest_id)
 
 print(f"Fetched {len(emails)} total emails")

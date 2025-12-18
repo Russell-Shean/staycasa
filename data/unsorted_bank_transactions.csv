@@ -1,23 +1,23 @@
-"transaction_date","description","amount","account","recipient","sender","category"
-2025-09-27,"自行提款 0130VBAJ −",-19000,"Cathay",NA,NA,NA
-2025-09-13,"跨行提款 81207438   118829A −",-2000,"Cathay",NA,NA,NA
-2025-09-01,"自行提款 0130VB3A −",-25800,"Cathay",NA,NA,NA
-2025-08-15,"自行提款 0130VB32 −",-10000,"Cathay",NA,NA,NA
-2025-08-12,"跨行提款 81207086   04915B6 −",-2000,"Cathay",NA,NA,NA
-2025-08-05,"自行提款 0130VBAJ −",-17400,"Cathay",NA,NA,NA
-2025-07-29,"自行提款 0130VHPQ −",-6000,"Cathay",NA,NA,NA
-2025-07-19,"跨行提款 82204954380A42B31F −",-2000,"Cathay",NA,NA,NA
-2025-07-14,"跨行提款 009534553428697727 −",-10000,"Cathay",NA,NA,NA
-2025-07-03,"跨行提款 808L0679O328760226 −",-2000,"Cathay",NA,NA,NA
-2025-05-21,"自行提款 0130VBAJ −",-15000,"Cathay",NA,NA,NA
-2025-04-28,"自行提款 0130VBAJ −",-21300,"Cathay",NA,NA,NA
-2025-04-26,"自行提款 0130VB3A −",-1500,"Cathay",NA,NA,NA
-2025-04-21,"自行提款 0130VBAJ −",-3900,"Cathay",NA,NA,NA
-2025-04-06,"自行提款 0130VBAJ −",-500,"Cathay",NA,NA,NA
-2025-04-06,"自行提款 0130VBAJ −",-1000,"Cathay",NA,NA,NA
-2025-04-02,"自行提款 0130VBAJ −",-14500,"Cathay",NA,NA,NA
-2025-03-28,"自行提款 0130VBAJ −",-15300,"Cathay",NA,NA,NA
-2025-02-24,"自行提款 0130VHKP −",-6000,"Cathay",NA,NA,NA
-2025-01-17,"跨行提款 82204957068D9AC96F −",-1000,"Cathay",NA,NA,NA
-2025-01-14,"自行提款 0130VBAJ −",-10000,"Cathay",NA,NA,NA
-2024-12-15,"自行提款 0130VBAJ −",-5000,"Cathay",NA,NA,NA
+"transaction_date","description","amount","account","recipient","sender","category","Month","Year","month_year","category2"
+2025-09-27,"自行提款 0130VBAJ −",-19000,"Cathay",NA,NA,NA,"Sep",2025,"Sep_2025",NA
+2025-09-13,"跨行提款 81207438   118829A −",-2000,"Cathay",NA,NA,NA,"Sep",2025,"Sep_2025",NA
+2025-09-01,"自行提款 0130VB3A −",-25800,"Cathay",NA,NA,NA,"Sep",2025,"Sep_2025",NA
+2025-08-15,"自行提款 0130VB32 −",-10000,"Cathay",NA,NA,NA,"Aug",2025,"Aug_2025",NA
+2025-08-12,"跨行提款 81207086   04915B6 −",-2000,"Cathay",NA,NA,NA,"Aug",2025,"Aug_2025",NA
+2025-08-05,"自行提款 0130VBAJ −",-17400,"Cathay",NA,NA,NA,"Aug",2025,"Aug_2025",NA
+2025-07-29,"自行提款 0130VHPQ −",-6000,"Cathay",NA,NA,NA,"Jul",2025,"Jul_2025",NA
+2025-07-19,"跨行提款 82204954380A42B31F −",-2000,"Cathay",NA,NA,NA,"Jul",2025,"Jul_2025",NA
+2025-07-14,"跨行提款 009534553428697727 −",-10000,"Cathay",NA,NA,NA,"Jul",2025,"Jul_2025",NA
+2025-07-03,"跨行提款 808L0679O328760226 −",-2000,"Cathay",NA,NA,NA,"Jul",2025,"Jul_2025",NA
+2025-05-21,"自行提款 0130VBAJ −",-15000,"Cathay",NA,NA,NA,"May",2025,"May_2025",NA
+2025-04-28,"自行提款 0130VBAJ −",-21300,"Cathay",NA,NA,NA,"Apr",2025,"Apr_2025",NA
+2025-04-26,"自行提款 0130VB3A −",-1500,"Cathay",NA,NA,NA,"Apr",2025,"Apr_2025",NA
+2025-04-21,"自行提款 0130VBAJ −",-3900,"Cathay",NA,NA,NA,"Apr",2025,"Apr_2025",NA
+2025-04-06,"自行提款 0130VBAJ −",-500,"Cathay",NA,NA,NA,"Apr",2025,"Apr_2025",NA
+2025-04-06,"自行提款 0130VBAJ −",-1000,"Cathay",NA,NA,NA,"Apr",2025,"Apr_2025",NA
+2025-04-02,"自行提款 0130VBAJ −",-14500,"Cathay",NA,NA,NA,"Apr",2025,"Apr_2025",NA
+2025-03-28,"自行提款 0130VBAJ −",-15300,"Cathay",NA,NA,NA,"Mar",2025,"Mar_2025",NA
+2025-02-24,"自行提款 0130VHKP −",-6000,"Cathay",NA,NA,NA,"Feb",2025,"Feb_2025",NA
+2025-01-17,"跨行提款 82204957068D9AC96F −",-1000,"Cathay",NA,NA,NA,"Jan",2025,"Jan_2025",NA
+2025-01-14,"自行提款 0130VBAJ −",-10000,"Cathay",NA,NA,NA,"Jan",2025,"Jan_2025",NA
+2024-12-15,"自行提款 0130VBAJ −",-5000,"Cathay",NA,NA,NA,"Dec",2024,"Dec_2024",NA
