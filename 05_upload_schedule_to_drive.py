@@ -68,7 +68,8 @@ print(f'this month: {THIS_MONTH_FILENAME}')
 
 # links to drive files
 # Step 1: Create/overwrite the file to make it blank
-open("data/drive_links.txt", "w", encoding="utf-8").close()
+with open("data/drive_links.txt", "w", encoding="utf-8") as f:
+    pass
 
 
 # load google creds -----------------------------------------------------------------------

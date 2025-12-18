@@ -33,11 +33,12 @@ month = today.month
 next_month = today.month + 1
 
 # Calculate the month after the next
-if month > 12:
-    next_month = month - 12
-    next_year += 1
+if month == 12:
+    next_month = 1
+    next_year = year + 1
 
 else:
+    next_month = today.month + 1
     next_year = year
 
 # First and last day of that month
