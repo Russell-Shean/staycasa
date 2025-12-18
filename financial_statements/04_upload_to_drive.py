@@ -1,8 +1,7 @@
 '''This file uploads the processed financial transactions back to google drive'''
 
-# pylint: disable=import-error, invalid-name
+# pylint: disable=import-error, invalid-name, wrong-import-position
 
-import os
 from datetime import date
 from datetime import datetime
 import calendar
@@ -11,9 +10,6 @@ import sys
 from pathlib import Path
 
 
-from google.oauth2.credentials import Credentials
-from google.auth.transport.requests import Request
-from googleapiclient.discovery import build
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 

@@ -1,16 +1,11 @@
 '''This file downloads financial data from our google drive account'''
 
-# pylint: disable=import-error, line-too-long, invalid-name
+# pylint: disable=import-error, line-too-long, invalid-name, wrong-import-position
 
 import os
 import sys
 from pathlib import Path
 import io
-
-from google.oauth2.credentials import Credentials
-from google.auth.transport.requests import Request
-from googleapiclient.discovery import build
-
 
 from googleapiclient.http import MediaIoBaseDownload
 

@@ -1,36 +1,37 @@
 ''' This script defines common python utility functions to be used across the project'''
 
-# plylint: disable=import-error
+# pylint: disable=import-error
 
 import os
 
 import requests
 
-from googleapiclient.http import MediaFileUpload
+from googleapiclient.http import build, MediaFileUpload
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
-from googleapiclient.discovery import build
 
 from dotenv import load_dotenv
 
 
 def build_google_service(service_type):
-    '''This function builds a drive service for later use manipulating drive files and sending emails
+    '''This function builds a drive service for later use manipulating drive
+     files and sending emails
 
-    This loads secrets from .env or github secrets and then builds authentication and the service based on the provided scopes
+    This loads secrets from .env or github secrets and then builds 
+    authentication and the service based on the provided scopes
 
     Possible types are gmail and drive (for now)
     '''
 
-    SCOPES = []
+    my_scopes = []
     service_version = ""
 
     if service_type == "gmail":
-        SCOPES = ["https://www.googleapis.com/auth/gmail.modify"]
+        my_scopes = ["https://www.googleapis.com/auth/gmail.modify"]
         service_version = "v1"
-    
+
     elif service_type == "drive":
-        SCOPES = ["https://www.googleapis.com/auth/drive"]
+        my_scopes = ["https://www.googleapis.com/auth/drive"]
         service_version = "v3"
 
     # Load secrets
@@ -40,19 +41,19 @@ def build_google_service(service_type):
     client_id = os.environ["GOOGLE_OAUTH_CLIENT_ID"]
     client_secret = os.environ["GOOGLE_OAUTH_CLIENT_SECRET"]
     refresh_token = os.environ["GOOGLE_OAUTH_REFRESH_TOKEN"]
-    
+
     creds = Credentials(
     token=None,
     refresh_token=refresh_token,
     token_uri="https://oauth2.googleapis.com/token",
     client_id=client_id,
     client_secret=client_secret,
-    scopes=SCOPES,
+    scopes=my_scopes,
     )
-    
+
     # Refresh the access token
     creds.refresh(Request())
-    
+
     drive_service = build(service_type, service_version, credentials=creds)
 
     return drive_service
@@ -66,7 +67,8 @@ def upload_file_to_drive(local_filename, drive_filename, file_type, drive_servic
     Args:
         local_filename (str): Path to the local Excel file to upload.
         drive_filename (str): Desired name of the file in Google Drive.
-        file_type (str, optional): The type of google doc type to use. Options include: document, spreadsheet
+        file_type (str, optional): The type of google doc type to use. 
+        Options include: document, spreadsheet
     """
 
     if file_type not in ["document", "spreadsheet"]:
@@ -153,7 +155,7 @@ def send_line_message(group_id, message_text, channel_access_token):
     url = "https://api.line.me/v2/bot/message/push"
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer {LINE_CHANNEL_ACCESS_TOKEN}"
+        "Authorization": f"Bearer {channel_access_token}"
     }
     body = {
         "to": group_id,

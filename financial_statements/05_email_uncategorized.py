@@ -1,7 +1,7 @@
 '''This file emails unsorted transactions to Simon so he can look at them'''
 
 # pylint: disable=import-error, invalid-name, too-many-arguments, too-many-positional-arguments
-
+# pylint: disable=wrong-import-position
 import os
 
 import sys
@@ -10,12 +10,6 @@ from pathlib import Path
 import base64
 import mimetypes
 from email.message import EmailMessage
-
-from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials
-from googleapiclient.discovery import build
-
-from dotenv import load_dotenv
 
 import pandas as pd
 

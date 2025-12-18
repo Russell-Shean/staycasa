@@ -2,21 +2,11 @@
 
 # pylint: disable=import-error, invalid-name
 
-import os
-
 from datetime import date
 from datetime import datetime
 
 import calendar
 
-from google.oauth2.credentials import Credentials
-from google.auth.transport.requests import Request
-from googleapiclient.discovery import build
-
-
-
-
-from dotenv import load_dotenv
 
 from utils import upload_file_to_drive, build_google_service
 
