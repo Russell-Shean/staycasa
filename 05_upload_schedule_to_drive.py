@@ -1,12 +1,6 @@
 '''This script uploads the cleaning schedules and cleaning invoices to google drive'''
 
-# pylint: disable=import-error, invalid-name
-
-from datetime import date
-from datetime import datetime
-
-import calendar
-
+# pylint: disable=import-error, invalid-name, line-too-long
 
 from utils import upload_file_to_drive, build_google_service, build_date_matrix
 
@@ -46,6 +40,6 @@ upload_file_to_drive(NEXT_MONTH_FILENAME,
 my_drive_service)
 
 upload_file_to_drive("data/this_months_payment_schedule.xlsx",
-f'Automatically Generated Cleaning Schedule and Invoice - {current_month_year}',
+f'Automatically Generated Cleaning Schedule and Invoice - {date_matrix["current_month_year"]}',
 'spreadsheet',
 my_drive_service)

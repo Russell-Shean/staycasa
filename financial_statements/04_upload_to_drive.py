@@ -2,10 +2,6 @@
 
 # pylint: disable=import-error, invalid-name, wrong-import-position
 
-from datetime import date
-from datetime import datetime
-import calendar
-
 import sys
 from pathlib import Path
 

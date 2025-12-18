@@ -1,10 +1,8 @@
 '''This script sends Simon a line message with the cleaning schedule for the next month'''
 
-# pylint: disable=import-error, invalid-name
+# pylint: disable=import-error, invalid-name, line-too-long
 
 import os
-from datetime import date
-import calendar
 
 from dotenv import load_dotenv
 

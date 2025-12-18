@@ -188,12 +188,12 @@ def build_date_matrix():
     date_matrix["now"] = datetime.now()
 
     # Format as "Month Year"
-    date_matrix["current_month_year"] = now.strftime("%B %Y")
+    date_matrix["current_month_year"] = date_matrix["now"].strftime("%B %Y")
 
     # Current year and month
-    date_matrix["year"] = today.year
-    date_matrix["month"] = today.month
-    date_matrix["next_month"] = today.month + 1
+    date_matrix["year"] = date_matrix["today"].year
+    date_matrix["month"] = date_matrix["today"].month
+    date_matrix["next_month"] = date_matrix["today"].month + 1
 
     # Calculate the month after the next
     if date_matrix["month"] == 12:
@@ -201,7 +201,7 @@ def build_date_matrix():
         date_matrix["next_year"] = date_matrix["year"] + 1
 
     else:
-        date_matrix["next_month"] = today.month + 1
+        date_matrix["next_month"] = date_matrix["today"].month + 1
         date_matrix["next_year"] = date_matrix["year"]
 
     # First and last day of that month
