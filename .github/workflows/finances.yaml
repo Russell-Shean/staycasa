@@ -40,12 +40,12 @@ jobs:
           GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
         run: |
           
-          python3 financial_statements/01-load_data_from_drive.py
+          python3 financial_statements/01_load_data_from_drive.py
 
       # Step 2: Process data and create reports
       - name: Process data and create reports
         run: |
-          Rscript -e 'source("financial_statements/00-driver_script.R")'
+          Rscript -e 'source("financial_statements/00_driver_script.R")'
 
 
       # Step 5: Upload financial documents to google drive
@@ -55,7 +55,7 @@ jobs:
           GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
           GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
-        run: python3 financial_statements/04-upload_to_drive.py
+        run: python3 financial_statements/04_upload_to_drive.py
         
       # Step 6: Send email with uncategorized transactions
       - name: Email uncategorized transactions
@@ -64,5 +64,5 @@ jobs:
           GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
           GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
-        run: python3 financial_statements/05-email_uncategorized.py
+        run: python3 financial_statements/05_email_uncategorized.py
 

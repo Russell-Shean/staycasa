@@ -45,12 +45,12 @@ jobs:
       # Step 2: Process emails
       - name: Process emails
         run: |
-          Rscript -e 'source("02-process_airbnb_emails.R")'
+          Rscript -e 'source("02_process_airbnb_emails.R")'
 
       # Step 3: Create daily schedule from emails
       # Step 4: Create a payment schedule
       - name: Create schedules
-        run: Rscript -e 'source("03-create_daily_schedule.R"); source("04-create_payment_schedule.R"); source("07-check_for_same_day_checkins.R")'
+        run: Rscript -e 'source("03_create_daily_schedule.R"); source("04_create_payment_schedule.R"); source("07_check_for_same_day_checkins.R")'
         
 
       # Step 5: Upload daily schedule to google drive
@@ -60,10 +60,10 @@ jobs:
           GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
           GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
-        run: python3 05-upload_schedule_to_drive.py
+        run: python3 05_upload_schedule_to_drive.py
         
       # Step 6: Send Line message
       - name: Send Line Message
         env: 
           LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
-        run: python3 08-2pm_line_messages.py
+        run: python3 08_2pm_line_messages.py

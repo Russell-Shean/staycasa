@@ -24,14 +24,14 @@ bank_transactions <- lapply(bank_statements,
   
   mutate(
     # fix dates
-    transaction_date = as.Date(ymd_hm(交易日期)),
+    transaction_date = as.Date(ymd_hm(`交易日期`)),
     
     # create an amount column
-    amount = case_when(提出 != "−" ~ as.numeric(str_remove_all(提出, ",")) * -1,
-                       存入 != "−" ~ as.numeric(str_remove_all(存入, ","))),
+    amount = case_when(`提出` != "−" ~ as.numeric(str_remove_all(`提出`, ",")) * -1,
+                       `存入` != "−" ~ as.numeric(str_remove_all(`存入`, ","))),
     
     # Create a combined description field
-    description = paste(說明, 備註, 交易資訊),
+    description = paste(`說明`, `備註`, `交易資訊`),
     
     # create account column
     account = "Cathay"
