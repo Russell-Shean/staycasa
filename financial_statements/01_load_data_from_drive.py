@@ -11,33 +11,11 @@ from googleapiclient.discovery import build
 
 from googleapiclient.http import MediaIoBaseDownload
 
-from dotenv import load_dotenv
-
-load_dotenv()
-
-# Find the financial documents
-# load google creds -----------------------------------------------------------------------
+from staycasa_automation.utils import build_google_service
 
 
-# Load from environment variables
-client_id = os.environ["GOOGLE_OAUTH_CLIENT_ID"]
-client_secret = os.environ["GOOGLE_OAUTH_CLIENT_SECRET"]
-refresh_token = os.environ["GOOGLE_OAUTH_REFRESH_TOKEN"]
-
-creds = Credentials(
-    token=None,
-    refresh_token=refresh_token,
-    token_uri="https://oauth2.googleapis.com/token",
-    client_id=client_id,
-    client_secret=client_secret,
-    scopes=["https://www.googleapis.com/auth/drive"],
-)
-
-# Refresh the access token
-creds.refresh(Request())
-
-my_drive_service = build("drive", "v3", credentials=creds)
-
+# Build a drive service  -----------------------------------------------------------------------
+my_drive_service = build_google_service("drive")
 
 def download_from_drive(drive_service, local_download_path):
     '''This function downloads a file from google drive'''

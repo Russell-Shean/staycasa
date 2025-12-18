@@ -6,9 +6,10 @@ import os
 from datetime import date
 import calendar
 
-import requests
-
 from dotenv import load_dotenv
+
+from utils import send_line_message
+
 load_dotenv()
 
 
@@ -95,4 +96,4 @@ links_message = ""
 with open("data/drive_links.txt", "r", encoding="utf-8") as f:
     links_message += f.read()
 
-send_line_message(GROUP_ID,links_message)
+send_line_message(GROUP_ID, links_message, LINE_CHANNEL_ACCESS_TOKEN)

@@ -1,12 +1,11 @@
 '''This script sends a line message alerting Simon to same day checkins if present'''
 
-# pylint: disable=import-error
+# pylint: disable=import-error, line-too-long, invalid-name
 
 import os
 from datetime import date
 import json
 
-import requests
 
 from dotenv import load_dotenv
 
@@ -66,7 +65,7 @@ GROUP_ID = "C4c2944e52265752b5b36ca467d6bbbd6"  # actual group
 
 # Load the same day checkins file so we can send it
 with open(SAME_DAY_CHECKINS_PATH, "r", encoding="utf-8") as f:
-    sameday_checkins = json.load(f)
+  sameday_checkins = json.load(f)
 
 # check to see if there are any same day checkins today
 for days in sameday_checkins:
@@ -85,4 +84,4 @@ for days in sameday_checkins:
 
 
       # send a line message only if there's a checkin today
-      send_line_message(GROUP_ID, line_message)
+      send_line_message(GROUP_ID, line_message, LINE_CHANNEL_ACCESS_TOKEN)

@@ -12,18 +12,7 @@ from googleapiclient.discovery import build
 
 from dotenv import load_dotenv
 
-load_dotenv()
-
-
-
-# Gmail API scope
-SCOPES = ["https://www.googleapis.com/auth/gmail.modify"]
-
-# Load from environment variables
-CLIENT_ID = os.environ["GOOGLE_OAUTH_CLIENT_ID"]
-CLIENT_SECRET = os.environ["GOOGLE_OAUTH_CLIENT_SECRET"]
-REFRESH_TOKEN = os.environ["GOOGLE_OAUTH_REFRESH_TOKEN"]
-
+from utils import build_google_service
 
 
 # Path to checkpoint file
@@ -32,20 +21,8 @@ CHECKPOINT_FILE = "data/last_message_id.txt"
 # PAth to save out data
 EMAILS_PATH = "data/emails_from_api.json"
 
-# Build credentials
-creds = Credentials(
-    None,
-    refresh_token=REFRESH_TOKEN,
-    token_uri="https://oauth2.googleapis.com/token",
-    client_id=CLIENT_ID,
-    client_secret=CLIENT_SECRET,
-    scopes=SCOPES,
-)
+my_service = build_google_service("gmail")
 
-creds.refresh(Request())
-
-# Build Gmail service
-service = build("gmail", "v1", credentials=creds)
 
 def get_message_body(msg_payload):
     """Extract plain text or HTML body."""
@@ -81,7 +58,7 @@ while True:
 
     print(f'Now on page: {page_token}')
 
-    results = service.users().messages().list(
+    results = my_service.users().messages().list(
         userId="me",
         maxResults=500,
         pageToken=page_token,
@@ -100,7 +77,7 @@ while True:
             break
 
         # Download message details
-        message = service.users().messages().get(userId="me", id=msg_id, format="full").execute()
+        message = my_service.users().messages().get(userId="me", id=msg_id, format="full").execute()
         payload = message.get("payload", {})
         headers = payload.get("headers", [])
         header_map = {h["name"]: h["value"] for h in headers}

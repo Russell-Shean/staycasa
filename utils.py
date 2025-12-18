@@ -1,8 +1,57 @@
 ''' This script defines common python utility functions to be used across the project'''
 
+# plylint: disable=import-error
+
 import requests
 
 from googleapiclient.http import MediaFileUpload
+
+from dotenv import load_dotenv
+
+
+def build_google_service(service_type):
+    '''This function builds a drive service for later use manipulating drive files and sending emails
+
+    This loads secrets from .env or github secrets and then builds authentication and the service based on the provided scopes
+
+    Possible types are gmail and drive (for now)
+    '''
+
+    SCOPES = []
+    service_version = ""
+
+    if service_type == "gmail":
+        SCOPES = ["https://www.googleapis.com/auth/gmail.modify"]
+        service_version = "v1"
+    
+    elif service_type == "drive":
+        SCOPES = ["https://www.googleapis.com/auth/drive"]
+        service_version = "v3"
+
+    # Load secrets
+    load_dotenv()
+
+    # Load from environment variables
+    client_id = os.environ["GOOGLE_OAUTH_CLIENT_ID"]
+    client_secret = os.environ["GOOGLE_OAUTH_CLIENT_SECRET"]
+    refresh_token = os.environ["GOOGLE_OAUTH_REFRESH_TOKEN"]
+    
+    creds = Credentials(
+    token=None,
+    refresh_token=refresh_token,
+    token_uri="https://oauth2.googleapis.com/token",
+    client_id=client_id,
+    client_secret=client_secret,
+    scopes=SCOPES,
+    )
+    
+    # Refresh the access token
+    creds.refresh(Request())
+    
+    drive_service = build(service_type, service_version, credentials=creds)
+
+    return drive_service
+
 
 
 def upload_file_to_drive(local_filename, drive_filename, file_type, drive_service):
@@ -17,6 +66,9 @@ def upload_file_to_drive(local_filename, drive_filename, file_type, drive_servic
 
     if file_type not in ["document", "spreadsheet"]:
         raise ValueError("The file type must be 'document' or 'spreadsheet'")
+
+
+    file_mime_type = ""
 
 
 
@@ -90,7 +142,7 @@ def upload_file_to_drive(local_filename, drive_filename, file_type, drive_servic
 
 
 
-def send_line_message(group_id, message_text):
+def send_line_message(group_id, message_text, channel_access_token):
     ''' This function sends a line message to a line group'''
 
     url = "https://api.line.me/v2/bot/message/push"

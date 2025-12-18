@@ -15,30 +15,9 @@ from dotenv import load_dotenv
 
 import pandas as pd
 
-load_dotenv()
+from staycasa_automation.utils import build_google_service
 
-# Same scope you already use
-SCOPES = ["https://www.googleapis.com/auth/gmail.modify"]
-
-# Load credentials from environment (GitHub secrets)
-CLIENT_ID = os.environ["GOOGLE_OAUTH_CLIENT_ID"]
-CLIENT_SECRET = os.environ["GOOGLE_OAUTH_CLIENT_SECRET"]
-REFRESH_TOKEN = os.environ["GOOGLE_OAUTH_REFRESH_TOKEN"]
-
-# Build credentials
-creds = Credentials(
-    None,
-    refresh_token=REFRESH_TOKEN,
-    token_uri="https://oauth2.googleapis.com/token",
-    client_id=CLIENT_ID,
-    client_secret=CLIENT_SECRET,
-    scopes=SCOPES,
-)
-
-creds.refresh(Request())
-
-# Build Gmail service
-my_service = build("gmail", "v1", credentials=creds)
+my_service = build_google_service("gmail")
 
 
 def create_message_with_attachment(
