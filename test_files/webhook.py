@@ -1,5 +1,7 @@
 '''This script sets up the webhook I used to get the line group id'''
 
+# pylint: disable=import-error
+
 import json
 from flask import Flask, request
 
@@ -8,6 +10,8 @@ app = Flask(__name__)
 
 @app.route("/webhook", methods=["POST"])
 def webhook():
+    '''This function creates a flask app for a webhook and returns a line group id'''
+
     body = request.get_json()
     print("📥 Received event:")
     print(json.dumps(body, indent=2))

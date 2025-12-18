@@ -40,20 +40,20 @@ month = today.month
 
 # Calculate the month after the next
 if month == 12:
-    next_month = 1
+    NEXT_MONTH = 1
     next_year = year + 1
 
 else:
-    next_month = today.month + 1
+    NEXT_MONTH = today.month + 1
     next_year = year
 
 # First and last day of that month
-next_month_first_day = date(next_year, next_month, 1)
-next_month_last_day = date(next_year, next_month, calendar.monthrange(next_year, next_month)[1])
+NEXT_MONTH_first_day = date(next_year, NEXT_MONTH, 1)
+NEXT_MONTH_last_day = date(next_year, NEXT_MONTH, calendar.monthrange(next_year, NEXT_MONTH)[1])
 
 # Create the string
-next_month_filename = f"data/daily_schedule_{next_month_first_day}_{next_month_last_day}.txt"
-print(f'next month: {next_month_filename}')
+NEXT_MONTH_FILENAME = f"data/daily_schedule_{NEXT_MONTH_first_day}_{NEXT_MONTH_last_day}.txt"
+print(f'next month: {NEXT_MONTH_FILENAME}')
 
 
 
@@ -62,8 +62,8 @@ this_month_first_day = date(year, month, 1)
 this_month_last_day = date(year, month, calendar.monthrange(year, month)[1])
 
 # Create the string
-this_month_filename = f"data/daily_schedule_{this_month_first_day}_{this_month_last_day}.txt"
-print(f'this month: {this_month_filename}')
+THIS_MONTH_FILENAME = f"data/daily_schedule_{this_month_first_day}_{this_month_last_day}.txt"
+print(f'this month: {THIS_MONTH_FILENAME}')
 
 
 # links to drive files
@@ -240,11 +240,11 @@ def upload_excel_to_drive(local_filename,drive_filename):
 
 
 
-upload_file_to_drive(this_month_filename, 
+upload_file_to_drive(THIS_MONTH_FILENAME,
 "Automatically Generated Daily Schedule - This Month")
 
-upload_file_to_drive(next_month_filename,
+upload_file_to_drive(NEXT_MONTH_FILENAME,
 "Automatically Generated Daily Schedule - Next Month")
 
-upload_excel_to_drive("data/this_months_payment_schedule.xlsx", 
+upload_excel_to_drive("data/this_months_payment_schedule.xlsx",
 f'Automatically Generated Cleaning Schedule and Invoice - {current_month_year}')
