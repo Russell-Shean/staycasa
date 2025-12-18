@@ -74,14 +74,14 @@ for days in sameday_checkins:
     if days["checkin_date"] == str(today):
 
     # Then check to see if there are same day checkin today
-      if len(days["checkins"]) > 0:
+        if len(days["checkins"]) > 0:
 
-        line_message = "TODAY THERE ARE SAME DAY CHECKINS\n"
+            line_message = "TODAY THERE ARE SAME DAY CHECKINS\n"
 
-        for todays_checkins in days["checkins"]:
-          line_message += f'({todays_checkins["room_number"]})\n{todays_checkins["guest_first_name"]} ({todays_checkins["number_of_guests"]}) {todays_checkins["checkin_time"]}\n'
+            for todays_checkins in days["checkins"]:
+                line_message += f'({todays_checkins["room_number"]})\n{todays_checkins["guest_first_name"]} ({todays_checkins["number_of_guests"]}) {todays_checkins["checkin_time"]}\n'
 
 
 
-        # send a line message only if there's a checkin today
-        send_line_message(GROUP_ID, line_message, LINE_CHANNEL_ACCESS_TOKEN)
+            # send a line message only if there's a checkin today
+            send_line_message(GROUP_ID, line_message, LINE_CHANNEL_ACCESS_TOKEN)
