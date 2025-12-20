@@ -53,7 +53,7 @@
 2025-10-04,"電子轉出 墊款還款 (822)0000241540091956
 ",-50000,"Cathay","Simon",NA,"Reimbursement","Oct",2025,"Oct_2025","Other Business Expenses - COGS"
 2025-10-04,"網銀轉帳 − (013)0000270***032358
-鄭＊婷　　　　　　　　　　　　　　　　　",73500,"Cathay",NA,"Tina","Capital Injection","Oct",2025,"Oct_2025","Unneeded categories"
+鄭＊婷　　　　　　　　　　　　　　　　　",73500,"Cathay",NA,"Tina","Capital Injection","Oct",2025,"Oct_2025","Capital Injection"
 2025-10-03,"跨行費用 − −",-10,"Cathay",NA,NA,"Bank Transfer fees","Oct",2025,"Oct_2025","Other Business Expenses - COGS"
 2025-10-03,"電子轉出 ｌａｌａｍｏｖｅ (822)0000241540091956
 ",-525,"Cathay","Simon",NA,"Business Meals","Oct",2025,"Oct_2025","Other Business Expenses - Operating Expenses"
@@ -89,9 +89,9 @@
 2025-09-12,"網銀外存 218087121432 −",39290,"Cathay",NA,NA,"Revenue","Sep",2025,"Sep_2025","Revenue"
 2025-09-12,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Sep",2025,"Sep_2025","Other Business Expenses - COGS"
 2025-09-12,"電子轉出 Ｃａｓｈ　Ｐａｙｏｕｔ (822)0000241540091956
-",-50000,"Cathay","Simon",NA,"Dividend Distribution - Simon","Sep",2025,"Sep_2025","Unneeded categories"
+",-50000,"Cathay","Simon",NA,"Dividend Distribution - Simon","Sep",2025,"Sep_2025","Dividend Distribution"
 2025-09-12,"網銀轉帳 ｃａｓｈ　ｐａｙｏｕｔ (013)0000270506032358
-鄭＊婷",-50000,"Cathay","Tina",NA,"Dividend Distribution - Tina","Sep",2025,"Sep_2025","Unneeded categories"
+鄭＊婷",-50000,"Cathay","Tina",NA,"Dividend Distribution - Tina","Sep",2025,"Sep_2025","Dividend Distribution"
 2025-09-08,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Sep",2025,"Sep_2025","Other Business Expenses - COGS"
 2025-09-08,"電子轉出 ５１３租金 (009)0053458666888700
 ",-27560,"Cathay","716 Landlord",NA,"Rent","Sep",2025,"Sep_2025","Rent"
@@ -100,7 +100,7 @@
 2025-09-01,"自行提款 0130VB3A −",-25800,"Cathay",NA,NA,NA,"Sep",2025,"Sep_2025",NA
 2025-09-01,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Sep",2025,"Sep_2025","Other Business Expenses - COGS"
 2025-09-01,"電子轉出 減資 (822)0000152540146385
-",-50000,"Cathay","Andy",NA,"Dividend Distribution - Andy","Sep",2025,"Sep_2025","Unneeded categories"
+",-50000,"Cathay","Andy",NA,"Dividend Distribution - Andy","Sep",2025,"Sep_2025","Dividend Distribution"
 2025-09-01,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Sep",2025,"Sep_2025","Other Business Expenses - COGS"
 2025-09-01,"電子轉出 房租 (009)0053458666888700
 ",-29000,"Cathay","716 Landlord",NA,"Rent","Sep",2025,"Sep_2025","Rent"
@@ -126,11 +126,11 @@
 2025-08-15,"自行提款 0130VB32 −",-10000,"Cathay",NA,NA,NA,"Aug",2025,"Aug_2025",NA
 2025-08-15,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Aug",2025,"Aug_2025","Other Business Expenses - COGS"
 2025-08-15,"電子轉出 紅利分配 (822)0000241540091956
-",-40000,"Cathay","Simon",NA,"Dividend Distribution - Simon","Aug",2025,"Aug_2025","Unneeded categories"
+",-40000,"Cathay","Simon",NA,"Dividend Distribution - Simon","Aug",2025,"Aug_2025","Dividend Distribution"
 2025-08-15,"網銀轉帳 Ａｎｎ　ａｄｖａｎｃｅ (013)0000270506032358
 鄭＊婷",-10000,"Cathay","Tina",NA,"Cleaning","Aug",2025,"Aug_2025","Cleaning"
 2025-08-15,"網銀轉帳 分紅 (013)0000270506032358
-鄭＊婷",-50000,"Cathay","Tina",NA,"Dividend Distribution - Tina","Aug",2025,"Aug_2025","Unneeded categories"
+鄭＊婷",-50000,"Cathay","Tina",NA,"Dividend Distribution - Tina","Aug",2025,"Aug_2025","Dividend Distribution"
 2025-08-12,"網銀外存 218087121432 −",153575,"Cathay",NA,NA,"Revenue","Aug",2025,"Aug_2025","Revenue"
 2025-08-12,"跨行費用 − −",-5,"Cathay",NA,NA,"Bank Transfer fees","Aug",2025,"Aug_2025","Other Business Expenses - COGS"
 2025-08-12,"跨行提款 81207086   04915B6 −",-2000,"Cathay",NA,NA,NA,"Aug",2025,"Aug_2025",NA
@@ -151,7 +151,7 @@
 李＊軒",8700,"Cathay",NA,"李＊軒","Revenue","Aug",2025,"Aug_2025","Revenue"
 2025-08-01,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Aug",2025,"Aug_2025","Other Business Expenses - COGS"
 2025-08-01,"電子轉出 ｃａｐ　ｒｅｄｕｃｔｉｏｎ (822)0000152540146385
-",-50000,"Cathay","Andy",NA,"Dividend Distribution - Andy","Aug",2025,"Aug_2025","Unneeded categories"
+",-50000,"Cathay","Andy",NA,"Dividend Distribution - Andy","Aug",2025,"Aug_2025","Dividend Distribution"
 2025-08-01,"網銀外存 218087121432 −",118503,"Cathay",NA,NA,"Revenue","Aug",2025,"Aug_2025","Revenue"
 2025-07-29,"自行提款 0130VHPQ −",-6000,"Cathay",NA,NA,NA,"Jul",2025,"Jul_2025",NA
 2025-07-25,"網銀外存 218087121432 −",39847,"Cathay",NA,NA,"Revenue","Jul",2025,"Jul_2025","Revenue"
@@ -159,7 +159,7 @@
 2025-07-25,"電子轉出 １７１３房租 (008)0000129200040033
 ",-31500,"Cathay","1713 Landlord",NA,"Rent","Jul",2025,"Jul_2025","Rent"
 2025-07-21,"電子轉出 阿修傭金 (822)0000241540091956
-",-440,"Cathay","Simon",NA,"Dividend Distribution - Simon","Jul",2025,"Jul_2025","Unneeded categories"
+",-440,"Cathay","Simon",NA,"Dividend Distribution - Simon","Jul",2025,"Jul_2025","Dividend Distribution"
 2025-07-21,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
 2025-07-21,"電子轉出 １６１５租金 (012)0000704168156410
 ",-29560,"Cathay","1615 Landlord",NA,"Rent","Jul",2025,"Jul_2025","Rent"
@@ -179,14 +179,14 @@
 2025-07-14,"網銀外存 218087121432 −",42515,"Cathay",NA,NA,"Revenue","Jul",2025,"Jul_2025","Revenue"
 2025-07-13,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
 2025-07-13,"電子轉出 − (822)0000152540146385
-",-50000,"Cathay","Andy",NA,"Dividend Distribution - Simon","Jul",2025,"Jul_2025","Unneeded categories"
+",-50000,"Cathay","Andy",NA,"Dividend Distribution - Simon","Jul",2025,"Jul_2025","Dividend Distribution"
 2025-07-12,"跨行轉入 − (822)0000252***129590
 ",20000,"Cathay",NA,NA,"Revenue","Jul",2025,"Jul_2025","Revenue"
 2025-07-12,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
 2025-07-12,"電子轉出 ｄｉｓｔｒｉｂｕｔｉｏｎ (822)0000241540091956
-",-50000,"Cathay","Simon",NA,"Dividend Distribution - Simon","Jul",2025,"Jul_2025","Unneeded categories"
+",-50000,"Cathay","Simon",NA,"Dividend Distribution - Simon","Jul",2025,"Jul_2025","Dividend Distribution"
 2025-07-12,"網銀轉帳 ｄｉｓｔｒｉｂｕｔｉｏｎ (013)0000270506032358
-鄭＊婷",-50000,"Cathay","Tina",NA,"Dividend Distribution - Tina","Jul",2025,"Jul_2025","Unneeded categories"
+鄭＊婷",-50000,"Cathay","Tina",NA,"Dividend Distribution - Tina","Jul",2025,"Jul_2025","Dividend Distribution"
 2025-07-09,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Jul",2025,"Jul_2025","Other Business Expenses - COGS"
 2025-07-09,"電子轉出 − (009)0053458666888700
 ",-27560,"Cathay","716 Landlord",NA,"Rent","Jul",2025,"Jul_2025","Rent"
@@ -350,7 +350,7 @@
 2025-04-13,"電子轉出 １６００電子鎖 (822)0000241540091956
 ",-4000,"Cathay","Simon",NA,"Maintenance/Repairs/Furniture","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
 2025-04-12,"網銀轉帳 Ｔｉｎａ (013)0000270***032358
-鄭＊婷",47168,"Cathay",NA,"Tina","Capital Injection","Apr",2025,"Apr_2025","Unneeded categories"
+鄭＊婷",47168,"Cathay",NA,"Tina","Capital Injection","Apr",2025,"Apr_2025","Capital Injection"
 2025-04-11,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Apr",2025,"Apr_2025","Other Business Expenses - COGS"
 2025-04-11,"電子轉出 ５１３　ｒｅｎｔ (009)0053458666888700
 ",-27560,"Cathay","716 Landlord",NA,"Rent","Apr",2025,"Apr_2025","Rent"
@@ -446,9 +446,9 @@
 2025-03-01,"電子轉出 敦化南路打掃 (700)0001213890257738
 ",-2400,"Cathay","Cleaner 4",NA,"Cleaning","Mar",2025,"Mar_2025","Cleaning"
 2025-02-24,"網銀轉帳 Ｔｉｎａ２ (013)0000270***032358
-鄭＊婷",50000,"Cathay",NA,"Tina","Capital Injection","Feb",2025,"Feb_2025","Unneeded categories"
+鄭＊婷",50000,"Cathay",NA,"Tina","Capital Injection","Feb",2025,"Feb_2025","Capital Injection"
 2025-02-24,"網銀轉帳 Ｔｉｎａ (013)0000270***032358
-鄭＊婷",50000,"Cathay",NA,"Tina","Capital Injection","Feb",2025,"Feb_2025","Unneeded categories"
+鄭＊婷",50000,"Cathay",NA,"Tina","Capital Injection","Feb",2025,"Feb_2025","Capital Injection"
 2025-02-24,"自行提款 0130VHKP −",-6000,"Cathay",NA,NA,NA,"Feb",2025,"Feb_2025",NA
 2025-02-21,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Feb",2025,"Feb_2025","Other Business Expenses - COGS"
 2025-02-21,"電子轉出 １６１５一個月押金 (822)0000241540091956
@@ -495,11 +495,11 @@
 2025-02-06,"電子轉出 ７１６　租金 (009)0053458666888700
 ",-29000,"Cathay","716 Landlord",NA,"Rent","Feb",2025,"Feb_2025","Rent"
 2025-02-06,"網銀轉帳 Ｔｉｎａ (013)0000270***032358
-鄭＊婷",50000,"Cathay",NA,"Tina","Capital Injection","Feb",2025,"Feb_2025","Unneeded categories"
+鄭＊婷",50000,"Cathay",NA,"Tina","Capital Injection","Feb",2025,"Feb_2025","Capital Injection"
 2025-02-06,"跨行轉入 Ａｎｄｙ (808)0000015***209452
-",50000,"Cathay",NA,"Andy","Capital Injection","Feb",2025,"Feb_2025","Unneeded categories"
+",50000,"Cathay",NA,"Andy","Capital Injection","Feb",2025,"Feb_2025","Capital Injection"
 2025-02-06,"跨行轉入 − (822)0000241***091956
-",50000,"Cathay",NA,"Simon","Capital Injection","Feb",2025,"Feb_2025","Unneeded categories"
+",50000,"Cathay",NA,"Simon","Capital Injection","Feb",2025,"Feb_2025","Capital Injection"
 2025-02-06,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Feb",2025,"Feb_2025","Other Business Expenses - COGS"
 2025-02-06,"電子轉出 １６１５　７１６打掃 (007)0000018150301741
 ",-2000,"Cathay","Cleaner 3",NA,"Cleaning","Feb",2025,"Feb_2025","Cleaning"
@@ -548,7 +548,7 @@
 2024-12-31,"電子轉出 打掃清潔 (822)0000190530056476
 ",-3000,"Cathay","Cleaner 2",NA,"Cleaning","Dec",2024,"Dec_2024","Cleaning"
 2024-12-30,"跨行轉入 − (808)0000015***209452
-",50000,"Cathay",NA,"Andy","Capital Injection","Dec",2024,"Dec_2024","Unneeded categories"
+",50000,"Cathay",NA,"Andy","Capital Injection","Dec",2024,"Dec_2024","Capital Injection"
 2024-12-30,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Dec",2024,"Dec_2024","Other Business Expenses - COGS"
 2024-12-30,"電子轉出 １７１３房租押金 (009)0053459500036600
 ",-50000,"Cathay","洪永修",NA,"Deposit","Dec",2024,"Dec_2024","Deposit"
@@ -559,9 +559,9 @@
 2024-12-30,"電子轉出 − (008)0000129200040033
 ",-26500,"Cathay","1713 Landlord",NA,"Rent","Dec",2024,"Dec_2024","Rent"
 2024-12-28,"網銀轉帳 Ｔｉｎａ (013)0000270***032358
-鄭＊婷",50000,"Cathay",NA,"Tina","Capital Injection","Dec",2024,"Dec_2024","Unneeded categories"
+鄭＊婷",50000,"Cathay",NA,"Tina","Capital Injection","Dec",2024,"Dec_2024","Capital Injection"
 2024-12-27,"跨行轉入 − (822)0000241***091956
-",50000,"Cathay",NA,"Simon","Capital Injection","Dec",2024,"Dec_2024","Unneeded categories"
+",50000,"Cathay",NA,"Simon","Capital Injection","Dec",2024,"Dec_2024","Capital Injection"
 2024-12-26,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Dec",2024,"Dec_2024","Other Business Expenses - COGS"
 2024-12-26,"電子轉出 − (822)0000152540146385
 ",-12989,"Cathay","Andy",NA,"Reimbursement","Dec",2024,"Dec_2024","Other Business Expenses - COGS"
@@ -591,9 +591,9 @@
 2024-12-08,"電子轉出 − (009)0053459500036600
 ",-42560,"Cathay","洪永修",NA,"Deposit","Dec",2024,"Dec_2024","Deposit"
 2024-12-05,"跨行轉入 Ｒｅｎｔ (808)0000015***209452
-",50000,"Cathay",NA,"Andy","Capital Injection","Dec",2024,"Dec_2024","Unneeded categories"
+",50000,"Cathay",NA,"Andy","Capital Injection","Dec",2024,"Dec_2024","Capital Injection"
 2024-12-05,"網銀轉帳 Ｔｉｎａ (013)0000270***032358
-鄭＊婷",50000,"Cathay",NA,"Tina","Capital Injection","Dec",2024,"Dec_2024","Unneeded categories"
+鄭＊婷",50000,"Cathay",NA,"Tina","Capital Injection","Dec",2024,"Dec_2024","Capital Injection"
 2024-12-05,"跨行費用 − −",-15,"Cathay",NA,NA,"Bank Transfer fees","Dec",2024,"Dec_2024","Other Business Expenses - COGS"
 2024-12-05,"電子轉出 − (822)0000241540091956
 ",-10600,"Cathay","Simon",NA,"Reimbursement","Dec",2024,"Dec_2024","Other Business Expenses - COGS"

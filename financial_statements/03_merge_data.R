@@ -65,19 +65,23 @@ combined_transactions <- bank_transactions |>
     
     #category %in% c() ~ "Revenue",
     
-    category %in% c("Capital Reduction",
-                    "Capital Injection",
-                    "Dividend Distribution - Marty",
+    category %in% c("Credit Card Payments"          ) ~ "Unneeded categories",
+    
+    
+#category %in% c("Capital Reduction") ~ "Capital Reduction",
+    category %in% c("Capital Injection") ~ "Capital Injection",
+    category %in% c("Dividend Distribution - Marty",
                     "Dividend Distribution - Simon",
                     "Dividend Distribution - Tina",
-                    "Dividend Distribution - Andy",
-                    "Credit Card Payments"          ) ~ "Unneeded categories",
+                    "Dividend Distribution - Andy") ~ "Dividend Distribution",
     
     
     .default = NA
     
     
   )) 
+
+
 
 
 unsorted_bank_transactions <- combined_transactions |>
@@ -138,7 +142,10 @@ financial_report <- combined_transactions |>
          `Gross Margin`,
          `Gross margin %`,
          `Operating Expenses`,
-         Revenue 
+         Revenue,
+         `Capital Injection`,
+#`Capital Reduction`,
+         `Dividend Distribution`
          ) |> 
          arrange(`Month and Year`) 
 
