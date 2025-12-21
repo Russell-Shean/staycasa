@@ -6,6 +6,8 @@ Check in: 2026-01-01 YOSEPH(1) 16:00
 Drop Keycard : (515) YOSEPH 515
 (Renai Casa 2F-2)
 Check out: Yvonne 12:00 Clean anytime of day
+Check in: 2026-01-02 RAVI(1) 16:00
+Drop Keycard : (Renai Casa 2F-2) RAVI 515
 
 
 01-02
@@ -21,6 +23,8 @@ Drop Keycard : (513) EMMA 515
 Check out: MARK JOSEPH 12:00 Clean anytime of day
 Check in: 2026-01-04 NGOC(4) 16:00
 Drop Keycard : (1713) NGOC 515
+(301)
+Check out: Silvia 12:00 Clean anytime of day
 (Casa 2-3)
 Check out: Debbie 12:00 Clean anytime of day
 (716)
@@ -30,6 +34,10 @@ Drop Keycard : (716) MIRANDA 515
 
 
 01-03
+(1615)
+Check out: Abby 11:00 Clean anytime of day
+Check in: 2026-01-06 TOM(2) 16:00
+Drop Keycard : (1615) TOM 515
 
 
 01-04
@@ -45,9 +53,6 @@ Check in: NGOC(4)  16:00
 
 01-05
 
-
-DAY BEFORE KEY DROPS:
-Drop Keycard : (1615) TOM 515
 
 01-06
 (513)
@@ -128,6 +133,8 @@ Check in: NG(2)  16:00
 
 
 01-18
+(Renai Casa 2F-2)
+Check out: RAVI 12:00 Clean anytime of day
 (1600)
 Check out: SHABBIR 12:00 Clean immediately
 Check in: 2026-01-18 BENJAMIN(2) 16:00

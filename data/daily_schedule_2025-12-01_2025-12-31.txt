@@ -154,7 +154,7 @@ Check in: 2025-12-15 MITCHEL(2) 16:00
 Drop Keycard : (513) MITCHEL 515
 (Renai Casa 2F-2)
 Check out: 敦漢 12:00 Clean anytime of day
-Check in: 2025-12-24 Yvonne(2) 16:00
+Check in: 2025-12-23 Yvonne(2) 16:00
 
 
 12-15
@@ -251,6 +251,9 @@ Check in: 2025-12-24 SZE(2) 16:00
 Drop Keycard : (1713) SZE 515
 
 
+DAY BEFORE KEY DROPS:
+Drop Keycard : (Renai Casa 2F-2) Yvonne 515
+
 12-23
 (515)
 Check out: WEI 12:00 Clean immediately
@@ -258,8 +261,9 @@ Check in: 2025-12-23 JANA(2) 16:00
 Drop Keycard : (515) JANA 515
 
 
-DAY BEFORE KEY DROPS:
-Drop Keycard : (Renai Casa 2F-2) Yvonne 515
+(Renai Casa 2F-2)
+Check in: Yvonne(2)  16:00
+
 
 12-24
 (1615)
@@ -270,8 +274,6 @@ Drop Keycard : (1615) B 515
 
 (1713)
 Check in: SZE(2)  16:00
-(Renai Casa 2F-2)
-Check in: Yvonne(2)  16:00
 
 
 12-25
@@ -288,6 +290,12 @@ Drop Keycard : (716) Bianca 515
 12-26
 (301)
 Check out: SIA 12:00 Clean anytime of day
+Check in: 2025-12-28 Silvia(4) 16:00
+Drop Keycard : (301) Silvia 515
+
+
+(Casa 2-3)
+Check in: Debbie(1)  16:00
 
 
 12-27
@@ -312,7 +320,8 @@ Check in: 2025-12-28 SUYING(2) 16:00
 Drop Keycard : (814) SUYING 515
 (1615)
 Check out: B 12:00 Clean anytime of day
-Check in: 2026-01-06 TOM(2) 16:00
+Check in: 2025-12-29 Abby(2) 15:00
+Drop Keycard : (1615) Abby 515
 
 
 12-29
