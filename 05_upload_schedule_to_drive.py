@@ -41,6 +41,6 @@ my_drive_service)
 # links to drive files
 # Step 1: Create/overwrite the file to make it blank
 with open("data/drive_links.txt", "w", encoding="utf-8") as file:
-    file.write(f"This Month's cleaning schedule: {this_month_link}")
-    file.write(f"This Month's cleaning schedule: {next_month_link}")
+    file.write(f"This Month's cleaning schedule: {this_month_link}\n")
+    file.write(f"This Month's cleaning schedule: {next_month_link}\n")
     file.write(f"Invoice link: {invoice_link}")
