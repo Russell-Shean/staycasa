@@ -151,6 +151,8 @@ def upload_file_to_drive(local_filename, drive_filename, file_type, drive_servic
     print("📄 File ID:", file["id"])
     print("🔗 View it here:", file["webViewLink"])
 
+    return file["webViewLink"]
+
 
 
 
@@ -159,10 +161,13 @@ def send_line_message(group_id, message_text, channel_access_token):
     ''' This function sends a line message to a line group'''
 
     url = "https://api.line.me/v2/bot/message/push"
+
     headers = {
         "Content-Type": "application/json",
         "Authorization": f"Bearer {channel_access_token}"
     }
+
+
     body = {
         "to": group_id,
         "messages": [

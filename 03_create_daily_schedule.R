@@ -20,6 +20,12 @@ next_month <-  seq.Date(from = next_month_start,
                         by = "day") |>
   as.character()
 
+# next 20 days
+next_20_days <- seq.Date(from = today(),
+                         length.out = 20, 
+                         by = "day")  |>
+  as.character()
+
 
 #########################################################################3
 # Define advanced keydrops
@@ -149,15 +155,17 @@ keydrops <- keydrops |>
 ###########################################################################
 
 
-generate_schedule <- function(day_series){
+generate_schedule <- function(day_series, file_name=NULL){
   
  # day_series <- next_month
 
+  if(is.null(file_name)){
   file_name <- paste0("data/daily_schedule_",
                       min(day_series),
                       "_",
                       max(day_series),
                       ".txt")
+  }
   
   # Make sure we're starting with a blank file
   write("", file = file_name)
@@ -344,5 +352,6 @@ generate_schedule <- function(day_series){
 
 generate_schedule(this_month)
 generate_schedule(next_month)
+generate_schedule(next_20_days, "data/daily_schedule_next_20.txt")
 
 

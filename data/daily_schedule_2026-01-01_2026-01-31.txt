@@ -27,6 +27,8 @@ Drop Keycard : (1713) NGOC 515
 Check out: Silvia 12:00 Clean anytime of day
 (Casa 2-3)
 Check out: Debbie 12:00 Clean anytime of day
+Check in: 2026-01-04 JING(1) 16:00
+Drop Keycard : (Casa 2-3) JING 515
 (716)
 Check out: Bianca 11:00 Clean immediately
 Check in: 2026-01-02 MIRANDA(1) 16:00
@@ -35,9 +37,9 @@ Drop Keycard : (716) MIRANDA 515
 
 01-03
 (1615)
-Check out: Abby 11:00 Clean anytime of day
-Check in: 2026-01-06 TOM(2) 16:00
-Drop Keycard : (1615) TOM 515
+Check out: Abby 11:00 Clean immediately
+Check in: 2026-01-03 RHEA MAE(2) 16:00
+Drop Keycard : (1615) RHEA MAE 515
 
 
 01-04
@@ -47,14 +49,20 @@ Check in: 2026-01-06 VICTOR(2) 16:00
 Drop Keycard : (515) VICTOR 515
 
 
+(Casa 2-3)
+Check in: JING(1)  16:00
 (1713)
-Check in: NGOC(4)  16:00
+Check in: NGOC(1)  16:00
 
 
 01-05
 
 
 01-06
+(1615)
+Check out: RHEA MAE 12:00 Clean immediately
+Check in: 2026-01-06 TOM(2) 16:00
+Drop Keycard : (1615) TOM 515
 (513)
 Check out: EMMA 12:00 Clean anytime of day
 Check in: 2026-01-17 PEN(2) 16:00
@@ -62,8 +70,6 @@ Check in: 2026-01-17 PEN(2) 16:00
 
 (515)
 Check in: VICTOR(2)  16:00
-(1615)
-Check in: TOM(2)  16:00
 
 
 01-07
@@ -72,8 +78,9 @@ Check out: XIANG 12:00 Clean anytime of day
 Check in: 2026-01-10 AL(2) 16:00
 Drop Keycard : (814) AL 515
 (1713)
-Check out: NGOC 12:00 Clean anytime of day
-Check in: 2026-01-17 NG(2) 16:00
+Check out: NGOC 12:00 Clean immediately
+Check in: 2026-01-07 NICHOLAS(2) 16:00
+Drop Keycard : (1713) NICHOLAS 515
 
 
 01-08
@@ -82,7 +89,8 @@ Check in: 2026-01-17 NG(2) 16:00
 01-09
 (1615)
 Check out: TOM 12:00 Clean anytime of day
-Check in: 2026-01-19 ALLEN(2) 16:00
+Check in: 2026-01-11 BIREN(1) 16:00
+Drop Keycard : (1615) BIREN 515
 (1600)
 Check out: LITTLE 12:00 Clean immediately
 Check in: 2026-01-09 SHABBIR(1) 16:00
@@ -102,10 +110,17 @@ Check out: VICTOR 12:00 Clean anytime of day
 Check in: 2026-01-26 CHIAYI(2) 16:00
 
 
+(1615)
+Check in: BIREN(1)  16:00
+
+
 01-12
 
 
 01-13
+(1713)
+Check out: NICHOLAS 12:00 Clean anytime of day
+Check in: 2026-01-17 NG(2) 16:00
 
 
 01-14
@@ -115,6 +130,10 @@ Check in: 2026-01-26 CHIAYI(2) 16:00
 
 
 01-16
+(1615)
+Check out: BIREN 12:00 Clean anytime of day
+Check in: 2026-01-19 ALLEN(2) 16:00
+Drop Keycard : (1615) ALLEN 515
 
 
 DAY BEFORE KEY DROPS:
