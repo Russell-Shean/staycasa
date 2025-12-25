@@ -23,8 +23,6 @@ Drop Keycard : (513) EMMA 515
 Check out: MARK JOSEPH 12:00 Clean anytime of day
 Check in: 2026-01-04 NGOC(4) 16:00
 Drop Keycard : (1713) NGOC 515
-(301)
-Check out: Silvia 12:00 Clean anytime of day
 (Casa 2-3)
 Check out: Debbie 12:00 Clean anytime of day
 Check in: 2026-01-04 JING(1) 16:00
@@ -33,6 +31,8 @@ Drop Keycard : (Casa 2-3) JING 515
 Check out: Bianca 11:00 Clean immediately
 Check in: 2026-01-02 MIRANDA(1) 16:00
 Drop Keycard : (716) MIRANDA 515
+(301)
+Check out: Silvia 12:00 Clean anytime of day
 
 
 01-03

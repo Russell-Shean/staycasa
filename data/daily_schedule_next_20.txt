@@ -1,15 +1,4 @@
 
-12-24
-(1615)
-Check out: HUI ZHAN 12:00 Clean immediately
-Check in: 2025-12-24 B(3) 16:00
-Drop Keycard : (1615) B 515
-
-
-(1713)
-Check in: SZE(2)  16:00
-
-
 12-25
 (513)
 Check out: ANGEL 12:00 Clean immediately
@@ -105,8 +94,6 @@ Drop Keycard : (513) EMMA 515
 Check out: MARK JOSEPH 12:00 Clean anytime of day
 Check in: 2026-01-04 NGOC(4) 16:00
 Drop Keycard : (1713) NGOC 515
-(301)
-Check out: Silvia 12:00 Clean anytime of day
 (Casa 2-3)
 Check out: Debbie 12:00 Clean anytime of day
 Check in: 2026-01-04 JING(1) 16:00
@@ -115,6 +102,8 @@ Drop Keycard : (Casa 2-3) JING 515
 Check out: Bianca 11:00 Clean immediately
 Check in: 2026-01-02 MIRANDA(1) 16:00
 Drop Keycard : (716) MIRANDA 515
+(301)
+Check out: Silvia 12:00 Clean anytime of day
 
 
 01-03
@@ -197,5 +186,11 @@ Check in: BIREN(1)  16:00
 
 
 01-12
+
+
+01-13
+(1713)
+Check out: NICHOLAS 12:00 Clean anytime of day
+Check in: 2026-01-17 NG(2) 16:00
 
 
