@@ -45,4 +45,3 @@ upload_file_to_drive("data/unsorted_bank_transactions.csv",
                       f'Unsorted Bank Transactions - {date_matrix["current_month_year"]}',
 'spreadsheet',
 my_drive_service)
-

@@ -2,6 +2,7 @@
 
 # pylint: disable=import-error, invalid-name, too-many-arguments, too-many-positional-arguments
 # pylint: disable=wrong-import-position
+# pylint: disable=line-too-long
 import os
 
 import sys
