@@ -110,4 +110,4 @@ response = send_email(
        # attachment_path=ATTACHMENTS,  # any file, or None
     )
 
-    print(f"Email sent. Message ID: {response['id']}")
+print(f"Email sent. Message ID: {response['id']}")
