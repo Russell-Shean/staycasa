@@ -90,9 +90,9 @@ with open("data/financial_drive_links.txt", "r", encoding="utf-8") as drive_link
     all_links_text = drive_links_file.read()
 
 
-email_body = "Hi Simon,\n" +
+email_body = ("Hi Simon,\n" + 
              "Here's the latest version of the financial report and the unsorted transactions.\n\n" +
-             all_links_text
+             all_links_text)
 
 
 # Send the email if there are any uncategorized transactions
