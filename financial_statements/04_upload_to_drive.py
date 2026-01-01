@@ -31,13 +31,13 @@ my_drive_service = build_google_service("drive")
 # upload files
 # ---------------------------------------
 
-upload_file_to_drive("data/financial_report_format1.csv",
-                      f'Financial Report Format 1 - {date_matrix["current_month_year"]}',
-'spreadsheet',
-my_drive_service)
+#upload_file_to_drive("data/financial_report_format1.csv",
+ #                     f'Financial Report Format 1 - {date_matrix["current_month_year"]}',
+#'spreadsheet',
+#my_drive_service)
 
-upload_file_to_drive("data/financial_report_format2.csv",
-                      f'Financial Report Format 2 - {date_matrix["current_month_year"]}',
+upload_file_to_drive("data/transactions_by_category.xlsx",
+                      f'Financial Report - {date_matrix["current_month_year"]}',
 'spreadsheet',
 my_drive_service)
 
@@ -46,7 +46,3 @@ upload_file_to_drive("data/unsorted_bank_transactions.csv",
 'spreadsheet',
 my_drive_service)
 
-upload_file_to_drive("data/all_transactions.csv",
-                      f'All Transactions - {date_matrix["current_month_year"]}',
-'spreadsheet',
-my_drive_service)

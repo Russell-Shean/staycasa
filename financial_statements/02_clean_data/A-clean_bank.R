@@ -223,10 +223,10 @@ bank_transactions <- lapply(bank_statements,
                               .default = category))  |> 
   
   
-  mutate(category = case_when(str_detect(description, "提款") & amount < 10000 ~ "Reimbursement",
-                              str_detect(description, "提款") & amount >= 10000 & amount < 40000 ~ "Cleaning",
+  mutate(category = case_when(str_detect(description, "提款") & amount > -10000 ~ "Reimbursement",
+                              str_detect(description, "提款") & amount <= -10000 & amount > -40000 ~ "Cleaning",
                               .default = category)
-         )) |>
+         ) |>
   
   # Filter out unneeded things 
   

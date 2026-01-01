@@ -78,10 +78,10 @@ def send_email(
     return sent
 
 
-UNSORTEDS_PATH="data/unsorted_bank_transactions.csv"
+ATTACHMENTS = ["data/unsorted_bank_transactions.csv", "data/transactions_by_category.xlsx"]
 
 # Read in the unsorted dataframe and count the number of rows
-unsorted_transactions = pd.read_csv(UNSORTEDS_PATH)
+unsorted_transactions = pd.read_csv(ATTACHMENTS)
 row_count = len(unsorted_transactions)
 
 # Send the email if there are any uncategorized transactions
@@ -92,8 +92,8 @@ if row_count > 0:
         sender="me",  # "me" uses the authenticated Gmail account
         to="simon1122@gmail.com",
         subject="Unsorted Bank Transactions",
-        body_text="Hi Simon,\nHere are the latest uncategorized transactions.",
-        attachment_path=UNSORTEDS_PATH,  # any file, or None
+        body_text="Hi Simon,\nHere's the latest version of the financial report and the unsorted transactions.",
+        attachment_path=ATTACHMENTS,  # any file, or None
     )
 
     print(f"Email sent. Message ID: {response['id']}")

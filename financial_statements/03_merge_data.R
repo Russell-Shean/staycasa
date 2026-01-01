@@ -33,7 +33,8 @@ combined_transactions <- bank_transactions |>
   mutate(category2 = case_when(
     
     category %in% c("Rent") ~ "Rent",
-    category %in% c("Revenue") ~ "Revenue",
+    category %in% c("Revenue",
+                    "Interest") ~ "Revenue",
     category %in% c("Cleaning") ~ "Cleaning",
     
     category %in% c("Water and Electricity") ~ "Water and Electricity",
@@ -44,23 +45,20 @@ combined_transactions <- bank_transactions |>
                     "Storage", 
                     "Reimbursement",
                     "Service Fee"
-                    ) ~ "Other Business Expenses - COGS",
+                    ) ~ "Other - COGS",
     
     category %in% c(#"Deposit",
                     "Business Meals",
                     
-                    # We're counting account interest as a business expense
-                    # Because it esentially offsets the business expense of 
-                    # bank transfer fees
-                    "Interest",
+                   
                     "Taxes",
                     "Marketing",
-                    "Business Travel Expenses" ) ~ "Other Business Expenses - Operating Expenses",
+                    "Business Travel Expenses" ) ~ "Other- Operating Expenses",
     
     category %in% c("Deposit") ~ "Deposit",
     
-    category %in% c("Other Business Expenses", "Cash Advance Payback") & amount <= -15000 ~ "Other Business Expenses - Operating Expenses",
-    category %in% c("Other Business Expenses", "Cash Advance Payback") & amount > -15000 ~ "Other Business Expenses - COGS",
+    category %in% c("Other Business Expenses", "Cash Advance Payback") & amount <= -15000 ~ "Other - Operating Expenses",
+    category %in% c("Other Business Expenses", "Cash Advance Payback") & amount > -15000 ~ "Other - COGS",
     
     
     #category %in% c() ~ "Revenue",
@@ -94,7 +92,7 @@ unsorted_bank_transactions <- combined_transactions |>
 
 #calculate a monthly summary of costs
 financial_report <- combined_transactions |> 
-  filter(!category2 %in% c("Unneeded categories", "Deposit")) |>
+  filter(!category2 %in% c("Unneeded categories")) |>
   group_by(category2, month_year) |>
   summarise(total_value = sum(amount)) |>
   ungroup() |>
@@ -114,10 +112,10 @@ financial_report <- combined_transactions |>
   mutate(Revenue = - Revenue) |>
   
   # Calculate new columns
-  mutate(COGS = Rent + Cleaning + `Water and Electricity` + `Internet and TV` + `Other Business Expenses - COGS`, 
+  mutate(COGS = Rent + Cleaning + `Water and Electricity` + `Internet and TV` + `Other - COGS`, 
          `Gross Margin` = Revenue - COGS,
          `Gross margin %` = (Revenue - COGS) / Revenue * 100,
-         `Operating Expenses` = `Other Business Expenses - Operating Expenses` / Revenue,
+         `Operating Expenses` = `Other - Operating Expenses` / Revenue,
          `Net Income` = `Gross Margin` - `Operating Expenses`) |>
   
   # Fix Nan and inf number caused by dividing by zero when monthly revenue is zero
@@ -131,21 +129,22 @@ financial_report <- combined_transactions |>
   ) |> 
   
   select(`Month and Year` = month_year,
+         Revenue,
          COGS,
          Rent, 
          Cleaning, 
          `Water and Electricity`,
          `Internet and TV`,
-         `Other Business Expenses - COGS`,
-         `Other Business Expenses - Operating Expenses`,
+         `Other - COGS`,
+         `Other - Operating Expenses`,
          #`NA`,
          `Gross Margin`,
          `Gross margin %`,
-         `Operating Expenses`,
-         Revenue,
-         `Capital Injection`,
+         `Operating Expenses` #,
+       #  `Capital Injection`,
+     #    Deposit,
 #`Capital Reduction`,
-         `Dividend Distribution`
+    #     `Dividend Distribution`
          ) |> 
          arrange(`Month and Year`) 
 
@@ -154,13 +153,33 @@ financial_report <- combined_transactions |>
 
 
 financial_report_format2 <- financial_report %>%
-  pivot_longer(-`Month and Year`, names_to = "variable", values_to = "value") %>%
-  mutate(across(where(is.numeric), ~ format(round(.x), scientific = FALSE))) |>
-  pivot_wider(names_from = `Month and Year`, values_from = value) 
+  
+  mutate(across(where(is.numeric), ~round(.x, 0))) |>
+  
+  # reformat the gross margin percent as a percent
+  mutate(`Gross margin %` = ifelse(is.na(`Gross margin %`),
+                                   "NA",
+                                   paste0(as.character(`Gross margin %`), "%")
+  )) |>
+  
+  mutate(across(everything(), ~format(.x, big.mark = ",", trim=TRUE))) |>
+  
+
+  pivot_longer(-`Month and Year`, names_to = "category", values_to = "value") |>
+
+  pivot_wider(names_from = `Month and Year`, values_from = value) |>
+  
+  # add indents for certain variables
+  mutate(category = ifelse(category %in% c("Rent",
+                                              "Cleaning",
+                                              "Water and Electricity",
+                                              "Internet and TV"),
+                           paste0("   ", category),
+         category))
 
 
-write.csv(financial_report, "data/financial_report_format1.csv", row.names = FALSE)
-write.csv(financial_report_format2, "data/financial_report_format2.csv", row.names = FALSE)
+#write.csv(financial_report, "data/financial_report_format1.csv", row.names = FALSE)
+#write.csv(financial_report_format2, "data/financial_report_format2.csv", row.names = FALSE)
 
 write.csv(unsorted_bank_transactions, "data/unsorted_bank_transactions.csv", row.names = FALSE)
 write.csv(combined_transactions, "data/all_transactions.csv", row.names = FALSE)
