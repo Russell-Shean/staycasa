@@ -90,15 +90,18 @@ with open("data/financial_drive_links.txt", "r", encoding="utf-8") as drive_link
     all_links_text = drive_links_file.read()
 
 
+if row_count == 0:
+    all_links_text = all_links_text.partition("\n")[0]
+
+    
+
 email_body = ("Hi Simon,\n" +
              "Here's the latest version of the financial report and the unsorted transactions.\n\n" +
              all_links_text)
 
 
 # Send the email if there are any uncategorized transactions
-if row_count > 0:
-
-    response = send_email(
+response = send_email(
         service=my_service,
         sender="me",  # "me" uses the authenticated Gmail account
         to="russshean@gmail.com",
