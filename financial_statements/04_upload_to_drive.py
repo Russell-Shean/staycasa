@@ -36,12 +36,18 @@ my_drive_service = build_google_service("drive")
 #'spreadsheet',
 #my_drive_service)
 
-upload_file_to_drive("data/transactions_by_category.xlsx",
+link1 = upload_file_to_drive("data/transactions_by_category.xlsx",
                       f'Financial Report - {date_matrix["current_month_year"]}',
 'spreadsheet',
 my_drive_service)
 
-upload_file_to_drive("data/unsorted_bank_transactions.csv",
+link2 = upload_file_to_drive("data/unsorted_bank_transactions.csv",
                       f'Unsorted Bank Transactions - {date_matrix["current_month_year"]}',
 'spreadsheet',
 my_drive_service)
+
+
+# write links
+with open("data/financial_drive_links.txt", "w", encoding="utf-8") as drive_links_file:
+    drive_links_file.write("Financial Report: " + link1 + "\n")
+    drive_links_file.write("Unsorted transactions: " + link2)
