@@ -90,13 +90,18 @@ with open("data/financial_drive_links.txt", "r", encoding="utf-8") as drive_link
     all_links_text = drive_links_file.read()
 
 
-if row_count == 0:
-    all_links_text = all_links_text.partition("\n")[0]
+if row_count == 1:
+    all_links_text = ("Here's the latest version of the financial report.\n" +
+                      "This week there are no unsorted transactions.\n\n" + 
+                      all_links_text.partition("\n")[0] )
 
-    
+else:
+    all_links_text = ( "Here's the latest version of the financial report and unsorted transactions.\n\n" +
+                        all_links_text.replace("\n", "\n\n") )
+
+
 
 email_body = ("Hi Simon,\n" +
-             "Here's the latest version of the financial report and the unsorted transactions.\n\n" +
              all_links_text)
 
 
@@ -104,8 +109,8 @@ email_body = ("Hi Simon,\n" +
 response = send_email(
         service=my_service,
         sender="me",  # "me" uses the authenticated Gmail account
-        to="russshean@gmail.com",
-        subject="Unsorted Bank Transactions",
+        to="simon1122@gmail.com",
+        subject="Stayvacasa Financial Report",
         body_text=email_body
        # attachment_path=ATTACHMENTS,  # any file, or None
     )
