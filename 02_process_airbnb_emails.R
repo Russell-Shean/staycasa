@@ -614,6 +614,7 @@ airbnb_emails <- sample_data2 |>
                    airbnb_change_requests2 <- airbnb_change_requests |>
                      select(guest_first_name, 
                             room_number,
+                            date,
                             og_guest_number:requested_checkout_date)
                    
                    airbnb_confirmed_changes <- airbnb_emails |> 
@@ -645,8 +646,15 @@ airbnb_emails <- sample_data2 |>
                    airbnb_confirmed_changes2 <- airbnb_confirmed_changes |>
                      select(confirmation_number,
                             guest_first_name, 
+                            date,
                             room_number) |>
-                     left_join(airbnb_change_requests2)
+                     left_join(airbnb_change_requests2) |>
+                     group_by(confirmation_number) |>
+                     slice_max(order_by = date, n = 1, with_ties = FALSE) |>
+                     ungroup() |>
+                     select(-date)
+                  
+                     
                    
                    
                    
