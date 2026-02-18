@@ -1,0 +1,235 @@
+
+02-01
+(Casa 2-3)
+Check out: JING 12:00 Clean anytime of day
+Check in: 2026-03-29 ALAN(1) 16:00
+
+
+(513)
+Check in: ANTHONY(1)  16:00
+
+
+02-02
+(1615)
+Check out: MURUGAN 12:00 Clean anytime of day
+Check in: 2026-02-04 KELLY(2) 16:00
+Drop Keycard : (1615) KELLY 515
+(Renai Casa 2F-2)
+Check out: NIKKI 12:00 Clean anytime of day
+Check in: 2026-02-03 EIKO(2) 16:00
+Drop Keycard : (Renai Casa 2F-2) EIKO 515
+
+
+02-03
+(814)
+Check out: MENG HAN 12:00 Clean immediately
+Check in: 2026-02-03 SIMON(2) 16:00
+Drop Keycard : (814) SIMON 515
+
+
+(Renai Casa 2F-2)
+Check in: EIKO(2)  16:00
+
+
+02-04
+
+
+(1615)
+Check in: KELLY(2)  16:00
+
+
+02-05
+
+
+02-06
+(716)
+Check out: MIRANDA 12:00 Clean anytime of day
+Check in: 2026-02-14 HUYỀN MY(3) 16:00
+
+
+02-07
+(1615)
+Check out: KELLY 12:00 Clean anytime of day
+Check in: 2026-02-12 REMO(1) 16:00
+(1600)
+Check out: BENJAMIN 12:00 Clean anytime of day
+Check in: 2026-02-08 CHIAYI(2) 16:00
+Drop Keycard : (1600) CHIAYI 515
+
+
+02-08
+(515)
+Check out: CHIAYI 12:00 Clean anytime of day
+Check in: 2026-02-09 PETER(1) 16:00
+Drop Keycard : (515) PETER 515
+
+
+(1600)
+Check in: CHIAYI(2)  16:00
+
+
+02-09
+
+
+(515)
+Check in: PETER(1)  16:00
+
+
+02-10
+
+
+02-11
+(814)
+Check out: SIMON 12:00 Clean anytime of day
+Check in: 2026-02-12 JEAN(2) 16:00
+Drop Keycard : (814) JEAN 515
+(513)
+Check out: ANTHONY 12:00 Clean immediately
+Check in: 2026-02-11 ETHEREAL(2) 16:00
+Drop Keycard : (513) ETHEREAL 515
+
+
+02-12
+
+
+(1615)
+Check in: REMO(1)  16:00
+(814)
+Check in: JEAN(1)  16:00
+
+
+02-13
+
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (716) HUYỀN MY 515
+
+02-14
+(Renai Casa 2F-2)
+Check out: EIKO 12:00 Clean anytime of day
+Check in: 2026-02-17 LAURA(2) 16:00
+Drop Keycard : (Renai Casa 2F-2) LAURA 515
+
+
+(716)
+Check in: HUYỀN MY(3)  16:00
+
+
+02-15
+(1615)
+Check out: REMO 12:00 Clean immediately
+Check in: 2026-02-15 TINA(1) 16:00
+Drop Keycard : (1615) TINA 515
+
+
+(814)
+Check in: PAUL(2)  16:00
+
+
+02-16
+
+
+02-17
+
+
+(Renai Casa 2F-2)
+Check in: LAURA(2)  16:00
+
+
+02-18
+
+
+02-19
+(1615)
+Check out: TINA 12:00 Clean immediately
+Check in: 2026-02-19 NICK(2) 16:00
+Drop Keycard : (1615) NICK 515
+(716)
+Check out: HUYỀN MY 12:00 Clean anytime of day
+Check in: 2026-02-20 KIRILL(1) 16:00
+Drop Keycard : (716) KIRILL 515
+(814)
+Check out: JEAN 12:00 Clean anytime of day
+Check in: 2026-03-02 ALEX(1) 16:00
+
+
+02-20
+(301)
+Check out: RAY 12:00 Clean anytime of day
+Check in: 2026-03-01 JULIE(2) 16:00
+
+
+(716)
+Check in: KIRILL(1)  16:00
+(1713)
+Check in: KEITH(1)  16:00
+
+
+02-21
+(515)
+Check out: PETER 12:00 Clean immediately
+Check in: 2026-02-21 DIEGO(2) 16:00
+Drop Keycard : (515) DIEGO 515
+(814)
+Check out: PAUL 12:00 Clean anytime of day
+Check in: 2026-03-02 ALEX(1) 16:00
+(513)
+Check out: ETHEREAL 12:00 Clean immediately
+Check in: 2026-02-21 PETER(1) 16:00
+Drop Keycard : (513) PETER 515
+
+
+02-22
+
+
+02-23
+(1615)
+Check out: NICK 12:00 Clean anytime of day
+Check in: 2026-02-24 SIMON(2) 16:00
+Drop Keycard : (1615) SIMON 515
+(1600)
+Check out: CHIAYI 12:00 Clean anytime of day
+Check in: 2026-03-17 JOSHUA(2) 16:00
+
+
+02-24
+(513)
+Check out: PETER 12:00 Clean anytime of day
+Check in: 2026-02-25 ADAM(2) 16:00
+Drop Keycard : (513) ADAM 515
+
+
+(1615)
+Check in: SIMON(2)  16:00
+
+
+02-25
+
+
+(513)
+Check in: ADAM(2)  16:00
+
+
+02-26
+
+
+02-27
+
+
+02-28
+(716)
+Check out: KIRILL 12:00 Clean immediately
+Check in: 2026-02-28 NAKO(2) 16:00
+Drop Keycard : (716) NAKO 515
+(513)
+Check out: ADAM 12:00 Clean anytime of day
+Check in: 2026-03-01 YASUHIKO(2) 16:00
+Drop Keycard : (513) YASUHIKO 515
+(Renai Casa 2F-2)
+Check out: LAURA 12:00 Clean anytime of day
+Check in: 2026-03-11 MICHAEL(1) 16:00
+
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (301) JULIE 515
+

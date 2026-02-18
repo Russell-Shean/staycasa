@@ -212,12 +212,14 @@ airbnb_emails <- sample_data2 |>
                                    miscellaneous == "no",
                                    context_parameter2 != "booking/v2_migration/reservation_host_pending",
                                    context_parameter2 != "reservation/inquiries/first_preapprove_reminder7",
+                                   context_parameter2 != "booking/reservation_host_pending7",
                                    context_parameter2 != "claims/resolution_center/to_claimant_offer_money",
                                    context_parameter2 != "claims/resolution_center/to_claimant_accept_request",
                                    context_parameter2 != "claims/to_claimant_mediation_request_submitted",
                                    context_parameter2 != "host_communications/scheduled_message_force_sent",
                                    context_parameter2 != "host_communications/scheduled_message_skipped",
-                                   context_parameter2 != "claims/mediation/to_responder_partial_refund_submitted"
+                                   context_parameter2 != "claims/mediation/to_responder_partial_refund_submitted",
+                                   context_parameter2 != "reservation/inquiries/reminder"
                      )  
                    
                    
@@ -614,7 +616,9 @@ airbnb_emails <- sample_data2 |>
                    airbnb_change_requests2 <- airbnb_change_requests |>
                      select(guest_first_name, 
                             room_number,
-                            og_guest_number:requested_checkout_date)
+                            og_guest_number:requested_checkout_date) |>
+                     filter(!confirmation_number %in% c("HMF32AM8EK", "HMPH5RNCAA")) |>
+                            distinct()
                    
                    airbnb_confirmed_changes <- airbnb_emails |> 
                      filter(str_detect(subject, "預訂已更新")) |>
@@ -639,14 +643,18 @@ airbnb_emails <- sample_data2 |>
                             str_detect(room_title, "CityLink Suite Xinyi Downtown") ~ as.character(301),
                             
                             str_detect(room_title, "Luxe Modern Xinyi") ~ as.character("Renai Casa 2F-2"),
-                            str_detect(room_title, "Parkside Oasis") ~ as.character("Casa 2-3")))
+                            str_detect(room_title, "Parkside Oasis") ~ as.character("Casa 2-3"))) |>
+                     
+                            # remove duplicates
+                            distinct() |>
+                   filter(!confirmation_number %in% c("HMF32AM8EK", "HMPH5RNCAA"))
                    
-                   
+
                    airbnb_confirmed_changes2 <- airbnb_confirmed_changes |>
                      select(confirmation_number,
                             guest_first_name, 
                             room_number) |>
-                     left_join(airbnb_change_requests2)
+                     left_join(airbnb_change_requests2) 
                    
                    
                    
@@ -680,6 +688,25 @@ airbnb_emails <- sample_data2 |>
                      mutate(checkout_date = if_else(confirmation_number == "HMYN3YCAQ2",
                                                     as.Date("2025-10-11"),
                                                     checkout_date)) |>
+                     
+                     
+                     # multiple emails
+                     mutate(checkin_date = if_else(confirmation_number == "HMF32AM8EK",
+                                                    as.Date("2026-02-01"),
+                                                    checkin_date)) |>
+                     
+                     
+                     mutate(checkin_date = if_else(confirmation_number == "HMPH5RNCAA",
+                                                   as.Date("2026-02-12"),
+                                                   checkin_date)) |>
+                     
+                     
+                     mutate(checkout_date = if_else(confirmation_number == "HMPH5RNCAA",
+                                                   as.Date("2026-02-19"),
+                                                   checkout_date)) |>
+                     
+                     
+                     
                      
                      # rename room_numbers
                      rename(room_number = room_number.x)
