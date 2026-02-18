@@ -616,9 +616,14 @@ airbnb_emails <- sample_data2 |>
                    airbnb_change_requests2 <- airbnb_change_requests |>
                      select(guest_first_name, 
                             room_number,
+<<<<<<< HEAD
                             og_guest_number:requested_checkout_date) |>
                      filter(!confirmation_number %in% c("HMF32AM8EK", "HMPH5RNCAA")) |>
                             distinct()
+=======
+                            date,
+                            og_guest_number:requested_checkout_date)
+>>>>>>> 7c1a71b07495906e1c544fd519bb93ba9c8d1e26
                    
                    airbnb_confirmed_changes <- airbnb_emails |> 
                      filter(str_detect(subject, "預訂已更新")) |>
@@ -653,8 +658,19 @@ airbnb_emails <- sample_data2 |>
                    airbnb_confirmed_changes2 <- airbnb_confirmed_changes |>
                      select(confirmation_number,
                             guest_first_name, 
+                            date,
                             room_number) |>
+<<<<<<< HEAD
                      left_join(airbnb_change_requests2) 
+=======
+                     left_join(airbnb_change_requests2) |>
+                     group_by(confirmation_number) |>
+                     slice_max(order_by = date, n = 1, with_ties = FALSE) |>
+                     ungroup() |>
+                     select(-date)
+                  
+                     
+>>>>>>> 7c1a71b07495906e1c544fd519bb93ba9c8d1e26
                    
                    
                    
