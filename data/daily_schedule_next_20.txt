@@ -1,18 +1,4 @@
 
-02-19
-(1615)
-Check out: TINA 12:00 Clean immediately
-Check in: 2026-02-19 NICK(2) 16:00
-Drop Keycard : (1615) NICK 515
-(716)
-Check out: HUYỀN MY 12:00 Clean anytime of day
-Check in: 2026-02-20 KIRILL(1) 16:00
-Drop Keycard : (716) KIRILL 515
-(814)
-Check out: JEAN 12:00 Clean anytime of day
-Check in: 2026-03-02 ALEX(1) 16:00
-
-
 02-20
 (301)
 Check out: RAY 12:00 Clean anytime of day
@@ -157,4 +143,11 @@ Check in: 2026-05-04 JAMES(1) 18:00
 
 DAY BEFORE KEY DROPS:
 Drop Keycard : (Renai Casa 2F-2) MICHAEL 515
+
+03-11
+
+
+(Renai Casa 2F-2)
+Check in: MICHAEL(1)  16:00
+
 

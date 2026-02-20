@@ -219,7 +219,8 @@ airbnb_emails <- sample_data2 |>
                                    context_parameter2 != "host_communications/scheduled_message_force_sent",
                                    context_parameter2 != "host_communications/scheduled_message_skipped",
                                    context_parameter2 != "claims/mediation/to_responder_partial_refund_submitted",
-                                   context_parameter2 != "reservation/inquiries/reminder"
+                                   context_parameter2 != "reservation/inquiries/reminder",
+                                   !str_detect(context_parameter2, "claims/to_claimant_mediation_request_submitted")
                      )  
                    
                    
