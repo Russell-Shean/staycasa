@@ -72,12 +72,15 @@ bank_transactions <- lapply(bank_statements,
                                
                                
                                str_detect(description, "\\(008\\)0000129200040033") ~ "1713 Landlord",
+                               str_detect(description, "\\(808\\)0000772968280286") ~ "202 Landlord",
                                str_detect(description, "\\(012\\)0000704168156410") ~ "1615 Landlord",
                                str_detect(description, "\\(822\\)0000241540091956") ~ "513 Landlord",
                                str_detect(description, "\\(009\\)0053458666888700") ~ "716 Landlord",
                                str_detect(description, "\\(006\\)0001405765859712") ~ "814 Landlord",
                                str_detect(description, "\\(007\\)0000010668132820") ~ "301 Landlord",
                                str_detect(description, "\\(007\\)0000014610067030") ~ "Storage Landlord",
+                               
+                               str_detect(description, "\\(822\\)0000023540201951") ~ "Ann",
                                
                                str_detect(description, "\\(700\\)0000013131001632") ~ "Cleaner 1",
                                str_detect(description, "\\(822\\)0000190530056476") ~ "Cleaner 2",
@@ -120,9 +123,9 @@ bank_transactions <- lapply(bank_statements,
                               #str_detect(recipient, "Landlord") & amount > -40000 ~ "Rent",
                               
                               # Deposit
-                              str_detect(description, "押金") ~ "Deposit",
+                              str_detect(description, "押金|訂金　ｄｅｐｏｓｉｔ") ~ "Deposit",
                               
-                              str_detect(description, "行銷") ~ "Marketing", 
+                              str_detect(description, "行銷|ｍａｒｋｅｔｉｎｇ") ~ "Marketing", 
                               
                               str_detect(description, "租倉儲空間|Ｓｔｏｒａｇｅ") ~ "Storage",
                               
@@ -136,7 +139,7 @@ bank_transactions <- lapply(bank_statements,
                               
                               str_detect(description, "佣金|傭金|ｄｉｓｔｒｉｂｕｔｉｏｎ|分紅|ｃａｓｈ　ｐａｙｏｕｔ|Ｃａｓｈ　Ｐａｙｏｕｔ|減資|ｃａｐ　ｒｅｄｕｃｔｉｏｎ|紅利分配")  ~ paste0("Dividend Distribution - ", recipient),
                               
-                              
+                              recipient == "Ann" ~ "Cleaning",
                               
                               
                               # Assume that any payout of exactly 50000 going to Simon or Tina is also a dividend distribution
@@ -165,7 +168,7 @@ bank_transactions <- lapply(bank_statements,
                               
                               #墊款還款
                               
-                              str_detect(description, "五金雜貨|電視臂安裝|裝電視臂|熱水器|沙發床|ｈａｎｄｙｍａｎ|修理|修繕|檢修|拆濾水器|電子鎖|修水管|洗冷氣|ｓｈｏｗｅｒ　ｃｕｒｔａｉｎ|馬桶蓋") ~ "Maintenance/Repairs/Furniture",
+                              str_detect(description, "五金雜貨|電視臂安裝|裝電視臂|熱水器|沙發床|ｈａｎｄｙｍａｎ|修理|修繕|檢修|拆濾水器|電子鎖|修水管|洗冷氣|ｓｈｏｗｅｒ　ｃｕｒｔａｉｎ|馬桶蓋|ｆｉｘ　ａｉｒｃｏｎ|漏水　水電") ~ "Maintenance/Repairs/Furniture",
                               recipient %in% c("Handyman 1") ~ "Maintenance/Repairs/Furniture",
                               str_detect(description,"ｌａｌａｍｏｖｅ|餐費") ~ "Business Meals",
                               str_detect(description, "網路") ~ "Internet and TV",
@@ -235,9 +238,10 @@ bank_transactions <- lapply(bank_statements,
  # filter(!str_detect(description, "網銀外存 218087121432 −")) |> 
   
   # reversed bank errors
-  filter(!str_detect(description, "錯誤更正 ｊｕｎｅ　ｓａｌａｒｙ \\(700\\)0001213890257738|電子轉出 ｊｕｎｅ　ｓａｌａｒｙ \\(700\\)0001213890257738"))
+  filter(!str_detect(description, "錯誤更正 ｊｕｎｅ　ｓａｌａｒｙ \\(700\\)0001213890257738|電子轉出 ｊｕｎｅ　ｓａｌａｒｙ \\(700\\)0001213890257738")) |>
 
 
-
+  # Remove duplicate transactions
+  distinct()
 
 
