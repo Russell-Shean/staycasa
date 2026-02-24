@@ -20,19 +20,43 @@ credit_card <- list.files(credit_card_statements_folder,
 load_single_cc_statement <- function(file_path){
   
   
-  # extract year
-  statement_year <- file_path |> 
-    read_csv(locale = locale(encoding = "UTF-8")) |>
-    colnames() |> 
-    str_extract("^\\d{4}")
+  # extract statement year and month
+  statement_date <- file_path |> 
+    read_csv(locale = locale(encoding = "UTF-8"),
+             show_col_types = FALSE) |>
+    colnames() 
+  
+  statement_year <- statement_date |> 
+    str_extract("^\\d{4}") 
+  
+  
+  statement_month <- statement_date |> 
+    str_extract("(?<=/).*(?=信用卡對帳單)")
+  
   
   single_statement <- file_path |>
     read_csv(skip = 23) |>
-    mutate(transaction_date = ymd(paste0(statement_year, "/",消費日)),
+    
+    # Attach the year and the month to the dataset
+    mutate(statement_year = as.numeric(statement_year),
+           statement_month = as.numeric(statement_month),
+           transaction_month = as.numeric(str_extract(消費日, "^\\d+")))  |>
+    
+    # change the transaction year to go backwards if the transaction month is larger
+    # than the statement month
+    mutate(transaction_year = ifelse(transaction_month > statement_month,
+                                     statement_year - 1,
+                                     statement_year)) |> 
+    
+    mutate(transaction_date = ymd(paste0(transaction_year, "/",消費日)),
            amount = as.numeric(str_remove_all(`新臺幣金額`, ",")) * -1,
            account = "credit card") |> 
     filter(!is.na(transaction_date)) |>
     select(transaction_date,
+           transaction_year,
+           transaction_month,
+           statement_year,
+           statement_month,
            description = `交易說明`,
            amount,
            account)
