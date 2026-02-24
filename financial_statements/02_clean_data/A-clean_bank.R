@@ -64,12 +64,9 @@ bank_transactions <- lapply(bank_statements,
                                
                                str_detect(description, "\\(013\\)0000218506051130") ~ "黃＊真",
                                str_detect(description, "\\(013\\)0000699515257750") ~ "張＊凱",
+                               str_detect(description, " \\(013\\)0000127506322391") ~ "賴＊良",
                                
-                               
-                               
-                               
-                               
-                               
+             
                                
                                str_detect(description, "\\(008\\)0000129200040033") ~ "1713 Landlord",
                                str_detect(description, "\\(808\\)0000772968280286") ~ "202 Landlord",
@@ -120,12 +117,18 @@ bank_transactions <- lapply(bank_statements,
                               str_detect(description, "１６１５|\\(012\\)0000704168156410") & amount == -29560 ~ "Rent", 
                               str_detect(description, "７１６|\\(009\\)0053458666888700") & amount == -29000 ~ "Rent",
                               str_detect(description, "５１３|\\(009\\)0053458666888700") & amount == -27560 ~ "Rent",
+                              str_detect(description, "斡旋") ~ "Rent",
+                              
+                              recipient == "202 Landlord" ~ "Rent",
+                              recipient == "301 Landlord" ~ "Rent",
                               #str_detect(recipient, "Landlord") & amount > -40000 ~ "Rent",
                               
                               # Deposit
                               str_detect(description, "押金|訂金　ｄｅｐｏｓｉｔ") ~ "Deposit",
                               
                               str_detect(description, "行銷|ｍａｒｋｅｔｉｎｇ") ~ "Marketing", 
+                              
+                              recipient == "賴＊良" ~ "Marketing",
                               
                               str_detect(description, "租倉儲空間|Ｓｔｏｒａｇｅ") ~ "Storage",
                               
@@ -150,6 +153,8 @@ bank_transactions <- lapply(bank_statements,
                               amount == -50000 &
                                 str_detect(description, "\\(013\\)0000270506032358")  ~ "Dividend Distribution - Tina",
                               
+                              str_detect(description, "ｃａｐｉｔａｌ　ｃａｌｌ") ~ "Capital Injection",
+                              
                               
                               
                               # Interest
@@ -161,6 +166,16 @@ bank_transactions <- lapply(bank_statements,
                               #amount < 0 & recipient == "Marty" ~ "Revenue",
                               
                               !(sender %in% c("Simon", "Tina", "Andy")) & amount > 0 ~ "Revenue",
+                              
+                              
+                              str_detect(description, "兩日房費") & transaction_date %in% c("2025-12-06") ~ "Revenue",
+                              
+                              sender == "Tina" & transaction_date %in% c("2026-01-17") ~ "Revenue",
+                              
+                              str_detect(description, "電子轉出 ｄｅｐｏｓｉｔ　ｒｅｔｕｒｎ \\(700\\)0024415130238926") & 
+                                 transaction_date %in% c("2026-01-02") ~ "Revenue",
+                              
+                      
                               
                               
                               
