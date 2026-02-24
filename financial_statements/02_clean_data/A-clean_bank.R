@@ -8,17 +8,18 @@ library(forcats)
 
 # file_path
 financial_data_folder <- "data/financial"
+bank_statements_folder <- paste0(financial_data_folder, "/Airbnb Bank Statement")
 
 # Find bank statements in the data folder
-bank_statements <- list.files(financial_data_folder, 
-                              "Bank Statement.*",
+bank_statements <- list.files(bank_statements_folder,
                               full.names = TRUE)
+
 
 
 
 bank_transactions <- lapply(bank_statements, 
                             function(x) read_csv(x, skip=4, locale = locale(encoding = "UTF-8"))) |> 
-  bind_rows() |>
+  bind_rows()  |>
   
   
   
