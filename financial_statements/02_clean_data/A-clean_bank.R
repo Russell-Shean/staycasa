@@ -243,9 +243,26 @@ bank_transactions <- lapply(bank_statements,
   
   
   mutate(category = case_when(str_detect(description, "提款") & amount > -10000 ~ "Reimbursement",
-                              str_detect(description, "提款") & amount <= -10000 & amount > -40000 ~ "Cleaning",
+                              str_detect(description, "提款") & amount <= -10000 & amount > -40000 & transaction_date < "2026-02-25" ~ "Cleaning",
                               .default = category)
-         ) |>
+         ) |> 
+  
+  # manually modify additional cash withdrawals that aren't cleaning
+  # filter out the atm withdrawals
+  filter(
+    !(str_detect(description, "提款") &
+        transaction_date %in% as.Date(c("2025-11-13", "2025-11-14")))
+  ) |>
+  
+  # add a seperate entry
+  bind_rows(data.frame(transaction_date = as.Date("2025-11-14"),
+                       description = "Manually added rent and deposit to replace atm cash withdrawals",
+                       amount = c(-77500, -155000),
+                       account = "Cathy",
+                       recipient = NA,
+                       sender = NA, 
+                       category = c("Rent", "Deposit"))) |>
+  
   
   # Filter out unneeded things 
   
