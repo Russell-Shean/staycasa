@@ -62,17 +62,22 @@ def download_from_drive(drive_service, local_download_path):
                 download_folder(file_id, os.path.join(local_path, name))
             else:
                 # Download file
-                request = drive_service.files().get_media(fileId=file_id)
-                local_file_path = os.path.join(local_path, name)
-                fh = io.FileIO(local_file_path, "wb")
-                downloader = MediaIoBaseDownload(fh, request)
+                try:
+                    request = drive_service.files().get_media(fileId=file_id)
+                    local_file_path = os.path.join(local_path, name)
+                    fh = io.FileIO(local_file_path, "wb")
+                    downloader = MediaIoBaseDownload(fh, request)
 
-                done = False
-                while not done:
-                    status, done = downloader.next_chunk()
-                    if status:
-                        print(f"Downloading {name}: {int(status.progress() * 100)}%")
-                print(f"Downloaded: {local_file_path}")
+                    done = False
+                    while not done:
+                        status, done = downloader.next_chunk()
+                        if status:
+                            print(f"Downloading {name}: {int(status.progress() * 100)}%")
+                    print(f"Downloaded: {local_file_path}")
+
+                except HttpError as error:
+                    print(f"Failed to download {name}: {error}")
+
 
     # Start recursive download from the root folder
     download_folder(root_folder_id, local_download_path)
