@@ -189,7 +189,8 @@ Check in: 2026-02-24 SIMON(2) 16:00
 Drop Keycard : (1615) SIMON 515
 (1600)
 Check out: CHIAYI 12:00 Clean anytime of day
-Check in: 2026-03-17 JOSHUA(2) 16:00
+Check in: 2026-02-26 GLEN(1) 16:00
+Drop Keycard : (1600) GLEN 515
 
 
 02-24
@@ -211,6 +212,10 @@ Check in: ADAM(2)  16:00
 
 
 02-26
+
+
+(1600)
+Check in: GLEN(1)  16:00
 
 
 02-27

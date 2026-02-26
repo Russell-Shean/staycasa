@@ -1,62 +1,9 @@
 
-02-20
-(301)
-Check out: RAY 12:00 Clean anytime of day
-Check in: 2026-03-01 JULIE(2) 16:00
-
-
-(716)
-Check in: KIRILL(1)  16:00
-(1713)
-Check in: KEITH(1)  16:00
-
-
-02-21
-(515)
-Check out: PETER 12:00 Clean immediately
-Check in: 2026-02-21 DIEGO(2) 16:00
-Drop Keycard : (515) DIEGO 515
-(814)
-Check out: PAUL 12:00 Clean anytime of day
-Check in: 2026-03-02 ALEX(1) 16:00
-(513)
-Check out: ETHEREAL 12:00 Clean immediately
-Check in: 2026-02-21 PETER(1) 16:00
-Drop Keycard : (513) PETER 515
-
-
-02-22
-
-
-02-23
-(1615)
-Check out: NICK 12:00 Clean anytime of day
-Check in: 2026-02-24 SIMON(2) 16:00
-Drop Keycard : (1615) SIMON 515
-(1600)
-Check out: CHIAYI 12:00 Clean anytime of day
-Check in: 2026-03-17 JOSHUA(2) 16:00
-
-
-02-24
-(513)
-Check out: PETER 12:00 Clean anytime of day
-Check in: 2026-02-25 ADAM(2) 16:00
-Drop Keycard : (513) ADAM 515
-
-
-(1615)
-Check in: SIMON(2)  16:00
-
-
-02-25
-
-
-(513)
-Check in: ADAM(2)  16:00
-
-
 02-26
+
+
+(1600)
+Check in: GLEN(1)  16:00
 
 
 02-27
@@ -95,6 +42,9 @@ DAY BEFORE KEY DROPS:
 Drop Keycard : (814) ALEX 515
 
 03-02
+(1600)
+Check out: GLEN 12:00 Clean anytime of day
+Check in: 2026-03-17 JOSHUA(2) 16:00
 
 
 (814)
@@ -110,7 +60,7 @@ Check in: 2026-03-13 JANNIK(1) 16:00
 03-04
 (716)
 Check out: NAKO 12:00 Clean anytime of day
-Check in: 2026-03-31 FRENCES(2) 16:00
+Check in: 2026-03-13 JESSIE(2) 16:00
 
 
 03-05
@@ -135,7 +85,11 @@ Drop Keycard : (1615) HARRIET 515
 03-09
 (513)
 Check out: YASUHIKO 12:00 Clean anytime of day
-Check in: 2026-05-04 JAMES(1) 18:00
+Check in: 2026-03-20 SABRINA(1) 16:00
+
+
+(1615)
+Check in: HARRIET(2)  16:00
 
 
 03-10
@@ -149,5 +103,45 @@ Drop Keycard : (Renai Casa 2F-2) MICHAEL 515
 
 (Renai Casa 2F-2)
 Check in: MICHAEL(1)  16:00
+
+
+03-12
+
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (716) JESSIE 515
+
+03-13
+
+
+(716)
+Check in: JESSIE(2)  16:00
+(515)
+Check in: JANNIK(2)  16:00
+(1713)
+Check in: ASHWATH(2)  16:00
+
+
+03-14
+
+
+03-15
+
+
+03-16
+
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (1600) JOSHUA 515
+
+03-17
+(1615)
+Check out: HARRIET 12:00 Clean anytime of day
+Check in: 2026-03-19 BOBBY(2) 16:00
+Drop Keycard : (1615) BOBBY 515
+
+
+(1600)
+Check in: JOSHUA(2)  16:00
 
 
