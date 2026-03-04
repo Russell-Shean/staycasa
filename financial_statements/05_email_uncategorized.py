@@ -101,7 +101,7 @@ else:
 
 
 
-email_body = ("Hi Simon,\n" +
+email_body = ("Hi Simon and Tina,\n" +
              all_links_text)
 
 
@@ -109,7 +109,7 @@ email_body = ("Hi Simon,\n" +
 response = send_email(
         service=my_service,
         sender="me",  # "me" uses the authenticated Gmail account
-        to="simon1122@gmail.com",
+        to=["simon1122@gmail.com", "tinawcheng@gmail.com"],
         subject="Stayvacasa Financial Report",
         body_text=email_body
        # attachment_path=ATTACHMENTS,  # any file, or None
