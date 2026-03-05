@@ -23,20 +23,26 @@ THIS_MONTH_FILENAME = f'data/daily_schedule_{date_matrix["this_month_first_day"]
 my_drive_service = build_google_service("drive")
 
 
-this_month_link = upload_file_to_drive(THIS_MONTH_FILENAME,
-"Automatically Generated Daily Schedule - This Month",
-'document',
-my_drive_service)
+this_month_link = upload_file_to_drive(local_filename = THIS_MONTH_FILENAME,
+                                       drive_filename = "Automatically Generated Daily Schedule - This Month",
+                                       file_type = 'document',
+                                       drive_service = my_drive_service,
+                                       folder_id = "1Xs4GpS31nAVnvrv2Ds-KeI63nu3_Z3UW" #"Cleaning Schedules and Invoices"
+                                       )
 
-next_month_link = upload_file_to_drive(NEXT_MONTH_FILENAME,
-"Automatically Generated Daily Schedule - Next Month",
-'document',
-my_drive_service)
+next_month_link = upload_file_to_drive(local_filename = NEXT_MONTH_FILENAME,
+                                       drive_filename = "Automatically Generated Daily Schedule - Next Month",
+                                       file_type = 'document',
+                                       drive_service = my_drive_service,
+                                       folder_id = "1Xs4GpS31nAVnvrv2Ds-KeI63nu3_Z3UW" #"Cleaning Schedules and Invoices"
+                                       )
 
-invoice_link = upload_file_to_drive("data/this_months_payment_schedule.xlsx",
-f'Automatically Generated Cleaning Schedule and Invoice - {date_matrix["current_month_year"]}',
-'spreadsheet',
-my_drive_service)
+invoice_link = upload_file_to_drive(local_filename = "data/this_months_payment_schedule.xlsx",
+                                    drive_filename = f'Automatically Generated Cleaning Schedule and Invoice - {date_matrix["current_month_year"]}',
+                                    file_type = 'spreadsheet',
+                                    drive_service = my_drive_service,
+                                    folder_id = "1Xs4GpS31nAVnvrv2Ds-KeI63nu3_Z3UW" #"Cleaning Schedules and Invoices"
+                                    )
 
 # links to drive files
 # Step 1: Create/overwrite the file to make it blank

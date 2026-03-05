@@ -66,57 +66,43 @@ def build_google_service(service_type):
 
 
 
-def upload_file_to_drive(local_filename, drive_filename, file_type, drive_service):
+from googleapiclient.http import MediaFileUpload
+
+def upload_file_to_drive(local_filename, 
+                         drive_filename, 
+                         file_type, 
+                         drive_service, 
+                         folder_id):
     """
-    Uploads files to Google Drive and converts them to google file types.
+    Uploads files to Google Drive, converts them to Google file types,
+    uploads them to a specific folder, and overwrites existing files.
 
     Args:
-        local_filename (str): Path to the local Excel file to upload.
+        local_filename (str): Path to the local file to upload.
         drive_filename (str): Desired name of the file in Google Drive.
-        file_type (str, optional): The type of google doc type to use.
-        Options include: document, spreadsheet
+        file_type (str): 'document' or 'spreadsheet'.
+        drive_service: Authenticated Google Drive service.
+        folder_id (str): ID of the destination Google Drive folder.
     """
 
     if file_type not in ["document", "spreadsheet"]:
         raise ValueError("The file type must be 'document' or 'spreadsheet'")
 
-
-    file_mime_type = ""
-
-
-
     if file_type == "spreadsheet":
         file_mime_type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-
-    elif file_type == "document":
+    else:
         file_mime_type = "text/plain"
 
 
+    # 1️⃣ Check if file already exists in the folder
+    query = f"name='{drive_filename}' and '{folder_id}' in parents and trashed=false"
 
-    # 1️⃣ Check if a file with the same name already exists and delete it
-    # See if the file already exists and delete it
-    # If it does
-    query = f"name='{drive_filename}'"
-
-    current_files = drive_service.files().list(
-    q=query,
-    supportsAllDrives=True,
-    includeItemsFromAllDrives=True,
-    fields="files(id, name)"
+    results = drive_service.files().list(
+        q=query,
+        supportsAllDrives=True,
+        includeItemsFromAllDrives=True,
+        fields="files(id, name)"
     ).execute()
-
-
-    for f in current_files.get("files", []):
-        print(f"Deleting old file: {f['name']} ({f['id']})")
-        drive_service.files().delete(fileId=f["id"]).execute()
-
-
-    # 2️⃣ Prepare metadata
-    file_metadata = {
-        "name": drive_filename,
-        "mimeType": f"application/vnd.google-apps.{file_type}"
-    }
-
 
     media = MediaFileUpload(
         local_filename,
@@ -125,26 +111,51 @@ def upload_file_to_drive(local_filename, drive_filename, file_type, drive_servic
     )
 
 
-    # 3️⃣ Upload & convert to Google Sheet
-    file = drive_service.files().create(
-        body=file_metadata,
-        media_body=media,
-        fields="id, name, mimeType, webViewLink",
-        supportsAllDrives=True
-    ).execute()
+    # 2️⃣ If file exists → overwrite it
+    if results.get("files"):
 
-    # give anyone with a link viewing permissions
-    permission = {
-            "type": "anyone",  # Anyone on the internet
-            "role": "reader"   # Can also be "reader" or "commenter"
+        file_id = results["files"][0]["id"]
+
+        print(f"♻️ Overwriting existing file: {drive_filename} ({file_id})")
+
+        updated_file = drive_service.files().update(
+            fileId=file_id,
+            media_body=media,
+            supportsAllDrives=True,
+            fields="id, name, webViewLink"
+        ).execute()
+
+        file = updated_file
+
+    # 3️⃣ Otherwise create a new file
+    else:
+
+        file_metadata = {
+            "name": drive_filename,
+            "mimeType": f"application/vnd.google-apps.{file_type}",
+            "parents": [folder_id]
         }
 
-    drive_service.permissions().create(
+        file = drive_service.files().create(
+            body=file_metadata,
+            media_body=media,
+            supportsAllDrives=True,
+            fields="id, name, mimeType, webViewLink"
+        ).execute()
+
+        # give anyone with link viewing permissions
+        permission = {
+            "type": "anyone",
+            "role": "reader"
+        }
+
+        drive_service.permissions().create(
             fileId=file["id"],
             body=permission
         ).execute()
 
-    print("🌍 Sharing enabled: Anyone with link can edit")
+        print("🌍 Sharing enabled: Anyone with link can view")
+
 
     print(f"✅ Uploaded as Google {file_type}:")
     print("📝 Name:", file["name"])
@@ -152,9 +163,6 @@ def upload_file_to_drive(local_filename, drive_filename, file_type, drive_servic
     print("🔗 View it here:", file["webViewLink"])
 
     return file["webViewLink"]
-
-
-
 
 
 def send_line_message(group_id, message_text, channel_access_token):

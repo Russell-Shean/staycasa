@@ -12,6 +12,7 @@ from googleapiclient.http import MediaIoBaseDownload
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 from utils import build_google_service
+from googleapiclient.errors import HttpError
 
 
 # Build a drive service  -----------------------------------------------------------------------
@@ -20,9 +21,8 @@ my_drive_service = build_google_service("drive")
 def download_from_drive(drive_service, local_download_path):
     '''This function downloads a file from google drive'''
 
-    # See if the file already exists and delete it
-    # If it does
-    query = "name='Airbnb Financial ' and mimeType='application/vnd.google-apps.folder' and trashed=false"
+
+    query = "name='Airbnb Financial' and mimeType='application/vnd.google-apps.folder' and trashed=false"
 
     results = drive_service.files().list(
     q=query,
@@ -85,5 +85,5 @@ def download_from_drive(drive_service, local_download_path):
 
 
 download_from_drive(drive_service=my_drive_service,
-                    #root_folder_name="Airbnb Financial ",
+                    #root_folder_name="Airbnb Financial",
                     local_download_path="data/financial")

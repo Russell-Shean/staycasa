@@ -102,7 +102,8 @@ else:
 
 
 email_body = ("Hi Simon and Tina,\n" +
-             all_links_text)
+             all_links_text +
+             "Any new financial statements can be uploaded to the following folder: https://drive.google.com/drive/u/1/folders/1mZ8fLbV37RcbCmfTa6NcWo-zgSM_gjme\n\n")
 
 
 # Send the email if there are any uncategorized transactions
