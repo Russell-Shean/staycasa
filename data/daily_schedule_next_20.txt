@@ -1,16 +1,4 @@
 
-03-05
-
-
-(716)
-Check in: VICTORINE(2)  16:00
-(515)
-Check in: AGUSTIN(2)  16:00
-
-
-DAY BEFORE KEY DROPS:
-Drop Keycard : (1600) RYAN 515
-
 03-06
 (814)
 Check out: ALEX 12:00 Clean immediately
@@ -190,4 +178,10 @@ Check in: 2026-04-18 HUGO(2) 16:00
 (1713)
 Check in: BEN(1)  16:00
 
+
+03-25
+
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (1600) ROGER 515
 
