@@ -801,12 +801,62 @@ airbnb_emails <- sample_data2 |>
                        
                    )
                    
-                   
+            
                    airbnb_reservation_confirmations5 <- airbnb_reservation_confirmations4 |>
                                                         bind_rows(manual_reservations)
                    
                    
-                   write.csv(airbnb_reservation_confirmations5, 
+                   
+                   
+                   
+                   
+                   
+                   # Add an additional check for things that got missed with all 
+                   # the things above, but probably got caught in the reminders
+                   unique_reminders <- airbnb_reminders |> 
+                     select(date,
+                            confirmation_number,
+                            room_id,
+                            guest_first_name,
+                            checkin_date,
+                            checkout_date,
+                            checkin_time,
+                            checkout_time,
+                            number_of_adults,
+                            number_of_children,
+                            number_of_guests,
+                            room_number) |>
+                     arrange(confirmation_number, desc(date)) |>
+                     distinct(confirmation_number, .keep_all = TRUE)
+                   
+                   
+                   airbnb_reservation_confirmations6 <- 
+                     airbnb_reservation_confirmations5 |> 
+                     # filter(context_parameter2 %in% c("booking/host/ReservationHostConfirmationTemplate",
+                     #                                                 "booking/v2_migration/reservation_host_confirmation")) |>
+                     rename(guest_first_name = guest_first_name.x)
+                   
+                   
+                   
+                   
+                   reminders_to_update <- unique_reminders |>
+                     inner_join(
+                       airbnb_reservation_confirmations6 |> select(confirmation_number, date_initial = date),
+                       by = "confirmation_number"
+                     ) |>
+                     filter(date > date_initial) |>
+                     select(-date_initial)
+                   
+                   airbnb_reservation_confirmations7 <- rows_update(
+                     airbnb_reservation_confirmations6,
+                     reminders_to_update,
+                     by = "confirmation_number"
+                   )
+                   
+                   
+                   
+                   
+                   write.csv(airbnb_reservation_confirmations7, 
                              file = "data/airbnb_reservation_confirmations.csv", 
                              row.names = FALSE)  
                    

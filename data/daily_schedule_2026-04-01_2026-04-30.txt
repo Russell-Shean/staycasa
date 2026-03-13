@@ -2,7 +2,8 @@
 04-01
 (814)
 Check out: AIDAN 12:00 Clean anytime of day
-Check in: 2026-05-04 Yenny(3) 15:00
+Check in: 2026-04-02 靖(2) 16:00
+Drop Keycard : (814) 靖 515
 
 
 04-02
@@ -11,40 +12,69 @@ Check out: BEN 12:00 Clean anytime of day
 Check in: 2026-05-31 Ryan(1) 16:00
 
 
+(814)
+Check in: 靖(2)  16:00
+
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (515) IMRAN 515
+
 04-03
+
+
+(515)
+Check in: IMRAN(2)  16:00
 
 
 04-04
 
 
 04-05
+(814)
+Check out: 靖 12:00 Clean immediately
+Check in: 2026-04-05 ANTOINETTE(2) 16:00
+Drop Keycard : (814) ANTOINETTE 515
 
 
 04-06
 (1615)
-Check out: SALLY 12:00 Clean anytime of day
-Check in: 2026-05-01 TEDDY(1) 16:00
+Check out: SALLY 12:00 Clean immediately
+Check in: 2026-04-06 CHIE(1) 16:00
+Drop Keycard : (1615) CHIE 515
 
 
 04-07
+(515)
+Check out: IMRAN 12:00 Clean anytime of day
+Check in: 2026-04-18 HUGO(2) 16:00
 (Renai Casa 2F-2)
-Check out: MICHAEL 12:00 Clean anytime of day
-Check in: 2026-12-28 KEVIN(2) 16:00
+Check out: Michael 12:00 Clean anytime of day
+Check in: 2026-09-11 CINDY(2) 16:00
 (1600)
 Check out: ROGER 12:00 Clean anytime of day
-Check in: 2026-05-01 BRIAN(2) 16:00
+Check in: 2026-04-11 SIMON(3) 16:00
 
 
 04-08
 
 
 04-09
+(1615)
+Check out: CHIE 12:00 Clean anytime of day
+Check in: 2026-04-26 SANDRA(1) 16:00
 
 
 04-10
 
 
+DAY BEFORE KEY DROPS:
+Drop Keycard : (1600) SIMON 515
+
 04-11
+
+
+(1600)
+Check in: SIMON(3)  16:00
 
 
 04-12
@@ -60,13 +90,13 @@ Check in: 2026-05-01 BRIAN(2) 16:00
 
 
 04-16
+(1600)
+Check out: SIMON 12:00 Clean anytime of day
+Check in: 2026-05-01 BRIAN(2) 16:00
 
 
 04-17
 
-
-DAY BEFORE KEY DROPS:
-Drop Keycard : (515) HUGO 515
 
 04-18
 
@@ -79,6 +109,9 @@ Check in: HUGO(2)  16:00
 
 
 04-20
+(814)
+Check out: ANTOINETTE 12:00 Clean anytime of day
+Check in: 2026-05-04 Yenny(3) 15:00
 
 
 04-21
@@ -95,6 +128,9 @@ Check in: HUGO(2)  16:00
 
 04-25
 
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (1615) SANDRA 515
 
 04-26
 (515)
@@ -115,8 +151,12 @@ Check in: 2026-05-06 Ted(2) 16:00
 
 
 04-30
+(1615)
+Check out: SANDRA 12:00 Clean anytime of day
+Check in: 2026-05-01 TEDDY(1) 16:00
+Drop Keycard : (1615) TEDDY 515
 (301)
-Check out: JULIE 12:00 Clean anytime of day
+Check out: Julie 12:00 Clean anytime of day
 Check in: 2026-06-17 THOMAS(1) 16:00
 
 

@@ -216,7 +216,7 @@ generate_schedule <- function(day_series, file_name=NULL){
               file = file_name, append = TRUE)
         
         write(paste0("Check out: ", 
-                     todays_checkouts[t,"guest_first_name.x"], 
+                     todays_checkouts[t,"guest_first_name"], 
                      " ",todays_checkouts[t, "checkout_time"],
                      clean_time),
               file = file_name, append = TRUE)
@@ -228,7 +228,7 @@ generate_schedule <- function(day_series, file_name=NULL){
         if(nrow(future_checkins) > 0){
         write(paste0("Check in: ",
                      future_checkins[1, "checkin_date"], 
-                     " ", future_checkins[1, "guest_first_name.x"], 
+                     " ", future_checkins[1, "guest_first_name"], 
                      "(", future_checkins[1, "number_of_guests"], 
                      ") ", future_checkins[1, "checkin_time"]),
               file = file_name, append = TRUE)
@@ -257,7 +257,7 @@ generate_schedule <- function(day_series, file_name=NULL){
           write(paste0("Drop Keycard : (",
                        future_checkins[1, "room_number"],
                        ") ", 
-                       future_checkins[1, "guest_first_name.x"],
+                       future_checkins[1, "guest_first_name"],
                        " 515"),
                 file = file_name, append = TRUE)
           
@@ -271,7 +271,7 @@ generate_schedule <- function(day_series, file_name=NULL){
         # remove the future checkin from today's checkins so that we don't
         # double print
         todays_checkins <- todays_checkins |>
-                           dplyr::filter((!guest_first_name.x == future_checkins[1, "guest_first_name.x"] &
+                           dplyr::filter((!guest_first_name == future_checkins[1, "guest_first_name"] &
                                          checkin_time  == future_checkins[1, "checkin_time"])) 
         
         if(t == nrow(todays_checkouts)){
@@ -299,7 +299,7 @@ generate_schedule <- function(day_series, file_name=NULL){
             file = file_name, append = TRUE)
       
       write(paste0("Check in: ", 
-                   todays_checkins[u,"guest_first_name.x"], 
+                   todays_checkins[u,"guest_first_name"], 
                    "(", todays_checkins[1, "number_of_guests"], 
                    ") ",
                    " ",todays_checkins[u, "checkin_time"]),
@@ -329,7 +329,7 @@ generate_schedule <- function(day_series, file_name=NULL){
         write(paste0("DAY BEFORE KEY DROPS:\nDrop Keycard : (",
                      todays_keydrops[z, "room_number"],
                      ") ", 
-                     todays_keydrops[z, "guest_first_name.x"],
+                     todays_keydrops[z, "guest_first_name"],
                      " 515\n"),
               file = file_name, append = TRUE)
         
