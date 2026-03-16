@@ -24,7 +24,7 @@ final_list <- sameday_checkins %>%
     .x <- .x %>%
       mutate(
         checkin_time = sapply(checkin_time, format_time),
-        guest_first_name = guest_first_name.x,
+        guest_first_name = guest_first_name,
         checkin_date = .y$checkin_date
       ) %>%
       select(checkin_date, checkin_time, room_number, number_of_guests, guest_first_name)
