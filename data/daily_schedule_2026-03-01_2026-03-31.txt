@@ -156,9 +156,9 @@ Drop Keycard : (1600) Joshua 515
 
 03-17
 (513)
-Check out: Warren 12:00 Clean anytime of day
-Check in: 2026-03-20 Sabrina(1) 16:00
-Drop Keycard : (513) Sabrina 515
+Check out: Warren 12:00 Clean immediately
+Check in: 2026-03-17 CARMEN(2) 16:00
+Drop Keycard : (513) CARMEN 515
 (1615)
 Check out: Harriet 12:00 Clean anytime of day
 Check in: 2026-03-20 채원(3) 16:00
@@ -183,8 +183,8 @@ Check in: 2026-03-20 Kaan(2) 16:00
 Drop Keycard : (515) Kaan 515
 (814)
 Check out: Jean 12:00 Clean anytime of day
-Check in: 2026-03-21 嘉濠(3) 16:00
-Drop Keycard : (814) 嘉濠 515
+Check in: 2026-03-20 My(2) 16:00
+Drop Keycard : (814) My 515
 
 
 (716)
@@ -192,105 +192,112 @@ Check in: Olivier(2)  16:00
 
 
 03-20
-
-
-(1615)
-Check in: 채원(3)  16:00
-(515)
-Check in: Kaan(3)  16:00
 (513)
-Check in: Sabrina(3)  16:00
+Check out: CARMEN 12:00 Clean immediately
+Check in: 2026-03-20 Sabrina(1) 16:00
+Drop Keycard : (513) Sabrina 515
+
+
+(814)
+Check in: My(2)  16:00
+(1615)
+Check in: 채원(2)  16:00
+(515)
+Check in: Kaan(2)  16:00
 
 
 03-21
 (1600)
 Check out: Joshua 12:00 Clean immediately
-Check in: 2026-03-21 ALEX(2) 16:00
-Drop Keycard : (1600) ALEX 515
-
-
-(814)
-Check in: 嘉濠(3)  16:00
+Check in: 2026-03-21 Alex(2) 16:00
+Drop Keycard : (1600) Alex 515
 
 
 03-22
 (716)
 Check out: Olivier 12:00 Clean anytime of day
-Check in: 2026-03-28 綾乃(3) 16:00
+Check in: 2026-03-25 Hueyru(2) 16:00
+Drop Keycard : (716) Hueyru 515
 (1713)
 Check out: Ashwath 12:00 Clean anytime of day
-Check in: 2026-03-24 BEN(1) 16:00
-Drop Keycard : (1713) BEN 515
+Check in: 2026-03-24 Ben(1) 16:00
+Drop Keycard : (1713) Ben 515
 
 
 03-23
+(814)
+Check out: My 12:00 Clean anytime of day
+Check in: 2026-03-24 Aidan(1) 16:00
+Drop Keycard : (814) Aidan 515
 (1615)
 Check out: 채원 12:00 Clean immediately
 Check in: 2026-03-23 建輔(2) 16:00
 Drop Keycard : (1615) 建輔 515
 (513)
 Check out: Sabrina 12:00 Clean anytime of day
-Check in: 2026-03-26 JESS(3) 16:00
-Drop Keycard : (513) JESS 515
+Check in: 2026-03-26 Jess(3) 16:00
+Drop Keycard : (513) Jess 515
 
 
 03-24
-(814)
-Check out: 嘉濠 12:00 Clean immediately
-Check in: 2026-03-24 AIDAN(1) 16:00
-Drop Keycard : (814) AIDAN 515
 (515)
 Check out: Kaan 12:00 Clean anytime of day
 Check in: 2026-04-03 IMRAN(2) 16:00
 
 
+(814)
+Check in: Aidan(1)  16:00
 (1713)
-Check in: BEN(1)  16:00
+Check in: Ben(1)  16:00
 
 
 03-25
 
 
+(716)
+Check in: Hueyru(2)  16:00
+
+
 03-26
 (1615)
 Check out: 建輔 12:00 Clean anytime of day
-Check in: 2026-03-27 SALLY(2) 16:00
-Drop Keycard : (1615) SALLY 515
+Check in: 2026-03-27 Sally(2) 16:00
+Drop Keycard : (1615) Sally 515
 (1600)
-Check out: ALEX 12:00 Clean immediately
-Check in: 2026-03-26 ROGER(4) 16:00
-Drop Keycard : (1600) ROGER 515
+Check out: Alex 12:00 Clean immediately
+Check in: 2026-03-26 Roger(4) 16:00
+Drop Keycard : (1600) Roger 515
 
 
 (513)
-Check in: JESS(3)  16:00
+Check in: Jess(3)  16:00
 
 
 03-27
 
 
 (1615)
-Check in: SALLY(2)  16:00
+Check in: Sally(2)  16:00
 
 
 03-28
-
-
 (716)
-Check in: 綾乃(3)  16:00
+Check out: Hueyru 12:00 Clean immediately
+Check in: 2026-03-28 Ayano(3) 16:00
+Drop Keycard : (716) Ayano 515
 
 
 DAY BEFORE KEY DROPS:
-Drop Keycard : (Casa 2-3) ALAN 515
+Drop Keycard : (Casa 2-3) Alan 515
 
 03-29
 (513)
-Check out: JESS 12:00 Clean anytime of day
-Check in: 2026-05-02 REBECCA(2) 16:00
+Check out: Jess 12:00 Clean anytime of day
+Check in: 2026-04-06 JOHN(1) 16:00
 
 
 (Casa 2-3)
-Check in: ALAN(1)  16:00
+Check in: Alan(1)  16:00
 
 
 03-30
@@ -298,7 +305,7 @@ Check in: ALAN(1)  16:00
 
 03-31
 (716)
-Check out: 綾乃 12:00 Clean immediately
+Check out: Ayano 12:00 Clean immediately
 Check in: 2026-03-31 FRENCES(2) 16:00
 Drop Keycard : (716) FRENCES 515
 

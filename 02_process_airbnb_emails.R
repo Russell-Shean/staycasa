@@ -5,7 +5,6 @@ library(stringr)
 library(base64enc)
 library(lubridate)
 
-sample_data <- fromJSON("data/emails.json")
 
 sample_data <- fromJSON("data/emails_from_api.json")
 
@@ -138,6 +137,9 @@ airbnb_emails <- sample_data2 |>
                  # (This allows us to link messages to the right reservation)
                  mutate(thread_id = str_extract(body, "(?<=/hosting/thread/).*(?=\\?)")) |>
   
+                 # add an alteration_id field for change requests
+                 mutate(alteration_id = str_extract(body, "(?<=/reservation/alteration/).*(?=\\?)")) |> 
+  
                  # Thread type  
                  mutate(thread_type = str_extract(body, "(?<=thread_type\\=).*?(?=\\&)")) |>
   
@@ -221,6 +223,7 @@ airbnb_emails <- sample_data2 |>
                                    context_parameter2 != "claims/mediation/to_responder_partial_refund_submitted",
                                    context_parameter2 != "reservation/inquiries/reminder",
                                    context_parameter2 != "claims/resolution_center/to_claimant_request_declined7",
+                                   context_parameter2 != "COHOSTING_COHOSTING_INVITE_REMINDER_TO_INVITEE\r\xc3\xdc",
                                    
                                    !str_detect(context_parameter2, "claims/to_claimant_mediation_request_submitted"),
                                                
@@ -547,7 +550,58 @@ airbnb_emails <- sample_data2 |>
                    airbnb_reservation_confirmations3 <- airbnb_reservation_confirmations2 |>
                                                         full_join(airbnb_reminders2)
 
-  
+                   
+                   
+                   
+#########################################################3
+        # Updates from reminders.....
+        # BEFORE change requests
+############################################################
+                   
+                   
+                   
+                   # Add an additional check for things that got missed with all 
+                   # the things above, but probably got caught in the reminders
+                   unique_reminders <- airbnb_reminders |> 
+                     select(date,
+                            confirmation_number,
+                            room_id,
+                            guest_first_name,
+                            checkin_date,
+                            checkout_date,
+                            checkin_time,
+                            checkout_time,
+                            number_of_adults,
+                            number_of_children,
+                            number_of_guests,
+                            room_number) |>
+                     arrange(confirmation_number, desc(date)) |>
+                     distinct(confirmation_number, .keep_all = TRUE)
+                   
+                   
+                   airbnb_reservation_confirmations3 <- 
+                     airbnb_reservation_confirmations2 |> 
+                      filter(context_parameter2 %in% c("booking/host/ReservationHostConfirmationTemplate",
+                                                                      "booking/v2_migration/reservation_host_confirmation")) #|>
+                    # rename(guest_first_name = guest_first_name.x)
+                   
+                   
+                   
+                   
+                   reminders_to_update <- unique_reminders |>
+                     inner_join(
+                       airbnb_reservation_confirmations3 |> select(confirmation_number, date_initial = date),
+                       by = "confirmation_number"
+                     ) |>
+                     filter(date > date_initial) |>
+                     select(-date_initial) 
+                   
+                   airbnb_reservation_confirmations4 <- rows_update(
+                     airbnb_reservation_confirmations3,
+                     reminders_to_update,
+                     by = "confirmation_number"
+                   )
+                   
                  
 
                    
@@ -622,9 +676,12 @@ airbnb_emails <- sample_data2 |>
                    airbnb_change_requests2 <- airbnb_change_requests |>
                      select(guest_first_name, 
                             room_number,
+                            datetime_taipei,
                             og_guest_number:requested_checkout_date) |>
                      filter(!confirmation_number %in% c("HMF32AM8EK", "HMPH5RNCAA")) |>
-                            distinct()
+                     arrange(guest_first_name, room_number, desc(datetime_taipei)) |>
+                     distinct(guest_first_name, room_number, .keep_all = TRUE) |>
+                     select(-datetime_taipei)
 
                    
                    airbnb_confirmed_changes <- airbnb_emails |> 
@@ -654,7 +711,14 @@ airbnb_emails <- sample_data2 |>
                      
                             # remove duplicates
                             distinct() |>
-                   filter(!confirmation_number %in% c("HMF32AM8EK", "HMPH5RNCAA"))
+                   filter(!confirmation_number %in% c("HMF32AM8EK", "HMPH5RNCAA")) |>
+                     
+                     
+                          # Break ties for multiple change requests in a row
+                          # based on when the email was received
+                     arrange(guest_first_name, room_number, desc(datetime_taipei)) |>
+                        distinct(confirmation_number, .keep_all = TRUE)
+                          
                    
 
                    airbnb_confirmed_changes2 <- airbnb_confirmed_changes |>
@@ -669,9 +733,11 @@ airbnb_emails <- sample_data2 |>
                      select(-date)
 
                    
-                   airbnb_reservation_confirmations4 <- airbnb_reservation_confirmations3 |>
+                   airbnb_reservation_confirmations5 <- airbnb_reservation_confirmations4 |>
                      left_join(airbnb_confirmed_changes2, 
-                               by = join_by("confirmation_number" == "confirmation_number")) |>
+                               by = join_by(confirmation_number, 
+                                            guest_first_name,
+                                            room_number)) |>
                      mutate(checkin_date = if_else(is.na(requested_checkin_date),
                                                    checkin_date,
                                                    requested_checkin_date),
@@ -685,7 +751,7 @@ airbnb_emails <- sample_data2 |>
                    
                    
                    # Make manual changes that don't show up in any of the emails
-                   airbnb_reservation_confirmations4 <- airbnb_reservation_confirmations4 |>
+                   airbnb_reservation_confirmations6 <- airbnb_reservation_confirmations5 |>
                                                         mutate(checkout_date = if_else(confirmation_number == "HMQMWRA9PB",
                                                                                        as.Date("2025-06-28"),
                                                                                        checkout_date)) |>
@@ -703,23 +769,13 @@ airbnb_emails <- sample_data2 |>
                      # multiple emails
                      mutate(checkin_date = if_else(confirmation_number == "HMF32AM8EK",
                                                     as.Date("2026-02-01"),
-                                                    checkin_date)) |>
-                     
-                     
-                     mutate(checkin_date = if_else(confirmation_number == "HMPH5RNCAA",
-                                                   as.Date("2026-02-12"),
-                                                   checkin_date)) |>
-                     
-                     
-                     mutate(checkout_date = if_else(confirmation_number == "HMPH5RNCAA",
-                                                   as.Date("2026-02-19"),
-                                                   checkout_date)) |>
+                                                    checkin_date))#|>
                      
                      
                      
                      
                      # rename room_numbers
-                     rename(room_number = room_number.x)
+                    # rename(room_number = room_number.x)
                    
                    
                    
@@ -802,7 +858,7 @@ airbnb_emails <- sample_data2 |>
                    )
                    
             
-                   airbnb_reservation_confirmations5 <- airbnb_reservation_confirmations4 |>
+                   airbnb_reservation_confirmations7 <- airbnb_reservation_confirmations6 |>
                                                         bind_rows(manual_reservations)
                    
                    
@@ -810,49 +866,7 @@ airbnb_emails <- sample_data2 |>
                    
                    
                    
-                   
-                   # Add an additional check for things that got missed with all 
-                   # the things above, but probably got caught in the reminders
-                   unique_reminders <- airbnb_reminders |> 
-                     select(date,
-                            confirmation_number,
-                            room_id,
-                            guest_first_name,
-                            checkin_date,
-                            checkout_date,
-                            checkin_time,
-                            checkout_time,
-                            number_of_adults,
-                            number_of_children,
-                            number_of_guests,
-                            room_number) |>
-                     arrange(confirmation_number, desc(date)) |>
-                     distinct(confirmation_number, .keep_all = TRUE)
-                   
-                   
-                   airbnb_reservation_confirmations6 <- 
-                     airbnb_reservation_confirmations5 |> 
-                     # filter(context_parameter2 %in% c("booking/host/ReservationHostConfirmationTemplate",
-                     #                                                 "booking/v2_migration/reservation_host_confirmation")) |>
-                     rename(guest_first_name = guest_first_name.x)
-                   
-                   
-                   
-                   
-                   reminders_to_update <- unique_reminders |>
-                     inner_join(
-                       airbnb_reservation_confirmations6 |> select(confirmation_number, date_initial = date),
-                       by = "confirmation_number"
-                     ) |>
-                     filter(date > date_initial) |>
-                     select(-date_initial)
-                   
-                   airbnb_reservation_confirmations7 <- rows_update(
-                     airbnb_reservation_confirmations6,
-                     reminders_to_update,
-                     by = "confirmation_number"
-                   )
-                   
+               
                    
                    
                    
