@@ -1,7 +1,11 @@
 library(dplyr)
 library(lubridate)
 
-airbnb_emails2 <- read.csv( file = "data/airbnb_reservation_confirmations.csv")  
+airbnb_emails2 <- read.csv( file = "data/airbnb_reservation_confirmations.csv")  |>
+  
+  # filter out unrelated properties
+  dplyr::filter(!room_number %in% c("5F-3"))
+  
 
 
 

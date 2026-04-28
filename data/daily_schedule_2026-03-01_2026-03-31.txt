@@ -306,7 +306,7 @@ Check in: Alan(1)  16:00
 03-31
 (716)
 Check out: Ayano 12:00 Clean immediately
-Check in: 2026-03-31 FRENCES(2) 16:00
-Drop Keycard : (716) FRENCES 515
+Check in: 2026-03-31 Frences(2) 16:00
+Drop Keycard : (716) Frences 515
 
 
