@@ -56,11 +56,11 @@ reminder_extractor <- function(airbnb_emails) {
     # Catch checkin dates where the year is in a different year than the email
     # ie. an email on dec 30 2025 about a checkin on jan 03 2026 
     
-    mutate(checkin_date = ifelse(checkin_date < taipei_date,
-                                 checkin_date + year(1),
+    mutate(checkin_date = if_else(checkin_date < taipei_date,
+                                 checkin_date + years(1),
                                  checkin_date),
-           checkout_date = ifelse(checkout_date < taipei_date,
-                                 checkout_date + year(1),
+           checkout_date = if_else(checkout_date < taipei_date,
+                                 checkout_date + years(1),
                                  checkout_date)) |> 
     
     
