@@ -45,13 +45,23 @@ reservations <- airbnb_emails|>
   
   # convert checkin date to actual date format
   mutate(checkin_date = ifelse(!str_detect(checkin_date, "年") & !is.na(checkin_date),
-                               paste0(format(Sys.Date(), "%Y年"), checkin_date),
+                               paste0(format(taipei_date, "%Y年"), checkin_date),
                                checkin_date),
          checkout_date = ifelse(!str_detect(checkout_date, "年") & !is.na(checkout_date),
-                                paste0(format(Sys.Date(), "%Y年"), checkout_date),
-                                checkout_date),) |>
+                                paste0(format(taipei_date, "%Y年"), checkout_date),
+                                checkout_date)) |>
   
   mutate(across(c(checkin_date, checkout_date), ~ as.Date(.x, format= "%Y年%m月%d日"))) |>
+  
+  # Catch checkin dates where the year is in a different year than the email
+  # ie. an email on dec 30 2025 about a checkin on jan 03 2026 
+  
+  mutate(checkin_date = ifelse(checkin_date < taipei_date,
+                               checkin_date + year(1),
+                               checkin_date),
+         checkout_date = ifelse(checkout_date < taipei_date,
+                                checkout_date + year(1),
+                                checkout_date)) |> 
   
   
   # Guest info

@@ -224,3 +224,4 @@ __marimo__/
 
 # Ignore financial documents
 data/financial/
+.positai
