@@ -1,227 +1,191 @@
 
-05-28
-(NA)
-Check out: STEFAN 12:00 Clean anytime of day
-(Renai Casa 2F-2)
-Check out: Garry 12:00 Clean immediately
-Check in: 2026-05-28 思萱(2) 16:00
-Drop Keycard : (Renai Casa 2F-2) 思萱 515
-(515)
-Check out: 柏毅 12:00 Clean immediately
-Check in: 2026-05-28 John(1) 16:00
-Drop Keycard : (515) John 515
-
-
-05-29
+06-22
 (1600)
-Check out: Marguerite 12:00 Clean anytime of day
-Check in: 2026-05-30 Peter(1) 16:00
-Drop Keycard : (1600) Peter 515
+Check out: Liyun 12:00 Clean anytime of day
+Check in: 2026-06-23 Ray(4) 16:00
+Drop Keycard : (1600) Ray 515
+(1615)
+Check out: Mia 12:00 Clean immediately
+Check in: 2026-06-22 Chao Shun(3) 16:00
+Drop Keycard : (1615) Chao Shun 515
 
 
-(Tina1)
-Check in: 혜진(6)  16:00
-
-
-05-30
-(301)
-Check out: Fazrul 12:00 Clean anytime of day
-Check in: 2026-05-31 기성(1) 16:00
-Drop Keycard : (301) 기성 515
-(1600)
-Check out: Rahul 12:00 Clean immediately
-Check in: 2026-05-30 Peter(1) 16:00
-Drop Keycard : (1600) Peter 515
-(716)
-Check out: Brian 12:00 Clean immediately
-Check in: 2026-05-30 Deedee(1) 16:00
-Drop Keycard : (716) Deedee 515
-
-
-(Casa 2-3)
-Check in: Valeska(2)  16:00
-
-
-05-31
-(515)
-Check out: John 12:00 Clean immediately
-Check in: 2026-05-31 Greg(2) 16:00
-Drop Keycard : (515) Greg 515
-
-
-(301)
-Check in: 기성(1)  16:00
-(1713)
-Check in: Ryan(1)  16:00
-
-
-06-01
-(Renai Casa 2F-2)
-Check out: 思萱 12:00 Clean anytime of day
-Check in: 2026-06-02 Howard(1) 16:00
-Drop Keycard : (Renai Casa 2F-2) Howard 515
-(Tina1)
-Check out: 혜진 12:00 Clean immediately
-Check in: 2026-06-01 Kaixiang Vincent(5) 16:00
-Drop Keycard : (Tina1) Kaixiang Vincent 515
-(814)
-Check out: JASON 12:00 Clean anytime of day
-Check in: 2026-06-02 Anna(3) 15:00
-Drop Keycard : (814) Anna 515
-
-
-06-02
 (513)
-Check out: Breanne 12:00 Clean anytime of day
-Check in: 2026-06-05 Leta(2) 16:00
-Drop Keycard : (513) Leta 515
-(NA)
-Check out: 一璞 11:00 Clean anytime of day
-(NA)
-Check out: Nicole 12:00 Clean anytime of day
-
-
-06-03
-
-
-(NA)
-Check in: Sabrina(1)  16:00
-
-
-06-04
-(515)
-Check out: Greg 12:00 Clean anytime of day
-Check in: 2026-06-06 So(2) 16:00
-Drop Keycard : (515) So 515
+Check in: Bartlomiej(2)  16:00
 (716)
-Check out: Deedee 12:00 Clean anytime of day
-Check in: 2026-06-08 Kiet(4) 15:00
-(1615)
-Check out: Joyce 11:00 Clean anytime of day
-Check in: 2026-06-05 Yg(2) 16:00
-Drop Keycard : (1615) Yg 515
-
-
-06-05
-(301)
-Check out: 기성 12:00 Clean anytime of day
-Check in: 2026-06-17 THOMAS(1) 16:00
-(NA)
-Check out: Sabrina 12:00 Clean anytime of day
-(1615)
-Check out: Chris And Jib 12:00 Clean immediately
-Check in: 2026-06-05 Yg(2) 16:00
-Drop Keycard : (1615) Yg 515
-(Casa 2-3)
-Check out: Valeska 12:00 Clean anytime of day
-Check in: 2026-06-12 ANTONIO(2) 16:00
-
-
-06-06
-(Tina1)
-Check out: Kaixiang Vincent 12:00 Clean anytime of day
-Check in: 2026-06-10 재혁(4) 16:00
-(515)
-Check out: Jonathan 12:00 Clean immediately
-Check in: 2026-06-06 So(2) 16:00
-Drop Keycard : (515) So 515
-
-
-(1713)
-Check in: CHLOE(2)  16:00
-
-
-06-07
-(1713)
-Check out: Ryan 12:00 Clean immediately
-Check in: 2026-06-07 JOANNE(3) 16:00
-Drop Keycard : (1713) JOANNE 515
-
-
-06-08
-(Renai Casa 2F-2)
-Check out: Howard 12:00 Clean anytime of day
-Check in: 2026-09-11 CINDY(2) 16:00
-(1600)
-Check out: Peter 12:00 Clean anytime of day
-Check in: 2026-06-15 LIYUN(2) 16:00
-(NA)
-Check out: Chai-Yuh 11:00 Clean anytime of day
-
-
-06-09
-(716)
-Check out: John 12:00 Clean anytime of day
-Check in: 2026-06-22 麗玲(2) 16:00
-(1713)
-Check out: CHLOE 12:00 Clean anytime of day
-Check in: 2026-06-11 ZACH(2) 16:00
-Drop Keycard : (1713) ZACH 515
-(513)
-Check out: Leta 12:00 Clean anytime of day
-Check in: 2026-06-10 SUMMER(2) 16:00
-Drop Keycard : (513) SUMMER 515
-
-
-06-10
-(1713)
-Check out: JOANNE 12:00 Clean anytime of day
-Check in: 2026-06-11 ZACH(2) 16:00
-Drop Keycard : (1713) ZACH 515
-(NA)
-Check out: Lucy 12:00 Clean anytime of day
-
-
-06-11
-(1615)
-Check out: Yg 12:00 Clean immediately
-Check in: 2026-06-11 PAIZE(1) 16:00
-Drop Keycard : (1615) PAIZE 515
-
-
-(1713)
-Check in: ZACH(2)  16:00
+Check in: Deedee(2)  16:00
 
 
 DAY BEFORE KEY DROPS:
-Drop Keycard : (Casa 2-3) ANTONIO 515
+Drop Keycard : (CITYHALL TAIPEI 101) Chia Lin 515
 
-06-12
+06-23
 (814)
-Check out: Anna 11:00 Clean immediately
-Check in: 2026-06-12 Shirley(3) 15:00
-Drop Keycard : (814) Shirley 515
+Check out: Armando 12:00 Clean anytime of day
+Check in: 2026-06-24 Chengwei(3) 16:00
+Drop Keycard : (814) Chengwei 515
 
 
-06-13
-
-
-(1615)
-Check in: Steven(2)  16:00
-
-
-06-14
-(1713)
-Check out: ZACH 12:00 Clean anytime of day
-Check in: 2026-06-17 HOWE(2) 16:00
-Drop Keycard : (1713) HOWE 515
-
-
-06-15
-(Tina1)
-Check out: 재혁 12:00 Clean immediately
-Check in: 2026-06-15 선아(4) 16:00
-Drop Keycard : (Tina1) 선아 515
-
-
+(Renai Casa 2F-2)
+Check in: 芷翎(2)  16:00
+(CITYHALL TAIPEI 101)
+Check in: Chia Lin(2)  16:00
+(Casa 2-3)
+Check in: Anthony(2)  16:00
 (1600)
-Check in: LIYUN(2)  16:00
+Check in: Ray(2)  16:00
 
 
-06-16
+06-24
+
+
+(1713)
+Check in: Emilie(3)  16:00
+(814)
+Check in: Chengwei(3)  16:00
+
+
+06-25
+(NA)
+Check out: MOIRA 11:00 Clean anytime of day
+
+
+06-26
+(716)
+Check out: Deedee 12:00 Clean immediately
+Check in: 2026-06-26 Marcelle(1) 16:00
+Drop Keycard : (716) Marcelle 515
+
+
+06-27
+(301)
+Check out: Thomas 12:00 Clean anytime of day
+Check in: 2026-12-30 ROSEMARY(2) 16:00
+
+
+06-28
+(Renai Casa 2F-2)
+Check out: 芷翎 12:00 Clean anytime of day
+Check in: 2026-09-11 CINDY(2) 16:00
+(CITYHALL TAIPEI 101)
+Check out: Chia Lin 12:00 Clean anytime of day
+Check in: 2026-10-30 SABRA(1) 16:00
+(Casa 2-3)
+Check out: Anthony 12:00 Clean anytime of day
+Check in: 2026-07-03 MANNY(2) 16:00
+(HIGHLINE 101 RESIDENCE)
+Check out: Chia Ling 11:00 Clean anytime of day
+Check in: 2026-06-29 Neng(3) 16:00
+Drop Keycard : (HIGHLINE 101 RESIDENCE) Neng 515
+
+
+06-29
+(NA)
+Check out: WEICHIEH 11:00 Clean anytime of day
 (1615)
-Check out: PAIZE 12:00 Clean immediately
-Check in: 2026-06-16 MIA(2) 16:00
-Drop Keycard : (1615) MIA 515
+Check out: Chao Shun 12:00 Clean immediately
+Check in: 2026-06-29 Jeffery(1) 16:00
+Drop Keycard : (1615) Jeffery 515
+(1713)
+Check out: Emilie 12:00 Clean anytime of day
+Check in: 2026-07-09 JENNIFER(2) 16:00
 
+
+06-30
+
+
+07-01
+(513)
+Check out: Bartlomiej 12:00 Clean anytime of day
+Check in: 2026-07-03 DANIELLE(2) 16:00
+Drop Keycard : (513) DANIELLE 515
+(814)
+Check out: Chengwei 12:00 Clean anytime of day
+Check in: 2026-07-02 SHINTARO AND SONOMI(2) 16:00
+Drop Keycard : (814) SHINTARO AND SONOMI 515
+
+
+07-02
+(1600)
+Check out: Ray 12:00 Clean anytime of day
+Check in: 2026-07-10 TAO(3) 16:00
+
+
+(814)
+Check in: SHINTARO AND SONOMI(2)  16:00
+
+
+07-03
+
+
+(Casa 2-3)
+Check in: MANNY(2)  16:00
+(513)
+Check in: DANIELLE(2)  16:00
+
+
+07-04
+(1615)
+Check out: Jeffery 12:00 Clean anytime of day
+Check in: 2026-07-12 KEVIN(2) 16:00
+
+
+07-05
+(814)
+Check out: SHINTARO AND SONOMI 12:00 Clean anytime of day
+Check in: 2026-07-17 SARAH(2) 16:00
+(716)
+Check out: Marcelle 12:00 Clean anytime of day
+Check in: 2026-09-25 KENNETH(2) 16:00
+
+
+07-06
+(HIGHLINE 101 RESIDENCE)
+Check out: Neng 11:00 Clean anytime of day
+Check in: 2026-07-13 ZHONG(1) 16:00
+
+
+07-07
+(Casa 2-3)
+Check out: MANNY 12:00 Clean anytime of day
+Check in: 2026-07-10 JUSTIN(1) 16:00
+Drop Keycard : (Casa 2-3) JUSTIN 515
+(513)
+Check out: DANIELLE 12:00 Clean immediately
+Check in: 2026-07-07 LEE(2) 16:00
+Drop Keycard : (513) LEE 515
+
+
+07-08
+
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (1713) JENNIFER 515
+
+07-09
+
+
+(1713)
+Check in: JENNIFER(2)  16:00
+
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (1600) TAO 515
+
+07-10
+
+
+(Casa 2-3)
+Check in: JUSTIN(1)  16:00
+(NA)
+Check in: 一璞(1)  15:00
+(1600)
+Check in: TAO(1)  16:00
+
+
+07-11
+
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (1615) KEVIN 515
 

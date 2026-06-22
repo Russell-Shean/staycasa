@@ -9,11 +9,11 @@ reminder_extractor <- function(airbnb_emails) {
     mutate(confirmation_number = str_extract(body_cleaned, "(?<=reservations/details/).*?(?=\\?)"),
            guest_first_name = str_extract(subject, "(?<=提醒：).*(?=快要)"))  |>
     
-    # extract two blocks of information
-    mutate(info_block1 = str_extract(body_cleaned, "入住 退房.*即將入住租客的更多詳情")) |>
+    # extract two blocks of information   
+    mutate(info_block1 = str_extract(body_cleaned, "入住 退房.*(即將入住租客的更多詳情|客人的更多詳情)")) |>
     mutate(info_block1 = str_replace_all(info_block1, "~~newline~~", "")) |>
-    
-    mutate(info_block2 = str_extract(body_cleaned, "確認碼.*出租收入會在房客入住")) |>
+
+    mutate(info_block2 = str_extract(body_cleaned, "確認碼.*(出租收入會在房客入住|查看收入查看收入)")) |>
     mutate(info_block2 = str_replace_all(info_block2, "~~newline~~", "")) |>
     
     
@@ -64,9 +64,9 @@ reminder_extractor <- function(airbnb_emails) {
                                  checkout_date)) |> 
     
     
-    # Guest info
+    # Guest info  
     mutate(
-      guests_block = str_replace_all(str_extract(info_block1, "人數.*即將入住")," ", ""),
+      guests_block = str_replace_all(str_extract(info_block1, "人數.*(即將入住|客人的更多詳情)")," ", ""),
       number_of_adults = as.numeric(str_extract(guests_block, "\\d+(?=名成人)")),
       number_of_children = as.numeric(str_extract(guests_block, "\\d+(?=名兒童)"))) |>
     
@@ -90,7 +90,12 @@ reminder_extractor <- function(airbnb_emails) {
                                    room_id == "1558409237712768132" ~ as.character("Renai Casa 2F-2"),
                                    room_id == "1556499339485122464" ~ as.character("Casa 2-3"),
                                    room_id == "1626777461460533309" ~ as.character("5F-3"),
-                                   room_id == "1662216486099283423" ~ as.character("Tina1")))
+                                   room_id == "1662216486099283423" ~ as.character("Tina1"),
+                                   room_id == "1693254543137941850" ~ as.character("HIGHLINE 101 RESIDENCE"),
+                                   room_id == "1653667480370407351" ~ as.character("CITYHALL TAIPEI 101"),
+                                   room_id == "1664552638439299512" ~ as.character("CENTRAL RESIDENCES")
+                                   
+                                   ))
   
   
   
