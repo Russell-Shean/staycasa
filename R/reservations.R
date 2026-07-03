@@ -30,8 +30,8 @@ reservations <- airbnb_emails|>
   mutate(checkin_date = str_extract(reservation_dates, "^.*?(?=週)"),
          checkout_date = str_squish(str_extract(reservation_dates, "(?<=週.).*(?=週)")),
          checkin_day_of_week = str_extract(reservation_dates, "週."),
-         checkout_day_of_week = str_extract(reservation_dates, "週.(?=..(午|凌晨))"),
-         checkin_time = str_extract(reservation_times, "^.*(?= .(午|凌晨))"),
+         checkout_day_of_week = str_extract(reservation_dates, "週.(?=..(午|晨))"),
+         checkin_time = str_extract(reservation_times, "^.*(?= .(午|晨))"),
          checkout_time = str_extract(reservation_times, "(?<= ).*$")) |>
   
   
