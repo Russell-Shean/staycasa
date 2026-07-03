@@ -19,6 +19,10 @@ reservations <- airbnb_emails|>
   mutate(info_block1 = str_extract(body_cleaned, "入住 退房.*(即將入住租客的更多詳情|客人的更多詳情)")) |>
   mutate(info_block1 = str_replace_all(info_block1, "~~newline~~", "")) |>
   
+  # Remove extra stuff in the middle of info block 1
+  mutate(info_block1 = str_remove(info_block1, "順暢入住的建議.*/arrival/check-in-method]")) |>
+  
+  
   mutate(info_block2 = str_extract(body_cleaned, "確認碼.*(出租收入會在房客入住|查看收入查看收入)")) |>
   mutate(info_block2 = str_replace_all(info_block2, "~~newline~~", "")) |>
   
