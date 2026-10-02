@@ -225,3 +225,5 @@ __marimo__/
 # Ignore financial documents
 data/financial/
 .positai
+
+data/emails_from_api.json
