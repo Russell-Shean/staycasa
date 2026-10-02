@@ -1,74 +1,148 @@
 
 08-01
-(HIGHLINE 101 RESIDENCE)
-Check out: AYOZE 11:00 Clean anytime of day
-Check in: 2026-08-12 MIA(2) 16:00
+(1615)
+Check out: PAUL 12:00 Clean immediately
+Check in: 2026-08-01 광희(2) 16:00
+Drop Keycard : (1615) 광희 515
+
+
+(515)
+Check in: NIKITA(1)  16:00
+(1713)
+Check in: Sydni(1)  16:00
+(716)
+Check in: Malene(1)  16:00
 
 
 08-02
-(1600)
-Check out: JUI-SHAN 12:00 Clean anytime of day
-Check in: 2026-08-17 MASATO(2) 16:00
-
-
+(Casa 2-3)
+Check out: TUSHANT 12:00 Clean anytime of day
+Check in: 2026-08-06 Cecilia(1) 16:00
+(Tina1)
+Check out: 怡伶 12:00 Clean anytime of day
+Check in: 2026-08-03 Bruce(3) 16:00
+Drop Keycard : (Tina1) Bruce 515
 (814)
-Check in: CHERON(3)  16:00
+Check out: Joshua 12:00 Clean immediately
+Check in: 2026-08-02 Cheron(3) 16:00
+Drop Keycard : (814) Cheron 515
+(1600)
+Check out: Jui-Shan 12:00 Clean immediately
+Check in: 2026-08-02 Renee(2) 16:00
+Drop Keycard : (1600) Renee 515
 
 
 08-03
+(301)
+Check out: ICHIEN 12:00 Clean anytime of day
+Check in: 2026-08-07 RYAN(1) 16:00
+(1713)
+Check out: Sydni 12:00 Clean anytime of day
+Check in: 2026-08-04 Paula(3) 16:00
+Drop Keycard : (1713) Paula 515
+
+
+(Tina1)
+Check in: Bruce(3)  16:00
 
 
 08-04
+(HIGHLINE 101 RESIDENCE)
+Check out: GWEN 11:00 Clean immediately
+Check in: 2026-08-04 Maximilian(2) 16:00
+Drop Keycard : (HIGHLINE 101 RESIDENCE) Maximilian 515
+
+
+(1713)
+Check in: Paula(3)  16:00
 
 
 08-05
+(Renai Casa 2F-2)
+Check out: CHARLES 12:00 Clean anytime of day
+Check in: 2026-09-11 CINDY(2) 16:00
 
 
 08-06
+(515)
+Check out: NIKITA 12:00 Clean immediately
+Check in: 2026-08-06 Cameron(1) 16:00
+Drop Keycard : (515) Cameron 515
+
+
+(Casa 2-3)
+Check in: Cecilia(1)  16:00
 
 
 08-07
 
 
+(301)
+Check in: RYAN(1)  16:00
+
+
 08-08
+(HIGHLINE 101 RESIDENCE)
+Check out: Maximilian 11:00 Clean anytime of day
+Check in: 2026-08-12 Mia(2) 16:00
+(716)
+Check out: Malene 12:00 Clean anytime of day
+Check in: 2026-08-11 Markus(2) 16:00
+Drop Keycard : (716) Markus 515
+(1615)
+Check out: 광희 12:00 Clean anytime of day
+Check in: 2026-08-11 Joost(2) 16:00
+Drop Keycard : (1615) Joost 515
 (814)
-Check out: CHERON 12:00 Clean immediately
+Check out: Cheron 12:00 Clean immediately
 Check in: 2026-08-08 明芬(3) 16:00
 Drop Keycard : (814) 明芬 515
 
 
 08-09
+(1713)
+Check out: Paula 12:00 Clean anytime of day
+Check in: 2026-08-10 현진(2) 16:00
+Drop Keycard : (1713) 현진 515
 
 
 08-10
+(513)
+Check out: Ricardo 12:00 Clean anytime of day
+Check in: 2026-08-13 민준(2) 16:00
+Drop Keycard : (513) 민준 515
 
 
-DAY BEFORE KEY DROPS:
-Drop Keycard : (716) MARKUS 515
+(1713)
+Check in: 현진(2)  16:00
+
 
 08-11
+(Tina1)
+Check out: Bruce 12:00 Clean anytime of day
+Check in: 2026-08-15 HUI LEE(4) 16:00
 
 
 (716)
-Check in: MARKUS(2)  16:00
+Check in: Markus(2)  16:00
 (1615)
-Check in: JOOST(2)  16:00
+Check in: Joost(2)  16:00
 
-
-DAY BEFORE KEY DROPS:
-Drop Keycard : (HIGHLINE 101 RESIDENCE) MIA 515
 
 08-12
 
 
 (HIGHLINE 101 RESIDENCE)
-Check in: MIA(2)  16:00
+Check in: Mia(2)  16:00
 
-
-DAY BEFORE KEY DROPS:
-Drop Keycard : (513) 민준 515
 
 08-13
+(515)
+Check out: Cameron 12:00 Clean anytime of day
+Check in: 2026-08-23 IOANA(1) 16:00
+(1713)
+Check out: 현진 12:00 Clean anytime of day
+Check in: 2026-08-19 FANNY(4) 16:00
 
 
 (513)
@@ -77,31 +151,42 @@ Check in: 민준(2)  16:00
 
 08-14
 (716)
-Check out: MARKUS 12:00 Clean anytime of day
-Check in: 2026-09-25 KENNETH(2) 16:00
+Check out: Markus 12:00 Clean anytime of day
+Check in: 2026-08-15 BRIAN(1) 16:00
+Drop Keycard : (716) BRIAN 515
 
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (Tina1) HUI LEE 515
 
 08-15
 
 
+(716)
+Check in: BRIAN(1)  16:00
 (Tina1)
-Check in: HUI LEE(4)  16:00
+Check in: HUI LEE(1)  16:00
 
 
 08-16
+(Casa 2-3)
+Check out: Cecilia 12:00 Clean immediately
+Check in: 2026-08-16 GRAVEN(1) 16:00
+Drop Keycard : (Casa 2-3) GRAVEN 515
+(1600)
+Check out: Renee 12:00 Clean anytime of day
+Check in: 2026-08-17 MASATO(2) 16:00
+Drop Keycard : (1600) MASATO 515
 (1615)
-Check out: JOOST 12:00 Clean immediately
+Check out: Joost 12:00 Clean immediately
 Check in: 2026-08-16 GREG(3) 16:00
 Drop Keycard : (1615) GREG 515
 
 
-DAY BEFORE KEY DROPS:
-Drop Keycard : (1600) MASATO 515
-
 08-17
-(HIGHLINE 101 RESIDENCE)
-Check out: MIA 11:00 Clean anytime of day
-Check in: 2026-12-17 RAFAEL(3) 16:00
+(301)
+Check out: RYAN 12:00 Clean anytime of day
+Check in: 2026-12-30 ROSEMARY(2) 16:00
 
 
 (1600)
@@ -111,10 +196,23 @@ Check in: MASATO(2)  16:00
 08-18
 (513)
 Check out: 민준 12:00 Clean anytime of day
-Check in: 2026-08-30 BART(1) 16:00
+Check in: 2026-08-26 MARK(1) 16:00
 
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (1713) FANNY 515
 
 08-19
+(HIGHLINE 101 RESIDENCE)
+Check out: Mia 11:00 Clean anytime of day
+Check in: 2026-10-07 KATE(2) 16:00
+(814)
+Check out: 明芬 12:00 Clean anytime of day
+Check in: 2026-09-11 JEVIN(1) 16:00
+
+
+(1713)
+Check in: FANNY(4)  16:00
 
 
 08-20
@@ -124,9 +222,9 @@ Check in: 2026-08-30 BART(1) 16:00
 
 
 08-22
-(814)
-Check out: 明芬 12:00 Clean anytime of day
-Check in: 2026-09-11 JEVIN(1) 16:00
+(716)
+Check out: BRIAN 12:00 Clean anytime of day
+Check in: 2026-08-27 DAN(1) 16:00
 
 
 08-23
@@ -135,30 +233,59 @@ Check out: GREG 12:00 Clean anytime of day
 Check in: 2026-09-06 TORSTEN(2) 16:00
 
 
+(515)
+Check in: IOANA(1)  16:00
+
+
 08-24
+(1713)
+Check out: FANNY 12:00 Clean anytime of day
+Check in: 2026-08-25 LANE(1) 16:00
+Drop Keycard : (1713) LANE 515
 
 
 08-25
 
 
+(1713)
+Check in: LANE(1)  16:00
+
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (513) MARK 515
+
 08-26
 
+
+(513)
+Check in: MARK(1)  16:00
+
+
+DAY BEFORE KEY DROPS:
+Drop Keycard : (716) DAN 515
 
 08-27
 
 
+(716)
+Check in: DAN(1)  16:00
+
+
 08-28
-
-
-(CENTRAL RESIDENCES)
-Check in: JENNY(1)  15:00
+(1713)
+Check out: LANE 12:00 Clean anytime of day
+Check in: 2026-09-01 JAN(2) 16:00
 
 
 08-29
-
-
-DAY BEFORE KEY DROPS:
+(Casa 2-3)
+Check out: GRAVEN 12:00 Clean anytime of day
+Check in: 2026-10-12 BILL(2) 16:00
+(513)
+Check out: MARK 12:00 Clean anytime of day
+Check in: 2026-08-30 BART(1) 16:00
 Drop Keycard : (513) BART 515
+
 
 08-30
 
@@ -168,6 +295,9 @@ Check in: BART(1)  16:00
 
 
 08-31
+(716)
+Check out: DAN 12:00 Clean anytime of day
+Check in: 2026-09-25 KENNETH(2) 16:00
 (Tina1)
 Check out: HUI LEE 12:00 Clean anytime of day
 Check in: 2026-10-24 RACHEL(3) 16:00
